@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <% 
+    	String[] fnb = {"사이트맵","윤리경영","사외내방신청","협력사신문고","공정위 4대 실천사항","보안 신고센터","개인정보처리방침"}
+    %>
+    <div class="ft_wrap">
+    	<nav class="fnb"> 
+    	
+    		<p class="copyright"> Copryright @ SKtelecom</p>
+    	</nav>
+    </div>
