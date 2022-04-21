@@ -26,3 +26,18 @@
 	<% } %>
 	</ul>
 </nav>
+<p id="tnb">
+	<%
+		String sid = (String) session.getAttribute("uid");
+		String sname = (String) session.getAttribute("name");
+		if(sid == null){
+	%>
+	<a href="login.jsp">로그인</a>
+	<a href="">방문객</a>
+	<%
+		} else {
+	%>
+	<a href="logout.jsp">로그아웃</a>
+	<a href=""><%=sname%></a>
+	<% } %>
+</p>

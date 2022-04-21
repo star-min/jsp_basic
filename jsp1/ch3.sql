@@ -1,0 +1,11 @@
+use academy;
+show tables;
+select * from money_tbl_02;
+select * from sales_tbl_03;
+select * from money_tbl_02, sales_tbl_03;
+start transaction;
+update sales_tbl_03 set price=2000, amount=4 where saleno=2016007;
+delete from money_tbl_02 where saleno=2016007;
+commit;
+select * from money_tbl_02;
+select * from sales_tbl_03;

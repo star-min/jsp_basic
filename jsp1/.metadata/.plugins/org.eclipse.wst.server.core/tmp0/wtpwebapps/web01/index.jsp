@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>서버 페이지 테스트</title>
+<title>메인페이지</title>
 </head>
 <body>
 <div class="wrap"></div>
@@ -15,9 +15,7 @@
 	</div>
 </header>
 <div class="content">
-<h3>--------------------------위로 헤더 아래로 바디 -------------------------------</h3>
-	<h2>여기가 콘텐츠 자리입니다 피규어 등등</h2>
-<h3>--------------------------위로 바디 아래로 푸터 -------------------------------</h3>
+
 </div>
 <footer id="ft">
 	<%@ include file="ft.jsp" %>
