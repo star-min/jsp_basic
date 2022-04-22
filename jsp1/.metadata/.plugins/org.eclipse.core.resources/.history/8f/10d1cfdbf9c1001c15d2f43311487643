@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>From</title>
+</head>
+<body>
+	<header>
+		<h2>Form</h2>
+	</header>
+	<table>
+		<tr>
+			<td>
+				<p>이름 :<input type="text" id="mname" name="mname" class="name"></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>아이디 :<input type="text" id="uid" name="uid" class="indata" placeholder="아이디입력" required></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>패스워드 :<input type="password"  id="upw" name="upw" class="pw"></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>주소 :<input type="text" placeholder="서울시"></p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
