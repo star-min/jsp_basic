@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	request.setCharacterEncoding("UTF-8");
+	String name = request.getParameter("name");
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String address = request.getParameter("address");
+	int qty = Integer.parse(request.getParameter("qty"));
+	String email = request.getParameter("email");
+	String url = request.getParameter("url");
+	String date = request.getParameter("date");
+	String comment = request.getParameter("comment");
+	String baseball = request.getParameter("baseball");
+	String favorite = request.getParameter("favorite");
+	String victory = request.getParameter("victory");
+	String playoff = request.getParameter("playoff");
+	String file = request.getParameter("file");
+	
+	if(id.equals("zxzx123") && pw.equals("1234")){
+		session.setAttribute("id", id);
+		session.setAttribute("name", "성민띠");
+	} else {
+		response.sendRedirect("form.html");
+	}
+	%>
+	
+	<p></p>
+</body>
+</html>
