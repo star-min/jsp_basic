@@ -1,8 +1,8 @@
 use mysql;
--- create user test3;	-- 사용자 추가
--- select host, user from user;  -- 사용자 목록 보기
--- create user test3@localhost identified by '1234'; -- localhost에 대한 암호 설정
--- create user test3@'%' identified by '1234'; -- 외부 접근시 암호 설정
+create user test3;	-- 사용자 추가
+select host, user from user;  -- 사용자 목록 보기
+create user test3@localhost identified by '1234'; -- localhost에 대한 암호 설정
+create user test3@'%' identified by '1234'; -- 외부 접근시 암호 설정
 -- drop user 사용자아이디;   사용자제거
 -- 권한 수행(권한 부여 - grant, 권한 회수 - revoke)
 -- 1) 권한 부여
@@ -16,7 +16,7 @@ use mysql;
 -- 5) 권한 회수
 -- revoke sql명령 privileges on 데이터베이스.테이블명 from 계정아이디@lacalhost;  
 -- 6) 모든 권한 회수
--- revoke all privileges on *.* from 계정@localhost;
+-- revoke all privileges on *.* to 계정@localhost;
 
 -- 1) test4/a1234 의 사용자 계정을 추가
 -- 2) test4 사용자에게 모든 데이터베이스의 모든 권한을 부여
@@ -26,8 +26,5 @@ use mysql;
 -- 5) test4 사용자에게 모든 데이터베이스의 모든 권한을 회수
 -- 6) test4의 사용자를 제거
 
--- create user test4;
--- create user test4@localhost identified by '1234';
--- create user test4@'%' identified by '1234';
--- flush privileges;
-show grants for test4@localhost;
+
+
