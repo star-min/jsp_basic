@@ -1,4 +1,4 @@
 use company;
 select * from mem;
-insert into mem values("우와신기하다","shingibangi","112119",0);
+insert into mem values("김태균","tae","4444",0);
 commit;
