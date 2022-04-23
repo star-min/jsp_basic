@@ -1,0 +1,16 @@
+use academy;
+select * from member_tbl_02;
+select custname as '이름', phone as '전화번호', address as '주소' from member_tbl_02 group by custno order by custno;
+select custname as '이름', custno as '번호', phone as '전화번호' from member_tbl_02 where custname like '%복%';
+select * from member_tbl_02 where joindate between '2015-10-01' and '2015-11-30';
+select custname as '이름', phone as '전화번호', address as '주소' from member_tbl_02;
+select custno, sum(price) from money_tbl_02 group by custno;
+select * from money_tbl_02;
+create view money_view as select custno, saleno, pcost, amonut, price from money_tbl_02;
+select * from money_view;
+select * from money_tbl_02;
+select * from member_tbl_02;
+select me.custno, me.custname, me.address, sum(mo.price) from member_tbl_02 me inner join money_tbl_02 mo on me.custno=mo.custno group by custno;
+select custno, pcost, amount, price from money_tbl_02 where custno in (select custno from member_tbl_02 where address like '%서울%');
+select custno, pcost, amount, price from money_tbl_02 where custno not in (select custno from member_tbl_02 where address like '%서울%');
+create table sales_tbl_03 as select * from money_tbl_02;
