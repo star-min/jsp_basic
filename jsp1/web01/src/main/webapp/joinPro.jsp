@@ -29,7 +29,7 @@
 	pstmt.setString(3, address);
 	pstmt.setString(4, uid);
 	response.setCharacterEncoding("UTF-8");
-	result = pstmt.executeQuery();
+	pstmt.executeUpdate();
 	} catch(Exception e) {
 		e.printStackTrace();
 	} finally {
