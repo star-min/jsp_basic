@@ -16,14 +16,14 @@
 <div class="wrap">
 <header id="hd">
 	<div class="hd_wrap">
-		<%@ include file="nav.jsp" %>
+		<%@ include file="nav1.jsp" %>
 	</div>
 </header>
 <div class="content">
 	<h2>여기는 콘텐츠 영역</h2>
 </div>
 <footer id="ft">
-	<%@ include file="ft.jsp" %>
+	<%@ include file="ft1.jsp" %>
 </footer>
 </div>
 </body>

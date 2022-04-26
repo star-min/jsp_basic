@@ -17,7 +17,7 @@
 <div class="wrap">
 <header id="hd">
 	<div class="hd_wrap">
-		<%@ include file="nav.jsp" %>
+		<%@ include file="nav1.jsp" %>
 	</div>
 </header>
 <div class="content">
@@ -26,7 +26,7 @@
 	<p>비밀번호 : <%=upw %></p>
 </div>
 <footer id="ft">
-	<%@ include file="ft.jsp" %>
+	<%@ include file="ft1.jsp" %>
 </footer>
 </div>
 </body>

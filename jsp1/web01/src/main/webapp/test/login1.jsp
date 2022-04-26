@@ -13,7 +13,7 @@
 <div class="wrap">
 <header id="hd">
 	<div class="hd_wrap">
-		<%@ include file="nav.jsp" %>
+		<%@ include file="nav1.jsp" %>
 	</div>
 </header>
 <div class="content">
@@ -30,7 +30,7 @@
 	</form>	
 </div>
 <footer id="ft">
-	<%@ include file="ft.jsp" %>
+	<%@ include file="ft1.jsp" %>
 </footer>
 </div>
 </body>

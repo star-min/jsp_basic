@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SQLAccessControl="http:///org/eclipse/datatools/modelbase/sql/accesscontrol.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:SQLSchema="http:///org/eclipse/datatools/modelbase/sql/schema.ecore" xmlns:SQLTables="http:///org/eclipse/datatools/modelbase/sql/tables.ecore">
+  <SQLSchema:Database name="company" vendor="MySql" version="5.1" schemas="/1" authorizationIds="/4 /5 /6 /7 /8">
+    <eAnnotations source="ConnectionURI">
+      <details key="ConnectionKey" value="MariaDB"/>
+    </eAnnotations>
+  </SQLSchema:Database>
+  <SQLSchema:Schema name="company" tables="/2 /3" database="/0"/>
+  <SQLTables:PersistentTable name="mem" schema="/1">
+    <columns name="name" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns name="id" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns name="pw" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="30"/>
+    </columns>
+    <columns name="no" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:IntegerDataType" name="INT" primitiveType="INTEGER"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" name="PRIMARY" members="/2/no"/>
+  </SQLTables:PersistentTable>
+  <SQLTables:PersistentTable name="member" schema="/1">
+    <columns name="name" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns name="id" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns name="pw" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns name="phone" description="" defaultValue="NULL">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="13"/>
+    </columns>
+    <columns name="address" description="" defaultValue="NULL">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" name="PRIMARY" members="/3/id"/>
+  </SQLTables:PersistentTable>
+  <SQLAccessControl:User name="mariadb.sys [localhost]" label="mariadb.sys [localhost]" Database="/0"/>
+  <SQLAccessControl:User name="root [localhost]" label="root [localhost]" Database="/0"/>
+  <SQLAccessControl:User name="root [desktop-p4v0g9d]" label="root [desktop-p4v0g9d]" Database="/0"/>
+  <SQLAccessControl:User name="root [127.0.0.1]" label="root [127.0.0.1]" Database="/0"/>
+  <SQLAccessControl:User name="root [::1]" label="root [::1]" Database="/0"/>
+</xmi:XMI>
