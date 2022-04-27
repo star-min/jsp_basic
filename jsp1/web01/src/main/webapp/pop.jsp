@@ -8,31 +8,25 @@
 <title>중복확인</title>
 </head>
 <body>
-<h2>중복확인</h2>
-<%
-	request.setCharacterEncoding("UTF-8");
-	String uid = request.getParameter("uid");
-	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet result = null;
-	try{
-		Class.forName("org.mariadb.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3308/company","root","1234");
-		pstmt = conn.prepareStatement("select * from member where id=?");
-		pstmt.setString(1, uid);
-		result = pstmt.executeQuery();
-	} catch (Exception e) {
-		e.printStackTrace();
-	}finally {
-		try {
-			result.close();
-			pstmt.close();
-			conn.close();
-		} catch(Exception e) {
-			e.printStackTrace();
+<fieldset>
+<div class="form">
+	<h2>아이디 검색하기!</h2>
+	<form action="idCheckPro.jsp" method="post" onsubmit="return invalidCheck(this)">
+		<input type="text" name="id" id="id" placeholder="8~12 문자 및 숫자로 입력" required autofocus>
+		<input type="submit" value="중복확인">
+	</form>
+	<script>
+	function invalidCheck(f) {
+		var id = f.id.value;
+		id = id.trim();
+		id(id.length<8 || id.length>12){
+			alert("아이디는 글자수가 8이상 ~ 12이하 이어야 합니다.")
+			return false;
 		}
 	}
-	
-%>
+	</script>
+</fieldset>
+</div>
+
 </body>
 </html>

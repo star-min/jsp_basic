@@ -15,26 +15,30 @@
 	String name = request.getParameter("name");
 	String phone = request.getParameter("phone");
 	String address = request.getParameter("address");	
-	String cnt = "";
+	int cnt = 0;
 	Connection conn = null;
 	PreparedStatement pstmt = null;
-	ResultSet result = null;
+
 	try {
-	Class.forName("org.mariadb.jdbc.Driver");
-	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3308/company","root","1234");
-	pstmt = conn.prepareStatement("insert into member values(?,?,?,?,?)");
-	pstmt.setString(0, uid);
-	pstmt.setString(1, upw);
-	pstmt.setString(2, phone);
-	pstmt.setString(3, address);
-	pstmt.setString(4, uid);
-	response.setCharacterEncoding("UTF-8");
-	result = pstmt.executeQuery();
+		Class.forName("org.mariadb.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3308/company","root","1234");
+		String sql = "insert into member(id, pw, name, phone, address) values(?,?,?,?,?)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, uid);
+		pstmt.setString(2, upw);
+		pstmt.setString(3, name);
+		pstmt.setString(4, phone);
+		pstmt.setString(5, address);
+		cnt = pstmt.executeUpdate();
+		if(cnt>0){
+			response.sendRedirect("login.jsp");			
+		} else {
+			response.sendRedirect("join.jsp");	
+		}
 	} catch(Exception e) {
 		e.printStackTrace();
 	} finally {
 		try {
-			result.close();
 			pstmt.close();
 			conn.close();
 		} catch(Exception e) {

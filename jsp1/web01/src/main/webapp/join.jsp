@@ -18,25 +18,26 @@
 </header>
 <div class="content">
 	<h2>회원가입</h2>
-	<form id="frm1" name="join" action="joinPro.jsp" method="post">
+	<form id="joinform" name="joinform" action="joinPro.jsp" method="post" >
 		<tbody>
 			<tr>
 				<td>아이디 : </td>
 				<td>
-					<input type="text" class="indata" id="uid" name="uid" placeholder="아이디 입력" required autofocus>
-					<input type="button" id="popopen" value="중복확인"	 href="pop.jsp"><br>
+					<input type="text" id="uid" name="uid" placeholder="아이디 입력" required autofocus >
+					<input type="button" id="popopen" value="중복확인" onclick="idCheck()"><br>
+					<input type="hidden" id="idck" name="idck" value="">
 				</td>
 			</tr>
 			<tr>
 				<td>비밀번호 : </td>
 				<td>
-					<input type="password" class="pw"id="upw" name="upw" placeholder="비밀번호 입력" required><br>
+					<input type="password" class="upw"id="upw" name="upw" placeholder="비밀번호 입력" required><br>
 				</td>
 			</tr>
 			<tr>
 				<td>비밀번호 확인 : </td>
 				<td>
-					<input type="password" id="upw" name="upw" placeholder="비밀번호 확인" required><br>
+					<input type="password" id="upw2" name="upw2" placeholder="비밀번호 확인" required><br>
 				</td>
 			</tr>
 			<tr>
@@ -73,10 +74,23 @@
 			<tr>
 				<td>주소 : </td>
 				<td>
-					<input type="text" id="address" name="address" placeholder="주소 입력" size=50 required><br>
+					<input type="text" id="address" name="address" placeholder="주소 입력" size=50><br>
 				</td>
-			</tr>							
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="회원가입" id="submit" class="btn">
+				</td>
+				<td>
+					<input type="reset" value="취소" id="reset" class="btn">
+				</td>
+			</tr>					
 		</tbody>
+		<script>
+		function idCheck() {
+			window.open("pop.jsp", "idwin", "width=400, height=300");
+		}
+		</script>
 	</form>	
 </div>
 <footer id="ft">
