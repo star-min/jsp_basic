@@ -9,7 +9,11 @@
 			{"재무하이라이트","신용등급"},
 			{"주주현황","주주환원","배당조회","주가정보"}
 	};
-	
+	String[][] lnk = {{"sub1.jsp#page1","sub1.jsp#page2","sub1.jsp#page3","sub1.jsp#page4","sub1.jsp#page5"},
+			{"sub2.jsp#page1","sub2.jsp#page2","sub2.jsp#page3","sub2.jsp#page4","sub2.jsp#page5"},
+			{"service1.jsp","service2.jsp","service3.jsp"},
+			{"board1.jsp","board2.jsp"},
+			{"user1.jsp","user2.jsp","user3.jsp","user3.jsp"}};
 %>
 <%--    	 <%= 표현식(expression)%>		 --%>
 <a class="Logo" herf="index.jsp"><img alt="" src=""></a>
@@ -20,7 +24,7 @@
 			<span class="dp1"><%=dp1[i]%></span>
 			<ul class="sub">
 			<% for(int j=0;j<dp2[i].length;j++){ %>
-				<li><a class="dp2" href=""><%= dp2[i][j] %></a></li>
+				<li><a class="dp2" href="<%=lnk[i][j] %>"><%= dp2[i][j] %></a></li>
 			<%} %>
 			</ul>
 		</li>
@@ -37,14 +41,17 @@
 	<a href="">방문객</a>
 	<a href="agree.jsp">회원가입</a>
 	<%
-		} else {
+		} else if(!sid.equals("admin")){
 	%>
 	<a href="logout.jsp">로그아웃</a>
 	<a href="mypage.jsp"><%=sname%></a>
-	<% } %>
-	<a href="">상단2</a>
+	<% } else { %>
+	<a href="mypage.jsp"><%=sname%></a>
+	<a href="boardList.jsp">게시판관리</a>
 	<a href="memberList.jsp">회원목록</a>
-	<a href="">상단3</a>
+	<a href="">상품관리</a>
+	<a href="logout.jsp">로그아웃</a>
+	<% } %>
 <span id="msg_a"></span>
 </p>
 <script>

@@ -55,6 +55,11 @@
 						 <tr>
 						 	<td colspan="2">
 						 		<input type="submit" value="정보변경"/> &nbsp; &nbsp; &nbsp;&nbsp;
+						 		<%
+						 		if(!sid.equals("admin")){
+						 		%>
+						 		<a href="secession.jsp" class=""><input type="button" value="탈퇴" ></a>
+						 		<% } %>
 						 		<input type="reset" value="취소"/>
 						 	</td>
 						 </tr>
