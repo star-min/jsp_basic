@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시물 삭제</title>
+</head>
+<body>
+<%@ include file="connectPool.conf" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	int bno = Integer.parseInt(request.getParameter("bno"));
+	sql = "delete * from board where bno=?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.executeUpdate();
+	
+%>
+<%@ include file="connectClose.conf" %>
+</body>
+</html>

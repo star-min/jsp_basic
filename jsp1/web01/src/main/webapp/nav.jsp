@@ -45,9 +45,10 @@
 	%>
 	<a href="logout.jsp">로그아웃</a>
 	<a href="mypage.jsp"><%=sname%></a>
+	<a href="board1.jsp">게시판</a>
 	<% } else { %>
 	<a href="mypage.jsp"><%=sname%></a>
-	<a href="boardList.jsp">게시판관리</a>
+	<a href="board1.jsp">게시판관리</a>
 	<a href="memberList.jsp">회원목록</a>
 	<a href="">상품관리</a>
 	<a href="logout.jsp">로그아웃</a>

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<% 
+	request.setCharacterEncoding("UTF-8");
+	String title = request.getParameter("title");
+%>
+<%@ include file="connectPool.conf" %>
+<%
+	sql= "select * from board1 where bno=?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setInt(1, bno);
+	rs = pstmt.executeQuery();
+	if(rs.next()){
+		
+	}
+%>

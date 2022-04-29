@@ -9,8 +9,8 @@
 	
 	
 	try{
-		Class.forName("org.mariadb.jdbc.Driber");
-		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3308/company", "root", "1234");
+		Class.forName("org.mariadb.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3308/company","root","1234");
 		String sql = "delete from member where id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, sid);

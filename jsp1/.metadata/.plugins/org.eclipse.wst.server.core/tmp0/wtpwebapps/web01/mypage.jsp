@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ include file="environment.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,7 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
+	
 	try {
 		Class.forName("org.mariadb.jdbc.Driver");
 		conn = DriverManager.getConnection("jdbc:mariadb://localhost:3308/company", "root", "1234");
@@ -58,7 +60,7 @@
 						 		<%
 						 		if(!sid.equals("admin")){
 						 		%>
-						 		<a href="secession.jsp" class=""><input type="button" value="탈퇴" ></a>
+						 		<a href="secession.jsp"><input type="button" value="탈퇴"></a>
 						 		<% } %>
 						 		<input type="reset" value="취소"/>
 						 	</td>
@@ -80,6 +82,13 @@
 		}
 	}
 %>
+	<div id="message">
+<%
+	if(message!="") {
+		out.println("<p>"+message+"</p>");
+	}
+%>	
+	</div>
 </div>
 <footer id="ft" class="panel-footer">
 	<%@ include file="ft.jsp" %>
