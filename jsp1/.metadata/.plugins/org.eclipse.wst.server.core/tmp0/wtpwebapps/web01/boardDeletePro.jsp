@@ -10,7 +10,7 @@
 <body>
 <%
 	request.setCharacterEncoding("UTF-8");
-	int bno = (Integer) request.getAttribute("bno");
+	int bno = Integer.parseInt(request.getParameter("bno"));
 %>
 <%@ include file="connectPool.conf" %>
 <%
@@ -19,7 +19,7 @@
 	pstmt.setInt(1, bno);
 	cnt = pstmt.executeUpdate();
 	if(cnt>0){
-		response.sendRedirect("board1");
+		response.sendRedirect("board1.jsp");
 	} else {
 		out.println("게시글을 삭제하지 못했습니다.");
 		response.sendRedirect("boardDetail.jsp?bno="+bno);

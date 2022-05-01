@@ -66,7 +66,7 @@
 	</form>	
 	</div>
 </div>
-<footer id="ft">
+<footer id="ft" class="panel-footer">
 	<%@ include file="ft.jsp" %>
 </footer>
 </div>

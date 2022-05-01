@@ -3,10 +3,7 @@
 <%@ page import="java.sql.*"%>
 <% 
 	request.setCharacterEncoding("UTF-8");
-	String bno = request.getParameter("bno");
-	String title = request.getParameter("title");
-	String author = request.getParameter("author");
-	String content = request.getParameter("content");
+	int bno = Integer.parseInt(request.getParameter("bno"));
 %>
 <!DOCTYPE html>
 <html>
@@ -23,51 +20,52 @@
 <script src="datatables.min.js"></script>
 </head>
 <body>
-<div class="wrap">
-<header id="hd">
-	<div class="hd_wrap">
+<div class="container-full">
+<header id="hd" class="panel-heading navbar navbar-default">
+	<div class="hd_wrap container">
 		<%@ include file="nav.jsp" %>
 	</div>
 </header>
-
-<%@ include file = "connectPool.conf" %>
-<% 	
-	sql = "select * from board where bno=?";
-	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, bno);
-	pstmt.setString(2, title);
-	pstmt.setString(3, author);
-	pstmt.setString(4, content);
-	rs = pstmt.executeQuery();
-%>
 <div class="content" class="panel-body">
 	<div class="container-fluid">
 	<h2>게시판 글 수정</h2>
+	<%@ include file = "connectPool.conf" %>
+<% 	
+	sql = "select * from board where bno=?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setInt(1, bno);
+	rs = pstmt.executeQuery();
+	if(rs.next()){
+%>
 	<form id="boardform" name="boardform" action="boardUpdatePro.jsp" method="post" onsubmit="return writeCheck(this)">
 		<table class="table">
 			<tbody>
 				<tr>
 					<th class="necessary">번호</th>
 					<td>
-						<input type="text" value="<%=bno%>"><br>
+						<%=bno%><input type="hidden" name="bno" id="bno" value='<%=bno%>' required><br>
 					</td>
 				</tr>
 				<tr>
 					<th class="necessary">제목 </th>
 					<td>
-						<input type="text" id="title" name="title" maxlength="80" size="70" value="<%= rs.getString(title) %>" required autofocus >
+						<input type="text" id="title" name="title" maxlength="80" size="70" value='<%= rs.getString(title) %>' required autofocus >
 					</td>
 				</tr>
 				<tr>
 					<th class="necessary">작성자</th>
 					<td>
-						<input type="text" class="author"id="author" name="author" value="<%= rs.getString(author) %>" required><br>
+						<input type="text" class="author"id="author" name="author" value='<%= rs.getString(author) %>' required><br>
 					</td>
+				</tr>
+				<tr>
+					<td class="necessary">작성일 : </td>
+					<td><%=rs.getDate("regdate") %></td>
 				</tr>
 				<tr>
 					<th class="necessary">내용</th>
 					<td>
-						<textarea name="content" id="content" rows="6" cols="80">rs.getString(content)</textarea><br>
+						<textarea name="content" id="content" rows="6" cols="80"><% rs.getString("content")%></textarea><br>
 					</td>
 				</tr>
 				<tr>
