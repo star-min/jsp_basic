@@ -2,7 +2,7 @@ package kr.go.sokcho.model;
 
 import java.util.Date;
 
-public class nnoticeVO {
+public class NnoticeVO {
 	private int tno;
 	private String ntitle;
 	private String ncontent;

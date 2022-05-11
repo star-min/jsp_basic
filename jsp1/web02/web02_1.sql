@@ -1,12 +1,14 @@
 create table member(
-    mid varchar(15) primary key,
-    mpw varchar(40) not null, 
-    mname varchar(20) not null,
-    tel varchar(15) not null, 
-    email varchar(200) not null,
-    birth date,
-    joinday date Default SYSDATE);
+    mid varchar(15) primary key,        --고객아이디
+    mpw varchar(40) not null,           --고객비밀번호
+    mname varchar(20) not null,         --고객명
+    tel varchar(15) not null,           --전화번호
+    email varchar(200) not null,        --이메일
+    birth date,                         --생년월일
+    joinday date Default SYSDATE);      --가입일
     
+desc customer;
+-- 고객(member) 테이블 더미 데이터 추가
 insert into member(mid, mpw, mname, tel, email, birth) values
 ('admin','1234','관리자','010-1234-4321','admin@master.com','2022-05-10');
 insert into member(mid, mpw, mname, tel, email, birth) values
@@ -20,11 +22,18 @@ insert into member(mid, mpw, mname, tel, email, birth) values
 insert into member(mid, mpw, mname, tel, email, birth) values
 ('emile','3211','에밀리킴','010-2244-4111','emile@naver.com','1794-11-20');
     
+-- 고객(customer) 테이블 더미 데이터 수정
+update member set mpw=?, tel=?, email=?, birth=? where mid=?;
+-- update member set 컬럼=값;
+
+-- 고객(member) 테이블 더미 데이터 삭제
+delete from member where mid=?;
+
+-- 고객(member) 테이블 더미 데이터 조회
+select * from member where mid=?;
 select * from member;
-drop table member;
 
-
---이 아래로 관광테이블
+-- 관광(tourlist) 테이블 생성
 create table tourlist(
     pno number(11) not null,
     pid varchar2(10) primary key,               --장소아이디
@@ -35,9 +44,10 @@ create table tourlist(
     pimg2 varchar2(50),                         --장소이미지2 경로
     pimg3 varchar2(50),                         --장소썸네일1 경로
     pimg4 varchar2(50));                        --장소이미지3 경로
-    
+
+-- 관광 인덱스(시퀀스) 추가
 create sequence system.tour_seq increment by 1 start with 1 MINVALUE 1 MAXVALUE 100000 NOCYCLE NOCACHE;
-SELECT * FROM USER_SEQUENCES;
+
 -- pid 첫 번째 문자 설명 : A:관광명소, B:문화축제, C:숙박, D:식당, E:쇼핑, F:체험, G:교통편
 --pid 두 번째 구분코드 설명 A - 11:섬, 12:해변, 13:산, 14:사찰, 15:박물관/박람회, 16:교량및시설, 17:문화재및유적, 18:유명길또는전망대, 19:기타
 --pid 두 번째 구분코드 설명 B - 11:문화예술행사, 12:축제, 13:체험행사, 14:일출제, 15:음식문화제, 16:지역별축제, 17:기타문화축제
@@ -46,7 +56,12 @@ SELECT * FROM USER_SEQUENCES;
 --pid 두 번째 구분코드 설명 E - 11:전통시장, 12:수산시작, 13:특산물판매장, 14:공예/공방, 15:주문제작, 16:5일장, 17:직거래소, 18:라이브쇼핑, 19:기타쇼핑
 --pid 두 번째 구분코드 설명 F - 11:관람시설, 12:체험시설, 13:레저시설, 14:캠핑시설, 15:농어촌체험, 16:이색체험, 17:템플스테이, 18:요트투어, 19:VR체험
 --pid 두 번째 구분코드 설명 G - 11:투어버스, 12:시외버스, 13:시내버스, 14:철도, 15:택시, 16:관광버스, 17:렌트카, 18:바이크, 19:전용관람차
+--                          - 21:철도-호남선, 22:철도-목포선, 23:철도-남해선, 24:철도-KTX
+--                          - 31:여객선, 32:유람선, 33:요트, 34:크루즈, 35:낚시배대여, 36:무인도방문및계약선박
+--                          - 41:김포공항, 42:제주공항, 43:양양공항, 44:청주공항, 45:해외공항, 46:국내기타
+-- pid 두 번째 구분코드 설명 H - 11:코스여행
 
+-- 관광(tourlist) 테이블 더미 데이터 추가
 insert into tourlist(pno, pid, pname, ptype, pcoment, pimg1, pimg2, pimg3) values (tour_seq.nextval, 'A110001','주도','섬','속초해수욕장 앞에 위치한 무인도이다.',
     './img/judo01.jpg','./img/judo02.jpg','./img/judo03.jpg');
 insert into tourlist(pno, pid, pname, ptype, pcoment, pimg1, pimg2, pimg3) values (tour_seq.nextval, 'C170001','밤하늘글램핑','캠핑장','낮에는 즐길거리 가득한 속초여행을, 밤에는 속초밤하늘 글램핑에서 편안하고 감성가득한 추억을.',
@@ -57,10 +72,18 @@ insert into tourlist(pno, pid, pname, ptype, pcoment, pimg1, pimg2, pimg3) value
     './img/bigcar01.jpg','./img/bigcar02.jpg','./img/bigcar03.jpg');
 insert into tourlist(pno, pid, pname, ptype, pcoment, pimg1, pimg2, pimg3) values (tour_seq.nextval, 'A180001','바다향기로','길','시원한 외옹치 해안 절경이 산책로 바로 라애 펼쳐져 있고 시원한 파도소리와 함께 산책로 주변 해송에서 뿜어져 나오는 솔향기 등을 즐길 수 있는 명소이다.',
     './img/seasmell01.jpg','./img/seasmell02.jpg','./img/seasmell03.jpg');
+
 select * from tourlist;
+-- 관광(tourlist) 테이블 더미 데이터 변경
+update tourlist set pname=?, ptype=?, pcoment=?, pimg1=?, pimg2=?, pimg3=?, pimg4=? where pid=?;
 
+-- 관광(tourlist) 테이블 더미 데이터 삭제
+delete from tourlist where pid=?;
 
--- 이 아래로 이용후기
+-- 관광(tourlist) 테이블 더미 데이터 검색
+select * from tourlist where pid=?;
+
+-- 이용후기(review) 테이블 생성
 create table review(rno number(11) primary key,     --관광후기번호
     rtitle varchar2(50) not null,                   --관광후기 제목
     rplace varchar2(50) not null,                   --관광후기 장소명
@@ -72,9 +95,12 @@ create table review(rno number(11) primary key,     --관광후기번호
     rid varchar2(12),                               --작성자
     rpw varchar2(40),                               --작성글 비밀번호
     rdate date default sysdate,                     --작성일
-    viewcnt number(11));                            --본횟수
+    viewcnt number(11));                            --읽은횟수
     
+-- 이용후기(review) 인덱스(시퀀스) 생성
 create sequence system.im_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
+
+-- 이용후기(review) 더미 데이터 추가
 insert into review values(im_seq.nextval,'만수무강하세요,,', '설악산 둘레길', '2022-05-08', '2022-05-10', '힘들고,,,,고단한,,,등산끝에는,,반드시,,아름다운 우리강산이 기다린다,,!',
     './img/san01.jpg','./img/san02.jpg','김갑수','1004','',1);
 insert into review values(im_seq.nextval,'가족과 행복한 나들이~^^*', '속초해수욕장', '2022-05-05', '2022-05-10', '바다도 맑고 해수욕장도 넒어서 아이들이 너무너무 좋아헤요 강추!!',
@@ -85,7 +111,16 @@ insert into review values(im_seq.nextval,'따듯한 온천과 멋진야경 까�
     './img/water01.jpg','./img/water02.jpg','박수빈','4321','',1);
 select * from review;
 
---이 아래로 공지사항
+-- 이용후기(review) 더미 데이터 변경
+update review set rtitle=?, rplace=?, rtodate=?, rfromdate=?, icontent=?, ipic1=?, rdate=sysdate, veiwcnt=viewcnt+1 where rno=?;
+
+-- 이용후기(impression) 더미 데이터 삭제
+delete from review where ino=?;
+
+-- 이용후기(impression) 더미 데이터 조회
+select * from review where ino=?;
+
+-- 공지사항(notice) 테이블 생성
 create table nnotice(
 	tno number(20) primary key,        					--글번호
     ntitle varchar2(50) not null,                       --글제목
@@ -94,8 +129,11 @@ create table nnotice(
     resdate date default sysdate,                       --작성일
     nname varchar2(20),                                 --작성자
     viewcnt number(11));                                --읽은횟수
-    
+
+-- 공지사항(nnotice) 인덱스(시퀀스) 생성
 create sequence system.noti_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
+
+-- 공지사항(nnotice) 더미데이터 추가
 insert into nnotice values(noti_seq.nextval,'해변 애완동물 관련 안내',' 다른 관광객 및 주민 에게 피해를 줄수도있기에 모래사장에서는 애완동물의 출입을 허가하지 않습니다.',
 './img/nopet.jpg','','관리자',1);
 insert into nnotice values(noti_seq.nextval,'시립박물관, 숲박물관 -> 박물관노리숲길 로 변경',' 지난 9월부터 속초시민을 대상으로 실시한 명칭개정 공모전에 따라 박물관노리숲길 로 최종확정되었다.',
@@ -107,6 +145,14 @@ insert into nnotice values(noti_seq.nextval,'국군장병 할인 우대업소','
 insert into nnotice values(noti_seq.nextval,'외국인 전용 관광택시 운영',' 요금.',
 './img/nopet.jpg','','관리자',1);
 
-select * from nnotice;
+-- 공지사항(nnotice) 더미데이터 변경
+update nnotice set ntitle=?, ncontent=?, npic=?, ndata=?, resdate=sysdate, nname=? where tno=?;
+update nnotice set resdate=sysdate;
+
+-- 공지사항(nnotice) 더미데이터 삭제
+delete from nnotice where tno=?;
+
+-- 공지사항(nnotice) 더미데이터 조회
+select * from nnotice where tno=?;
 
 commit;
