@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,11 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.go.sokcho.model.MemberVO;
 
-@WebServlet("/GetMemberListCtrl")
-public class GetMemberListCtrl extends HttpServlet {
+@WebServlet("/GetMemberCtrl")
+public class GetMemberCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public GetMemberListCtrl() {
+    public GetMemberCtrl() {
         super();
     }
 
@@ -29,15 +28,16 @@ public class GetMemberListCtrl extends HttpServlet {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "";
+		String mid = request.getParameter("mid");
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
-			sql = "select * from member";
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
+			sql = "select * from member where mid = ?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
 			rs = pstmt.executeQuery();
-			ArrayList<MemberVO> memberList = new ArrayList<MemberVO>();
-			while(rs.next()) {
-				MemberVO mem = new MemberVO();
+			MemberVO mem = new MemberVO();
+			if(rs.next()) {
 				mem.setMid(rs.getString("mid")); //오라클연결해서 여기부터 하면댐 위에 스콧으로 해놨음 안돼면 시스템으로 바꿔야함
 				mem.setMpw(rs.getString("mpw"));
 				mem.setMname(rs.getString("mname"));
@@ -45,11 +45,10 @@ public class GetMemberListCtrl extends HttpServlet {
 				mem.setEmail(rs.getString("email"));
 				mem.setBirth(rs.getDate("birth"));
 				mem.setJoinday(rs.getDate("joinday"));
-				memberList.add(mem);
 			}
-			request.setAttribute("memberList", memberList);
-			RequestDispatcher view = request.getRequestDispatcher("memberList.jsp");
-			view.forward(request, response);
+			request.setAttribute("mem", mem);  //요청 저장소에 담기
+			RequestDispatcher view = request.getRequestDispatcher("member.jsp");  //보내질 곳 지정
+			view.forward(request, response);   //지정된 곳에 저장된 요청데이터를 전송하기
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -57,10 +56,10 @@ public class GetMemberListCtrl extends HttpServlet {
 				rs.close();
 				pstmt.close();
 				conn.close();
-			}catch(Exception e) {
+			} catch(Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}// TODO Auto-generated method stub
 	}
 
 }

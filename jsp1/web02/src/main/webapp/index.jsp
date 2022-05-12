@@ -17,6 +17,6 @@
 </div>
 <footer id="ft">
 	<%@ include file="ft.jsp" %>
-</footer>s
+</footer>
 </body>
 </html>

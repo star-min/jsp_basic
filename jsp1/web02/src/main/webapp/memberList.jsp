@@ -4,9 +4,9 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="kr.go.sokcho.model.MemberVO" %>
 <%
-	//보내진 memberList 객체를 받아 member로 분리하여 출력
-	ArrayList<MemberVO> memberList = (ArrayList<MemberVO>) request.getAttribute("MemberList");
-	//memberVO cus = (CustomerVO) request.getAttribute("memberList");
+
+	ArrayList<MemberVO> memberList = (ArrayList<MemberVO>) request.getAttribute("memberList");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -33,9 +33,9 @@
 	<tbody>
 <%
 	for(int i=0;i<memberList.size();i++){
-		MemberVO cs = memberList.get(i);
+		MemberVO vo = memberList.get(i);
 %>
-		<tr><td><%=cs.getMid() %></td><td><%=cs.getMpw() %></td><td><%=cs.getMname() %></td><td><%=cs.getTel() %></td><td><%=cs.getEmail() %></td><td><%=cs.getBirth() %></td><td><%=cs.getJoinday() %></td></tr>
+		<tr><td><%=vo.getMid() %></td><td><%=vo.getMpw() %></td><td><a href="/web02/GetMemberCtrl?mid=<%=vo.getMid() %>"><%=vo.getMname() %></a></td><td><%=vo.getTel() %></td><td><%=vo.getEmail() %></td><td><%=vo.getBirth() %></td><td><%=vo.getJoinday() %></td></tr>
 <%
 	}
 %>
