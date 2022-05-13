@@ -31,7 +31,7 @@ public class GetMemberListCtrl extends HttpServlet {
 		String sql = "";
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
 			sql = "select * from member";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();

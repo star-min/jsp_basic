@@ -1,3 +1,4 @@
+
 create table member(
     mid varchar(15) primary key,        --고객아이디
     mpw varchar(40) not null,           --고객비밀번호
@@ -6,8 +7,8 @@ create table member(
     email varchar(200) not null,        --이메일
     birth date,                         --생년월일
     joinday date Default SYSDATE);      --가입일
-    
-desc customer;
+
+select * from tour_seq;
 -- 고객(member) 테이블 더미 데이터 추가
 insert into member(mid, mpw, mname, tel, email, birth) values
 ('admin','1234','관리자','010-1234-4321','admin@master.com','2022-05-10');
@@ -46,7 +47,8 @@ create table tourlist(
     pimg4 varchar2(50));                        --장소이미지3 경로
 
 -- 관광 인덱스(시퀀스) 추가
-create sequence system.tour_seq increment by 1 start with 1 MINVALUE 1 MAXVALUE 100000 NOCYCLE NOCACHE;
+create sequence scott.tour_seq increment by 1 start with 1 MINVALUE 1 MAXVALUE 100000 NOCYCLE NOCACHE;
+select * from user_sequences;
 
 -- pid 첫 번째 문자 설명 : A:관광명소, B:문화축제, C:숙박, D:식당, E:쇼핑, F:체험, G:교통편
 --pid 두 번째 구분코드 설명 A - 11:섬, 12:해변, 13:산, 14:사찰, 15:박물관/박람회, 16:교량및시설, 17:문화재및유적, 18:유명길또는전망대, 19:기타
@@ -82,7 +84,7 @@ delete from tourlist where pid=?;
 
 -- 관광(tourlist) 테이블 더미 데이터 검색
 select * from tourlist where pid=?;
-
+select * from tourlist;
 -- 이용후기(review) 테이블 생성
 create table review(rno number(11) primary key,     --관광후기번호
     rtitle varchar2(50) not null,                   --관광후기 제목
@@ -98,7 +100,7 @@ create table review(rno number(11) primary key,     --관광후기번호
     viewcnt number(11));                            --읽은횟수
     
 -- 이용후기(review) 인덱스(시퀀스) 생성
-create sequence system.im_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
+create sequence scott.im_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
 
 -- 이용후기(review) 더미 데이터 추가
 insert into review values(im_seq.nextval,'만수무강하세요,,', '설악산 둘레길', '2022-05-08', '2022-05-10', '힘들고,,,,고단한,,,등산끝에는,,반드시,,아름다운 우리강산이 기다린다,,!',
@@ -131,12 +133,12 @@ create table nnotice(
     viewcnt number(11));                                --읽은횟수
 
 -- 공지사항(nnotice) 인덱스(시퀀스) 생성
-create sequence system.noti_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
+create sequence scott.noti_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
 
 -- 공지사항(nnotice) 더미데이터 추가
 insert into nnotice values(noti_seq.nextval,'해변 애완동물 관련 안내',' 다른 관광객 및 주민 에게 피해를 줄수도있기에 모래사장에서는 애완동물의 출입을 허가하지 않습니다.',
 './img/nopet.jpg','','관리자',1);
-insert into nnotice values(noti_seq.nextval,'시립박물관, 숲박물관 -> 박물관노리숲길 로 변경',' 지난 9월부터 속초시민을 대상으로 실시한 명칭개정 공모전에 따라 박물관노리숲길 로 최종확정되었다.',
+insert into nnotice values(noti_seq.nextval,'숲박물관 -> 박물관노리숲길 로 변경',' 지난 9월부터 속초시민을 대상으로 실시한 명칭개정 공모전에 따라 박물관노리숲길 로 최종확정되었다.',
 './img/sup.jpg','','관리자',1);
 insert into nnotice values(noti_seq.nextval,'청춘파티 in 청년몰 속초 갯배St',' 복고파티, 영화상영제, 비보잉 공연, 클럽파티, 버스킹 경연대회 등 풍성한 이벤트가 마련되어 있습니다.',
 './img/St.jpg','','관리자',1);
@@ -154,5 +156,5 @@ delete from nnotice where tno=?;
 
 -- 공지사항(nnotice) 더미데이터 조회
 select * from nnotice where tno=?;
-
+select * from nnotice;
 commit;

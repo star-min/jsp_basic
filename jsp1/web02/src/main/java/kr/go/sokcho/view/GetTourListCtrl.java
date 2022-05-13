@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,11 +32,11 @@ public class GetTourListCtrl extends HttpServlet {
 		String sql = "";
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
-			sql = "select * from tuorlist";
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+			sql = "select * from tourlist";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			ArrayList<TourlistVO> tourList = new ArrayList<TourlistVO>();
+			List<TourlistVO> tourList = new ArrayList<TourlistVO>();
 			while(rs.next()) {
 				TourlistVO tou = new TourlistVO();
 				tou.setPno(rs.getInt("pno")); //오라클연결해서 여기부터 하면댐 위에 스콧으로 해놨음 안돼면 시스템으로 바꿔야함
@@ -50,7 +51,7 @@ public class GetTourListCtrl extends HttpServlet {
 				tourList.add(tou);
 			}
 			request.setAttribute("tourList", tourList);
-			RequestDispatcher view = request.getRequestDispatcher("tourlist.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("tourList.jsp");
 			view.forward(request, response);
 		} catch(Exception e) {
 			e.printStackTrace();
