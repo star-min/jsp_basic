@@ -1,12 +1,12 @@
 package kr.go.sokcho.model;
 
 public class TourlistVO {
-	private int pno;
-	private String pid;
-	private String pname;
-	private String ptype;
-	private String pcoment;
-	private String pimg1;
+	private int pno;		//그번호
+	private String pid;		//장소아이디
+	private String pname;	//장소명
+	private String ptype;	//장소구분
+	private String pcoment;	//장소설명
+	private String pimg1;	
 	private String pimg2;
 	private String pimg3;
 	private String pimg4;

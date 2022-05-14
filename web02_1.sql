@@ -1,4 +1,5 @@
 
+
 create table member(
     mid varchar(15) primary key,        --고객아이디
     mpw varchar(40) not null,           --고객비밀번호
