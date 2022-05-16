@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_aaQp8NJsEey3TobYdLC_Ew" name="web02">
+    <eAnnotations xmi:id="_mvCOQNJsEey3TobYdLC_Ew" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_mvC1UNJsEey3TobYdLC_Ew" source="codegen">
+        <details xmi:id="_mvC1UdJsEey3TobYdLC_Ew" key="codegenDirectory" value="/web02/src/main/java"/>
+        <details xmi:id="_m0hLMNJsEey3TobYdLC_Ew" key="AssociatedSourceCode" value="/web02/src/main/java/kr/go/yeosu/model/CustomerVO.java;2339351071/1;/web02/src/main/java/kr/go/yeosu/model/ImpressionVO.java;2301156493/1;/web02/src/main/java/kr/go/yeosu/model/NoticeVO.java;3094696272/1;/web02/src/main/java/kr/go/yeosu/model/TourlistVO.java;530737852/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_mvEqgNJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_mvFRkNJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_mvFRkdJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_mvFRktJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_mvFRk9JsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_mvF4oNJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_mvF4odJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_mvF4otJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_mvGfsNJsEey3TobYdLC_Ew">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_muW40NJsEey3TobYdLC_Ew" name="kr">
+      <packagedElement xmi:type="uml:Package" xmi:id="_muZ8INJsEey3TobYdLC_Ew" name="go">
+        <packagedElement xmi:type="uml:Package" xmi:id="_muZ8IdJsEey3TobYdLC_Ew" name="yeosu">
+          <packagedElement xmi:type="uml:Package" xmi:id="_muy9sNJsEey3TobYdLC_Ew" name="model">
+            <packagedElement xmi:type="uml:Class" xmi:id="_mu6ScNJsEey3TobYdLC_Ew" name="CustomerVO">
+              <ownedAttribute xmi:id="_my2-UNJsEey3TobYdLC_Ew" name="cid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my3lYNJsEey3TobYdLC_Ew" name="upw">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my4McNJsEey3TobYdLC_Ew" name="uname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my4zgNJsEey3TobYdLC_Ew" name="tel">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my5akNJsEey3TobYdLC_Ew" name="email">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my5akdJsEey3TobYdLC_Ew" name="birth" type="_myo74NJsEey3TobYdLC_Ew" association="_my8d4NJsEey3TobYdLC_Ew"/>
+              <ownedAttribute xmi:id="_my6BoNJsEey3TobYdLC_Ew" name="regdate" type="_myo74NJsEey3TobYdLC_Ew" association="_my9sANJsEey3TobYdLC_Ew"/>
+              <ownedAttribute xmi:id="_my6osNJsEey3TobYdLC_Ew" name="visited">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my6osdJsEey3TobYdLC_Ew" name="upoint">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_my7PwNJsEey3TobYdLC_Ew" name="urank">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_my8d4NJsEey3TobYdLC_Ew" name="" memberEnd="_my5akdJsEey3TobYdLC_Ew _my9E8NJsEey3TobYdLC_Ew">
+              <ownedEnd xmi:id="_my9E8NJsEey3TobYdLC_Ew" name="" type="_mu6ScNJsEey3TobYdLC_Ew" association="_my8d4NJsEey3TobYdLC_Ew"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_my9sANJsEey3TobYdLC_Ew" name="" memberEnd="_my6BoNJsEey3TobYdLC_Ew _my-TENJsEey3TobYdLC_Ew">
+              <ownedEnd xmi:id="_my-TENJsEey3TobYdLC_Ew" name="" type="_mu6ScNJsEey3TobYdLC_Ew" association="_my9sANJsEey3TobYdLC_Ew"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_nvqk0NJsEey3TobYdLC_Ew" name="ImpressionVO">
+              <ownedAttribute xmi:id="_nv7qkNJsEey3TobYdLC_Ew" name="ino">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv8RoNJsEey3TobYdLC_Ew" name="ititle">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv8RodJsEey3TobYdLC_Ew" name="iplace">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv84sNJsEey3TobYdLC_Ew" name="itodate" type="_myo74NJsEey3TobYdLC_Ew" association="_nwAjENJsEey3TobYdLC_Ew"/>
+              <ownedAttribute xmi:id="_nv84sdJsEey3TobYdLC_Ew" name="ifromdate" type="_myo74NJsEey3TobYdLC_Ew" association="_nwBKINJsEey3TobYdLC_Ew"/>
+              <ownedAttribute xmi:id="_nv84stJsEey3TobYdLC_Ew" name="icontent">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv9fwNJsEey3TobYdLC_Ew" name="ipic1">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv9fwdJsEey3TobYdLC_Ew" name="ipic2">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv9fwtJsEey3TobYdLC_Ew" name="cid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv-G0NJsEey3TobYdLC_Ew" name="ipw">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_nv-t4NJsEey3TobYdLC_Ew" name="idate" type="_myo74NJsEey3TobYdLC_Ew" association="_nwBxMNJsEey3TobYdLC_Ew"/>
+              <ownedAttribute xmi:id="_nv_U8NJsEey3TobYdLC_Ew" name="viewcnt">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_nwAjENJsEey3TobYdLC_Ew" name="" memberEnd="_nv84sNJsEey3TobYdLC_Ew _nwAjEdJsEey3TobYdLC_Ew">
+              <ownedEnd xmi:id="_nwAjEdJsEey3TobYdLC_Ew" name="" type="_nvqk0NJsEey3TobYdLC_Ew" association="_nwAjENJsEey3TobYdLC_Ew"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_nwBKINJsEey3TobYdLC_Ew" name="" memberEnd="_nv84sdJsEey3TobYdLC_Ew _nwBKIdJsEey3TobYdLC_Ew">
+              <ownedEnd xmi:id="_nwBKIdJsEey3TobYdLC_Ew" name="" type="_nvqk0NJsEey3TobYdLC_Ew" association="_nwBKINJsEey3TobYdLC_Ew"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_nwBxMNJsEey3TobYdLC_Ew" name="" memberEnd="_nv-t4NJsEey3TobYdLC_Ew _nwBxMdJsEey3TobYdLC_Ew">
+              <ownedEnd xmi:id="_nwBxMdJsEey3TobYdLC_Ew" name="" type="_nvqk0NJsEey3TobYdLC_Ew" association="_nwBxMNJsEey3TobYdLC_Ew"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_pVhvYNJsEey3TobYdLC_Ew" name="NoticeVO">
+              <ownedAttribute xmi:id="_pVyOENJsEey3TobYdLC_Ew" name="nno">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_pVy1INJsEey3TobYdLC_Ew" name="ntitle">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_pVzcMNJsEey3TobYdLC_Ew" name="nconetnt">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_pVzcMdJsEey3TobYdLC_Ew" name="npic">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_pV0DQNJsEey3TobYdLC_Ew" name="ndata">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_pV0DQdJsEey3TobYdLC_Ew" name="resdate" type="_myo74NJsEey3TobYdLC_Ew" association="_pV1RYNJsEey3TobYdLC_Ew"/>
+              <ownedAttribute xmi:id="_pV0qUNJsEey3TobYdLC_Ew" name="nname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_pV0qUdJsEey3TobYdLC_Ew" name="viewcnt">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_pV1RYNJsEey3TobYdLC_Ew" name="" memberEnd="_pV0DQdJsEey3TobYdLC_Ew _pV1RYdJsEey3TobYdLC_Ew">
+              <ownedEnd xmi:id="_pV1RYdJsEey3TobYdLC_Ew" name="" type="_pVhvYNJsEey3TobYdLC_Ew" association="_pV1RYNJsEey3TobYdLC_Ew"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_tz70YNJsEey3TobYdLC_Ew" name="TourlistVO">
+              <ownedAttribute xmi:id="_t0GzgNJsEey3TobYdLC_Ew" name="ppno">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0IBoNJsEey3TobYdLC_Ew" name="pid">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0IosNJsEey3TobYdLC_Ew" name="pname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0IosdJsEey3TobYdLC_Ew" name="ptype">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0JPwNJsEey3TobYdLC_Ew" name="pcoment">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0Kd4NJsEey3TobYdLC_Ew" name="pimg1">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0Kd4dJsEey3TobYdLC_Ew" name="pimg2">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0LE8NJsEey3TobYdLC_Ew" name="pimg3">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_t0LE8dJsEey3TobYdLC_Ew" name="pimg4">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedAttribute>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_mueNkNJsEey3TobYdLC_Ew" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_mueNkdJsEey3TobYdLC_Ew" name="util">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_myo74NJsEey3TobYdLC_Ew" name="Date"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_mu65gNJsEey3TobYdLC_Ew">
+      <eAnnotations xmi:id="_mu-j4NJsEey3TobYdLC_Ew" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:Reference xmi:id="_myr_MNJsEey3TobYdLC_Ew" base_Element="_myo74NJsEey3TobYdLC_Ew"/>
+</xmi:XMI>

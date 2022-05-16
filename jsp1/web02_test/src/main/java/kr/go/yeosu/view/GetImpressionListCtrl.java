@@ -44,7 +44,7 @@ public class GetImpressionListCtrl extends HttpServlet {
 				ImpressionVO vo = new ImpressionVO();
 				vo.setIno(rs.getInt("ino"));
 				vo.setItitle(rs.getString("ititle"));
-				vo.setIplace(rs.getString("ititle"));
+				vo.setIplace(rs.getString("iplace"));
 				vo.setItodate(rs.getDate("itodate"));
 				vo.setIfromdate(rs.getDate("ifromdate"));
 				vo.setIcontent(rs.getString("icontent"));

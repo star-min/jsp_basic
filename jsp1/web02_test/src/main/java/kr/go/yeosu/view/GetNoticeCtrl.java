@@ -17,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.go.yeosu.model.NoticeVO;
 
+/**
+ * Servlet implementation class GetNoticeCtrl
+ */
 @WebServlet("/GetNoticeCtrl")
 public class GetNoticeCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,9 +41,11 @@ public class GetNoticeCtrl extends HttpServlet {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, nno);
 			rs = pstmt.executeQuery();
-			NoticeVO vo = new NoticeVO();		//ArrayList형의 제네릭 해당VO로 객체 선언 : 해당 테이블의 정보를 저장할 리스트
+			//ArrayList형의 제네릭 해당VO로 객체 선언 : 해당 테이블의 정보를 저장할 리스트
+			NoticeVO vo = new NoticeVO();
 			if(rs.next()) {
-				vo.setNno(rs.getInt("nno"));	//레코드(튜플) 데이터를 하나씩 불러와 해당VO 객체에 저장
+				//레코드(튜플) 데이터를 하나씩 불러와 해당VO 객체에 저장
+				vo.setNno(rs.getInt("nno"));
 				vo.setNtitle(rs.getString("ntitle"));
 				vo.setNconetnt(rs.getString("nconetnt"));
 				vo.setNpic(rs.getString("npic"));

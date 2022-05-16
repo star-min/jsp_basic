@@ -6,7 +6,7 @@
 <%@ page import="kr.go.sokcho.model.*" %>
 <%
 	//Ctrl에서 보내온 list 객체를 받아 해당 VO 객체로 분리하여 출력
-	List<ReviewVO> rev = (ArrayList<ReviewVO>) request.getAttribute("rev");
+	List<ReviewVO> legeno = (ArrayList<ReviewVO>) request.getAttribute("legeno");
 %>    
 <!DOCTYPE html>
 <html>
@@ -32,27 +32,22 @@ font-size:14px; }
 <div id="content">
 <table class="tb1">
 	<thead>
-		<tr><th>번호</th><th>제목</th><th>방문지명</th><th>관광 시작일</th><th>관광 종료일</th><th>관광 소감</th><th>방문 사진1</th><th>방문 사진2</th><th>작성자</th><th>글 비밀번호</th><th>작성일</th><th>본횟수</th></tr>
+		<tr><th>글번호</th><th>장소명</th><th>시작일</th><th>종료일</th><th>작성자</th><th>비밀번호</th><th>작성일</th></tr>
 	</thead>
 	<tbody>
 <%
-	for(int i=0;i<rev.size();i++){
+	for(int i=0;i<legeno.size();i++){
 		//해당VO의 객체 선언
-		ReviewVO vo = rev.get(i);
+		ReviewVO vo = legeno.get(i);
 %>
-		<tr><td><%=vo.getRno() %></td><td><%=vo.getRtitle() %></td><td><%=vo.getRplace() %></td><td><%=vo.getRtodate() %></td><td><p class="coment"><%=vo.getIcontent() %></p></td>
-		<td class="img_data">
-		<% if(vo.getIpic1()!=null) { %>
-			<img src='<%=vo.getIpic1() %>' alt='<%=vo.getRplace() %>1'>
-		<% } %>	
-		</td>
-		<td class="img_data">
-		<% if(vo.getIpic2()!=null) { %>
-			<img src='<%=vo.getIpic2() %>' alt='<%=vo.getRplace() %>2'>
-		<% } %>	
-		</td>
-		<td><%=vo.getRid() %></td><td><%=vo.getRpw() %></td><td><%=vo.getRdate() %></td><td><%=vo.getViewcnt() %></td>
-
+		<tr>
+			<td><%=vo.getRno() %></td>
+			<td><a href="/web02/GetReviewCtrl?rno=<%=vo.getRno() %>"><%=vo.getRplace() %></a></td>
+			<td><%=vo.getRtodate() %></td>
+			<td><%=vo.getRfromdate() %></td>
+			<td><%=vo.getRid() %></td>
+			<td><%=vo.getRpw() %></td>
+			<td><%=vo.getRdate() %></td>
 		</tr>
 <%
 	}

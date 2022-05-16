@@ -49,6 +49,7 @@ public class AddNnoticeCtrl extends HttpServlet {
 		} catch(Exception e) {
 			System.out.println("요청한 insert SQL 문장을 처리하지 못함");
 			response.sendRedirect("e404.jsp");
+			
 			e.printStackTrace();
 		} finally {
 			try {

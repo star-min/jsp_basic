@@ -38,7 +38,7 @@ public class GetMemberListCtrl extends HttpServlet {
 			ArrayList<MemberVO> memberList = new ArrayList<MemberVO>();
 			while(rs.next()) {
 				MemberVO mem = new MemberVO();
-				mem.setMid(rs.getString("mid")); //오라클연결해서 여기부터 하면댐 위에 스콧으로 해놨음 안돼면 시스템으로 바꿔야함
+				mem.setMid(rs.getString("mid"));
 				mem.setMpw(rs.getString("mpw"));
 				mem.setMname(rs.getString("mname"));
 				mem.setTel(rs.getString("tel"));

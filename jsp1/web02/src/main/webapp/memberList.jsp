@@ -5,7 +5,7 @@
 <%@ page import="kr.go.sokcho.model.MemberVO" %>
 <%
 
-	ArrayList<MemberVO> List = (ArrayList<MemberVO>) request.getAttribute("List");
+	ArrayList<MemberVO> memberList = (ArrayList<MemberVO>) request.getAttribute("memberList");
 
 %>
 <!DOCTYPE html>
@@ -32,8 +32,8 @@
 	</thead>
 	<tbody>
 <%
-	for(int i=0;i<List.size();i++){
-		MemberVO vo = List.get(i);
+	for(int i=0;i<memberList.size();i++){
+		MemberVO vo = memberList.get(i);
 %>
 		<tr><td><%=vo.getMid() %></td><td><%=vo.getMpw() %></td><td><a href="/web02/GetMemberCtrl?mid=<%=vo.getMid() %>"><%=vo.getMname() %></a></td><td><%=vo.getTel() %></td><td><%=vo.getEmail() %></td><td><%=vo.getBirth() %></td><td><%=vo.getJoinday() %></td></tr>
 <%

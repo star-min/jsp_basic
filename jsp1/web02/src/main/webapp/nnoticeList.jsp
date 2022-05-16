@@ -6,7 +6,7 @@
 <%@ page import="kr.go.sokcho.model.*" %>
 <%
 	//Ctrl에서 보내온 nno 객체를 받아 해당 VO 객체로 분리하여 출력
-	List<NnoticeVO> nno = (ArrayList<NnoticeVO>) request.getAttribute("nno");
+	List<NnoticeVO> ntist = (ArrayList<NnoticeVO>) request.getAttribute("ntist");
 %>    
 <!DOCTYPE html>
 <html>
@@ -36,9 +36,9 @@ font-size:14px; }
 	</thead>
 	<tbody>
 <%
-	for(int i=0;i<nno.size();i++){
+	for(int i=0;i<ntist.size();i++){
 		//해당VO의 객체 선언
-		NnoticeVO vo = nno.get(i);
+		NnoticeVO vo = ntist.get(i);
 %>
 		<tr><td><%=vo.getTno() %></td><td><%=vo.getNtitle() %></td><td><p class="coment"><%=vo.getNcontent() %></p></td>
 		<td class="img_data">
@@ -50,6 +50,11 @@ font-size:14px; }
 <%
 	}
 %>
+		<tr>
+			<td colspan="5">
+				<a href="addNnoticeForm.jsp">글 추가</a>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>

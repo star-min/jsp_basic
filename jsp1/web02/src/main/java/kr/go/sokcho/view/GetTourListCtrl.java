@@ -36,7 +36,7 @@ public class GetTourListCtrl extends HttpServlet {
 			sql = "select * from tourlist";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			List<TourlistVO> tourList = new ArrayList<TourlistVO>();
+			List<TourlistVO> tour = new ArrayList<TourlistVO>();
 			while(rs.next()) {
 				TourlistVO tou = new TourlistVO();
 				tou.setPno(rs.getInt("pno")); //오라클연결해서 여기부터 하면댐 위에 스콧으로 해놨음 안돼면 시스템으로 바꿔야함
@@ -48,9 +48,9 @@ public class GetTourListCtrl extends HttpServlet {
 				tou.setPimg2(rs.getString("pimg2"));
 				tou.setPimg3(rs.getString("pimg3"));
 				tou.setPimg4(rs.getString("pimg4"));
-				tourList.add(tou);
+				tour.add(tou);
 			}
-			request.setAttribute("tourList", tourList);
+			request.setAttribute("tour", tour);
 			RequestDispatcher view = request.getRequestDispatcher("tourList.jsp");
 			view.forward(request, response);
 		} catch(Exception e) {

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ page import="kr.go.sokcho.model.ReviewVO" %>
 <%
 	//보내진 customList 객체를 받아 customer로 분리하여 출력
@@ -11,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>작성 후기</title>
+<title>관광 후기 수정</title>
 <style>
 .tb2 { display:table; width:1100px; margin:20px auto; border-collapse: collapse; }
 .tb2 tr { display:table-row; }
@@ -30,7 +31,7 @@ font-size:14px; }
 	<%@ include file="hd.jsp" %>
 </header>
 <div id="content">
-<form action="/web02/EditMemberCtrl" method="post">
+<form action="/web02/EditReviewCtrl" method="post">
 	<table class="tb2">
 		<tbody>
 	<%

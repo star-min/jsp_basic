@@ -6,7 +6,7 @@
 <%@ page import="kr.go.sokcho.model.*" %>
 <%
 	//Ctrl에서 보내온 list 객체를 받아 해당 VO 객체로 분리하여 출력
-	List<TourlistVO> list = (ArrayList<TourlistVO>) request.getAttribute("list");
+	List<TourlistVO> tour = (ArrayList<TourlistVO>) request.getAttribute("tour");
 %>    
 <!DOCTYPE html>
 <html>
@@ -36,9 +36,9 @@ font-size:14px; }
 	</thead>
 	<tbody>
 <%
-	for(int i=0;i<list.size();i++){
+	for(int i=0;i<tour.size();i++){
 		//해당VO의 객체 선언
-		TourlistVO vo = list.get(i);	
+		TourlistVO vo = tour.get(i);	
 %>
 		<tr><td><%=vo.getPno() %></td><td><%=vo.getPid() %></td><td><%=vo.getPname() %></td><td><%=vo.getPtype() %></td>
 		<td><p class="coment"><%=vo.getPcoment() %></p></td>
@@ -66,6 +66,11 @@ font-size:14px; }
 <%
 	}
 %>
+		<tr>
+			<td colspan="4">
+				<a href="addTourListForm.jsp">방문지 추가</a>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
