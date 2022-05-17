@@ -64,6 +64,8 @@ create sequence scott.tour_seq increment by 1 start with 1 minvalue 1 maxvalue 1
 --                          - 41:김포공항, 42:제주공항, 43:양양공항, 44:청주공항, 45:해외공항, 46:국내기타
 -- pid 두 번째 구분코드 설명 H - 11:코스여행
 
+select count(*) as res from tourlist;
+
 -- 관광(tourlist) 테이블 더미 데이터 추가
 insert into tourlist(ppno, pid, pname, ptype, pcoment, pimg1, pimg2, pimg3) values (tour_seq.nextval, 'A110001', '오동도', 'place', '여수의 중심가에서 약 10분쯤의 거리에 위치해 있으며, 오동도 입구 주차장에서 약 15분 정도, 방파제 길을 따라 걸으면 도착한다. 이 길은 한국의 아름다운 길 100선에 선정된 바 있을 만큼 운치가 있으며, 오동도가 한눈에 내려다보이는 언덕에는 자산공원이 조성되어 있어 향일암과 더불어 한려수도 서쪽 관광루트의 시작점이 되고 있다.',
 './img/odong_bg.jpg', './img/odong1.jpg','./img/odong2.jpg');

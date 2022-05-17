@@ -1,12 +1,10 @@
-package kr.go.yeosu.view;
+package kr.go.yeosu.service;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,15 +15,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.go.yeosu.model.NoticeVO;
 
-@WebServlet("/GetNoticeCtrl")
-public class GetNoticeCtrl extends HttpServlet {
+@WebServlet("/GetUserNoticeCtrl")
+public class GetUserNoticeCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public GetNoticeCtrl() {
+    public GetUserNoticeCtrl() {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -52,7 +50,7 @@ public class GetNoticeCtrl extends HttpServlet {
 				vo.setViewcnt(rs.getInt("viewcnt"));
 			}
 			request.setAttribute("vo", vo); //요청 저장소에 담기
-			RequestDispatcher view = request.getRequestDispatcher("notice.jsp"); //보내질 곳을 지정하기
+			RequestDispatcher view = request.getRequestDispatcher("userNotice.jsp"); //보내질 곳을 지정하기
 			view.forward(request, response);//지정된 곳에 저장된 요청 데이터를 전송하기
 		} catch(Exception e) {
 			e.printStackTrace();

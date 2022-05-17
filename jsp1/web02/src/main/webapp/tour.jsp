@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ page import="kr.go.sokcho.model.TourlistVO" %>
 <%
 	//보내진 customList 객체를 받아 customer로 분리하여 출력
@@ -113,7 +114,7 @@ font-size:14px; }
 					<input type="submit" value="수정" class="frm_btn"> &nbsp; &nbsp; &nbsp; &nbsp;
 					<input type="reset" value="취소" class="frm_btn"> &nbsp; &nbsp; &nbsp; &nbsp;
 					<a href="/web02/GetTourListCtrl" class="frm_btn">목록</a> &nbsp; &nbsp; &nbsp; &nbsp;
-					<a href="/web02/DelTourlistCtrl?pid=<%=vo.getPid() %>" class="frm_btn">삭제</a>
+					<a href="/web02/DelTourListCtrl?pid=<%=vo.getPid() %>" class="frm_btn">삭제</a>
 				</td>
 			</tr>
 	<%

@@ -14,7 +14,7 @@
 <div class="hd_wrap">
 	<nav id="gnb">
 		<ul>
-			<li><a href="" class="menu1">관관명소</a>
+			<li><a href="" class="menu1">관광명소</a>
 				<ul class="sub">
 		<%
 			Connection conn = null;
@@ -42,8 +42,62 @@
 				<ul class="sub">
 	
 <%
+				sql = "select * from place order by ptype, prop";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					if(rs.getString("ptype").equals("B")) {
+%>
+							<li class="cate"><a href='PlaceCtrl?ptype=<%=rs.getString("ptype") %>&prop=<%=rs.getString("prop") %>'><%=rs.getString("propname") %></a></li>								
+<%						
+					}
+				}	
+%>
+				</ul>
+			</li>
+			<li><a href="" class="menu1">숙박/음식/쇼핑</a>
+				<ul class="sub">
+	
+<%
+				sql = "select * from place order by ptype, prop";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					if(rs.getString("ptype").equals("C") || rs.getString("ptype").equals("D") || rs.getString("ptype").equals("E")) {
+%>
+							<li class="cate"><a href='PlaceCtrl?ptype=<%=rs.getString("ptype") %>&prop=<%=rs.getString("prop") %>'><%=rs.getString("propname") %></a></li>								
+<%						
+					}
+				}	
+%>
+				</ul>
+			</li>
+			<li><a href="" class="menu1">체험관광</a>
+				<ul class="sub">
+	
+<%
+				sql = "select * from place order by ptype, prop";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					if(rs.getString("ptype").equals("F")) {
+%>
+							<li class="cate"><a href='PlaceCtrl?ptype=<%=rs.getString("ptype") %>&prop=<%=rs.getString("prop") %>'><%=rs.getString("propname") %></a></li>								
+<%						
+					}
+				}	
+%>
+				</ul>
+			</li>
+			<li><a href="" class="menu1">교통</a>
+				<ul class="sub">
+	
+<%
+				sql = "select * from place order by ptype, prop";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					if(rs.getString("ptype").equals("G")) {
 %>
 							<li class="cate"><a href='PlaceCtrl?ptype=<%=rs.getString("ptype") %>&prop=<%=rs.getString("prop") %>'><%=rs.getString("propname") %></a></li>								
 <%						
@@ -65,15 +119,11 @@
 				}
 			}
 %>
-			<li><a href="" class="menu1">관광명소</a>
+			<li><a href="" class="menu1">커뮤니티</a>
 				<ul class="sub">
-					<li class="cate">
-						<dl>
-							<dt>여수 10경</dt>
-							<dd><a href="" >오동도</a></dd>
-							<dd><a href="" >거문도백도</a></dd>
-						</dl>
-					</li>
+					<li class="cate"><a href="GetUserImpressionListCtrl" >이용후기</a></li>
+					<li class="cate"><a href="" >자료실</a></li>
+					<li class="cate"><a href="GetUserNoticeListCtrl" >공지사항</a></li>
 				</ul>
 			<li>
 		</ul>	

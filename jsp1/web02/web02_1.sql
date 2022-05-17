@@ -25,15 +25,24 @@ insert into member(mid, mpw, mname, tel, email, birth) values
 ('emile','3211','에밀리킴','010-2244-4111','emile@naver.com','1794-11-20');
     
 -- 고객(customer) 테이블 더미 데이터 수정
+ALTER TABLE member MODIFY(mpw VARCHAR2(100));
 update member set mpw=?, tel=?, email=?, birth=? where mid=?;
+update member set mpw='03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4' where mid='admin';
+update member set mpw='fe2592b42a727e977f055947385b709cc82b16b9a87f88c6abf3900d65d0cdc3' where mid='zxzx001';
+update member set mpw='afbfb89027a4dae87c6033eaa07896e93f3f1ddc2214ca43658982e8aa74b4d4' where mid='eggman';
+update member set mpw='61503690505f84b144e6ac89124540a3eb8d22e77db76500984cfc50a1d8776e' where mid='bangi';
+update member set mpw='edee29f882543b956620b26d0ee0e7e950399b1c4222f5de05e06425b4c995e9' where mid='dong123';
+update member set mpw='4a8ed6268c1741e4d3b85f8e40aeddc34d35a965671eaa5207abd4cdef049d6f' where mid='emile';
+update member set mpw='96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e' where mid='qwe123123';
 -- update member set 컬럼=값;
-
+commit;
 -- 고객(member) 테이블 더미 데이터 삭제
 delete from member where mid=?;
 
 -- 고객(member) 테이블 더미 데이터 조회
 select * from member where mid=?;
 select * from member;
+
 
 -- 관광(tourlist) 테이블 생성
 create table tourlist(

@@ -3,15 +3,16 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="kr.go.sokcho.model.MemberVO" %>
-<%@ page import="kr.go.sokcho.model.ReviewVO" %>
-<%@ page import="kr.go.sokcho.model.TourlistVO" %>
-<%@ page import="kr.go.sokcho.model.NnoticeVO" %>
+<%@ page import="kr.go.yeosu.model.CustomerVO" %>
+<%@ page import="kr.go.yeosu.model.ImpressionVO" %>
+<%@ page import="kr.go.yeosu.model.TourlistVO" %>
+<%@ page import="kr.go.yeosu.model.NoticeVO" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 쓰기</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<title>문화 관광 방문지 등록하기</title>
 </head>
 <body>
 <header id="hd">

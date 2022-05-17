@@ -23,7 +23,7 @@ public class GetNnoticeCtrl extends HttpServlet {
         super();
     }
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -38,7 +38,7 @@ public class GetNnoticeCtrl extends HttpServlet {
 			rs = pstmt.executeQuery();
 			NnoticeVO nno = new NnoticeVO();
 			if(rs.next()) {
-				nno.setTno(rs.getInt("tno")); //오라클연결해서 여기부터 하면댐 위에 스콧으로 해놨음 안돼면 시스템으로 바꿔야함
+				nno.setTno(rs.getInt("tno"));
 				nno.setNtitle(rs.getString("ntitle"));
 				nno.setNcontent(rs.getString("ncontent"));
 				nno.setNpic(rs.getString("npic"));

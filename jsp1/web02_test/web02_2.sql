@@ -5,104 +5,103 @@ create table place(pcode number primary key,
 	prop varchar2(2) not null,
 	propname varchar2(50) not null
 );
-select * from place;
 create sequence scott.place_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;
--- pid ì²« ë²ˆì§¸ ë¬¸ì ì„¤ëª… : A:ê´€ê´‘ëª…ì†Œ, B:ë¬¸í™”ì¶•ì œ, C:ìˆ™ë°•, D:ìŒì‹, E:ì‡¼í•‘, F:ì²´í—˜, G:êµí†µí¸
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… A - 11:ì„¬, 12:í•´ë³€, 13:ì‚°, 14:ì‚¬ì°°, 15:ë°•ë¬¼ê´€/ë°•ëŒíšŒ, 16:êµëŸ‰ë°ì‹œì„¤, 17:ë¬¸í™”ì¬ë°ìœ ì , 18:ìœ ëª…ê¸¸ë˜ëŠ”ì „ë§ëŒ€, 19:ê¸°íƒ€
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '11', 'ì„¬');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '12', 'í•´ë³€');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '13', 'ì‚°');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '14', 'ì‚¬ì°°');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '15', 'ë°•ë¬¼ê´€ ë° ë°•ëŒíšŒ');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '16', 'êµëŸ‰ ë° ì‹œì„¤');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '17', 'ë¬¸í™”ì¬ ë° ìœ ì ');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '18', 'ìœ ëª…ê¸¸ ë˜ëŠ” ì „ë§ëŒ€');
-insert into place values(place_seq.nextval, 'A', 'ê´€ê´‘ëª…ì†Œ', '19', 'ê¸°íƒ€');
+-- pid Ã¹ ¹øÂ° ¹®ÀÚ ¼³¸í : A:°ü±¤¸í¼Ò, B:¹®È­ÃàÁ¦, C:¼÷¹Ú, D:À½½Ä, E:¼îÇÎ, F:Ã¼Çè, G:±³ÅëÆí
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í A - 11:¼¶, 12:ÇØº¯, 13:»ê, 14:»çÂû, 15:¹Ú¹°°ü/¹Ú¶÷È¸, 16:±³·®¹×½Ã¼³, 17:¹®È­Àç¹×À¯Àû, 18:À¯¸í±æ¶Ç´ÂÀü¸Á´ë, 19:±âÅ¸
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '11', '¼¶');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '12', 'ÇØº¯');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '13', '»ê');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '14', '»çÂû');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '15', '¹Ú¹°°ü ¹× ¹Ú¶÷È¸');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '16', '±³·® ¹× ½Ã¼³');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '17', '¹®È­Àç ¹× À¯Àû');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '18', 'À¯¸í±æ ¶Ç´Â Àü¸Á´ë');
+insert into place values(place_seq.nextval, 'A', '°ü±¤¸í¼Ò', '19', '±âÅ¸');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… B - 11:ë¬¸í™”ì˜ˆìˆ í–‰ì‚¬, 12:ì¶•ì œ, 13:ì²´í—˜í–‰ì‚¬, 14:ì¼ì¶œì œ, 15:ìŒì‹ë¬¸í™”ì œ, 16:ì§€ì—­ë³„ì¶•ì œ, 17:ê¸°íƒ€ë¬¸í™”ì¶•ì œ
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '11', 'ë¬¸í™”ì˜ˆìˆ í–‰ì‚¬');
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '12', 'ì¶•ì œ');
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '13', 'ì²´í—˜í–‰ì‚¬');
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '14', 'ì¼ì¶œì œ');
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '15', 'ìŒì‹ë¬¸í™”ì œ');
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '16', 'ì§€ì—­ë³„ì¶•ì œ');
-insert into place values(place_seq.nextval, 'B', 'ë¬¸í™”ì¶•ì œ', '17', 'ê¸°íƒ€ë¬¸í™”ì¶•ì œ');
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í B - 11:¹®È­¿¹¼úÇà»ç, 12:ÃàÁ¦, 13:Ã¼ÇèÇà»ç, 14:ÀÏÃâÁ¦, 15:À½½Ä¹®È­Á¦, 16:Áö¿ªº°ÃàÁ¦, 17:±âÅ¸¹®È­ÃàÁ¦
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '11', '¹®È­¿¹¼úÇà»ç');
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '12', 'ÃàÁ¦');
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '13', 'Ã¼ÇèÇà»ç');
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '14', 'ÀÏÃâÁ¦');
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '15', 'À½½Ä¹®È­Á¦');
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '16', 'Áö¿ªº°ÃàÁ¦');
+insert into place values(place_seq.nextval, 'B', '¹®È­ÃàÁ¦', '17', '±âÅ¸¹®È­ÃàÁ¦');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… C - 11:í˜¸í…”, 12:ëª¨í…”, 13:ì½˜ë„, 14:íœì…˜, 15:ë¯¼ë°•, 16:ê²ŒìŠ¤íŠ¸í•˜ìš°ìŠ¤, 17:ìº í•‘ìˆ™ì†Œ, 18:ì°œì§ˆë°©, 19:ê¸°íƒ€ìˆ™ì†Œ
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '11', 'í˜¸í…”');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '12', 'ëª¨í…”');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '13', 'ì½˜ë„');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '14', 'íœì…˜');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '15', 'ë¯¼ë°•');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '16', 'ê²ŒìŠ¤íŠ¸í•˜ìš°ìŠ¤');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '17', 'ìº í•‘ìˆ™ì†Œ');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '18', 'ì°œì§ˆë°©');
-insert into place values(place_seq.nextval, 'C', 'ìˆ™ë°•', '19', 'ê¸°íƒ€ìˆ™ì†Œ');
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í C - 11:È£ÅÚ, 12:¸ğÅÚ, 13:ÄÜµµ, 14:Ææ¼Ç, 15:¹Î¹Ú, 16:°Ô½ºÆ®ÇÏ¿ì½º, 17:Ä·ÇÎ¼÷¼Ò, 18:ÂòÁú¹æ, 19:±âÅ¸¼÷¼Ò
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '11', 'È£ÅÚ');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '12', '¸ğÅÚ');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '13', 'ÄÜµµ');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '14', 'Ææ¼Ç');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '15', '¹Î¹Ú');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '16', '°Ô½ºÆ®ÇÏ¿ì½º');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '17', 'Ä·ÇÎ¼÷¼Ò');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '18', 'ÂòÁú¹æ');
+insert into place values(place_seq.nextval, 'C', '¼÷¹Ú', '19', '±âÅ¸¼÷¼Ò');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… D - 11:í•œì‹, 12:íšŸì§‘, 13:ì¤‘ì‹, 14:ì–‘ì‹, 15:ì¼ì‹, 16:ë¶„ì‹, 17:ë·”í˜, 18:ë™ë‚¨ì•„ì‹, 19:ê¸°íƒ€ì‹ë‹¹
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '11', 'í•œì‹');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '12', 'íšŸì§‘');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '13', 'ì¤‘ì‹');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '14', 'ì–‘ì‹');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '15', 'ì¼ì‹');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '16', 'ë¶„ì‹');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '17', 'ë·”í˜');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '18', 'ë™ë‚¨ì•„ì‹');
-insert into place values(place_seq.nextval, 'D', 'ìŒì‹', '19', 'ê¸°íƒ€ì‹ë‹¹');
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í D - 11:ÇÑ½Ä, 12:È½Áı, 13:Áß½Ä, 14:¾ç½Ä, 15:ÀÏ½Ä, 16:ºĞ½Ä, 17:ºßÆä, 18:µ¿³²¾Æ½Ä, 19:±âÅ¸½Ä´ç
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '11', 'ÇÑ½Ä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '12', 'È½Áı');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '13', 'Áß½Ä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '14', '¾ç½Ä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '15', 'ÀÏ½Ä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '16', 'ºĞ½Ä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '17', 'ºßÆä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '18', 'µ¿³²¾Æ½Ä');
+insert into place values(place_seq.nextval, 'D', 'À½½Ä', '19', '±âÅ¸½Ä´ç');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… E - 11:ì „í†µì‹œì¥, 12:ìˆ˜ì‚°ì‹œì¥, 13:íŠ¹ì‚°ë¬¼íŒë§¤ì¥, 14:ê³µì˜ˆ/ê³µë°©, 15:ì£¼ë¬¸ì œì‘, 16:5ì¼ì¥, 17:ì§ê±°ë˜ì†Œ, 18:ë¼ì´ë¸Œì‡¼í•‘, 19:ê¸°íƒ€ì‡¼í•‘
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '11', 'ì „í†µì‹œì¥');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '12', 'ìˆ˜ì‚°ì‹œì¥');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '13', 'íŠ¹ì‚°ë¬¼ì‹œì¥');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '14', 'ê³µì˜ˆ/ê³µë°©');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '15', 'ì£¼ë¬¸ì œì‘');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '16', '5ì¼ì¥');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '17', 'ì§ê±°ë˜ì†Œ');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '18', 'ë¼ì´ë¸Œì‡¼í•‘');
-insert into place values(place_seq.nextval, 'E', 'ì‡¼í•‘', '19', 'ê¸°íƒ€ì‡¼í•‘');
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í E - 11:ÀüÅë½ÃÀå, 12:¼ö»ê½ÃÀå, 13:Æ¯»ê¹°ÆÇ¸ÅÀå, 14:°ø¿¹/°ø¹æ, 15:ÁÖ¹®Á¦ÀÛ, 16:5ÀÏÀå, 17:Á÷°Å·¡¼Ò, 18:¶óÀÌºê¼îÇÎ, 19:±âÅ¸¼îÇÎ
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '11', 'ÀüÅë½ÃÀå');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '12', '¼ö»ê½ÃÀå');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '13', 'Æ¯»ê¹°½ÃÀå');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '14', '°ø¿¹/°ø¹æ');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '15', 'ÁÖ¹®Á¦ÀÛ');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '16', '5ÀÏÀå');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '17', 'Á÷°Å·¡¼Ò');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '18', '¶óÀÌºê¼îÇÎ');
+insert into place values(place_seq.nextval, 'E', '¼îÇÎ', '19', '±âÅ¸¼îÇÎ');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… F - 11:ê´€ëŒì‹œì„¤, 12:ì²´í—˜ì‹œì„¤, 13:ë ˆì €ì‹œì„¤, 14:ìº í•‘ì‹œì„¤, 15:ë†ì–´ì´Œì²´í—˜, 16:ì´ìƒ‰ì²´í—˜, 17:í…œí”ŒìŠ¤í…Œì´, 18:ìš”íŠ¸íˆ¬ì–´, 19:VRì²´í—˜
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '11', 'ê´€ëŒì‹œì„¤');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '12', 'ì²´í—˜ì‹œì„¤');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '13', 'ë ˆì €ì‹œì„¤');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '14', 'ìº í•‘ì‹œì„¤');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '15', 'ë†ì–´ì´Œì²´í—˜');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '16', 'ì´ìƒ‰ì²´í—˜');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '17', 'í…œí”ŒìŠ¤í…Œì´');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '18', 'ìš”íŠ¸íˆ¬ì–´');
-insert into place values(place_seq.nextval, 'F', 'ì²´í—˜', '19', 'VRì²´í—˜');
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í F - 11:°ü¶÷½Ã¼³, 12:Ã¼Çè½Ã¼³, 13:·¹Àú½Ã¼³, 14:Ä·ÇÎ½Ã¼³, 15:³ó¾îÃÌÃ¼Çè, 16:ÀÌ»öÃ¼Çè, 17:ÅÛÇÃ½ºÅ×ÀÌ, 18:¿äÆ®Åõ¾î, 19:VRÃ¼Çè
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '11', '°ü¶÷½Ã¼³');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '12', 'Ã¼Çè½Ã¼³');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '13', '·¹Àú½Ã¼³');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '14', 'Ä·ÇÎ½Ã¼³');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '15', '³ó¾îÃÌÃ¼Çè');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '16', 'ÀÌ»öÃ¼Çè');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '17', 'ÅÛÇÃ½ºÅ×ÀÌ');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '18', '¿äÆ®Åõ¾î');
+insert into place values(place_seq.nextval, 'F', 'Ã¼Çè', '19', 'VRÃ¼Çè');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… G - 11:íˆ¬ì–´ë²„ìŠ¤, 12:ì‹œì™¸ë²„ìŠ¤, 13:ì‹œë‚´ë²„ìŠ¤, 14:ë§ˆì„ë²„ìŠ¤, 15:íƒì‹œ, 16:ê´€ê´‘ì „ì„¸ë²„ìŠ¤, 17:ë ŒíŠ¸ì¹´, 18:ë°”ì´í¬, 19:ì „ìš©ê´€ëŒì°¨
---                          - 21:ì² ë„-í˜¸ë‚¨ì„ , 22:ì² ë„-ëª©í¬ì„ , 23:ì² ë„-ë‚¨í•´ì„ , 24:ì² ë„-KTX
---                          - 31:ì—¬ê°ì„ , 32:ìœ ëŒì„ , 33:ìš”íŠ¸, 34:í¬ë£¨ì¦ˆ, 35:ë‚šì‹œë°°ëŒ€ì—¬, 36:ë¬´ì¸ë„ë°©ë¬¸ë°ê³„ì•½ì„ ë°•
---                          - 41:ê¹€í¬ê³µí•­, 42:ì œì£¼ê³µí•­, 43:ì–‘ì–‘ê³µí•­, 44:ì²­ì£¼ê³µí•­, 45:í•´ì™¸ê³µí•­, 46:êµ­ë‚´ê¸°íƒ€
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '11', 'íˆ¬ì–´ë²„ìŠ¤');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '12', 'ì‹œì™¸ë²„ìŠ¤');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '13', 'ì‹œë‚´ë²„ìŠ¤');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '14', 'ë§ˆì„ë²„ìŠ¤');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '15', 'íƒì‹œ');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '16', 'ê´€ê´‘ì „ì„¸ë²„ìŠ¤');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '17', 'ë ŒíŠ¸ì¹´');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '18', 'ë°”ì´í¬');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '19', 'ì „ìš©ê´€ëŒì°¨');
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í G - 11:Åõ¾î¹ö½º, 12:½Ã¿Ü¹ö½º, 13:½Ã³»¹ö½º, 14:¸¶À»¹ö½º, 15:ÅÃ½Ã, 16:°ü±¤Àü¼¼¹ö½º, 17:·»Æ®Ä«, 18:¹ÙÀÌÅ©, 19:Àü¿ë°ü¶÷Â÷
+--                          - 21:Ã¶µµ-È£³²¼±, 22:Ã¶µµ-¸ñÆ÷¼±, 23:Ã¶µµ-³²ÇØ¼±, 24:Ã¶µµ-KTX
+--                          - 31:¿©°´¼±, 32:À¯¶÷¼±, 33:¿äÆ®, 34:Å©·çÁî, 35:³¬½Ã¹è´ë¿©, 36:¹«ÀÎµµ¹æ¹®¹×°è¾à¼±¹Ú
+--                          - 41:±èÆ÷°øÇ×, 42:Á¦ÁÖ°øÇ×, 43:¾ç¾ç°øÇ×, 44:Ã»ÁÖ°øÇ×, 45:ÇØ¿Ü°øÇ×, 46:±¹³»±âÅ¸
+insert into place values(place_seq.nextval, 'G', '±³Åë', '11', 'Åõ¾î¹ö½º');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '12', '½Ã¿Ü¹ö½º');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '13', '½Ã³»¹ö½º');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '14', '¸¶À»¹ö½º');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '15', 'ÅÃ½Ã');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '16', '°ü±¤Àü¼¼¹ö½º');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '17', '·»Æ®Ä«');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '18', '¹ÙÀÌÅ©');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '19', 'Àü¿ë°ü¶÷Â÷');
 
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '21', 'í˜¸ë‚¨ê³ ì†ì² ë„');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '22', 'ëª©í¬ì„ ì² ë„');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '23', 'ë‚¨í•´ì„ ì² ë„');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '24', 'ì‹ ì„¤KTX');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '21', 'È£³²°í¼ÓÃ¶µµ');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '22', '¸ñÆ÷¼±Ã¶µµ');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '23', '³²ÇØ¼±Ã¶µµ');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '24', '½Å¼³KTX');
 
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '31', 'ì—¬ê°ì„ ');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '32', 'ìœ ëŒì„ ');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '33', 'í¬ë£¨ì¦ˆ');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '34', 'ë‚šì‹œë°°ëŒ€ì—¬');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '35', 'ë¬´ì¸ë„ë°©ë¬¸ ë° ê³„ì•½ì„ ë°•');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '31', '¿©°´¼±');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '32', 'À¯¶÷¼±');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '33', 'Å©·çÁî');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '34', '³¬½Ã¹è´ë¿©');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '35', '¹«ÀÎµµ¹æ¹® ¹× °è¾à¼±¹Ú');
 
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '41', 'ê¹€í¬ê³µí•­');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '42', 'ì œì£¼ê³µí•­');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '43', 'ì–‘ì–‘ê³µí•­');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '44', 'ì²­ì£¼ê³µí•­');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '45', 'í•´ì™¸ê³µí•­');
-insert into place values(place_seq.nextval, 'G', 'êµí†µ', '46', 'ê¸°íƒ€êµ­ë‚´ê³µí•­');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '41', '±èÆ÷°øÇ×');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '42', 'Á¦ÁÖ°øÇ×');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '43', '¾ç¾ç°øÇ×');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '44', 'Ã»ÁÖ°øÇ×');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '45', 'ÇØ¿Ü°øÇ×');
+insert into place values(place_seq.nextval, 'G', '±³Åë', '46', '±âÅ¸±¹³»°øÇ×');
 
--- pid ë‘ ë²ˆì§¸ êµ¬ë¶„ì½”ë“œ ì„¤ëª… H - 11:ì½”ìŠ¤ì—¬í–‰
+-- pid µÎ ¹øÂ° ±¸ºĞÄÚµå ¼³¸í H - 11:ÄÚ½º¿©Çà
 commit;

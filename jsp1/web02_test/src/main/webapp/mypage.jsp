@@ -81,37 +81,30 @@
 		</thead>
 		<tbody>
 <%	
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "";
+		Connection conn2 = null;
+		PreparedStatement pstmt2 = null;
+		ResultSet rs2 = null;
+		String sql2 = "";
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
-			sql = "select * from impression where cid=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, sid);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {			
+			conn2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+			sql2 = "select * from impression where cid=?";
+			pstmt2 = conn.prepareStatement(sql2);
+			pstmt2.setString(1, sid);
+			rs2 = pstmt.executeQuery();
+			while(rs2.next()) {			
 					
 %>
 		<tr>
-			<td><%=rs.getInt("ino") %></td>
-			<td><%=rs.getString("ititle") %></td>
-			<td><%=rs.getString("iplace") %></td>
-			<td><%=rs.getDate("itodate") %></td>
-			<td><%=rs.getDate("ifromdate") %></td>
+			<td><%=rs2.getInt("ino") %></td>
+			<td><%=rs2.getString("ititle") %></td>
+			<td><%=rs2.getString("iplace") %></td>
+			<td><%=rs2.getDate("itodate") %></td>
+			<td><%=rs2.getDate("ifromdate") %></td>
 		</tr>
 <%					
-/* 					rs.getString("icontent");
-					rs.getString("ipic1");
-					rs.getString("ipic2");
-					rs.getString("cid");
-					rs.getString("ipw");
-					rs.getDate("idate");
-					rs.getInt("viewcnt"); */
 			} 
-			if(!rs.next()) {
+			if(!rs2.next()) {
 %>
 		<tr>
 			<td colspan="5">기록하신 이용후기가 없습니다.</td>
@@ -122,9 +115,9 @@
 			e.printStackTrace();
 		} finally {
 			try {
-				rs.close();
-				pstmt.close();
-				conn.close();
+				rs2.close();
+				pstmt2.close();
+				conn2.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}

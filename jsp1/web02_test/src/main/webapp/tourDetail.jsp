@@ -115,7 +115,7 @@ font-size:14px; }
 					<input type="submit" value="수정" class="frm_btn"> &nbsp; &nbsp; &nbsp; &nbsp;
 					<input type="reset" value="취소" class="frm_btn"> &nbsp; &nbsp; &nbsp; &nbsp;
 					<a href="/web02/GetTourListCtrl" class="frm_btn">목록</a> &nbsp; &nbsp; &nbsp; &nbsp;
-					<a href="/web02/DelTourlistCtrl?pid=<%=vo.getPid() %>" class="frm_btn">삭제</a>
+					<a href="/web02/DelTourlistCtrl?ppno=<%=vo.getPpno() %>" class="frm_btn">삭제</a>
 				</td>
 			</tr>
 	<%
