@@ -21,4 +21,37 @@
   	<filter-name>EncodingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
+  
+  <context-param>
+	<param-name>admin</param-name>
+	<param-value>admin@naver.com</param-value>
+</context-param>
+<context-param>
+	<param-name>business-layer</param-name>
+	<param-value>/WEB-INF/config/business-layer.xml</param-value>
+</context-param>
+<context-param>
+	<param-name>commoncss</param-name>
+	<param-value>/css/sytle1.css</param-value>
+</context-param>
+<context-param>
+	<param-name>dburl</param-name>
+	<param-value>jdbc/oracle:thin:@localhost:1521:xe</param-value>
+</context-param>
+<context-param>
+	<param-name>dbid</param-name>
+	<param-value>scott</param-value>
+</context-param>
+<context-param>
+	<param-name>dbpw</param-name>
+	<param-value>tiger</param-value>
+</context-param>
+<servlet>
+	<servlet-name>A01Context</servlet-name>
+	<servlet-class>sec.A01Context</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>A01Context</servlet-name>
+	<url-pattern>/A01Context</url-pattern>
+</servlet-mapping>
 </web-app>
