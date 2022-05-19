@@ -37,17 +37,26 @@ public class AddTourlistCtrl extends HttpServlet {
 		String file1, file2, file3, file4;
 		String filename1 = "", filename2 = "", filename3="", filename4="";
 		String pat = "./tourlist/";  //업로드된 폴더
-		String realFolder = "tourlist"; //관리자가 업로드할 이미지가 있는 폴더
+		String realFolder = "E:\\java_web3\\web02\\src\\main\\webapp\\tourlist"; //관리자가 업로드할 이미지가 있는 폴더
 		String saveFolder = "tourlist"; //실제 업로드된 폴더 
 		String encType = "UTF-8";
 		int maxSize = 5*1024*1024;  //최대 5MB 설정
+		pid = request.getParameter("pid1") + request.getParameter("pid2");
+		pname = request.getParameter("pname");
+		ptype = request.getParameter("ptype");
+		pcoment = request.getParameter("pcoment");
+		name1 = request.getParameter("pimg1");
+		name2 = request.getParameter("pimg2");
+		name3 = request.getParameter("pimg3");
+		name4 = request.getParameter("pimg4");
 		
 		try {
 			ServletContext context = request.getServletContext();
 			realFolder = context.getRealPath(saveFolder);
 			
 			MultipartRequest multi = null;
-			multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+			//multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+			multi = new MultipartRequest(request, realFolder, maxSize, encType);
 			pid = multi.getParameter("pid1") + multi.getParameter("pid2");
 			pname = multi.getParameter("pname");
 			ptype = multi.getParameter("ptype");
@@ -61,26 +70,23 @@ public class AddTourlistCtrl extends HttpServlet {
 			Enumeration params = multi.getParameterNames();
 			Enumeration files = multi.getFileNames();
 			
-			if(name4!=null) { 
-				file4 = (String) files.nextElement();
-				filename4 = multi.getFilesystemName(file4);
-				System.out.println(filename4);
-			}
-			if(name3!=null) {
-				file3 = (String) files.nextElement();
-				filename3 = multi.getFilesystemName(file3);
-				System.out.println(filename3);
-			}
-			if(name2!=null) {
-				file2 = (String) files.nextElement();
-				filename2 = multi.getFilesystemName(file2);
-				System.out.println(filename2);
-			}
-			if(name1!=null) {
-				file1 = (String) files.nextElement();
-				filename1 = multi.getFilesystemName(file1);
-				System.out.println(filename1);
-			}
+			file4 = (String) files.nextElement();
+			filename4 = multi.getFilesystemName(file4);
+			System.out.println(filename4);
+
+			file3 = (String) files.nextElement();
+			filename3 = multi.getFilesystemName(file3);
+			System.out.println(filename3);
+
+			file2 = (String) files.nextElement();
+			filename2 = multi.getFilesystemName(file2);
+			System.out.println(filename2);
+
+
+			file1 = (String) files.nextElement();
+			filename1 = multi.getFilesystemName(file1);
+			System.out.println(filename1);
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -118,10 +124,10 @@ public class AddTourlistCtrl extends HttpServlet {
 			pstmt.setString(2, pname);
 			pstmt.setString(3, ptype);
 			pstmt.setString(4, pcoment);
-			pstmt.setString(5, filename1);
-			pstmt.setString(6, filename2);
-			pstmt.setString(7, filename3);
-			pstmt.setString(8, filename4);
+			pstmt.setString(5, pat+filename1);
+			pstmt.setString(6, pat+filename2);
+			pstmt.setString(7, pat+filename3);
+			pstmt.setString(8, pat+filename4);
 			cnt = pstmt.executeUpdate();
 			if(cnt == 0) {
 				response.sendRedirect("addTourlistForm.jsp");

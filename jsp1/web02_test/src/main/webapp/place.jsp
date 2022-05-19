@@ -91,6 +91,33 @@
 		<section class="page" id="page<%=i %>">
 			<div class="page_wrap">
 				<h2 class="page_tit"><%=vo.getPname() %></h2>
+<%
+			if(vo.getPcoment()!=null) {
+%>
+				<p class="page_coment"><%=vo.getPcoment() %></p>
+<%				
+			}
+			if(vo.getPimg1()!=null) {
+%>
+				<figure class="page_img1"><img src="<%=vo.getPimg1() %>" alt="<%=vo.getPname() %>" /></figure>
+<%				
+			}
+			if(vo.getPimg2()!=null) {
+%>
+				<figure class="page_img2"><img src="<%=vo.getPimg2() %>" alt="<%=vo.getPname() %>" /></figure>
+<%				
+			}
+			if(vo.getPimg3()!=null) {
+%>
+				<figure class="page_img3"><img src="<%=vo.getPimg3() %>" alt="<%=vo.getPname() %>" /></figure>
+<%				
+			}
+			if(vo.getPimg4()!=null) {
+%>
+				<figure class="page_img4"><img src="<%=vo.getPimg4() %>" alt="<%=vo.getPname() %>" /></figure>
+<%				
+			}
+%>		
 			</div>	
 		</section>
 <%

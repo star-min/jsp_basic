@@ -22,7 +22,49 @@
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
   <error-page>
+  	<error-code>403</error-code>
+  	<location>/WEB-INF/e404.jsp</location>
+  </error-page>
+  <error-page>
   	<error-code>404</error-code>
   	<location>/WEB-INF/e404.jsp</location>
   </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/WEB-INF/e500.jsp</location>
+  </error-page>
+  <!-- 프로젝트 전체에서 사용할 있는 전역변수 선언하기 -->
+  <context-param>
+  		<param-name>admin</param-name>
+  		<param-value>admin@naver.com</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>business-layer</param-name>
+  		<param-value>/WEB-INF/config/business-layer.xml</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>commoncss</param-name>
+  		<param-value>/css/style1.css</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>dburl</param-name>
+  		<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>dbid</param-name>
+  		<param-value>scott</param-value>
+  </context-param>  
+  <context-param>
+  		<param-name>dbpw</param-name>
+  		<param-value>tiger</param-value>
+  </context-param>
+  <!-- @WebServlet("/서블릿호출명") 을 사용하지 않고, web.xml에 servlet으로 등록하여 호출할 수 있음 -->
+  <servlet>
+  	<servlet-name>A01Context</servlet-name>
+  	<servlet-class>sec.A01Context</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>A01Context</servlet-name>
+  	<url-pattern>/A01Context</url-pattern>
+  </servlet-mapping>
 </web-app>

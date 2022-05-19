@@ -31,6 +31,11 @@ public class LoginProCtrl extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		String mid = request.getParameter("mid");
 		String mpw = request.getParameter("mpw");
+		try {
+			mpw = SHA256.encrypt(mpw);
+		} catch (NoSuchAlgorithmException e1) {
+			e1.printStackTrace();
+		}
 		String lid = "";
 		String lpw = "";
 		String lname = "";
@@ -52,21 +57,16 @@ public class LoginProCtrl extends HttpServlet {
 			if(os.next()) {
 				lid = os.getString("mid");
 				lpw = os.getString("mpw");
-				try {
-					mpw = SHA256.encrypt(mpw);
-				} catch (NoSuchAlgorithmException e1) {
-					e1.printStackTrace();
-				}
 				lname = os.getString("mname");
-				if(lpw.equals(mpw)) { //아이디와 비밀번호가 일치하면, 세션을 초기화 및 저장
+				if(lpw.equals(mpw)) {
 					session.setAttribute("sid", lid);
 					session.setAttribute("sname", lname);
 					response.sendRedirect("index.jsp");	
-				} else { //아이디만 일치하고, 비밀번호가 일치하지 않으면
+				} else {
 					session.invalidate();
 					response.sendRedirect("login.jsp");	
 				}
-			} else { //없는 아이디이면
+			} else { 
 				session.invalidate();
 				response.sendRedirect("login.jsp");
 			}

@@ -42,7 +42,7 @@ font-size:14px; }
 %>
 		<tr>
 			<td><%=vo.getRno() %></td>
-			<td><a href="/web02/GetUserReviewCtrl?ino=<%=vo.getRno() %>"><%=vo.getRplace() %></a></td>
+			<td><a href="/web02/GetUserReviewCtrl?rno=<%=vo.getRno() %>"><%=vo.getRplace() %></a></td>
 			<td><%=vo.getRtodate() %></td>
 			<td><%=vo.getRfromdate() %></td>
 			<td><%=vo.getRid() %></td>

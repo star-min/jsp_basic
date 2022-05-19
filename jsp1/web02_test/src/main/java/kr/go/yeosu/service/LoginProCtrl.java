@@ -1,6 +1,7 @@
 package kr.go.yeosu.service;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import filter.SHA256;
 import kr.go.yeosu.model.CustomerVO;
 
 @WebServlet("/LoginProCtrl")
@@ -29,6 +31,11 @@ public class LoginProCtrl extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		String cid = request.getParameter("cid");
 		String upw = request.getParameter("upw");
+		try {
+			upw = SHA256.encrypt(upw);
+		} catch (NoSuchAlgorithmException e1) {
+			e1.printStackTrace();
+		}
 		String lid = "";
 		String lpw = "";
 		String lname = "";

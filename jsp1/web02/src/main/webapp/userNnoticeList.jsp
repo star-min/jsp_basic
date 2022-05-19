@@ -30,7 +30,7 @@
 		//해당VO의 객체 선언
 		NnoticeVO vo = list.get(i);
 %>
-		<tr><td><%=vo.getTno() %></td><td><a href="/web02/GetUserNoticeCtrl?nno=<%=vo.getTno() %>"><%=vo.getNtitle() %></a></td><td><%=vo.getNname() %></td><td><%=vo.getResdate() %></td><td><%=vo.getViewcnt() %></td></tr>
+		<tr><td><%=vo.getTno() %></td><td><a href="/web02/GetUserNnoticeCtrl?tno=<%=vo.getTno() %>"><%=vo.getNtitle() %></a></td><td><%=vo.getNname() %></td><td><%=vo.getResdate() %></td><td><%=vo.getViewcnt() %></td></tr>
 <%
 	}
 %>
