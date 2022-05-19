@@ -1,6 +1,7 @@
 package kr.go.sokcho.service;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import filter.SHA256;
 import kr.go.sokcho.model.MemberVO;
 
 @WebServlet("/LoginProCtrl")
@@ -35,7 +37,7 @@ public class LoginProCtrl extends HttpServlet {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet os = null;
 		String sql = "";
 		
 		try {
@@ -44,13 +46,18 @@ public class LoginProCtrl extends HttpServlet {
 			sql = "select * from member where mid=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
-			rs = pstmt.executeQuery();
+			os = pstmt.executeQuery();
 			MemberVO vo = new MemberVO();
 			HttpSession session = request.getSession();
-			if(rs.next()) {
-				lid = rs.getString("mid");
-				lpw = rs.getString("mpw");
-				lname = rs.getString("mname");
+			if(os.next()) {
+				lid = os.getString("mid");
+				lpw = os.getString("mpw");
+				try {
+					mpw = SHA256.encrypt(mpw);
+				} catch (NoSuchAlgorithmException e1) {
+					e1.printStackTrace();
+				}
+				lname = os.getString("mname");
 				if(lpw.equals(mpw)) { //아이디와 비밀번호가 일치하면, 세션을 초기화 및 저장
 					session.setAttribute("sid", lid);
 					session.setAttribute("sname", lname);
@@ -67,7 +74,7 @@ public class LoginProCtrl extends HttpServlet {
 			e.printStackTrace();
 		} finally {
 			try {
-				rs.close();
+				os.close();
 				pstmt.close();
 				conn.close();
 			} catch(Exception e) {

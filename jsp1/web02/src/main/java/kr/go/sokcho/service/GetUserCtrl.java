@@ -27,26 +27,26 @@ public class GetUserCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet os = null;
 		String sql = "";
 		HttpSession session = request.getSession();
 		String mid = (String) session.getAttribute("sid");
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
-			sql = "select * from Member where mid = ?";
+			sql = "select * from member where mid = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
-			rs = pstmt.executeQuery();
+			os = pstmt.executeQuery();
 			MemberVO mem = new MemberVO();
-			if(rs.next()) {
-				mem.setMid(rs.getString("mid"));
-				mem.setMpw(rs.getString("mpw"));
-				mem.setMname(rs.getString("mname"));
-				mem.setTel(rs.getString("tel"));
-				mem.setEmail(rs.getString("email"));
-				mem.setBirth(rs.getDate("birth"));
-				mem.setJoinday(rs.getDate("joinday"));
+			if(os.next()) {
+				mem.setMid(os.getString("mid"));
+				mem.setMpw(os.getString("mpw"));
+				mem.setMname(os.getString("mname"));
+				mem.setTel(os.getString("tel"));
+				mem.setEmail(os.getString("email"));
+				mem.setBirth(os.getDate("birth"));
+				mem.setJoinday(os.getDate("joinday"));
 			}
 			request.setAttribute("mem", mem);  //요청 저장소에 담기
 			RequestDispatcher view = request.getRequestDispatcher("userinfo.jsp");  //보내질 곳 지정
@@ -55,7 +55,7 @@ public class GetUserCtrl extends HttpServlet {
 			e.printStackTrace();
 		} finally {
 			try {
-				rs.close();
+				os.close();
 				pstmt.close();
 				conn.close();
 			} catch(Exception e) {

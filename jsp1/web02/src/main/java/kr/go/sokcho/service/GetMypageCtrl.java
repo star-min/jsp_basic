@@ -16,9 +16,6 @@ import javax.servlet.http.HttpSession;
 
 import kr.go.sokcho.model.MemberVO;
 
-/**
- * Servlet implementation class GetMypageCtrl
- */
 @WebServlet("/GetMypageCtrl")
 public class GetMypageCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,7 +27,7 @@ public class GetMypageCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet ms = null;
 		String sql = "";
 		HttpSession session = request.getSession();
 		String mid = (String) session.getAttribute("sid");
@@ -40,16 +37,16 @@ public class GetMypageCtrl extends HttpServlet {
 			sql = "select * from member where mid = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
-			rs = pstmt.executeQuery();
+			ms = pstmt.executeQuery();
 			MemberVO mem = new MemberVO();
-			if(rs.next()) {
-				mem.setMid(rs.getString("mid"));
-				mem.setMpw(rs.getString("mpw"));
-				mem.setMname(rs.getString("mname"));
-				mem.setTel(rs.getString("tel"));
-				mem.setEmail(rs.getString("email"));
-				mem.setBirth(rs.getDate("birth"));
-				mem.setJoinday(rs.getDate("joinday"));
+			if(ms.next()) {
+				mem.setMid(ms.getString("mid"));
+				mem.setMpw(ms.getString("mpw"));
+				mem.setMname(ms.getString("mname"));
+				mem.setTel(ms.getString("tel"));
+				mem.setEmail(ms.getString("email"));
+				mem.setBirth(ms.getDate("birth"));
+				mem.setJoinday(ms.getDate("joinday"));
 			}
 			request.setAttribute("mem", mem);  //요청 저장소에 담기
 			RequestDispatcher view = request.getRequestDispatcher("mypage.jsp");  //보내질 곳 지정
@@ -58,7 +55,7 @@ public class GetMypageCtrl extends HttpServlet {
 			e.printStackTrace();
 		} finally {
 			try {
-				rs.close();
+				ms.close();
 				pstmt.close();
 				conn.close();
 			} catch(Exception e) {

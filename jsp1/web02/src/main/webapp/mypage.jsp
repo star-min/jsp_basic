@@ -90,7 +90,7 @@
 			conn2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
 			sql2 = "select * from review where rid=?";
 			pstmt2 = conn.prepareStatement(sql2);
-			pstmt2.setString(1, sid);
+			pstmt2.setString(1, mid);
 			rs2 = pstmt.executeQuery();
 			while(rs2.next()) {			
 					
