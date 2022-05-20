@@ -34,7 +34,7 @@
 	%>
 			<tr>
 				<th>글번호</th>
-				<td><input type="text" name="nno" value="<%=nno.getTno() %>" readonly></td>
+				<td><input type="text" name="tno" value="<%=nno.getTno() %>" readonly></td>
 			</tr>
 			<tr>
 				<th>제목</th>	
