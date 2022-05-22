@@ -1,5 +1,6 @@
+
 create table customer(cid varchar2(12) primary key,     -- 고객아이디
-    upw varchar2(40) not null,      -- 고객비밀번호
+    upw varchar2(100) not null,      -- 고객비밀번호
     uname varchar2(20) not null,    -- 고객명
     tel varchar2(13) not null,      -- 전화번호
     email varchar2(50) not null,    -- 이메일
@@ -24,6 +25,15 @@ insert into customer(cid, upw, uname, tel, email, birth) values ('lkj','7777','�
 -- 고객(customer) 테이블 더미 데이터 수정
 update customer set upw=?, tel=?, email=?, birth=?, urank=? where cid=?;
 update customer set visited=1;
+update customer set upw='75992a5ac67ff644d3063976c2effd10bdd93fcc109798e3d5c1acf2e530d01a' where cid='limsohee';
+update customer set upw='03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4' where cid='kimsohi1004';
+update customer set upw='03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4' where cid='admin';
+update customer set upw='fe2592b42a727e977f055947385b709cc82b16b9a87f88c6abf3900d65d0cdc3' where cid='kye'; 
+update customer set upw='318aee3fed8c9d040d35a7fc1fa776fb31303833aa2de885354ddf3d44d8fb69' where cid='lgh'; 
+update customer set upw='edee29f882543b956620b26d0ee0e7e950399b1c4222f5de05e06425b4c995e9' where cid='ksm';
+update customer set upw='79f06f8fde333461739f220090a23cb2a79f6d714bee100d0e4b4af249294619' where cid='sgh';
+update customer set upw='41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af' where cid='lkj';
+
 
 -- 고객(customer) 테이블 더미 데이터 삭제
 delete from customer where cid=?;
@@ -280,3 +290,11 @@ insert into place values(place_seq.nextval, 'G', '교통', '46', '기타국내�
 select * from place;
 
 commit;
+-- 파일 첨부 연습 테이블
+create table filelist(fno number primary key,
+fname varchar2(100),
+subject varchar2(100),
+filename1 varchar2(200),
+filename2 varchar2(200));
+
+create sequence scott.file_seq increment by 1 start with 1 minvalue 1 maxvalue 100000 nocycle nocache;

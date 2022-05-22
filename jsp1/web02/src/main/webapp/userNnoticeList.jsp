@@ -6,7 +6,7 @@
 <%@ page import="kr.go.sokcho.model.*" %>
 <%
 	//Ctrl에서 보내온 list 객체를 받아 해당 VO 객체로 분리하여 출력
-	List<NnoticeVO> list = (ArrayList<NnoticeVO>) request.getAttribute("list");
+	List<NnoticeVO> nno = (ArrayList<NnoticeVO>) request.getAttribute("nno");
 %>    
 <!DOCTYPE html>
 <html>
@@ -26,9 +26,9 @@
 	</thead>
 	<tbody>
 <%
-	for(int i=0;i<list.size();i++){
+	for(int i=0;i<nno.size();i++){
 		//해당VO의 객체 선언
-		NnoticeVO vo = list.get(i);
+		NnoticeVO vo = nno.get(i);
 %>
 		<tr><td><%=vo.getTno() %></td><td><a href="/web02/GetUserNnoticeCtrl?tno=<%=vo.getTno() %>"><%=vo.getNtitle() %></a></td><td><%=vo.getNname() %></td><td><%=vo.getResdate() %></td><td><%=vo.getViewcnt() %></td></tr>
 <%

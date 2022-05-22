@@ -52,7 +52,7 @@ public class LoginProCtrl extends HttpServlet {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
 			os = pstmt.executeQuery();
-//			MemberVO vo = new MemberVO();
+			MemberVO vo = new MemberVO();
 			HttpSession session = request.getSession();
 			if(os.next()) {
 				lid = os.getString("mid");
