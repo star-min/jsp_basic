@@ -12,8 +12,13 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-fileupload-1.4.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-io-2.8.0.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/cos.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/activation.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+		<attributes>
+			<attribute name="annotationpath" value="/web02"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/ksm/apache-tomcat-9.0.62"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
 </classpath>

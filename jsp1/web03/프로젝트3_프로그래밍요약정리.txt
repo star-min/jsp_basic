@@ -1,0 +1,51 @@
+
+	common : JDBCConnection
+		 BoardVO, MemberVO, ProductVO, PaymentVO
+	model : BoardDAO, MemberDAO, ProductDAO, PaymentDAO
+	
+	시퀀스 다이어그램 : 실제 사용자가 처리 요청한 것에 대한 프로그래밍 상의 기능 흐름을 나타낸 다이어그램
+
+					List<BoardVO> getBoardList()
+	전체 데이터목록 요청			select * from board
+	index.jsp -> GetBoardListCtrl -> BoardDAO -> JDBC -> 데이터베이스
+			List<BoardVO>	List<BoardVO>	ResultSet	
+	getBoardList.jsp <- GetBoardListCtrl <- BoardDAO <- JDBC <- 데이터베이스
+						
+
+					BoardVO getBoard(int seq)
+			파라미터	BoradVO.seq  select * from board where seq=?
+	getBoardList.jsp -> GetBoardCtrl -> BoardDAO -> JDBC -> 데이터베이스
+		BoardVO		BoardVO		BoardVO	ResultSet
+	getBoard.jsp <- GetBoardCtrl <- BoardDAO <- JDBC <- 데이터베이스
+
+			
+					int addBoard(BoardVO vo)
+			BoardVO		BoardVO		insert into board values,...
+	addBoardForm.jsp -> AddBoardCtrl -> BoardDAO -> JDBC -> 데이터베이스
+	등록성공(목록)	cnt=1
+	등록실패(복귀)	cnt=0		cnt	     cnt							
+	addBoardForm.jsp <- AddBoardCtrl <- BoardDAO <- JDBC <- 데이터베이스
+
+					int editBoard(BoardVO vo)
+			BoardVO		BoardVO		update board set ,...
+	editBoardForm.jsp -> EditBoardCtrl -> BoardDAO -> JDBC -> 데이터베이스
+	수정성공(목록)	cnt=1
+	수정실패(복귀)	cnt=0		cnt	     cnt							
+	editBoardForm.jsp <- AddBoardCtrl <- BoardDAO <- JDBC <- 데이터베이스
+
+					int delBoard(BoardVO vo)
+			BoardVO		BoardVO		update board set ,...
+	getBoardList.jsp -> DelBoardCtrl -> BoardDAO -> JDBC -> 데이터베이스
+	삭제성공(목록)	cnt=1
+	삭제실패(복귀)	cnt=0		cnt	     cnt							
+	getBoardList.jsp <- AddBoardCtrl <- BoardDAO <- JDBC <- 데이터베이스
+	
+
+
+
+	GetBoardListCtrl
+	GetBoardCtrl
+
+
+	BoardDAO
+		
