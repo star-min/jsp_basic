@@ -2,12 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath }" />  
+<%
+	String sid = "";
+	if(session !=null) sid = (String) session.getAttribute("sid");  
+%>
 <header id="header" class="panel-heading">
 	<div class="hd_wrap">
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 		  <div class="navbar-brand">
-		    <a class="navbar-item" href="https://bulma.io">
-		      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+		    <a class="navbar-item" href="${path }/index.jsp" id="logo">
+		      <img src="${path }/img/img_header_logo.png" width="220" height="39">
 		    </a>
 		
 		    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -17,56 +21,91 @@
 		    </a>
 		  </div>
 		
-		  <div id="navbarBasicExample" class="navbar-menu">
+		  <div id="gnb" class="navbar-menu">
 		    <div class="navbar-start">
 		      <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
-		          쇼핑몰
+		          케어식단
 		        </a>
 		
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item">
-		            쇼핑몰 소개
+		            정기식단
 		          </a>
 		          <a class="navbar-item">
-		            쇼핑몰 안내
-		          </a>
-		          <a class="navbar-item">
-		            쇼핑몰 알아보기
-		          </a>
-		          <hr class="navbar-divider">
-		          <a class="navbar-item">
-		            쇼핑몰 찾아가기
+		            챌린지 식단
 		          </a>
 		        </div>
 		      </div>
 		      <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
-		          제품안내
+		          건강마켓
 		        </a>
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item">
-		            제품1
+		            건강반찬
 		          </a>
 		          <a class="navbar-item">
-		            제품2
+		            건강 국/찌개
 		          </a>
 		          <a class="navbar-item">
-		            제품3
+		            자연 담은 면
 		          </a>
 		          <hr class="navbar-divider">
 		          <a class="navbar-item">
-		            제품4
+		            영양 가득 밥/죽
+		          </a>
+		          <a class="navbar-item">
+		            샐러드/샌드위치
+		          </a>
+		          <a class="navbar-item">
+		            베이커리
+		          </a>
+		          <a class="navbar-item">
+		            착한 간식
+		          </a>
+		        </div>
+		      </div>
+		      <div class="navbar-item has-dropdown is-hoverable">
+		        <a class="navbar-link">
+		          브랜드관/기획전
+		        </a>
+		
+		        <div class="navbar-dropdown">
+		          <a class="navbar-item" href="GetDiscountListCtrl">
+		            할인관
+		          </a>
+		          <a class="navbar-item">
+		            브랜드관
+		          </a>
+		          <a class="navbar-item">
+		            기획전
+		          </a>
+		        </div>
+		      </div>
+		      <div class="navbar-item has-dropdown is-hoverable">
+		        <a class="navbar-link">
+		          이벤트/스토리
+		        </a>
+		
+		        <div class="navbar-dropdown">
+		          <a class="navbar-item" href="GetEventListCtrl">
+		            이벤트
+		          </a>
+		          <a class="navbar-item">
+		            스토리
+		          </a>
+		          <a class="navbar-item">
+		            이용후기
 		          </a>
 		        </div>
 		      </div>
 		      <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
 		          고객센터
-		        </a>
-		
+		        </a>		
 		        <div class="navbar-dropdown">
-		          <a class="navbar-item">
+		          <a class="navbar-item" href="GetBoardListCtrl">
 		            공지사항
 		          </a>
 		          <a class="navbar-item">
@@ -82,18 +121,57 @@
 		        </div>
 		      </div>
 		    </div>
-		
+			<c:if test="${empty sid }">		
 		    <div class="navbar-end">
 		      <div class="navbar-item">
 		        <div class="buttons">
 		          <a class="button is-primary">
-		            <strong>Sign up</strong>
+		            <strong>회원가입</strong>
 		          </a>
 		          <a class="button is-light">
-		            Log in
+		            로그인
 		          </a>
 		        </div>
 		      </div>
+		      </c:if>
+		      <c:if test="${!empty sid }">
+		      <!-- 로그인 사용자 -->
+		      <div class="navbar-item">
+		        <div class="buttons">
+		          <a class="button is-primary">
+		            <strong>회원정보수정</strong>
+		          </a>
+		          <a class="button is-light">
+		            마이페이지
+		          </a>
+		          <a class="button is-light">
+		            로그아웃
+		          </a>
+		        </div>
+		      </div>
+		      </c:if>
+		      <!-- 관리자 -->
+		      <c:if test="${sid=='admin' }">
+		      <div class="navbar-item">
+		        <div class="buttons">
+		          <a class="button is-primary">
+		            <strong>글 관리</strong>
+		          </a>
+		          <a class="button is-light">
+		            회원관리
+		          </a>
+		          <a class="button is-light">
+		            제품관리
+		          </a>
+		          <a class="button is-light">
+		            판매관리
+		          </a>
+		          <a class="button is-light">
+		            로그아웃
+		          </a>
+		        </div>
+		      </div>
+		      </c:if>
 		    </div>
 		  </div>
 		</nav>
