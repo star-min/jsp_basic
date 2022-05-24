@@ -1,37 +1,36 @@
-package com.shop.view;
+package com.shop.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.shop.common.MemberVO;
 import com.shop.model.MemberDAO;
 
-@WebServlet("/GetMemberCtrl")
-public class GetMemberCtrl extends HttpServlet {
+@WebServlet("/DelMemberCtrl")
+public class DelMemberCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public GetMemberCtrl() {
+
+    public DelMemberCtrl() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String hid = request.getParameter("hid");
+		String uid = request.getParameter("uid");
+		HttpSession session = request.getSession();
 		MemberDAO dao = new MemberDAO();
-		MemberVO member = dao.getMember(hid);
-		if(member != null) {
-			request.setAttribute("member", member);
-			RequestDispatcher view = request.getRequestDispatcher("./member/getMember.jsp");
-			view.forward(request, response);
-		} else {
-			response.sendRedirect("GetMemberListCtrl");
-		}
+		int cnt = dao.delMember(uid);
+		if(cnt>0) {  //회원탈퇴 성공
+			session.invalidate();
+			response.sendRedirect("index.jsp");
+		} else {  //회원탈퇴 실패
+			response.sendRedirect("./member/login.jsp");
+		}	
 	}
-
 }

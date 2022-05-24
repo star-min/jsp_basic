@@ -1,4 +1,4 @@
-package com.shop.view;
+package com.shop.controller;
 
 import java.io.IOException;
 
@@ -12,26 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.common.MemberVO;
 import com.shop.model.MemberDAO;
 
-@WebServlet("/GetMemberCtrl")
-public class GetMemberCtrl extends HttpServlet {
+@WebServlet("/myPageCtrl")
+public class myPageCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public GetMemberCtrl() {
+    public myPageCtrl() {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String hid = request.getParameter("hid");
 		MemberDAO dao = new MemberDAO();
 		MemberVO member = dao.getMember(hid);
 		if(member != null) {
 			request.setAttribute("member", member);
-			RequestDispatcher view = request.getRequestDispatcher("./member/getMember.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("./member/myPage.jsp");
 			view.forward(request, response);
 		} else {
-			response.sendRedirect("GetMemberListCtrl");
+			response.sendRedirect("index.jsp");
 		}
 	}
-
 }

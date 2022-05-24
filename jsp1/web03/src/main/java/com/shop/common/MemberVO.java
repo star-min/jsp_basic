@@ -8,9 +8,21 @@ public class MemberVO {
 	private String hname;
 	private String tel;
 	private String email;
-	private Date birth;
+	private String birth;
 	private Date joinday;
 	
+	public Date getJoinday() {
+		return joinday;
+	}
+	public void setJoinday(Date joinday) {
+		this.joinday = joinday;
+	}
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
 	public String getHid() {
 		return hid;
 	}
@@ -41,16 +53,6 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getBirth() {
-		return birth;
-	}
-	public void setBirth(Date birth) {
-		this.birth = birth;
-	}
-	public Date getJoinday() {
-		return joinday;
-	}
-	public void setJoinday(Date joinday) {
-		this.joinday = joinday;
-	}
+
+
 }

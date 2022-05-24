@@ -24,7 +24,9 @@
 					<th class="item1">번호</th>
 					<th class="item2">아이디</th>
 					<th class="item3">이름</th>
-					<th class="item4">가입일</th>
+					<th class="item4">전화번호</th>
+					<th class="item5">이메일</th>
+					<th class="item6">가입일</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,14 +35,11 @@
 					<td>${status.count }</td>
 					<td><a href="${path1 }/GetMemberCtrl?num=${vo.seq }">${vo.hid }</a></td>
 					<td>${vo.hname }</td>
+					<td>${vo.tel }</td>
+					<td>${vo.email }</td>
 					<td>${vo.joinday }</td>
 				</tr>
 			</c:forEach>
-			<c:if test="${sid=='admin' }">
-				<tr>
-					<td colspan="4"><a href="${path1 }/board/addMemberForm.jsp" class="button is-info">글 등록</a></td>
-				</tr>
-			</c:if>	
 			</tbody>
 		</table>
 	</section>

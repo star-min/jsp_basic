@@ -34,6 +34,10 @@ public class EditBoardCtrl extends HttpServlet {
 	
 	BoardDAO dao = new BoardDAO();
 	int cnt = dao.editBoard(vo);
-	if(cnt>0)
+	if(cnt>0){  // 성공
+		response.sendRedirect("GetBoardListCtrl");
+	} else {  // 실패
+		response.sendRedirect("GetBoardCtrl?num="+seq);
+	}	
 	}
 }

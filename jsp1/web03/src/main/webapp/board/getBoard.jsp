@@ -60,7 +60,7 @@
 					</tr>
 					<tr>
 						<th>조회수</th>
-						<td>${board.jo }</td>
+						<td>${board.visited }</td>
 					</tr>
 					<tr>
 						<td colspan="2">

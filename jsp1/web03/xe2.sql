@@ -19,7 +19,8 @@ commit;
 
 -- 회원테이블
 create table human (hid varchar2(50) primary key, hpw varchar2(50) not null,
-hname varchar2(50) not null, tel varchar2(100) not null, email varchar2(200) not null, birth date,joinday date Default SYSDATE);
+hname varchar2(50) not null, tel varchar2(100) not null, 
+email varchar2(200) not null, birth date,joinday date Default SYSDATE);
 -- 더미데이터 생성
 insert into human values ('admin', '1234', '관리자', '010-1234-1234', '1234@1234.1234', sysdate, sysdate);
 insert into human values ('zxzx001', '1004', '김성민', '010-1004-1004', 'zxzx1004@good.net', '1995-05-22', sysdate);
