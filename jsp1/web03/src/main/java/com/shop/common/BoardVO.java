@@ -45,6 +45,4 @@ public class BoardVO {
 	public void setJo(int jo) {
 		this.jo = jo;
 	}
-	
-	
 }

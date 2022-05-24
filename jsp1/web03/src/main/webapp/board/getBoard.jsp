@@ -67,7 +67,7 @@
 						<c:if test="${sid=='admin' }">
 							<input type="submit" value="수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/DelBoardCtrl" class="button is-info">삭제</a>
+							<a href="${path1 }/DelBoardCtrl?num=${board.seq }" class="button is-info">삭제</a>
 						</c:if>
 							<a href="${path1 }/GetBoardListCtrl" class="button is-info">목록</a>
 						</td>

@@ -157,7 +157,7 @@
 		          <a class="button is-primary">
 		            <strong>글 관리</strong>
 		          </a>
-		          <a class="button is-light">
+		          <a href="GetMemberListCtrl" class="button is-light">
 		            회원관리
 		          </a>
 		          <a class="button is-light">
