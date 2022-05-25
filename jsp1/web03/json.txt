@@ -1,0 +1,9 @@
+PrintWriter out = response.getWriter();
+		MemberDAO dao = new MemberDAO();
+		ArrayListMemberVO memberList = null;
+		memberList = dao.JSONMemberList();
+		HashMapString, Object map = new HashMapString, Object();
+		map.put(memberList, memberList);
+		JSONObject json = new JSONObject();
+		json.putAll(map);
+		out.println(json);
