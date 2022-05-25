@@ -10,13 +10,10 @@ public class MemberVO {
 	private String email;
 	private String birth;
 	private Date joinday;
-	
 	public Date getJoinday() {
-		return joinday;
-	}
+		return joinday;}
 	public void setJoinday(Date joinday) {
-		this.joinday = joinday;
-	}
+		this.joinday = joinday;}
 	public String getBirth() {
 		return birth;
 	}
@@ -51,8 +48,5 @@ public class MemberVO {
 		return email;
 	}
 	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
+		this.email = email;}
 }

@@ -9,16 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/logOutCtrl")
-public class logOutCtrl extends HttpServlet {
+public class logOutCtrl extends HttpServlet {			//로그아웃 ctrl
 	private static final long serialVersionUID = 1L;
-       
-    public logOutCtrl() {
-        super();
-    }
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public logOutCtrl() {super();}
+    protected void service(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		response.sendRedirect("./member/login.jsp");
-	}
-}
+}}

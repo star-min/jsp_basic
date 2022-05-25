@@ -15,7 +15,7 @@ public class BoardDAO {
 	private ResultSet rs = null;
 	String sql = "";
 	int cnt = 0;
-	public ArrayList<BoardVO> getBoardList() {
+	public ArrayList<BoardVO> getBoardList() {	//게시펀 목록 불러오기
 		ArrayList<BoardVO> list = null;
 		try {
 			conn = JDBCConnection.getConnection();
@@ -48,7 +48,7 @@ public class BoardDAO {
 		return list;
 	}
 	
-	public BoardVO getBoard(int seq) {
+	public BoardVO getBoard(int seq) {		//게시글 불러오기
 		BoardVO board = new BoardVO();
 		try {
 			conn = JDBCConnection.getConnection();
@@ -79,7 +79,7 @@ public class BoardDAO {
 		return board;
 	}
 	
-	public ArrayList<BoardVO> getConditionSearch(String condition, String keyword) {
+	public ArrayList<BoardVO> getConditionSearch(String condition, String keyword) {	//글 검색
 		ArrayList<BoardVO> boardList = null; 
 		try {
 			conn = JDBCConnection.getConnection();
@@ -118,7 +118,7 @@ public class BoardDAO {
 		}	
 		return boardList; 
 	}
-	public int addBoard(BoardVO vo) {
+	public int addBoard(BoardVO vo) {	// 글 쓰기
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "insert into board values((select nvl(max(seq), 0)+1 from board), ?, ?, ?, sysdate, 0)";
@@ -142,7 +142,7 @@ public class BoardDAO {
 		return cnt;
 	}
 	
-	public int editBoard(BoardVO vo) {
+	public int editBoard(BoardVO vo) {	// 글 수정
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "update board set title=?, content=?, nickname=?, regdate=sysdate where seq=?";
@@ -167,7 +167,7 @@ public class BoardDAO {
 		return cnt;
 	}
 	
-	public int delBoard(int num) {
+	public int delBoard(int num) {	// 글 삭제
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "delete from board where seq=?";

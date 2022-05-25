@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.shop.model.MemberDAO;
 
 @WebServlet("/DelMemberCtrl")
-public class DelMemberCtrl extends HttpServlet {
+public class DelMemberCtrl extends HttpServlet {			//회원탈퇴 ctrl
 	private static final long serialVersionUID = 1L;
        
 
@@ -20,7 +20,8 @@ public class DelMemberCtrl extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String uid = request.getParameter("uid");
 		HttpSession session = request.getSession();

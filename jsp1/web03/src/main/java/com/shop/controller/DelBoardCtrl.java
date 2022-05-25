@@ -11,14 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.model.BoardDAO;
 
 @WebServlet("/DelBoardCtrl")
-public class DelBoardCtrl extends HttpServlet {
+public class DelBoardCtrl extends HttpServlet {	//글 삭제를 위한 ctrl
 	private static final long serialVersionUID = 1L;
        
     public DelBoardCtrl() {
         super();
     }
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, 
+			HttpServletResponse response) 
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		int num = Integer.parseInt(request.getParameter("num")); 
 		BoardDAO dao = new BoardDAO();		

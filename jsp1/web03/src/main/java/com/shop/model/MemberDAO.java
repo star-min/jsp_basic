@@ -224,4 +224,37 @@ public class MemberDAO {
 		}
 		return member;
 	}
+	public ArrayList<MemberVO> JSONMemberList() {  //관리자 회원목록을 JSON으로 내보내기
+		ArrayList<MemberVO> list = null;
+		try {
+			conn = JDBCConnection.getConnection();
+			sql = "select hid, hpw, hname, tel, email, birth, joinday from human";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			list = new ArrayList<MemberVO>();
+			while(rs.next()) {
+				MemberVO vo = new MemberVO();
+				vo.setHid(rs.getString("hid"));
+				vo.setHpw(rs.getString("hpw"));
+				vo.setHname(rs.getString("hname"));
+				vo.setTel(rs.getString("tel"));
+				vo.setEmail(rs.getString("email"));
+				vo.setBirth(rs.getString("birth"));
+				vo.setJoinday(rs.getDate("joinday"));
+				list.add(vo);
+			}
+		} catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩이 실패되었습니다.");
+			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("SQL구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+			e.printStackTrace();
+		} finally {
+			JDBCConnection.close(rs, pstmt, conn);
+		}
+		return list;
+	}
 }

@@ -20,7 +20,6 @@ public class GetMemberListCtrl extends HttpServlet {
     public GetMemberListCtrl() {
         super();
     }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberDAO dao = new MemberDAO();
 		ArrayList<MemberVO> list = dao.getMemberList();
@@ -28,5 +27,4 @@ public class GetMemberListCtrl extends HttpServlet {
 		RequestDispatcher view = request.getRequestDispatcher("./member/getMemberList.jsp");
 		view.forward(request, response);
 	}
-
 }

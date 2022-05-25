@@ -11,16 +11,12 @@ import javax.servlet.http.HttpSession;
 
 import com.shop.common.MemberVO;
 import com.shop.model.MemberDAO;
-
 @WebServlet("/loginCtrl")
-public class loginCtrl extends HttpServlet {
+public class loginCtrl extends HttpServlet {			//로그인 ctrl
 	private static final long serialVersionUID = 1L;
-       
-    public loginCtrl() {
-        super();
-    }
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public loginCtrl() {super();}
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String hid = request.getParameter("hid");
 		String hpw = request.getParameter("hpw");
@@ -38,6 +34,6 @@ public class loginCtrl extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		} else {
 			response.sendRedirect("./member/login.jsp");
+			}
 		}
 	}
-}

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CryptTest {
-	private String data = "1234";
+	private String data = "4444";
 	private String indata = "MTIzNA==";
 	private String encoding;
 	private byte[] decoding;

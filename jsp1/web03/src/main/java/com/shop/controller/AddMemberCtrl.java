@@ -12,14 +12,15 @@ import com.shop.common.MemberVO;
 import com.shop.model.MemberDAO;
 
 @WebServlet("/AddMemberCtrl")
-public class AddMemberCtrl extends HttpServlet {
+public class AddMemberCtrl extends HttpServlet {			// 회원가입 ctrl 입니다.
 	private static final long serialVersionUID = 1L;
 
     public AddMemberCtrl() {
         super();
     }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String Hid = request.getParameter("hid");
 		String Hpw = request.getParameter("hpw");

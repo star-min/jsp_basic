@@ -13,13 +13,16 @@ import com.shop.model.BoardDAO;
 
 @WebServlet("/EditBoardCtrl")
 public class EditBoardCtrl extends HttpServlet {
+	//글 수정을 위한 ctrl
 	private static final long serialVersionUID = 1L;
 
     public EditBoardCtrl() {
         super();
     }
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, 
+			HttpServletResponse response) 
+			throws ServletException, IOException {
 	request.setCharacterEncoding("UTF-8");
 	int seq = Integer.parseInt(request.getParameter("seq"));
 	String title = request.getParameter("title");
