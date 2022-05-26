@@ -25,6 +25,7 @@ public class EditMemberCtrl extends HttpServlet {
 		String hpw = request.getParameter("hpw");
 		String hname = request.getParameter("hname");
 		String tel = request.getParameter("tel");
+		String addr = request.getParameter("addr");
 		String email = request.getParameter("email");
 		String birth = request.getParameter("birth");
 		MemberDAO dao = new MemberDAO();
@@ -33,6 +34,7 @@ public class EditMemberCtrl extends HttpServlet {
 		vo.setHpw(hpw);
 		vo.setHname(hname);
 		vo.setTel(tel);
+		vo.setTel(addr);
 		vo.setEmail(email);
 		int cnt = dao.editMember(vo);
 		if(cnt>0) {  //회원정보수정 성공

@@ -7,9 +7,17 @@ public class MemberVO {
 	private String hpw;
 	private String hname;
 	private String tel;
+	private String addr;
 	private String email;
 	private String birth;
 	private Date joinday;
+	
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
 	public Date getJoinday() {
 		return joinday;}
 	public void setJoinday(Date joinday) {

@@ -50,6 +50,12 @@
 						</td>
 					</tr>
 					<tr>
+						<th>주소</th>
+						<td>
+							<input type="text" name="addr" value="${member.addr }">
+						</td>
+					</tr>
+					<tr>
 						<th>생년월일</th>
 						<td>
 							<input type="date" name="birth" value="${member.birth }">

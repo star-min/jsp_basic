@@ -73,6 +73,12 @@
 						</td>
 					</tr>
 					<tr>
+						<th>주소</th>
+						<td>
+							<input type="text" name="addr" required>
+						</td>
+					</tr>
+					<tr>
 						<th>생년월일</th>
 						<td>
 							<input type="date" name="birth">

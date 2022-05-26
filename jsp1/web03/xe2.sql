@@ -19,15 +19,15 @@ commit;
 
 -- 회원테이블
 create table human (hid varchar2(50) primary key, hpw varchar2(50) not null,
-hname varchar2(50) not null, tel varchar2(100) not null, 
+hname varchar2(50) not null, tel varchar2(100) not null, addr varchar2(100) not null, 
 email varchar2(200) not null, birth date,joinday date Default SYSDATE);
 -- 더미데이터 생성
-insert into human values ('admin', '1234', '관리자', '010-1234-1234', '1234@1234.1234', sysdate, sysdate);
-insert into human values ('zxzx001', '1004', '김성민', '010-1004-1004', 'zxzx1004@good.net', '1995-05-22', sysdate);
-insert into human values ('academy', '1111', '학원생', '010-1111-1111', 'acade@hello.com', '1998-02-30', sysdate);
-insert into human values ('eggbarman', '2222', '알바맨', '010-1222-1222', 'eggbarman@naver.com', '2003-10-02', sysdate);
-insert into human values ('nongdam', '3333', '농담두', '010-2323-2323', 'nong@dam.do', '1992-04-27', sysdate);
-insert into human values ('play', '4444', '시청자', '010-3334-4444', 'playboy@streming.com', '2005-07-12', sysdate);
+insert into human values ('admin', '1234', '관리자', '010-1234-1234','식사동100-02', '1234@1234.1234', sysdate, sysdate);
+insert into human values ('zxzx001', '1004', '김성민', '010-1004-1004','응암동32-26', 'zxzx1004@good.net', '1995-05-22', sysdate);
+insert into human values ('academy', '1111', '학원생', '010-1111-1111','봉고동12-021', 'acade@hello.com', '1998-02-30', sysdate);
+insert into human values ('eggbarman', '2222', '알바맨', '010-1222-1222','노원동20-32', 'eggbarman@naver.com', '2003-10-02', sysdate);
+insert into human values ('nongdam', '3333', '농담두', '010-2323-2323','상암동240-82', 'nong@dam.do', '1992-04-27', sysdate);
+insert into human values ('play', '4444', '시청자', '010-3334-4444','풍동30-62', 'playboy@streming.com', '2005-07-12', sysdate);
 -- 테이블 human 검색
 select * from human;
 select * from human where hid=?;
@@ -35,6 +35,50 @@ select * from human where hid=?;
 update human set hpw=?, hname=?, tel=?, email=?, birth=?, joinday=? where hid=?;
 --테이블 내용 삭제
 delete from human;
+--테이블 삭제
+drop table human;
+
+--보충제테이블
+create table powder (pid varchar2(50) primary key, 
+pgory varchar2(100) not null,
+pname varchar2(100) not null,
+pprice number not null,
+ptaste varchar2(50) not null,
+pamount number not null,
+pcomment varchar2(1000),
+pimage varchar2(1000),
+pinday date Default SYSDATE);
+
+insert into powder values (1, '보충제', '엑스텐드 프로 웨이 아이솔레이트 64서빙', 95057, '리얼초코', 1, 
+'엑스텐드가 BCAA만 잘 만든다? 그것은 편견! 엑스텐드에서 만든 최고의 프로틴이 여기에 있습니다! 엑스텐드 프로 웨이 아이솔레이트! (5파운드, 64서빙)', 
+'./img/xtend.ipg', sysdate);
+insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '머슬피스트 Grass Fed WPI 37서빙', 69696, '리얼초코', 1, 
+'유기농 WPI를 최고의 가격에 먹을 수 있는 기회! 머슬피스트 Grass Fed 웨이 프로틴 아이솔레이트 37서빙!', 
+'./img/pist.ipg', sysdate);
+insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '100% 골드 스탠다드 웨이 네츄럴 68서빙', 81115, '리얼초코', 1, 
+'어떤 특징이 있나요? 
+- 합성 감미료 없이 100% 천연 제품
+- 무 색소
+- 금지된 성분 일체 무사용
+- 고품질의 WPI 단백질
+- 4g이상의 글루타민 함유
+- 5g의 BCAA 함유
+- 골드 스탠다드와 같은 품질의 고급 단백질', 
+'./img/way.ipg', sysdate);
+insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '컴뱃 100% 웨이 67서빙', 67174, '바닐라', 1, 
+'맛과 기본에 충실한 프로틴
+컴뱃 100% 웨이 5파운드 (2.27kg, 67서빙)', 
+'./img/combat.ipg', sysdate);
+insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '골드 스탠다드 100% 웨이 149서빙', 157795, '리얼초코', 1, 
+'이 골드 스탠다드는 옵티멈 뉴트리션의 프로틴 라인업에서 최상의 레벨을 갖고 있는 프로틴입니다. 옵티멈 뉴트리션에서 개발해낸 100% 고품질 WPI를 다량으로 함유하고 있습니다.', 
+'./img/whey.ipg', sysdate);
+insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '매트릭스 73서빙', 65906, '바닐라', 1, 
+'새로운 디자인! 새로운 매트릭스!
+하지만 가성비는 그대로!
+극강의 가성비 프로틴 매트릭스 73서빙!', 
+'./img/matrix.ipg', sysdate);
+
+-- 상품코드, 카테고리, 상품명, 가격, 맛, 수량, 설명, 이미지, 등록일
 
 
 commit;
