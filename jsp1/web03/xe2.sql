@@ -78,7 +78,8 @@ insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제',
 극강의 가성비 프로틴 매트릭스 73서빙!', 
 './img/matrix.ipg', sysdate);
 
--- 상품코드, 카테고리, 상품명, 가격, 맛, 수량, 설명, 이미지, 등록일
+-- 수정
+update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=?, pinday=sysdate where pid=?;
 
 
 commit;

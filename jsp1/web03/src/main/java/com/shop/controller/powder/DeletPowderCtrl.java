@@ -1,4 +1,4 @@
-package com.shop.controller;
+package com.shop.controller.powder;
 
 import java.io.IOException;
 
@@ -8,25 +8,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shop.model.BoardDAO;
+import com.shop.model.PowderDAO;
 
-@WebServlet("/DelBoardCtrl")
-public class DelBoardCtrl extends HttpServlet {	//글 삭제를 위한 ctrl
+@WebServlet("/DeletPowderCtrl")
+public class DeletPowderCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public DelBoardCtrl() {
+    public DeletPowderCtrl() {
         super();
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int num = Integer.parseInt(request.getParameter("num")); 
-		BoardDAO dao = new BoardDAO();		
-		int cnt = dao.delBoard(num); 
-		if(cnt>0) {  //글 삭제 성공
+		int pid = Integer.parseInt(request.getParameter("pid")); 
+		PowderDAO dao = new PowderDAO();		
+		int cnt = dao.deletePowder(pid); 
+		if(cnt>0) {  // 보충제 삭제 성공
 			response.sendRedirect("GetBoardListCtrl");
-		} else {  //글 삭제 실패
-			response.sendRedirect("GetBoardCtrl?num="+num);
+		} else {  // 보충제 삭제 실패
+			response.sendRedirect("GetBoardCtrl?num="+pid);
 		}	
+		
 	}
+
 }
