@@ -21,26 +21,32 @@ public class InsertPowderCtrl extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String pid = request.getParameter("pid");
+		int pno = Integer.parseInt(request.getParameter("pno"));
 		String pgory = request.getParameter("pgory");
-		String pnname = request.getParameter("pnname");
-		String pprice = request.getParameter("pprice");
+		String pname = request.getParameter("pnname");
+		int pprice = Integer.parseInt(request.getParameter("pprice"));
 		String ptaste = request.getParameter("ptaste");
-		String pamount = request.getParameter("pamount");
+		int pamount = Integer.parseInt(request.getParameter("pamount"));
 		String pcomment = request.getParameter("pcomment");
 		String pimage = request.getParameter("pimage");
 		
 		PowderDAO dao = new PowderDAO();
 		PowderVO vo = new PowderVO();
-		vo.setPid("pid");
-		vo.setPgory("pgory");
-		vo.setPname("pname");
-		vo.setPprice("pprice");
-		vo.setPtaste("ptaste");
-		vo.setPamount("pamount");
-		vo.setPcomment("pcomment");
-		vo.setPimage("pimage");
+		vo.setPno(pno);
+		vo.setPgory(pgory);
+		vo.setPname(pname);
+		vo.setPprice(pprice);
+		vo.setPtaste(ptaste);
+		vo.setPamount(pamount);
+		vo.setPcomment(pcomment);
+		vo.setPimage(pimage);
+		
 		int cnt = dao.insertPowder(vo);
+		if(cnt>0) {
+			response.sendRedirect("GetPowderListCtrl");
+		} else {
+			response.sendRedirect("./board/insertPowderForm.jsp");
+		}
 	}
 
 }

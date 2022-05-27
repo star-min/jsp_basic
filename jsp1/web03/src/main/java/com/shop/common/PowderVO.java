@@ -3,7 +3,7 @@ package com.shop.common;
 import java.util.Date;
 
 public class PowderVO {
-	private String pid;			//상품코드
+	private int pno;			//상품코드
 	private String pgory;		//카테고리
 	private String pname;		//상품명
 	private int pprice;			//가격
@@ -13,11 +13,12 @@ public class PowderVO {
 	private String pimage;		//이미지
 	private Date pinday;		//등록일
 	
-	public String getPid() {
-		return pid;
+
+	public int getPno() {
+		return pno;
 	}
-	public void setPid(String pid) {
-		this.pid = pid;
+	public void setPno(int pno) {
+		this.pno = pno;
 	}
 	public String getPgory() {
 		return pgory;

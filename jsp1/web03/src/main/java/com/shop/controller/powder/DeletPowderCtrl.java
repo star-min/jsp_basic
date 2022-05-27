@@ -20,13 +20,13 @@ public class DeletPowderCtrl extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int pid = Integer.parseInt(request.getParameter("pid")); 
+		int pno = Integer.parseInt(request.getParameter("pno")); 
 		PowderDAO dao = new PowderDAO();		
-		int cnt = dao.deletePowder(pid); 
+		int cnt = dao.deletePowder(pno); 
 		if(cnt>0) {  // 보충제 삭제 성공
 			response.sendRedirect("GetBoardListCtrl");
 		} else {  // 보충제 삭제 실패
-			response.sendRedirect("GetBoardCtrl?num="+pid);
+			response.sendRedirect("GetBoardCtrl?num="+pno);
 		}	
 		
 	}
