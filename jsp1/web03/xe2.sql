@@ -39,7 +39,7 @@ delete from human;
 drop table human;
 
 --보충제테이블
-create table powder (pid varchar2(50) primary key, 
+create table powder (pno number primary key, 
 pgory varchar2(100) not null,
 pname varchar2(100) not null,
 pprice number not null,
@@ -78,8 +78,31 @@ insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제',
 극강의 가성비 프로틴 매트릭스 73서빙!', 
 './img/matrix.ipg', sysdate);
 
+--검색
+select * from powder;
 -- 수정
 update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=?, pinday=sysdate where pid=?;
+--삭제
+drop table powder;
 
+
+-- 장바구니
+create table basket(bno number primary key, -- 장바구니번호
+hid varchar2(20),    -- 사용자아이디
+pno number,             -- 상품코드
+ptaste varchar2(40),    -- 보충제 맛
+pamount number,          -- 수량
+bdate Date);            -- 장바구니 담긴 날짜
+
+-- 장바구니 담기
+insert into basket values ();
+
+-- 장바구니 정보 변경
+update basket set pno=?, ptaste=?, pamount=?, bdate=sysdate where bno=?;
+
+-- 장바구니 삭제
+delete from basket where bno=?;
+--완전삭제
+drop table basket;
 
 commit;

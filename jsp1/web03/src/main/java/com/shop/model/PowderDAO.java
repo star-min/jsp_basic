@@ -23,7 +23,7 @@ public class PowderDAO {
 			conn = JDBCConnection.getConnection();
 			sql = "insert into powder values (?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, vo.getPid());
+			pstmt.setInt(1, vo.getPno());
 			pstmt.setString(2, vo.getPgory());
 			pstmt.setString(3, vo.getPname());
 			pstmt.setInt(4, vo.getPprice());
@@ -55,7 +55,7 @@ public class PowderDAO {
 			list = new ArrayList<PowderVO>();
 			while(rs.next()) {
 				PowderVO vo = new PowderVO();
-				vo.setPid(rs.getString("pid"));
+				vo.setPno(rs.getInt("pno"));
 				vo.setPgory(rs.getString("pgory"));
 				vo.setPname(rs.getString("pname"));
 				vo.setPprice(rs.getInt("pprice"));
@@ -80,16 +80,16 @@ public class PowderDAO {
 		}
 		return list;
 	}
-	public PowderVO getPowder(int pid) {	// 보충제 상세 보기
+	public PowderVO getPowder(int pno) {	// 보충제 상세 보기
 		PowderVO powder = new PowderVO();
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "select * from board where seq=?";
+			sql = "select * from powder where pno=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, pid);
+			pstmt.setInt(1, pno);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				powder.setPid(rs.getString("pid"));
+				powder.setPno(rs.getInt("pno"));
 				powder.setPgory(rs.getString("pgory"));
 				powder.setPname(rs.getString("pname"));
 				powder.setPprice(rs.getInt("pprice"));
@@ -117,7 +117,7 @@ public class PowderDAO {
 	public int updatePowder(PowderVO vo) {		// 보충제 수정
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=?, pinday=sysdate where pid=?";
+			sql = "update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=?, pinday=sysdate where pno=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getPgory());
 			pstmt.setString(2, vo.getPname());
@@ -125,7 +125,7 @@ public class PowderDAO {
 			pstmt.setString(4, vo.getPtaste());
 			pstmt.setInt(5, vo.getPamount());
 			pstmt.setString(6, vo.getPcomment());
-			pstmt.setString(7, vo.getPid());
+			pstmt.setInt(7, vo.getPno());
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");
@@ -141,12 +141,12 @@ public class PowderDAO {
 		}
 		return cnt;
 	}
-	public int deletePowder(int pid) {		// 보충제 삭제
+	public int deletePowder(int pno) {		// 보충제 삭제
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "delete from powder where pid=?";
+			sql = "delete from powder where pno=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, pid);
+			pstmt.setInt(1, pno);
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");
