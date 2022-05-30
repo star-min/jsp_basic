@@ -49,7 +49,7 @@ public class PowderDAO {
 		ArrayList<PowderVO> list = new ArrayList<PowderVO>();
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "select * from human";
+			sql = "select * from powder";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			list = new ArrayList<PowderVO>();

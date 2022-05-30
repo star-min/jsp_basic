@@ -60,3 +60,18 @@
 5월 20, 2022 10:29:32.60 NEW SESSION
 5월 20, 2022 10:29:32.60 [10104:13780:0520/102932.059:ERROR:device_event_log_impl.cc(214)] [10:29:32.060] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
 5월 20, 2022 10:30:29.986 [10104:9100:0520/103029.985:ERROR:util.cc(126)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+5월 30, 2022 12:21:14.697 NEW SESSION
+5월 30, 2022 12:21:14.697 [10604:13892:0530/122114.696:ERROR:device_event_log_impl.cc(214)] [12:21:14.696] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+5월 30, 2022 12:21:14.708 [10604:13892:0530/122114.700:ERROR:device_event_log_impl.cc(214)] [12:21:14.701] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+5월 30, 2022 12:22:12.600 [10604:12348:0530/122212.600:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+5월 30, 2022 16:49:59.862 [10604:13892:0530/164959.862:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:02.155 [10604:13892:0530/165002.155:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:03.156 [10604:13892:0530/165003.156:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:29.698 [10604:13892:0530/165029.698:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:31.838 [10604:13892:0530/165031.838:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:33.620 [10604:13892:0530/165033.620:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:34.649 [10604:13892:0530/165034.649:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:40.664 [10604:13892:0530/165040.664:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 16:50:43.03 [10604:13892:0530/165043.003:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+5월 30, 2022 17:22:12.602 [10604:12000:0530/172212.601:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

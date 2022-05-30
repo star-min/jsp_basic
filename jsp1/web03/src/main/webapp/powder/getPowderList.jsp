@@ -22,8 +22,6 @@
 					<th class="item2">카테고리</th>
 					<th class="item3">보충제 명</th>
 					<th class="item4">가격</th>
-					<th class="item5">맛</th>
-					<th class="item6">개수</th>
 					<th class="item7">내용</th>
 					<th class="item8">제품사진</th>
 					<th class="item9">제품등록일</th>
@@ -32,13 +30,12 @@
 			<tbody>
 			<c:forEach items="${list }" var="vo" varStatus="status">
 				<tr>
-					<td>${status.count }</td>
+					<td>${vo.pno }</td>
 					<td>${vo.pgory }</td>
-					<td>${vo.pname }</td>
-					<td>${vo.pprice }</td>
-					<td>${vo.ptaste }</td>
+					<td><a href="${path1 }/GetPowderCtrl?num=${vo.pno }">${vo.pname }</a></td>
+					<td>${vo.pprice }원</td>
 					<td>${vo.pcomment }</td>
-					<td>${vo.pimge }</td>
+					<td>${vo.pimage }</td>
 					<td>${vo.pinday }</td>
 				</tr>
 			</c:forEach>

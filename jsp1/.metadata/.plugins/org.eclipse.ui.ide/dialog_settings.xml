@@ -8,6 +8,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\ksm\jsp_basic\jsp1\web03_test"/>
 			<item value="D:\ksm\jsp1\web02"/>
 			<item value="D:\ksm\jsp_basic\jsp1"/>
 			<item value="C:\java\jsp_basic\jsp1"/>

@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 <title>보충제 정보 보기</title>
 <jsp:include page="../common.jsp"></jsp:include>
 </head>
@@ -19,34 +21,42 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
+						<th>글번호</th>
+						<td>
+							<input type="text" name="pno" value=" ${powder.pno }" readonly="readonly">
+						</td>
+					</tr>
+					<tr>
 						<th>카테고리</th>
 						<td>
-							<input type="text" name="pgory" value=" ${powder.pgory }" required>
+							<input type="text" name="pgory" value=" ${powder.pgory }">
 						</td>
 					</tr>
 					<tr>
 						<th>보충제명</th>
 						<td>
-							<input type="text" name="pname" value="${powder.pname }" required>
+							<input type="text" name="pname" value="${powder.pname }">
 						</td>
 					</tr>
 					<tr>
 						<th>가격</th>
 						<td>
-							<input type="text" name="pprice" value="${powder.pprice }" required>
+							<input type="text" name="pprice" value="${powder.pprice }">
 						</td>
 					</tr>
 					<tr>
 						<th>맛</th>
 						<td>
-							<input type="radio" name="ptaste" value="${powder.ptaste }" required>
-							<input type="radio" name="ptaste" value="${powder.ptaste }" required>
+							<label>리얼초코맛</label>
+							<input type="radio" name="ptaste" value="리얼초코" checked="checked">
+							<label>바닐라맛</label>
+							<input type="radio" name="ptaste" value="바닐라">
 						</td>
 					</tr>
 					<tr>
 						<th>개수</th>
 						<td>
-							<input type="number" name="pamount" value="${powder.pamount }" required>
+							<input type="number" name="pamount" value="${powder.pamount }">
 						</td>
 					</tr>
 					<tr>
@@ -58,7 +68,7 @@
 					<tr>
 						<th>제품사진</th>
 						<td>
-							<input type="image" name="pimage" value="${powder.pimage }" required>
+							<img alt="${powder.pimage }" src="${powder.pimage }">
 						</td>
 					</tr>
 					<tr>
@@ -69,8 +79,11 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="보충제 수정" class="button is-info"/>
+						<c:if test="${sid=='admin' }">
+							<input type="submit" value="수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
+							<a href="${path1 }/DelPowderCtrl?num=${board.seq }" class="button is-info">삭제</a>
+						</c:if>
 							<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>

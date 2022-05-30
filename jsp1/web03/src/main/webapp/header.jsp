@@ -11,7 +11,7 @@
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 		  <div class="navbar-brand">
 		    <a class="navbar-item" href="${path }/index.jsp" id="logo">
-		      <img src="${path }/img/img_header_logo.png" width="220" height="39">
+		      <img src="${path }/img/logo.jpg" width="auto" height="auto">
 		    </a>
 		
 		    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -25,78 +25,81 @@
 		    <div class="navbar-start">
 		      <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
-		          케어식단
+		          스택
 		        </a>
 		
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item">
-		            정기식단
+		            운동후 회복
 		          </a>
 		          <a class="navbar-item">
-		            챌린지 식단
+		            근성장 필수 스택
 		          </a>
 		        </div>
 		      </div>
 		      <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
-		          건강마켓
+		          부스터
 		        </a>
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item">
-		            건강반찬
+		            운동 전
 		          </a>
 		          <a class="navbar-item">
-		            건강 국/찌개
-		          </a>
-		          <a class="navbar-item">
-		            자연 담은 면
+		            운동 중
 		          </a>
 		          <hr class="navbar-divider">
 		          <a class="navbar-item">
-		            영양 가득 밥/죽
+		            에너지 음료
 		          </a>
 		          <a class="navbar-item">
-		            샐러드/샌드위치
-		          </a>
-		          <a class="navbar-item">
-		            베이커리
-		          </a>
-		          <a class="navbar-item">
-		            착한 간식
+		            무카페인 부스터
 		          </a>
 		        </div>
 		      </div>
 		      <div class="navbar-item has-dropdown is-hoverable">
-		        <a class="navbar-link">
-		          브랜드관/기획전
+		        <a href="${path }/powder/getPowderList.jsp" class="navbar-link">
+		          근성장
 		        </a>
 		
 		        <div class="navbar-dropdown">
-		          <a class="navbar-item" href="GetDiscountListCtrl">
-		            할인관
-		          </a>
-		          <a class="navbar-item">
-		            브랜드관
-		          </a>
-		          <a class="navbar-item">
-		            기획전
+		          <a class="navbar-item" href="${path }/GetPowderListCtrl">
+		            단백질 파우더
 		          </a>
 		        </div>
 		      </div>
 		      <div class="navbar-item has-dropdown is-hoverable">
 		        <a class="navbar-link">
-		          이벤트/스토리
+		          용품
 		        </a>
 		
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item" href="GetEventListCtrl">
-		            이벤트
+		            리프팅 벨트
 		          </a>
 		          <a class="navbar-item">
-		            스토리
+		            쉐이커 & 물통 & 케이스
 		          </a>
 		          <a class="navbar-item">
-		            이용후기
+		            대회준비
+		          </a>
+		          <a class="navbar-item">
+		            폼롤러&스트레칭
+		          </a>
+		          <a class="navbar-item">
+		            스크랩&그립
+		          </a>
+		          <a class="navbar-item">
+		            헬스 장갑
+		          </a>
+		          <a class="navbar-item">
+		            보호장비
+		          </a>
+		          <a class="navbar-item">
+		            홈트레이닝
+		          </a>
+		          <a class="navbar-item">
+		            그외 용품
 		          </a>
 		        </div>
 		      </div>
@@ -106,7 +109,7 @@
 		        </a>		
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item" href="${path }/GetBoardListCtrl">
-		            공지사항
+		            자유게시판
 		          </a>
 		          <a class="navbar-item">
 		            1:1 문의
@@ -138,7 +141,7 @@
 		      <!-- 로그인 사용자 -->
 		      <div class="navbar-item">
 		        <div class="buttons">
-		          <a href="${path }/myPageCtrl?userid=${sid }" class="button is-primary">
+		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
 		            <strong>회원정보수정</strong>
 		          </a>
 		          <a href="" class="button is-light">
@@ -160,6 +163,10 @@
 		          <a href="${path }/GetMemberListCtrl" class="button is-light">
 		            회원관리
 		          </a>
+		          <a href="${path }/AccessListCtrl" class="button is-light">
+		            접속자관리
+		          </a>
+		          
 		          <a class="button is-light">
 		            제품관리
 		          </a>

@@ -19,6 +19,12 @@
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
+						<th>글번호</th>
+						<td>
+							<input type="text" name="pno" value=" ${powder.pno }" required>
+						</td>
+					</tr>
+					<tr>
 						<th>카테고리</th>
 						<td>
 							<input type="text" name="pgory" value=" ${powder.pgory }" required>

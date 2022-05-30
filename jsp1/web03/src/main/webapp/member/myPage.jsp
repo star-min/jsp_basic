@@ -34,7 +34,7 @@
 					<tr>
 						<th>이름</th>
 						<td>
-							<input type="text" name="hname" required>
+							<input type="text" name="hname" value="${member.hname }"required>
 						</td>
 					</tr>
 					<tr>

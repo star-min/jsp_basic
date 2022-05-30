@@ -15,9 +15,15 @@ import com.shop.model.MemberDAO;
 @WebServlet("/GetMemberCtrl")						//개인정보를 불러오는 view 입니다.
 public class GetMemberCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public GetMemberCtrl() { super(); }
+	
+    public GetMemberCtrl() {
+    		super(); 
+    	}
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		String hid = request.getParameter("hid");
 		MemberDAO dao = new MemberDAO();
 		MemberVO member = dao.getMember(hid);

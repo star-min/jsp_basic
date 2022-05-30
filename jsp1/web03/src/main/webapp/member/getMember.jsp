@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path1" value="${pageContext.request.contextPath }" /> 
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
 <div id="content">
 	<section class="con_wrap">
 		<h2>회원정보 상세보기</h2>
-		<form action="${path1 }/EditAdminMemberCtrl" method="post">
+		<form action="${path1 }/EditMemberCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
@@ -28,7 +29,7 @@
 					<tr>
 						<th>비밀번호</th>
 						<td>
-							<input type="text" name="hpw" value="${member.hpw }">
+							<input type="password" name="hpw" value="${member.hpw }">
 						</td>
 					</tr>
 					<tr>

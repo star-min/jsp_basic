@@ -37,6 +37,14 @@ update human set hpw=?, hname=?, tel=?, email=?, birth=?, joinday=? where hid=?;
 delete from human;
 --테이블 삭제
 drop table human;
+--패스워드 암호화
+update human set hpw='MTIzNA==' where hid='admin';
+update human set hpw='MTAwNA==' where hid='zxzx001';
+update human set hpw='MjIyMg==' where hid='eggbarman';
+update human set hpw='MzMzMw==' where hid='nongdam';
+update human set hpw='NDQ0NA==' where hid='play';
+
+
 
 --보충제테이블
 create table powder (pno number primary key, 
@@ -51,11 +59,11 @@ pinday date Default SYSDATE);
 
 insert into powder values (1, '보충제', '엑스텐드 프로 웨이 아이솔레이트 64서빙', 95057, '리얼초코', 1, 
 '엑스텐드가 BCAA만 잘 만든다? 그것은 편견! 엑스텐드에서 만든 최고의 프로틴이 여기에 있습니다! 엑스텐드 프로 웨이 아이솔레이트! (5파운드, 64서빙)', 
-'./img/xtend.ipg', sysdate);
-insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '머슬피스트 Grass Fed WPI 37서빙', 69696, '리얼초코', 1, 
+'./img/xtend.jpg', sysdate);
+insert into powder values ((select nvl(max(pno), 0)+1 from powder), '보충제', '머슬피스트 Grass Fed WPI 37서빙', 69696, '리얼초코', 1, 
 '유기농 WPI를 최고의 가격에 먹을 수 있는 기회! 머슬피스트 Grass Fed 웨이 프로틴 아이솔레이트 37서빙!', 
-'./img/pist.ipg', sysdate);
-insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '100% 골드 스탠다드 웨이 네츄럴 68서빙', 81115, '리얼초코', 1, 
+'./img/pist.jpg', sysdate);
+insert into powder values ((select nvl(max(pno), 0)+1 from powder), '보충제', '100% 골드 스탠다드 웨이 네츄럴 68서빙', 81115, '리얼초코', 1, 
 '어떤 특징이 있나요? 
 - 합성 감미료 없이 100% 천연 제품
 - 무 색소
@@ -64,25 +72,29 @@ insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제',
 - 4g이상의 글루타민 함유
 - 5g의 BCAA 함유
 - 골드 스탠다드와 같은 품질의 고급 단백질', 
-'./img/way.ipg', sysdate);
-insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '컴뱃 100% 웨이 67서빙', 67174, '바닐라', 1, 
+'./img/way.jpg', sysdate);
+insert into powder values ((select nvl(max(pno), 0)+1 from powder), '보충제', '컴뱃 100% 웨이 67서빙', 67174, '바닐라', 1, 
 '맛과 기본에 충실한 프로틴
 컴뱃 100% 웨이 5파운드 (2.27kg, 67서빙)', 
-'./img/combat.ipg', sysdate);
-insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '골드 스탠다드 100% 웨이 149서빙', 157795, '리얼초코', 1, 
+'./img/combat.jpg', sysdate);
+insert into powder values ((select nvl(max(pno), 0)+1 from powder), '보충제', '골드 스탠다드 100% 웨이 149서빙', 157795, '리얼초코', 1, 
 '이 골드 스탠다드는 옵티멈 뉴트리션의 프로틴 라인업에서 최상의 레벨을 갖고 있는 프로틴입니다. 옵티멈 뉴트리션에서 개발해낸 100% 고품질 WPI를 다량으로 함유하고 있습니다.', 
-'./img/whey.ipg', sysdate);
-insert into powder values ((select nvl(max(pid), 0)+1 from powder), '보충제', '매트릭스 73서빙', 65906, '바닐라', 1, 
+'./img/whey.jpg', sysdate);
+insert into powder values ((select nvl(max(pno), 0)+1 from powder), '보충제', '매트릭스 73서빙', 65906, '바닐라', 1, 
 '새로운 디자인! 새로운 매트릭스!
 하지만 가성비는 그대로!
 극강의 가성비 프로틴 매트릭스 73서빙!', 
-'./img/matrix.ipg', sysdate);
+'./img/matrix.jpg', sysdate);
 
---검색
+--테이블 powder 검색
 select * from powder;
--- 수정
-update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=?, pinday=sysdate where pid=?;
---삭제
+select * from powder where pno;
+
+--테이블 powder 수정
+update powder set pgory=?, pname=?, pprice=?, ptaste=?, 
+pamount=?, pcomment=?, pimage=?, pinday=sysdate where pno=?;
+update powder set pimage='./img/xtend.ipg' where pno=1;
+--테이블 powder 내용 삭제
 drop table powder;
 
 
@@ -105,4 +117,21 @@ delete from basket where bno=?;
 --완전삭제
 drop table basket;
 
+CREATE TABLE db_access (
+  no number primary key,
+  request_uri varchar(100),
+  query_string varchar(200),
+  remote_address varchar(30),
+  server_name varchar(60),
+  server_port varchar(10),
+  locale varchar(20),
+  browser varchar(200),
+  referer varchar(255),
+  session_id varchar(80),
+  user_id varchar(20),
+  response_time number,
+  reg_date date default sysdate
+);
+
+select * from db_access;
 commit;

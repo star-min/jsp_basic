@@ -110,6 +110,11 @@ public class MemberDAO {
 				String pw = new String(pwc);
 				if(vo.getHpw().equals(pw)) { //복호화하여 비교
 					cnt = 1;
+					rs.close();
+					pstmt.close();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, vo.getHid());
+					pstmt.executeUpdate();
 				} else {
 					cnt = 0;
 				}
@@ -198,7 +203,7 @@ public class MemberDAO {
 		MemberVO member = new MemberVO();
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "select * from human where hid=?";
+			sql = "select hid, hpw, hname, tel, addr, email, birth, joinday from human where hid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, uid);
 			rs = pstmt.executeQuery();
