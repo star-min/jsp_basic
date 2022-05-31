@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Base64;
-import java.util.Date;
 
 import com.shop.common.JDBCConnection;
 import com.shop.common.MemberVO;

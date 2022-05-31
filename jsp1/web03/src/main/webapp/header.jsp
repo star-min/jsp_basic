@@ -144,6 +144,9 @@
 		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
 		            <strong>회원정보수정</strong>
 		          </a>
+		          <a href="${path }/GetBasketListCtrl" class="button is-primary">
+		            <strong>장바구니</strong>
+		          </a>
 		          <a href="" class="button is-light">
 		            마이페이지
 		          </a>

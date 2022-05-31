@@ -17,7 +17,7 @@
 		<div>
 			<%-- <h3>${name }님 &nbsp; &nbsp; <a href="../LogoutCtrl">로그아웃</a></h3> --%>
 		</div>	
-		<h2>글 목록</h2>
+		<h2 class="page_tit">글 목록</h2>
 		<form method="post" action="${path1 }/GetBoardSearchCtrl" class="frm_fr">
 			<table class="table" id="search_tb">
 				<tr>

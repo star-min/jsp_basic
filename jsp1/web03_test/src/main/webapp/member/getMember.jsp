@@ -16,7 +16,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="content">
 	<section class="con_wrap">
-		<h2>회원 상세보기</h2>
+		<h2 class="page_tit">회원 상세보기</h2>
 		<form action="${path1 }/EditAdminMemberCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>

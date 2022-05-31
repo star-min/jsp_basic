@@ -8,6 +8,7 @@ org.eclipse.jdt.ui.exception.name=e
 org.eclipse.jdt.ui.formatterprofiles.version=21
 org.eclipse.jdt.ui.gettersetter.use.is=true
 org.eclipse.jdt.ui.overrideannotation=true
+sourceHoverBackgroundColor=44,49,53
 spelling_locale_initialized=true
 typefilter_migrated=true
 useAnnotationsPrefPage=true

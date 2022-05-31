@@ -8,7 +8,9 @@ public class BasketVO {
 	private int pno;		// 제품 번호
 	private String ptaste;	// 제품 맛
 	private int pamount;	// 제품 개수
-	private Date bdate;		// 등록일
+	private String bdate;		// 등록일
+	
+	
 	
 	public int getPamount() {
 		return pamount;
@@ -40,12 +42,13 @@ public class BasketVO {
 	public void setPtaste(String ptaste) {
 		this.ptaste = ptaste;
 	}
-	public Date getBdate() {
+	public String getBdate() {
 		return bdate;
 	}
-	public void setBdate(Date bdate) {
+	public void setBdate(String bdate) {
 		this.bdate = bdate;
 	}
+
 	
 	
 }

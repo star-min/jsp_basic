@@ -1,5 +1,6 @@
 package com.shop.controller.goods;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.shop.common.GoodsVO;
 import com.shop.model.GoodsDAO;
 
@@ -23,15 +26,32 @@ public class AddGoodsCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		String gcategory = request.getParameter("gcategory");
-		String gname = request.getParameter("gname");
-		int gprice = Integer.parseInt(request.getParameter("gprice"));
-		String gcolor = request.getParameter("gcolor");
-		int amount = Integer.parseInt(request.getParameter("amount"));
-		String gsize = request.getParameter("gsize");
-		String gcontent = request.getParameter("gcontent");
-		String gimage = request.getParameter("gimage");
-		int best = Integer.parseInt(request.getParameter("best"));
+
+		String saveFolder = "D:/kim3/jsp1/web03/src/main/webapp/upload";
+		String encType = "UTF-8";
+		int maxSize = 10 * 1024 * 1024;	// 10MB
+		
+		MultipartRequest multi = new MultipartRequest(request,
+				saveFolder, maxSize, encType);
+		
+		String gcategory = multi.getParameter("gcategory");
+		String gname = multi.getParameter("gname");
+		int gprice = Integer.parseInt(multi.getParameter("gprice"));
+		String gcolor = multi.getParameter("gcolor");
+		int amount = Integer.parseInt(multi.getParameter("amount"));
+		String gsize = multi.getParameter("gsize");
+		String gcontent = multi.getParameter("gcontent");
+		String gimage = "";
+		int best = Integer.parseInt(multi.getParameter("best"));
+		
+		try {			
+			if (multi.getFilesystemName("gimage") != null) {
+				String name = multi.getFilesystemName("gimage");
+				gimage = name;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		GoodsVO vo = new GoodsVO();
 		vo.setGcategory(gcategory);

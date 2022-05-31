@@ -15,7 +15,12 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="content">
 	<section class="con_wrap">
-		<h2>글 상세보기</h2>
+		<c:if test="${sid=='admin' }">
+		<h2 class="page_tit">글 수정 및 상세보기</h2>
+		</c:if>
+		<c:if test="${sid!='admin' }">
+		<h2 class="page_tit">글 상세보기</h2>
+		</c:if>
 		<form action="${path1 }/EditBoardCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>

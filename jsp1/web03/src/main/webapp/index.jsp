@@ -14,7 +14,12 @@
 <jsp:include page="header.jsp"></jsp:include>
 <div id="content" class="panel-body">
 	<h2>메인 페이지</h2>
-
+	<figure style="text-align: center;">
+		<iframe  width="1000px" height="650px" src="https://www.youtube.com/embed/H-AcDBLqxi4?autoplay=1&mute=1" 
+			title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+			clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen>
+		</iframe>
+	</figure>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

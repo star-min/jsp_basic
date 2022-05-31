@@ -15,12 +15,9 @@ import com.shop.model.MemberDAO;
 @WebServlet("/loginCtrl")
 public class loginCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public loginCtrl() {
-        super();
-    }
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public loginCtrl() {      super();    }
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+	IOException {
 		request.setCharacterEncoding("UTF-8");
 		String userid = request.getParameter("userid");
 		String userpw = request.getParameter("userpw");

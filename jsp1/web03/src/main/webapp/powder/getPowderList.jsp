@@ -14,6 +14,20 @@
 <%-- <c:if test="${empty name }"><c:redirect url="../member/login.jsp" /></c:if> --%>
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
+		<form method="post" action="${path1 }/GetPowderSearchCtrl" class="frm_fr">
+			<table class="table" id="search_tb">
+				<tr>
+					<td>
+						<select name="searchCondition" required>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select>
+						<input type="text" name="searchKeyword" required />
+						<input type="submit" value="검색" class="button is-info"/>
+					</td>
+				</tr>
+			</table>
+		</form>
 		<h2>보충제 목록</h2>
 		<table class="table" id="lst_tb">
 			<thead>

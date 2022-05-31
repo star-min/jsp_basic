@@ -15,6 +15,7 @@ $(document).ready( function () {
 <style>
 #lst_tb, .frm_fr { max-width:1280px; min-width:800px; margin:0 auto; }
 .navbar-link:not(.is-arrowless)::after { display:none; }
+.navbar-manu {background-color: ;}
 .con_wrap { width:1280px; margin:0 auto; } 
 .frm_fr { width:800px; }
 #logo img { display:block; width:180px; height:30px; min-height:30px; max-height:30px; }

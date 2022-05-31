@@ -15,7 +15,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="content">
 	<section class="con_wrap">
-		<h2>글 상세보기</h2>
+		<h2 class="page_tit">회원 정보 상세보기</h2>
 		<form action="${path1 }/EditMemberCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
@@ -34,7 +34,7 @@
 					<tr>
 						<th>이름</th>
 						<td>
-							<input type="password" name="username" value="${member.username }">
+							<input type="text" name="username" value="${member.username }">
 						</td>
 					</tr>
 					<tr>

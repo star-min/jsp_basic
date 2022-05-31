@@ -11,8 +11,8 @@
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
-<%-- <c:if test="${empty name }"><c:redirect url="../member/login.jsp" /></c:if> --%>
 <div id="content" class="content_wrap">
+	<h2 class="page_tit">회원 목록 보기</h2>
 	<section class="con_wrap">
 		<table class="table" id="lst_tb">
 			<thead>
