@@ -148,8 +148,8 @@
 							<a href="${path1 }/DelGoodsCtrl?gno=${goods.gno }" class="button is-info">상품 삭제</a>
 							</c:if>
 							<c:if test="${sid!='admin' }">
-							<a href="${path1 }/AddBasketCtrl?bno=${goods.gno }" class="button is-info">장바구니 담기</a>
-							<a href="${path1 }/saleForm.jsp?bno=${goods.gno }" class="button is-info">바로 구매</a>
+							<a href="${path1 }/AddBasketCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">장바구니 담기</a>
+							<a href="${path1 }/SailFormCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a>
 							</c:if>
 							<a href="${path1 }/GetGoodsListCtrl" class="button is-info">목록</a>
 						</td>

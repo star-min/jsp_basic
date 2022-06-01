@@ -13,10 +13,9 @@ public class ShippingAssignCtrl extends HttpServlet {
        
     public ShippingAssignCtrl() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 	}
 }

@@ -26,7 +26,9 @@ public class AddMemberCtrl extends HttpServlet {			// 회원가입 ctrl 입니�
 		String Hpw = request.getParameter("hpw");
 		String Hname = request.getParameter("hname");
 		String Tel = request.getParameter("tel");
-		String Addr = request.getParameter("addr");
+		String addr1 = request.getParameter("addr1");
+		String addr2 = request.getParameter("addr2");
+		String postcode = request.getParameter("postcode");
 		String Email = request.getParameter("email");
 		String Birth = request.getParameter("birth");
 //		String Joinday = request.getParameter("joinday");	가입일 인데 없어도 될것같다.
@@ -37,7 +39,9 @@ public class AddMemberCtrl extends HttpServlet {			// 회원가입 ctrl 입니�
 		vo.setHpw(Hpw);
 		vo.setHname(Hname);
 		vo.setTel(Tel);
-		vo.setAddr(Addr);
+		vo.setAddr1(addr1);
+		vo.setAddr2(addr2);
+		vo.setPostcode(postcode);
 		vo.setEmail(Email);
 		vo.setBirth(Birth);
 		int cnt = dao.addMember(vo);

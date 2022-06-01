@@ -46,7 +46,7 @@
 				<tr>
 					<td>${vo.pno }</td>
 					<td>${vo.pgory }</td>
-					<td><a href="${path1 }/GetPowderCtrl?num=${vo.pno }">${vo.pname }</a></td>
+					<td><a href="${path1 }/GetPowderCtrl?pno=${vo.pno }">${vo.pname }</a></td>
 					<td>${vo.pprice }원</td>
 					<td>${vo.pcomment }</td>
 					<td>${vo.pimage }</td>

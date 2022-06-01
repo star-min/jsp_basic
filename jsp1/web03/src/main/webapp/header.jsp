@@ -141,13 +141,13 @@
 		      <!-- 로그인 사용자 -->
 		      <div class="navbar-item">
 		        <div class="buttons">
-		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
+<!--	          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
 		            <strong>회원정보수정</strong>
-		          </a>
+		          </a>  -->	
 		          <a href="${path }/GetBasketListCtrl" class="button is-primary">
 		            <strong>장바구니</strong>
 		          </a>
-		          <a href="" class="button is-light">
+		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
 		            마이페이지
 		          </a>
 		          <a href="${path }/logOutCtrl" class="button is-light">

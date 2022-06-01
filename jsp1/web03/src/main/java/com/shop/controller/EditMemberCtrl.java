@@ -25,7 +25,9 @@ public class EditMemberCtrl extends HttpServlet {
 		String hpw = request.getParameter("hpw");
 		String hname = request.getParameter("hname");
 		String tel = request.getParameter("tel");
-		String addr = request.getParameter("addr");
+		String addr1 = request.getParameter("addr1");
+		String addr2 = request.getParameter("addr2");
+		String postcode = request.getParameter("postcode");
 		String email = request.getParameter("email");
 		String birth = request.getParameter("birth");
 		MemberDAO dao = new MemberDAO();
@@ -34,13 +36,16 @@ public class EditMemberCtrl extends HttpServlet {
 		vo.setHpw(hpw);
 		vo.setHname(hname);
 		vo.setTel(tel);
-		vo.setTel(addr);
+		vo.setAddr1(addr1);
+		vo.setAddr2(addr2);
+		vo.setPostcode(postcode);
 		vo.setEmail(email);
+		vo.setBirth(birth);
 		int cnt = dao.editMember(vo);
 		if(cnt>0) {  //회원정보수정 성공
 			response.sendRedirect("index.jsp");
 		} else {  //회원정보수정 실패
-			response.sendRedirect("./member/myPage.jsp");
+			response.sendRedirect("./member/myPage.jsp?hid="+hid);
 		}	
 	}
 

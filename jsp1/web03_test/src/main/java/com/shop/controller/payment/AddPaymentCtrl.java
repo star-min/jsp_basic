@@ -1,11 +1,15 @@
 package com.shop.controller.payment;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.shop.common.PaymentVO;
 
 @WebServlet("/AddPaymentCtrl")
 public class AddPaymentCtrl extends HttpServlet {
@@ -16,6 +20,24 @@ public class AddPaymentCtrl extends HttpServlet {
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		String userid = (String) session.getAttribute("sid");
+		String paytype = request.getParameter("paytype");
+		String payplace = request.getParameter("payplace");
+		String payno = request.getParameter("payno");
+		payno = payplace + " : " + payno;
+		int gno = Integer.parseInt(request.getParameter("gno"));
+		int gprice = Integer.parseInt(request.getParameter("gprice")); 
+		int amount = Integer.parseInt(request.getParameter("amount"));
+		int money = gprice * amount;
+		String rname = request.getParameter("rname");
+		String addr1 = request.getParameter("addr1");
+		String addr2 = request.getParameter("addr2");
+		String postcode = request.getParameter("postcode");
+		String memo = request.getParameter("memo");
+		
+		PaymentVO vo = new PaymentVO();
 		
 	}
 }

@@ -41,9 +41,9 @@ public class AddBasketCtrl extends HttpServlet {
 		
 		//이동할 주소 지정 -> response.sendRedirect("");
 		if(cnt>0) {
-			response.sendRedirect("GetGoodsListCtrl");
+			response.sendRedirect("GetPowderListCtrl");
 		} else {
-			response.sendRedirect("GetGoodsCtrl?pno="+pno);
+			response.sendRedirect("GetPowderCtrl?pno="+pno);
 		}
 	}
 

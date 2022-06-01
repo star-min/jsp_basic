@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.shop.common.BasketDetailVO;
 import com.shop.common.BasketVO;
 import com.shop.common.JDBCConnection;
 
@@ -85,22 +86,32 @@ public class BasketDAO {
 		return list;
 	}
 	
-	public BasketVO getBasket(int bno) {
-		BasketVO basket = new BasketVO();
+
+	public BasketDetailVO getBasket(int bno) {
+		BasketDetailVO bs = new BasketDetailVO();
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "select * from basket where bno=?";
+			sql = "select a.bno as bno, a.userid as userid, a.gno as gno, a.gcolor as gcolor, a.amount as amount, a.gsize as gsize, a.bdate as bdate, ";
+			sql = sql + "b.gcategory as gcategory, b.gname as gname, b.gprice as gprice, b.gcontent as gcontent, b.gimage as gimage, b.best as best from ";
+			sql = sql + "basket a inner join goods b on a.gno=b.gno where a.bno=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bno);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				basket.setBno(rs.getInt("bno"));
-				basket.setUserid(rs.getString("userid"));
-				basket.setGno(rs.getInt("gno"));
-				basket.setGcolor(rs.getString("gcolor"));
-				basket.setAmount(rs.getInt("amount"));
-				basket.setGsize(rs.getString("gsize"));
-				basket.setBdate(rs.getString("bdate"));
+				bs.setBno(rs.getInt("bno"));
+				bs.setUserid(rs.getString("userid"));
+				bs.setGno(rs.getInt("gno"));
+				bs.setGcolor(rs.getString("gcolor"));
+				bs.setAmount(rs.getInt("amount"));
+				bs.setGsize(rs.getString("gsize"));
+				bs.setBdate(rs.getString("bdate"));
+				bs.setGcategory(rs.getString("gcategory"));
+				bs.setGname(rs.getString("gname"));
+				bs.setGprice(rs.getInt("gprice"));
+				bs.setGcontent(rs.getString("gcontent"));
+				bs.setGimage(rs.getString("gimage"));
+				bs.setBest(rs.getInt("best"));
+				System.out.println(rs.getInt("bno")+", "+rs.getString("userid"));
 			}
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");
@@ -114,7 +125,7 @@ public class BasketDAO {
 		} finally {
 			JDBCConnection.close(pstmt, conn);
 		}
-		return basket;
+		return bs;
 	}
 	
 

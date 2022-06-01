@@ -143,6 +143,9 @@
 		          <a href="${path }/myPageCtrl?userid=${sid }" class="button is-primary">
 		            <strong>회원정보수정</strong>
 		          </a>
+		          <a href="${path }/GetBasketListCtrl" class="button is-light">
+		            장바구니
+		          </a>
 		          <a href="" class="button is-light">
 		            마이페이지
 		          </a>

@@ -54,7 +54,7 @@ public class BasketDAO {
 		ArrayList<BasketVO> list = null;
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "select * from basket where userid=?";
+			sql = "select * from basket where hid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			rs = pstmt.executeQuery();

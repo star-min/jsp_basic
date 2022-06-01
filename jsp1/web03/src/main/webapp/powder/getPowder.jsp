@@ -16,20 +16,36 @@
 <%-- <c:if test="${empty name }"><c:redirect url="../member/login.jsp" /></c:if> --%>
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
-		<h2>상품정보 보기</h2>
-		<form action="${path1 }/UpdatePowderCtrl" method="post">
+		<c:if test="${sid=='admin' }">
+		<h2 class="page_tit">상품 정보 수정</h2>
+		</c:if>
+		<c:if test="${sid!='admin' }">
+		<h2 class="page_tit">상품 정보 보기</h2>
+		</c:if>
+		<form action="${path1 }/UpdatePowderCtrl" method="post" enctype="multipart/form-data">
 			<table class="table" id="lst_tb">
 				<tbody>
-					<tr>
+<!-- 					<tr>
 						<th>글번호</th>
 						<td>
-							<input type="text" name="pno" value=" ${powder.pno }" readonly="readonly">
+							<input type="text" name="pno" value="${powder.pno}" readonly="readonly">
 						</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<th>카테고리</th>
 						<td>
-							<input type="text" name="pgory" value=" ${powder.pgory }">
+							<c:if test="${sid=='admin' }">
+							<select name="pgory" class="select is-primary" required>
+								<option value="보충제" >보충제</option>
+								<option value="babel">바벨</option>
+								<option value="dumbel">덤벨</option>
+								<option value="muchin">머신</option>
+								<option value="vitamin">영양제</option>
+							</select>
+							<input type="hidden" name="pno" value="${powder.pno }">
+							<input type="hidden" name="pgory" value="${powder.pgory }">
+							</c:if>
+							<!-- <span>${powder.pgory }</span> -->
 						</td>
 					</tr>
 					<tr>
@@ -47,14 +63,11 @@
 					<tr>
 						<th>맛</th>
 						<td>
-							<label>리얼초코맛</label>
-							<input type="radio" name="ptaste" value="리얼초코" checked="checked">
-							<label>바닐라맛</label>
-							<input type="radio" name="ptaste" value="바닐라">
+							<input type="text" name="ptaste" value="${powder.ptaste }">
 						</td>
 					</tr>
 					<tr>
-						<th>개수</th>
+						<th>남은 수량</th>
 						<td>
 							<input type="number" name="pamount" value="${powder.pamount }">
 						</td>
@@ -84,10 +97,11 @@
 							<input type="reset" value="취소" class="button is-info"/>
 							<a href="${path1 }/DelGoodsCtrl?pno=${powder.pno }" class="button is-info">상품 삭제</a>
 							</c:if>
-							<c:if test="${sid!='admin' }">
-							<a href="${path1 }/AddBasketCtrl?bno=${powder.pno }" class="button is-info">장바구니 담기</a>
-							<a href="${path1 }/saleForm.jsp?bno=${powder.pno }" class="button is-info">바로 구매</a>
+							<c:if test="${sid!='admin' && !empty sid }">
+							<a href="${path1 }/AddBasketCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">장바구니 담기</a>
+							<a href="${path1 }/saleForm.jsp?pno=${powder.pno }" class="button is-info">바로 구매</a>
 							</c:if>
+							
 							<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>

@@ -22,10 +22,12 @@ public class GetPowderCtrl extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int num = Integer.parseInt(request.getParameter("num"));
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		int pno = Integer.parseInt(request.getParameter("pno"));
 		PowderDAO dao = new PowderDAO();
 		PowderVO powder = new PowderVO();
-		powder = dao.getPowder(num);
+		powder = dao.getPowder(pno);
 		if(powder != null) {
 			request.setAttribute("powder", powder);
 			RequestDispatcher view = request.getRequestDispatcher("./powder/getPowder.jsp");

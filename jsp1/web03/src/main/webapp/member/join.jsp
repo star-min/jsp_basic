@@ -75,7 +75,10 @@
 					<tr>
 						<th>주소</th>
 						<td>
-							<input type="text" name="addr" required>
+							<input type="text" name="addr1" id="addr1"><br>
+							<input type="text" name="addr2" id="addr2" placeholder="상세주소 입력"><br>
+							<input type="text" name="postcode" id="postcode">
+							<input type="button" value="주소찾기" onclick="findAddr()" class="button is-info">
 						</td>
 					</tr>
 					<tr>
@@ -117,7 +120,7 @@
 			}
 		}
 		</script>
-<!--		<script>					다음을 이용한 주소찾기
+		<script>					//다음을 이용한 주소찾기
 		function findAddr() {
 			new daum.Postcode({
 				oncomplete: function(data) {
@@ -133,7 +136,7 @@
 				}
 			}).open();
 		}
-		</script> -->
+		</script>
 		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
 	</section>
 </div>

@@ -19,15 +19,15 @@ commit;
 
 -- 회원테이블
 create table human (hid varchar2(50) primary key, hpw varchar2(50) not null,
-hname varchar2(50) not null, tel varchar2(100) not null, addr varchar2(100) not null, 
+hname varchar2(50) not null, tel varchar2(100) not null,addr1 varchar2(200),addr2 varchar2(100), postcode varchar2(10),
 email varchar2(200) not null, birth date,joinday date Default SYSDATE);
 -- 더미데이터 생성
-insert into human values ('admin', '1234', '관리자', '010-1234-1234','식사동100-02', '1234@1234.1234', sysdate, sysdate);
-insert into human values ('zxzx001', '1004', '김성민', '010-1004-1004','응암동32-26', 'zxzx1004@good.net', '1995-05-22', sysdate);
-insert into human values ('academy', '1111', '학원생', '010-1111-1111','봉고동12-021', 'acade@hello.com', '1998-02-30', sysdate);
-insert into human values ('eggbarman', '2222', '알바맨', '010-1222-1222','노원동20-32', 'eggbarman@naver.com', '2003-10-02', sysdate);
-insert into human values ('nongdam', '3333', '농담두', '010-2323-2323','상암동240-82', 'nong@dam.do', '1992-04-27', sysdate);
-insert into human values ('play', '4444', '시청자', '010-3334-4444','풍동30-62', 'playboy@streming.com', '2005-07-12', sysdate);
+insert into human values ('admin', '1234', '관리자', '010-1234-1234','','','', '1234@1234.1234', sysdate, sysdate);
+insert into human values ('zxzx001', '1004', '김성민', '010-1004-1004','','','', 'zxzx1004@good.net', '1995-05-22', sysdate);
+insert into human values ('academy', '1111', '학원생', '010-1111-1111','','','', 'acade@hello.com', '1998-02-30', sysdate);
+insert into human values ('eggbarman', '2222', '알바맨', '010-1222-1222','','','', 'eggbarman@naver.com', '2003-10-02', sysdate);
+insert into human values ('nongdam', '3333', '농담두', '010-2323-2323','','','', 'nong@dam.do', '1992-04-27', sysdate);
+insert into human values ('play', '4444', '시청자', '010-3334-4444','','','', 'playboy@streming.com', '2005-07-12', sysdate);
 -- 테이블 human 검색
 select * from human;
 select * from human where hid=?;
@@ -48,7 +48,7 @@ update human set hpw='NDQ0NA==' where hid='play';
 
 --보충제테이블
 create table powder (pno number primary key, 
-pgory varchar2(100) not null,
+pgory varchar2(1000) not null,
 pname varchar2(100) not null,
 pprice number not null,
 ptaste varchar2(50) not null,
@@ -93,7 +93,7 @@ select * from powder where pno;
 --테이블 powder 수정
 update powder set pgory=?, pname=?, pprice=?, ptaste=?, 
 pamount=?, pcomment=?, pimage=?, pinday=sysdate where pno=?;
-update powder set pimage='./img/xtend.ipg' where pno=1;
+update powder set pimage='./img/xtend.jpg' where pno=1;
 --테이블 powder 내용 삭제
 drop table powder;
 

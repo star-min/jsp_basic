@@ -17,7 +17,7 @@
 <div id="content">
 	<section class="con_wrap">
 		<h2>회원정보 상세보기</h2>
-		<form action="${path1 }/EditMemberCtrl" method="post">
+		<form action="${path1 }/EditAdminMemberCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
@@ -53,7 +53,9 @@
 					<tr>
 						<th>주소</th>
 						<td>
-							<input type="text" name="addr" value="${member.addr }">
+							<input type="text" name="addr1" value="${member.addr1 }"><br>
+							<input type="text" name="addr2" value="${member.addr2 }"><br>
+							<input type="text" name="postcode" value="${member.postcode }">
 						</td>
 					</tr>
 					<tr>
