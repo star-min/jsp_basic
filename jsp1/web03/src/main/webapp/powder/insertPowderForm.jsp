@@ -14,7 +14,7 @@
 <%-- <c:if test="${empty name }"><c:redirect url="../member/login.jsp" /></c:if> --%>
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
-		<h2>글 상세보기</h2>
+		<h2>보충제 등록</h2>
 		<form action="${path1 }/IsertPowderCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
@@ -69,7 +69,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input type="submit" value="보충제 수정" class="button is-info"/>
+								<input type="submit" value="보충제 등록" class="button is-info"/>
 								<input type="reset" value="취소" class="button is-info"/>
 								<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>
 							</td>

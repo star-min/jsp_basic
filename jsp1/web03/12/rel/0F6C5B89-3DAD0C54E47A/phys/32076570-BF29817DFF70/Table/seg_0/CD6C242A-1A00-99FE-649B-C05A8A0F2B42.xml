@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PAYMENT" directorySegmentName="seg_0" id="CD6C242A-1A00-99FE-649B-C05A8A0F2B42">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<schemaObject>35DD37BC-D2D9-E3F3-D175-7C84C8D92DE7</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>56F95327-E101-2F2F-BD7F-4D4F8075D6A9</segment>
+<tableSpace>590BEFAD-5C0B-0EF3-58C8-56DE482DED28</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ADDR2" id="17D3A9FF-A29E-E240-A0B0-25CF5BD47A68">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TRANSNO" id="2884AF66-D867-4794-8906-1F0A90B2E555">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USERID" id="291D9E62-4AF0-1472-FA64-50E6C6E75231">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="AMOUNT" id="42440ADF-C2B6-D791-9058-EF70F711EFBA">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SDATE" id="46271F42-40C8-AD53-ACAE-A8600F88107C">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDR1" id="5032E007-DAA4-4EE0-147A-5517AB6E2261">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEL" id="52270114-B3CA-B702-C15E-F3F89B5DCCE2">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MONEY" id="5A05C777-9854-3DC1-31D1-C172C8F0AB64">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GNO" id="7D8082C1-4D87-0C16-3942-2751871388B9">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ONO" id="84AB02D9-3D97-F6EC-55CA-9278D5EE2947">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RDATE" id="90B692E9-2974-68A3-79C6-75627C8D934F">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="POSTCODE" id="93D96E34-A9DD-BE16-C686-0465AF7204B3">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PAYNO" id="A7178D30-033E-CCB2-1CEC-19E1C0633818">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MEMO" id="A9C732C7-9417-AA7F-978E-D284D83BB96D">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PAYTYPE" id="B5BDE0E9-93C3-C6BF-A276-A45CD3125F77">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RSTATUS" id="D7451194-7148-CAC4-AA01-B2383BD494FC">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TRANSCO" id="E8D56886-6513-F104-FEC7-86AE1F9DED78">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RNAME" id="FD31D968-605E-337B-D437-94198D1B3AEB">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PAYMENT_PK" id="315E4A3B-781A-7607-2DAC-AF848D77BFEF">
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<schemaObject>35DD37BC-D2D9-E3F3-D175-7C84C8D92DE7</schemaObject>
+<segment>3FDBF282-0450-CE09-F2C5-6F83D1BE6122</segment>
+<tableSpace>590BEFAD-5C0B-0EF3-58C8-56DE482DED28</tableSpace>
+<indexSegment>3FDBF282-0450-CE09-F2C5-6F83D1BE6122</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

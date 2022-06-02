@@ -38,3 +38,31 @@ background-position: 0px -160px; background-repeat:no-repeat; }
 .ft_ico_lst li a.blog { background-position: -100px -160px; }
 .ft_ico_lst li a.talk { background-position: -150px -160px; }
 </style>
+<script type="text/javascript">
+function comma(str) {
+       str = String(str);
+       return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+   }
+
+   function uncomma(str) {
+       str = String(str);
+       return str.replace(/[^\d]+/g, '');
+   } 
+   
+   function inputNumberFormat(obj) {
+       obj.value = comma(uncomma(obj.value));
+   }
+   
+   function inputOnlyNumberFormat(obj) {
+       obj.value = onlynumber(uncomma(obj.value));
+   }
+   
+   function onlynumber(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
+}
+   
+   var money = $('#money').text();
+   var money2 = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+   $('#money').text(money2);
+</script>

@@ -106,6 +106,8 @@ ptaste varchar2(40),    -- 보충제 맛
 pamount number,          -- 수량
 bdate Date);            -- 장바구니 담긴 날짜
 
+--장바구니 보기
+select * from basket;
 -- 장바구니 담기
 insert into basket values ();
 

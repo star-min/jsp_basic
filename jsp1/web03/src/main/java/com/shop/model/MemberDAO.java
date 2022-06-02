@@ -56,12 +56,12 @@ public class MemberDAO {
 			pstmt.setString(1, pw);
 			pstmt.setString(2, vo.getHname());
 			pstmt.setString(3, vo.getTel());
-			pstmt.setString(5, vo.getAddr1());
-			pstmt.setString(6, vo.getAddr2());
-			pstmt.setString(7, vo.getPostcode());
-			pstmt.setString(5, vo.getEmail());
-			pstmt.setString(6, vo.getBirth());
-			pstmt.setString(7, vo.getHid());
+			pstmt.setString(4, vo.getAddr1());
+			pstmt.setString(5, vo.getAddr2());
+			pstmt.setString(6, vo.getPostcode());
+			pstmt.setString(7, vo.getEmail());
+			pstmt.setString(8, vo.getBirth());
+			pstmt.setString(9, vo.getHid());
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");

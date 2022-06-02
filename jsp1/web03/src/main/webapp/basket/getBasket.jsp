@@ -12,6 +12,7 @@
 <meta charset="UTF-8">
 <title>장바구니 상세보기</title>
 <jsp:include page="../common.jsp"></jsp:include>
+
 <style>
 .page_tit { border-bottom:1px solid #cdcdcd; margin-bottom:25px; }
 #lst_tb2 { width:1280px; margin:20px; auto; }
@@ -38,11 +39,11 @@ margin-top:20px; margin-bottom:15px; }
 					<h3 class="item_tit">제품명 : <%=vo.getPname() %></h3>
 					<p class="item_data">
 						<span class="img_fr"><img src="${path1 }/upload/<%=vo.getPimage() %>" alt="<%=vo.getPname() %>" /></span>
-						<span>가격 : <%=vo.getPprice() %></span><br>
+						<span id="money">가격 : <%=vo.getPprice() %></span><br>
 						<span>맛 : <%=vo.getPtaste() %></span><br>
 					</p>
 					<p><span>수량 : <%=vo.getPamount() %></span></p>
-					<br><br><a href="${path1 }/payment/saleForm.jsp?gno=${vo.gno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
+					<br><br><a href="${path1 }/payment/saleForm.jsp?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
 					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a><br><br>
 				</li>
 				<% } %>
@@ -56,6 +57,34 @@ margin-top:20px; margin-bottom:15px; }
 		</div>
 		</c:if>	
 	</section>
+<script type="text/javascript">
+function comma(str) {
+       str = String(str);
+       return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+   }
+
+   function uncomma(str) {
+       str = String(str);
+       return str.replace(/[^\d]+/g, '');
+   } 
+   
+   function inputNumberFormat(obj) {
+       obj.value = comma(uncomma(obj.value));
+   }
+   
+   function inputOnlyNumberFormat(obj) {
+       obj.value = onlynumber(uncomma(obj.value));
+   }
+   
+   function onlynumber(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
+}
+   
+   var money = $('#money').text();
+   var money2 = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+   $('#money').text(money2);
+</script>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>

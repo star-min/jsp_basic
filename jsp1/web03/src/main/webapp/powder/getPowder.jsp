@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 <title>보충제 정보 보기</title>
 <jsp:include page="../common.jsp"></jsp:include>
@@ -57,7 +58,7 @@
 					<tr>
 						<th>가격</th>
 						<td>
-							<input type="text" name="pprice" value="${powder.pprice }">
+							<input type="text" name="pprice" value="${powder.pprice }" id="money">
 						</td>
 					</tr>
 					<tr>
@@ -109,6 +110,34 @@
 			</table>
 		</form>	
 	</section>
+<script type="text/javascript">
+function comma(str) {
+       str = String(str);
+       return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+   }
+
+   function uncomma(str) {
+       str = String(str);
+       return str.replace(/[^\d]+/g, '');
+   } 
+   
+   function inputNumberFormat(obj) {
+       obj.value = comma(uncomma(obj.value));
+   }
+   
+   function inputOnlyNumberFormat(obj) {
+       obj.value = onlynumber(uncomma(obj.value));
+   }
+   
+   function onlynumber(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
+}
+   
+   var money = $('#money').text();
+   var money2 = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+   $('#money').text(money2);
+</script>
 	<script>
 	$(document).ready(function(){
 		$("#lst_tb_filter").css("display","none");

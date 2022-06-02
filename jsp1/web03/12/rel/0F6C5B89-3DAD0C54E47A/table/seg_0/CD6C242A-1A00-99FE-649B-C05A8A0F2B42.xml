@@ -1,0 +1,295 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD6C242A-1A00-99FE-649B-C05A8A0F2B42" schemaObject="35DD37BC-D2D9-E3F3-D175-7C84C8D92DE7" name="PAYMENT">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>PAYMENT</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ONO" id="84AB02D9-3D97-F6EC-55CA-9278D5EE2947">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>ONO</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PAYTYPE" id="B5BDE0E9-93C3-C6BF-A276-A45CD3125F77">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>PAYTYPE</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PAYNO" id="A7178D30-033E-CCB2-1CEC-19E1C0633818">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>PAYNO</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MONEY" id="5A05C777-9854-3DC1-31D1-C172C8F0AB64">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>MONEY</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SDATE" id="46271F42-40C8-AD53-ACAE-A8600F88107C">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>SDATE</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GNO" id="7D8082C1-4D87-0C16-3942-2751871388B9">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>GNO</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AMOUNT" id="42440ADF-C2B6-D791-9058-EF70F711EFBA">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>AMOUNT</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERID" id="291D9E62-4AF0-1472-FA64-50E6C6E75231">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>USERID</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RNAME" id="FD31D968-605E-337B-D437-94198D1B3AEB">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>RNAME</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEL" id="52270114-B3CA-B702-C15E-F3F89B5DCCE2">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>TEL</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDR1" id="5032E007-DAA4-4EE0-147A-5517AB6E2261">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>ADDR1</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDR2" id="17D3A9FF-A29E-E240-A0B0-25CF5BD47A68">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>ADDR2</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSTCODE" id="93D96E34-A9DD-BE16-C686-0465AF7204B3">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>POSTCODE</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSNO" id="2884AF66-D867-4794-8906-1F0A90B2E555">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>TRANSNO</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSCO" id="E8D56886-6513-F104-FEC7-86AE1F9DED78">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>TRANSCO</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RSTATUS" id="D7451194-7148-CAC4-AA01-B2383BD494FC">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>RSTATUS</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RDATE" id="90B692E9-2974-68A3-79C6-75627C8D934F">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>RDATE</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMO" id="A9C732C7-9417-AA7F-978E-D284D83BB96D">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>PAYMENT</sourceObjSchema>
+<sourceObjName>MEMO</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="315E4A3B-781A-7607-2DAC-AF848D77BFEF" schemaObject="35DD37BC-D2D9-E3F3-D175-7C84C8D92DE7" name="PAYMENT_PK">
+<sourceConnName>xe2</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SYS_C007141</sourceObjName>
+<createdBy>pc1</createdBy>
+<createdTime>2022-06-02 07:55:22 UTC</createdTime>
+<ownerDesignName>12</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84AB02D9-3D97-F6EC-55CA-9278D5EE2947"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
