@@ -53,11 +53,12 @@ margin-top:20px; margin-bottom:15px; }
 		</ul>
 		<c:if test="${sid=='admin' }">
 		<div id="btn_group">
-			<a href="${path1 }/goods/addGoodsForm.jsp" class="button is-info">제품 등록</a>
+			<a href="${path1 }/powder/insertPowderForm.jsp" class="button is-info">제품 등록</a>
 		</div>
 		</c:if>	
 	</section>
-<script type="text/javascript">
+	
+<script type="text/javascript"> // 천단위에 콤마찍기
 function comma(str) {
        str = String(str);
        return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');

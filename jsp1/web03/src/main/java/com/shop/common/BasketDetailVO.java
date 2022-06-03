@@ -4,7 +4,7 @@ public class BasketDetailVO {
 	private int bno;		//장바구니번호
 	private String hid;	//사용자아이디
 	private int pno;		//상품코드
-	private String ptaste;	//색상
+	private String ptaste;	//맛
 	private int pamount;		//수량
 	private String bdate;	//장바구니 등록일
 	private String pgory;    //상품카테고리
