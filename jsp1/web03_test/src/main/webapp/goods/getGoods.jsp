@@ -9,7 +9,7 @@
 <title>상품 정보 보기</title>
 <jsp:include page="../common.jsp"></jsp:include>
 <style>
-
+#lst_tb th { min-width:140px; }
 </style>
 </head>
 <body>
@@ -86,6 +86,9 @@
 							<c:if test="${sid!='admin' }">
 							<span>${goods.amount }</span>
 							</c:if>
+							<c:if test="${goods.amount==0 }">
+							<span style="color:red">품절 상품</span>
+							</c:if>
 						</td>
 					</tr>
 					<tr>
@@ -127,7 +130,7 @@
 							</c:if>
 							<c:if test="${sid!='admin' }">
 							<c:forEach var="item" begin="0" end="${goods.best }" step="1" varStatus="status"> 
-								<img src="./image/star1.png" alt="star" />
+								<img src="./img/star.png" alt="star" />
 							</c:forEach>
 							</c:if>
 						</td>
@@ -148,8 +151,10 @@
 							<a href="${path1 }/DelGoodsCtrl?gno=${goods.gno }" class="button is-info">상품 삭제</a>
 							</c:if>
 							<c:if test="${sid!='admin' }">
-							<a href="${path1 }/AddBasketCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">장바구니 담기</a>
-							<a href="${path1 }/SailFormCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a>
+								<c:if test="${goods.amount>0 }">
+									<a href="${path1 }/AddBasketCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">장바구니 담기</a>
+									<a href="${path1 }/SailFormCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a>
+								</c:if>
 							</c:if>
 							<a href="${path1 }/GetGoodsListCtrl" class="button is-info">목록</a>
 						</td>

@@ -15,7 +15,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="content">
 	<section class="con_wrap">
-		<h2>로그인</h2>
+		<h2 class="page_tit">로그인</h2>
 		<form action="${path1 }/loginCtrl" method="post" name="login_form">
 			<table class="table" id="lst_tb">
 				<tbody>

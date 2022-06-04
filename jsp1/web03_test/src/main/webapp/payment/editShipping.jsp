@@ -21,85 +21,72 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="content">
 	<section class="con_wrap">
-		<h2 class="page_tit">상품 구매</h2>
-		<form action="${path1 }/AddPaymentCtrl" method="post" name="payment_form">
+		<h2 class="page_tit">배송 도착지 정보 수정</h2>
+		<form action="${path1 }/EditPaymentCtrl" method="post" name="payment_form">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
-						<th>상품명</th>
+						<th>결제번호</th>
 						<td>
-							<input type="text" name="gname" value="${goods.gname }" readonly required>
-							<input type="hidden" name="gno" value="${goods.gno }">
-							<c:if test="${!empty bno}">
-							<input type="hidden" name="bno" value="${bno }">
-							</c:if>
+							<input type="text" name="ono" value="${payment.ono }" readonly required>
+							<input type="hidden" name="paytype" value="${payment.paytype }">
+							<input type="hidden" name="payno" value="${payment.payno }">
+							<input type="hidden" name="sdate" value="${payment.sdate }">
+							<input type="hidden" name="amount" value="${payment.sdate }">
+							<input type="hidden" name="userid" value="${payment.userid }">
+							<input type="hidden" name="transno" value="${vo.transno }">
+							<input type="hidden" name="transco" value="${vo.transco }">
+							<input type="hidden" name="rstatus" value="${vo.rstatus }">
+							<input type="hidden" name="rdate" value="${vo.rdate }">
 						</td>
 					</tr>
 					<tr>
-						<th>상품이미지</th>
+						<th>상품코드</th>
 						<td>
-							<img src="${path1 }/upload/${goods.gimage }" alt="${goods.gname }" />
+							<input type="text" name="gno" value="${payment.gno }" readonly required>
 						</td>
 					</tr>
 					<tr>
-						<th>수량</th>
+						<th>결제 금액</th>
 						<td>
-							<input type="number" name="amount" min="1" max="${goods.amount }" value="1">
-						</td>
-					</tr>
-					<tr>
-						<th>단가</th>
-						<td>
-							<input type="text" name="gprice" value="${goods.gprice }" readonly required>
+							<input type="text" name="amount" value="${payment.money }" readonly required>
 						</td>
 					</tr>
 					<tr>
 						<th>수신자명</th>
 						<td>
-							<input type="text" name="rname" required>
+							<input type="text" name="rname" value="${payment.rname }" required>
 						</td>
 					</tr>
 					<tr>
 						<th>수신자 연락처</th>
 						<td>
-							<input type="text" name="tel" required>
+							<input type="text" name="tel" value="${payment.tel }" required>
 						</td>
 					</tr>
 					<tr>
 						<th>수신자 주소</th>
 						<td>
-							<input type="text" name="addr1" id="addr1" required><br>
-							<input type="text" name="addr2" id="addr2" placeholder="상세주소 입력" required><br>
-							<input type="text" name="postcode" id="postcode" required>
+							<input type="text" name="addr1" id="addr1" value="${payment.addr1 }" required><br>
+							<input type="text" name="addr2" id="addr2" value="${payment.addr2 }" placeholder="상세주소 입력" required><br>
+							<input type="text" name="postcode" id="postcode" value="${payment.postcode }" required>
 							<input type="button" value="주소찾기" onclick="findAddr()" class="button is-info">
 						</td>
 					</tr>
 					<tr>
 						<th>배송장에 남길 말씀</th>
 						<td>
-							<input type="text" name="memo" id="memo">
-						</td>
-					</tr>
-					<tr>
-						<th>결제 방식</th>
-						<td>
-							<select name="paytype" required>
-								<option value="credit">신용카드 결제</option>
-								<option value="check">체크카드 결제</option>
-								<option value="account">계좌이체</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<th>결제 카드 번호</th>
-						<td>
-							카드사/은행명 : <input type="text" name="payplace" required><br>
-							카드번호/계좌번호 : <input type="text" name="payno" required>
+							<c:if test="${!empty payment.memo }">
+							<input type="text" name="memo" id="memo" value="${payment.memo }">
+							</c:if>
+							<c:if test="${empty payment.memo }">
+							<input type="text" name="memo" id="memo" value="">
+							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="구매" class="button is-info"/>
+							<input type="submit" value="도착지 수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
 							<p>모든 항목은 필수항목으로 꼭 입력하셔야 합니다.</p>
 						</td>

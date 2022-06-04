@@ -168,7 +168,32 @@ public class GoodsDAO {
 		return goods;
 	}
 	
-
+	public int countGoods(int gno) {
+		int num = 0;
+		try {
+			conn = JDBCConnection.getConnection();
+			sql = "select amount from goods where gno=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, gno);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				num = rs.getInt("amount");
+			}
+		} catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩이 실패되었습니다.");
+			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("SQL구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+			e.printStackTrace();
+		} finally {
+			JDBCConnection.close(pstmt, conn);
+		}
+		return num;
+	}
+	
 	public int addGoods(GoodsVO vo) {
 		try {
 			conn = JDBCConnection.getConnection();
@@ -228,6 +253,29 @@ public class GoodsDAO {
 				pstmt.setInt(8, vo.getBest());
 				pstmt.setInt(9, vo.getGno());
 			}
+			cnt = pstmt.executeUpdate();
+		} catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩이 실패되었습니다.");
+			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("SQL구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+			e.printStackTrace();
+		} finally {
+			JDBCConnection.close(pstmt, conn);
+		}
+		return cnt;
+	}
+	
+	public int editGoods(int gno, int num) {
+		try {
+			conn = JDBCConnection.getConnection();
+				sql = "update goods set amount=? where gno=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				pstmt.setInt(2, gno);
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");

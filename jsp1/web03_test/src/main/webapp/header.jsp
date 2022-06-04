@@ -42,26 +42,26 @@
 		          건강마켓
 		        </a>
 		        <div class="navbar-dropdown">
-		          <a href="GetGoodsListCtrl?gcategory=sidedish" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=sidedish" class="navbar-item">
 		            건강반찬
 		          </a>
-		          <a href="GetGoodsListCtrl?gcategory=soup" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=soup" class="navbar-item">
 		            건강 국/찌개
 		          </a>
-		          <a href="GetGoodsListCtrl?gcategory=noodle" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=noodle" class="navbar-item">
 		            자연 담은 면
 		          </a>
 		          <hr class="navbar-divider">
-		          <a href="GetGoodsListCtrl?gcategory=rice&gcategory2=porridge" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=rice&gcategory2=porridge" class="navbar-item">
 		            영양 가득 밥/죽
 		          </a>
-		          <a href="GetGoodsListCtrl?gcategory=salad" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=salad" class="navbar-item">
 		            샐러드/샌드위치
 		          </a>
-		          <a href="GetGoodsListCtrl?gcategory=bakery" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=bakery" class="navbar-item">
 		            베이커리
 		          </a>
-		          <a href="GetGoodsListCtrl?gcategory=drink" class="navbar-item">
+		          <a href="${path }/GetGoodsListCtrl?gcategory=drink" class="navbar-item">
 		            음료
 		          </a>
 		        </div>
@@ -146,7 +146,7 @@
 		          <a href="${path }/GetBasketListCtrl" class="button is-light">
 		            장바구니
 		          </a>
-		          <a href="" class="button is-light">
+		          <a href="myPageCtrl" class="button is-light">
 		            마이페이지
 		          </a>
 		          <a href="${path }/logOutCtrl" class="button is-light">
@@ -170,6 +170,9 @@
 		          </a> --%>
 		          <a href="${path }/GetGoodsListCtrl" class="button is-light">
 		            제품관리
+		          </a>
+		          <a href="${path }/GetPaymentListCtrl" class="button is-light">
+		            판매관리
 		          </a>
 		          <a href="${path }/AccessListCtrl" class="button is-light">
 		            접속자관리
