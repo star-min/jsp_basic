@@ -18,7 +18,7 @@ delete from board;
 commit;
 
 -- 회원테이블
-create table human (hid varchar2(50) primary key, hpw varchar2(50) not null,
+create table human (hid varchar2(20) primary key, hpw varchar2(50) not null,
 hname varchar2(50) not null, tel varchar2(100) not null,addr1 varchar2(200),addr2 varchar2(100), postcode varchar2(10),
 email varchar2(200) not null, birth date,joinday date Default SYSDATE);
 -- 더미데이터 생성

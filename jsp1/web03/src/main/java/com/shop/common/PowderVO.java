@@ -11,7 +11,7 @@ public class PowderVO {
 	private int pamount;		//수량
 	private String pcomment;	//설명
 	private String pimage;		//이미지
-	private Date pinday;		//등록일
+	private String pinday;		//등록일
 	
 
 	public int getPno() {
@@ -62,12 +62,13 @@ public class PowderVO {
 	public void setPimage(String pimage) {
 		this.pimage = pimage;
 	}
-	public Date getPinday() {
+	public String getPinday() {
 		return pinday;
 	}
-	public void setPinday(Date pinday) {
+	public void setPinday(String pinday) {
 		this.pinday = pinday;
 	}
+
 	
 	
 }

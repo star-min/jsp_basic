@@ -100,7 +100,7 @@
 							</c:if>
 							<c:if test="${sid!='admin' && !empty sid }">
 							<a href="${path1 }/AddBasketCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">장바구니 담기</a>
-							<a href="${path1 }/saleForm.jsp?pno=${powder.pno }" class="button is-info">바로 구매</a>
+							<a href="${path1 }/SailFormCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">바로 구매</a>
 							</c:if>
 							
 							<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>
@@ -110,34 +110,6 @@
 			</table>
 		</form>	
 	</section>
-<script type="text/javascript">
-function comma(str) {
-       str = String(str);
-       return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
-   }
-
-   function uncomma(str) {
-       str = String(str);
-       return str.replace(/[^\d]+/g, '');
-   } 
-   
-   function inputNumberFormat(obj) {
-       obj.value = comma(uncomma(obj.value));
-   }
-   
-   function inputOnlyNumberFormat(obj) {
-       obj.value = onlynumber(uncomma(obj.value));
-   }
-   
-   function onlynumber(str) {
-    str = String(str);
-    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
-}
-   
-   var money = $('#money').text();
-   var money2 = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-   $('#money').text(money2);
-</script>
 	<script>
 	$(document).ready(function(){
 		$("#lst_tb_filter").css("display","none");

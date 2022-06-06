@@ -63,7 +63,7 @@ public class PowderDAO {
 				vo.setPamount(rs.getInt("pamount"));
 				vo.setPcomment(rs.getString("pcomment"));
 				vo.setPimage(rs.getString("pimage"));
-				vo.setPinday(rs.getDate("pinday"));
+				vo.setPinday(rs.getString("pinday"));
 				list.add(vo);
 			}
 		} catch(ClassNotFoundException e) {
@@ -97,7 +97,7 @@ public class PowderDAO {
 				powder.setPamount(rs.getInt("pamount"));
 				powder.setPcomment(rs.getString("pcomment"));
 				powder.setPimage(rs.getString("pimage"));
-				powder.setPinday(rs.getDate("pinday"));
+				powder.setPinday(rs.getString("pinday"));
 			}
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");
@@ -183,6 +183,55 @@ public class PowderDAO {
 			JDBCConnection.close(pstmt, conn);
 		}
 		return cnt;
+	}
+	
+	public int editpowder(int pno, int num) {
+		try {
+			conn = JDBCConnection.getConnection();
+				sql = "update powder set pamount=? where pno=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				pstmt.setInt(2, pno);
+			cnt = pstmt.executeUpdate();
+		} catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩이 실패되었습니다.");
+			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("SQL구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+			e.printStackTrace();
+		} finally {
+			JDBCConnection.close(pstmt, conn);
+		}
+		return cnt;
+	}
+	
+	public int countpowder(int pno) {
+		int num = 0;
+		try {
+			conn = JDBCConnection.getConnection();
+			sql = "select pamount from powder where pno=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, pno);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				num = rs.getInt("pamount");
+			}
+		} catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩이 실패되었습니다.");
+			e.printStackTrace();
+		} catch(SQLException e) {
+			System.out.println("SQL구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("잘못된 요청으로 업무를 처리하지 못했습니다.");
+			e.printStackTrace();
+		} finally {
+			JDBCConnection.close(pstmt, conn);
+		}
+		return num;
 	}
 	
 	public ArrayList<PowderVO> getConditionSearch(String condition, String keyword){	// 보충제 검색하기

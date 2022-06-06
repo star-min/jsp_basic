@@ -111,9 +111,11 @@
 		          <a class="navbar-item" href="${path }/GetBoardListCtrl">
 		            자유게시판
 		          </a>
-		          <a class="navbar-item">
-		            1:1 문의
-		          </a>
+			      <c:if test="${!empty sid }">
+			          <a href="${path }/mailForm.jsp" class="navbar-item">
+			            1:1 문의
+			          </a>
+			      </c:if>  
 		          <a class="navbar-item">
 		            자주하는 질문 및 답변
 		          </a>
@@ -141,13 +143,13 @@
 		      <!-- 로그인 사용자 -->
 		      <div class="navbar-item">
 		        <div class="buttons">
-<!--	          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
+		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
 		            <strong>회원정보수정</strong>
-		          </a>  -->	
+		          </a>
 		          <a href="${path }/GetBasketListCtrl" class="button is-primary">
 		            <strong>장바구니</strong>
 		          </a>
-		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
+		          <a href="myPageCtrl" class="button is-primary">
 		            마이페이지
 		          </a>
 		          <a href="${path }/logOutCtrl" class="button is-light">
@@ -166,15 +168,14 @@
 		          <a href="${path }/GetMemberListCtrl" class="button is-light">
 		            회원관리
 		          </a>
-		          <a href="${path }/AccessListCtrl" class="button is-light">
-		            접속자관리
-		          </a>
-		          
-		          <a class="button is-light">
+		         <a href="${path }/GetPowderListCtrl" class="button is-light">
 		            제품관리
 		          </a>
-		          <a class="button is-light">
+		          <a href="${path }/GetPaymentListCtrl" class="button is-light">
 		            판매관리
+		          </a>
+		          <a href="${path }/AccessListCtrl" class="button is-light">
+		            접속자관리
 		          </a>
 		        </div>
 		      </div>

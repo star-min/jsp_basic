@@ -35,7 +35,7 @@
 					<tr>
 						<th>이름</th>
 						<td>
-							<input type="text" name="hname" value="${member.hname }">
+							<input type="text" name="hname" value="${member.hname }"required>
 						</td>
 					</tr>
 					<tr>
@@ -53,9 +53,10 @@
 					<tr>
 						<th>주소</th>
 						<td>
-							<input type="text" name="addr1" value="${member.addr1 }"><br>
-							<input type="text" name="addr2" value="${member.addr2 }"><br>
-							<input type="text" name="postcode" value="${member.postcode }">
+							<input type="text" name="addr1" value="${member.addr1 }" id="addr1"><br>
+							<input type="text" name="addr2" value="${member.addr2 }" id="addr2"><br>
+							<input type="text" name="postcode" value="${member.postcode }" id="postcode">
+							<input type="button" value="주소찾기" onclick="findAddr()" class="button is-info">
 						</td>
 					</tr>
 					<tr>
@@ -74,13 +75,31 @@
 						<td colspan="2">
 							<input type="submit" value="수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/DelMemberCtrl?num=${member.hid }" class="button is-info">삭제</a>
+							<a href="${path1 }/DelMemberCtrl?num=${member.hid }" class="button is-info">탈퇴</a>
 							<a href="${path1 }/GetMemberListCtrl" class="button is-info">목록</a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</form>	
+		<script>					//다음을 이용한 주소찾기
+		function findAddr() {
+			new daum.Postcode({
+				oncomplete: function(data) {
+					console.log(data);
+					var roadAddr = data.roadAddress;
+					var jibunAddr = data.jibunAddress;
+					document.getElementById("postcode").value = data.zonecode;
+					if(roadAddr !== '') {
+						document.getElementById("addr1").value = roadAddr;				
+					} else if(jibunAddr !== ''){
+						document.getElementById("addr1").value = jibunAddr;
+					}
+				}
+			}).open();
+		}
+		</script>
+		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
 	</section>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>

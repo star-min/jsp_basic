@@ -1,7 +1,6 @@
-package com.shop.controller;
+package com.shop.controller.payment;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,31 +8,31 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.shop.common.PaymentVO;
 import com.shop.model.PaymentDAO;
 
-@WebServlet("/myPageCtrl")
-public class myPageCtrl extends HttpServlet {
+@WebServlet("/GetPaymentCtrl")
+public class GetPaymentCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public myPageCtrl() {
+    public GetPaymentCtrl() {
         super();
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		HttpSession session = request.getSession();
-		String hid = (String) session.getAttribute("sid");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		int ono = Integer.parseInt(request.getParameter("ono"));
 		PaymentDAO dao = new PaymentDAO();
-		ArrayList<PaymentVO> payList = dao.getPaymentList(hid);
-		if(payList != null) {
-			request.setAttribute("payList", payList);
-			RequestDispatcher view = request.getRequestDispatcher("./member/myPage.jsp");
+		PaymentVO payment = dao.getPayment(ono);
+		if(payment != null) {
+			request.setAttribute("payment", payment);
+			RequestDispatcher view = request.getRequestDispatcher("./payment/getPayment.jsp");
 			view.forward(request, response);
 		} else {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("GetPaymentListCtrl");
 		}
 	}
 }
