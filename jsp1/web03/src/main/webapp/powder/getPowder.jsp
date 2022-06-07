@@ -96,9 +96,9 @@
 							<c:if test="${sid=='admin' }">
 							<input type="submit" value="제품 정보 수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/DelGoodsCtrl?pno=${powder.pno }" class="button is-info">상품 삭제</a>
+							<a href="${path1 }/DelPowderCtrl?pno=${powder.pno }" class="button is-info">상품 삭제</a>
 							</c:if>
-							<c:if test="${sid!='admin' && !empty sid }">
+							<c:if test="${sid!='admin'  }">
 							<a href="${path1 }/AddBasketCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">장바구니 담기</a>
 							<a href="${path1 }/SailFormCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">바로 구매</a>
 							</c:if>

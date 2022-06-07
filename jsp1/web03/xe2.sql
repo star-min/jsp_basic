@@ -51,7 +51,7 @@ create table powder (pno number primary key,
 pgory varchar2(1000) not null,
 pname varchar2(100) not null,
 pprice number not null,
-ptaste varchar2(50) not null,
+ptaste varchar2(50),
 pamount number not null,
 pcomment varchar2(1000),
 pimage varchar2(1000),
@@ -102,7 +102,7 @@ drop table powder;
 create table basket(bno number primary key, -- 장바구니번호
 hid varchar2(20),    -- 사용자아이디
 pno number,             -- 상품코드
-ptaste varchar2(40),    -- 보충제 맛
+ptaste varchar2(50),    -- 보충제 맛
 pamount number,          -- 수량
 bdate Date);            -- 장바구니 담긴 날짜
 

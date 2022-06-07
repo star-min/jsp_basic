@@ -143,7 +143,7 @@
 		      <!-- 로그인 사용자 -->
 		      <div class="navbar-item">
 		        <div class="buttons">
-		          <a href="${path }/myPageCtrl?hid=${sid }" class="button is-primary">
+		          <a href="${path }/GetMemberCtrl?hid=${sid }" class="button is-primary">
 		            <strong>회원정보수정</strong>
 		          </a>
 		          <a href="${path }/GetBasketListCtrl" class="button is-primary">

@@ -37,9 +37,7 @@ margin-top:20px; margin-bottom:15px; }
 					</div>
 					<div class="hidden item1">${status.count }</div>
 					<h3 class="item_tit"></h3>
-					<p class="item_data">
-						<span>맛 : ${vo.ptaste }</span><br>
-					</p>
+					<p><span>맛 : ${vo.ptaste }</span></p>
 					<p><span>남은 수량 : ${vo.pamount }</span></p>
 					<a href="${path1 }/payment/saleForm.jsp?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
 					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a>
@@ -51,7 +49,7 @@ margin-top:20px; margin-bottom:15px; }
 		</ul>
 		<c:if test="${sid=='admin' }">
 		<div id="btn_group">
-			<a href="${path1 }/goods/insertPowderForm.jsp" class="button is-info">제품 등록</a>
+			<a href="${path1 }/powder/insertPowderForm.jsp" class="button is-info">제품 등록</a>
 		</div>
 		</c:if>	
 	</section>

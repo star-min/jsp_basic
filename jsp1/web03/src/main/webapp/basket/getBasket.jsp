@@ -38,7 +38,7 @@ margin-top:20px; margin-bottom:15px; }
 				<li>
 					<h3 class="item_tit">제품명 : <%=vo.getPname() %></h3>
 					<p class="item_data">
-						<span class="img_fr"><img src="${path1 }/upload/<%=vo.getPimage() %>" alt="<%=vo.getPname() %>" /></span>
+						<span class="img_fr"><img src="${path1 }/<%=vo.getPimage() %>" alt="<%=vo.getPname() %>" /></span>
 						<span id="money">가격 : <%=vo.getPprice() %></span><br>
 						<span>맛 : <%=vo.getPtaste() %></span><br>
 					</p>

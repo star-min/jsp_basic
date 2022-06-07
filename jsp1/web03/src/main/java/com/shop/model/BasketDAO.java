@@ -50,13 +50,13 @@ public class BasketDAO {
 		return list;
 	}
 	
-	public ArrayList<BasketVO> getBasketList(String userid) {
+	public ArrayList<BasketVO> getBasketList(String hid) {
 		ArrayList<BasketVO> list = null;
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "select * from basket where hid=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userid);
+			pstmt.setString(1, hid);
 			rs = pstmt.executeQuery();
 			list = new ArrayList<BasketVO>();
 			while(rs.next()) {
