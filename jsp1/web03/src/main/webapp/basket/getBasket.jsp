@@ -42,8 +42,8 @@ margin-top:20px; margin-bottom:15px; }
 						<span id="money">가격 : <%=vo.getPprice() %></span><br>
 						<span>맛 : <%=vo.getPtaste() %></span><br>
 					</p>
-					<p><span>수량 : <%=vo.getPamount() %></span></p>
-					<br><br><a href="${path1 }/payment/saleForm.jsp?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
+					<p><span>남은 수량 : <%=vo.getPamount() %></span></p>
+					<br><br><a href="${path1 }/SailFormCtrl?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
 					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a><br><br>
 				</li>
 				<% } %>

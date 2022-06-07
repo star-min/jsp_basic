@@ -170,7 +170,7 @@ public class MemberDAO {
 		ArrayList<MemberVO> list = null;
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "select hid, hpw, hname, tel, addr1, addr2, postcode, email, birth, to_char(regdate, 'yyyy-MM-dd HH24:mi:ss') as cdate from human";
+			sql = "select hid, hpw, hname, tel, addr1, addr2, postcode, email, birth, to_char(joinday, 'yyyy-MM-dd HH24:mi:ss') as cdate from human";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			list = new ArrayList<MemberVO>();

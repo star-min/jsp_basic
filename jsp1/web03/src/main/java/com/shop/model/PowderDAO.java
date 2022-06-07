@@ -21,15 +21,15 @@ public class PowderDAO {
 	public int insertPowder(PowderVO vo) {	// 보충제 추가
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "insert into powder values (?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+			sql = "insert into powder values ((select nvl(max(pno), 0)+1 from powder), ?, ?, ?, ?, ?, ?, ?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, vo.getPno());
-			pstmt.setString(2, vo.getPgory());
-			pstmt.setString(3, vo.getPname());
-			pstmt.setInt(4, vo.getPprice());
-			pstmt.setString(5, vo.getPtaste());
-			pstmt.setInt(6, vo.getPamount());
-			pstmt.setString(7, vo.getPcomment());
+			pstmt.setString(1, vo.getPgory());
+			pstmt.setString(2, vo.getPname());
+			pstmt.setInt(3, vo.getPprice());
+			pstmt.setString(4, vo.getPtaste());
+			pstmt.setInt(5, vo.getPamount());
+			pstmt.setString(6, vo.getPcomment());
+			pstmt.setString(7, vo.getPimage());
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었습니다.");
@@ -118,7 +118,7 @@ public class PowderDAO {
 		try {
 			conn = JDBCConnection.getConnection();
 			if(vo.getPimage()!=null) {
-			sql = "update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=?, pinday=sysdate where pno=?";
+			sql = "update powder set pgory=?, pname=?, pprice=?, ptaste=?, pamount=?, pcomment=?, pimage=? where pno=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getPgory());
 			pstmt.setString(2, vo.getPname());

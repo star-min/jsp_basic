@@ -15,7 +15,7 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>보충제 등록</h2>
-		<form action="${path1 }/IsertPowderCtrl" method="post">
+		<form action="${path1 }/InsertPowderCtrl" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 						<tr>
@@ -33,13 +33,15 @@
 						<tr>
 							<th>가격</th>
 							<td>
-								<input type="text" name="pprice" value="${powder.pprice }" required>
+								<input type="number" name="pprice" value="${powder.pprice }" required>
 							</td>
 						</tr>
 						<tr>
 							<th>맛</th>
 							<td>
+							<label>리얼초코</label>
 								<input type="radio" name="ptaste" value="${powder.ptaste }" required>
+							<label>바닐라</label>
 								<input type="radio" name="ptaste" value="${powder.ptaste }" required>
 							</td>
 						</tr>
@@ -50,21 +52,15 @@
 							</td>
 						</tr>
 						<tr>
-							<th>내용</th>
+							<th>설명</th>
 							<td>
 								<textarea cols="100" rows ="7" name="pcomment" >${powder.pcomment }</textarea>
 							</td>
 						</tr>
 						<tr>
-							<th>제품사진</th>
+							<th>상품 이미지</th>
 							<td>
-								<input type="image" name="pimage" value="${powder.pimage }" required>
-							</td>
-						</tr>
-						<tr>
-							<th>제품등록일</th>
-							<td>
-								${ powder.pinday}
+								<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="pimage" class="input is-primary">
 							</td>
 						</tr>
 						<tr>

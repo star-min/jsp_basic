@@ -39,7 +39,7 @@ margin-top:20px; margin-bottom:15px; }
 					<h3 class="item_tit"></h3>
 					<p><span>맛 : ${vo.ptaste }</span></p>
 					<p><span>남은 수량 : ${vo.pamount }</span></p>
-					<a href="${path1 }/payment/saleForm.jsp?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
+					<a href="${path1 }/SailFormCtrl?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
 					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a>
 				</li>
 			</c:forEach>

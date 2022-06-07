@@ -24,9 +24,9 @@ public class DeletPowderCtrl extends HttpServlet {
 		PowderDAO dao = new PowderDAO();		
 		int cnt = dao.deletePowder(pno); 
 		if(cnt>0) {  // 보충제 삭제 성공
-			response.sendRedirect("GetBoardListCtrl");
+			response.sendRedirect("GetPowderListCtrl");
 		} else {  // 보충제 삭제 실패
-			response.sendRedirect("GetBoardCtrl?num="+pno);
+			response.sendRedirect("GetPowderCtrl?num="+pno);
 		}	
 		
 	}

@@ -109,7 +109,7 @@
 		        </a>		
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item" href="${path }/GetBoardListCtrl">
-		            자유게시판
+		            공지사항
 		          </a>
 			      <c:if test="${!empty sid }">
 			          <a href="${path }/mailForm.jsp" class="navbar-item">

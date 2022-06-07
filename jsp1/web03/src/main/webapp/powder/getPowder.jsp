@@ -44,7 +44,7 @@
 								<option value="vitamin">영양제</option>
 							</select>
 							<input type="hidden" name="pno" value="${powder.pno }">
-							<input type="hidden" name="pgory" value="${powder.pgory }">
+							
 							</c:if>
 							<!-- <span>${powder.pgory }</span> -->
 						</td>
@@ -64,7 +64,11 @@
 					<tr>
 						<th>맛</th>
 						<td>
-							<input type="text" name="ptaste" value="${powder.ptaste }">
+							<!-- <input type="text" name="ptaste" value="${powder.ptaste }"> -->
+							<select name="ptaste" class="select is-primary" required>
+								<option value="리얼초코" >리얼초코</option>
+								<option value="바닐라">바닐라</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
@@ -82,6 +86,9 @@
 					<tr>
 						<th>제품사진</th>
 						<td>
+							<c:if test="${sid=='admin' }">
+							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="pimage" value="./img/${powder.pimage }" class="input is-normal">
+							</c:if>
 							<img alt="${powder.pimage }" src="${powder.pimage }">
 						</td>
 					</tr>
@@ -96,7 +103,7 @@
 							<c:if test="${sid=='admin' }">
 							<input type="submit" value="제품 정보 수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/DelPowderCtrl?pno=${powder.pno }" class="button is-info">상품 삭제</a>
+							<a href="${path1 }/DeletPowderCtrl?pno=${powder.pno }" class="button is-info">상품 삭제</a>
 							</c:if>
 							<c:if test="${sid!='admin'  }">
 							<a href="${path1 }/AddBasketCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">장바구니 담기</a>

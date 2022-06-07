@@ -33,12 +33,12 @@ public class UpdatePowderCtrl extends HttpServlet {
 		MultipartRequest multi = new MultipartRequest(request, saveFolder, maxSize, encType);
 		
 		int pno = Integer.parseInt(multi.getParameter("pno"));
-		String pgory = request.getParameter("pgory");
-		String pname = request.getParameter("pname");
+		String pgory = multi.getParameter("pgory");
+		String pname = multi.getParameter("pname");
 		int pprice = Integer.parseInt(multi.getParameter("pprice"));
-		String ptaste = request.getParameter("ptaste");
+		String ptaste = multi.getParameter("ptaste");
 		int pamount = Integer.parseInt(multi.getParameter("pamount"));
-		String pcomment = request.getParameter("pcomment");
+		String pcomment = multi.getParameter("pcomment");
 		String pimage = "";
 		
 		try {			

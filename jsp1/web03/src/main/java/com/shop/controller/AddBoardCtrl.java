@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.common.BoardVO;
 import com.shop.model.BoardDAO;
 
-@WebServlet("/AddboardCtrl")
+@WebServlet("/AddBoardCtrl")
 public class AddBoardCtrl extends HttpServlet {	//글쓰기 ctrl
 	private static final long serialVersionUID = 1L;
 
@@ -19,10 +19,10 @@ public class AddBoardCtrl extends HttpServlet {	//글쓰기 ctrl
         super();
     }
 
-	protected void service(HttpServletRequest request, 
-			HttpServletResponse response) 
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String nickname = request.getParameter("nickname");
