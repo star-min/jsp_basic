@@ -50,17 +50,17 @@ public class BasketDAO {
 		return list;
 	}
 	
-	public ArrayList<BasketVO> getBasketList(String hid) {
-		ArrayList<BasketVO> list = null;
+	public ArrayList<BasketDetailVO> getBasketList(String hid) {
+		ArrayList<BasketDetailVO> list = null;
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "select * from basket where hid=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, hid);
 			rs = pstmt.executeQuery();
-			list = new ArrayList<BasketVO>();
+			list = new ArrayList<BasketDetailVO>();
 			while(rs.next()) {
-				BasketVO vo = new BasketVO();
+				BasketDetailVO vo = new BasketDetailVO();
 				vo.setBno(rs.getInt("bno"));
 				vo.setHid(rs.getString("hid"));
 				vo.setPno(rs.getInt("pno"));
@@ -125,7 +125,7 @@ public class BasketDAO {
 	}
 	
 
-	public int addBasket(BasketVO vo) {
+	public int addBasket(BasketDetailVO vo) {
 		try {
 			conn = JDBCConnection.getConnection();
 			sql = "insert into basket values((select nvl(max(bno), 0)+1 from basket), ?, ?, ?, ?, sysdate)";
@@ -195,4 +195,5 @@ public class BasketDAO {
 		}
 		return cnt;
 	}
+
 }

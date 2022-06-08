@@ -23,7 +23,8 @@ insert into member(mid, mpw, mname, tel, email, birth) values
 ('dong123','2222','장동근','010-4222-4331','dongs@naver.com','1975-03-16');
 insert into member(mid, mpw, mname, tel, email, birth) values
 ('emile','3211','에밀리킴','010-2244-4111','emile@naver.com','1794-11-20');
-    
+insert into member(mid, mpw, mname, tel, email, birth) values
+('adminn','1234','admin','010-2244-4111','emile@naver.com','1794-11-20');
 -- 고객(customer) 테이블 더미 데이터 수정
 ALTER TABLE member MODIFY(mpw VARCHAR2(100));
 update member set mpw=?, tel=?, email=?, birth=? where mid=?;
@@ -42,6 +43,10 @@ delete from member where mid=?;
 -- 고객(member) 테이블 더미 데이터 조회
 select * from member where mid=?;
 select * from member;
+
+drop table member;
+--권한주기
+grant connect, resource, dba to scott;
 
 
 -- 관광(tourlist) 테이블 생성

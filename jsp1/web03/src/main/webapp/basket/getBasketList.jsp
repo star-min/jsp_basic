@@ -36,7 +36,7 @@ margin-top:20px; margin-bottom:15px; }
 						<a href="${path1 }/GetBasketCtrl?bno=${vo.bno }">장바구니 상세정보</a>
 					</div>
 					<div class="hidden item1">${status.count }</div>
-					<h3 class="item_tit"></h3>
+					<h3 class="item_tit">${vo.pname }</h3>
 					<p><span>맛 : ${vo.ptaste }</span></p>
 					<p><span>남은 수량 : ${vo.pamount }</span></p>
 					<a href="${path1 }/SailFormCtrl?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>

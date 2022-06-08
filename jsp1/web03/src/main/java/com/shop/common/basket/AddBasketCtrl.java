@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.shop.common.BasketVO;
+import com.shop.common.BasketDetailVO;
 import com.shop.model.BasketDAO;
 
 @WebServlet("/AddBasketCtrl")
@@ -29,7 +29,7 @@ public class AddBasketCtrl extends HttpServlet {
 		String hid = (String) session.getAttribute("sid");
 		int pamount = 1;
 
-		BasketVO vo = new BasketVO();
+		BasketDetailVO vo = new BasketDetailVO();
 		vo.setHid(hid);
 		vo.setPno(pno);
 		vo.setPtaste(ptaste);

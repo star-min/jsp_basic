@@ -62,7 +62,7 @@
 					<tr>
 						<th>생년월일</th>
 						<td>
-							<input type="date" name="birth" value="${member.birth }">
+							<input type="text" name="birth" value="${member.birth }">
 						</td>
 					</tr>
 					<tr>
@@ -76,7 +76,9 @@
 							<input type="submit" value="수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
 							<a href="${path1 }/DelMemberCtrl?num=${member.hid }" class="button is-info">탈퇴</a>
+							<c:if test="${sid=='admin' }">
 							<a href="${path1 }/GetMemberListCtrl" class="button is-info">목록</a>
+							</c:if>
 						</td>
 					</tr>
 				</tbody>

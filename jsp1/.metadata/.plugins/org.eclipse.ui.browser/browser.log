@@ -108,3 +108,53 @@
 6월 07, 2022 21:57:41.460 [22504:19672:0607/215741.460:ERROR:interface_endpoint_client.cc(665)] Message 5 rejected by interface blink.mojom.WidgetHost
 6월 07, 2022 22:25:14.355 [7636:2416:0607/222514.355:ERROR:device_event_log_impl.cc(214)] [22:25:14.354] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 6월 07, 2022 22:26:12.258 [7636:28740:0607/222612.258:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+6월 08, 2022 14:47:31.138 NEW SESSION
+6월 08, 2022 14:47:31.138 [6448:3888:0608/144731.136:ERROR:device_event_log_impl.cc(214)] [14:47:31.135] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 14:47:31.139 [6448:3888:0608/144731.139:ERROR:device_event_log_impl.cc(214)] [14:47:31.139] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 14:48:32.630 [7132:7356:0608/144832.629:ERROR:device_event_log_impl.cc(214)] [14:48:32.629] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 14:48:32.633 [7132:7356:0608/144832.633:ERROR:device_event_log_impl.cc(214)] [14:48:32.633] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:13:32.401 [6764:16116:0608/151332.401:ERROR:device_event_log_impl.cc(214)] [15:13:32.400] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:13:32.406 [6764:16116:0608/151332.406:ERROR:device_event_log_impl.cc(214)] [15:13:32.406] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:13:47.999 [13600:7924:0608/151347.999:ERROR:device_event_log_impl.cc(214)] [15:13:47.999] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:13:48.04 [13600:7924:0608/151348.004:ERROR:device_event_log_impl.cc(214)] [15:13:48.004] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:14:20.404 [14924:11180:0608/151420.404:ERROR:device_event_log_impl.cc(214)] [15:14:20.403] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:14:20.408 [14924:11180:0608/151420.408:ERROR:device_event_log_impl.cc(214)] [15:14:20.408] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:15:50.522 [9256:8352:0608/151550.522:ERROR:device_event_log_impl.cc(214)] [15:15:50.522] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:15:50.526 [9256:8352:0608/151550.526:ERROR:device_event_log_impl.cc(214)] [15:15:50.526] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:16:35.206 [1484:7432:0608/151635.206:ERROR:device_event_log_impl.cc(214)] [15:16:35.205] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:16:35.209 [1484:7432:0608/151635.209:ERROR:device_event_log_impl.cc(214)] [15:16:35.209] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:17:30.560 [2024:12780:0608/151730.560:ERROR:device_event_log_impl.cc(214)] [15:17:30.559] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:17:30.563 [2024:12780:0608/151730.563:ERROR:device_event_log_impl.cc(214)] [15:17:30.563] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:19:11.629 [5548:1244:0608/151911.629:ERROR:device_event_log_impl.cc(214)] [15:19:11.629] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:19:11.632 [5548:1244:0608/151911.632:ERROR:device_event_log_impl.cc(214)] [15:19:11.632] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:22:20.532 [10760:12652:0608/152220.532:ERROR:device_event_log_impl.cc(214)] [15:22:20.532] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:22:20.536 [10760:12652:0608/152220.536:ERROR:device_event_log_impl.cc(214)] [15:22:20.536] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:25:56.394 [15356:12056:0608/152556.393:ERROR:device_event_log_impl.cc(214)] [15:25:56.394] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:25:56.398 [15356:12056:0608/152556.398:ERROR:device_event_log_impl.cc(214)] [15:25:56.399] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:33:16.590 [12120:8420:0608/153316.590:ERROR:device_event_log_impl.cc(214)] [15:33:16.590] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:33:16.594 [12120:8420:0608/153316.593:ERROR:device_event_log_impl.cc(214)] [15:33:16.594] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:34:14.442 [12120:16244:0608/153414.442:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+6월 08, 2022 15:36:59.754 [3132:3604:0608/153659.754:ERROR:device_event_log_impl.cc(214)] [15:36:59.754] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:37:57.618 [3132:4772:0608/153757.618:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+6월 08, 2022 15:42:04.422 [1388:5688:0608/154204.422:ERROR:device_event_log_impl.cc(214)] [15:42:04.422] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:42:04.425 [1388:5688:0608/154204.425:ERROR:device_event_log_impl.cc(214)] [15:42:04.425] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:43:02.391 [1388:6120:0608/154302.391:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+6월 08, 2022 15:44:26.258 [14976:12584:0608/154426.257:ERROR:device_event_log_impl.cc(214)] [15:44:26.258] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:44:26.262 [14976:12584:0608/154426.262:ERROR:device_event_log_impl.cc(214)] [15:44:26.263] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 15:46:35.813 [14256:924:0608/154635.813:ERROR:device_event_log_impl.cc(214)] [15:46:35.813] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 15:46:35.816 [14256:924:0608/154635.816:ERROR:device_event_log_impl.cc(214)] [15:46:35.816] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 16:06:26.787 [3112:9308:0608/160626.787:ERROR:device_event_log_impl.cc(214)] [16:06:26.787] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 16:06:26.791 [3112:9308:0608/160626.791:ERROR:device_event_log_impl.cc(214)] [16:06:26.791] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 16:07:24.791 [3112:5980:0608/160724.791:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+6월 08, 2022 16:08:29.114 [5420:2472:0608/160829.114:ERROR:device_event_log_impl.cc(214)] [16:08:29.114] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 16:08:29.119 [5420:2472:0608/160829.118:ERROR:device_event_log_impl.cc(214)] [16:08:29.119] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 16:09:56.82 [16232:9356:0608/160956.082:ERROR:device_event_log_impl.cc(214)] [16:09:56.082] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 16:09:56.86 [16232:9356:0608/160956.086:ERROR:device_event_log_impl.cc(214)] [16:09:56.086] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 16:20:35.202 [4652:14912:0608/162035.202:ERROR:device_event_log_impl.cc(214)] [16:20:35.202] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 16:20:35.206 [4652:14912:0608/162035.206:ERROR:device_event_log_impl.cc(214)] [16:20:35.206] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 16:21:33.176 [4652:15464:0608/162133.176:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+6월 08, 2022 17:51:29.736 [9256:3688:0608/175129.736:ERROR:device_event_log_impl.cc(214)] [17:51:29.735] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 17:51:29.742 [9256:3688:0608/175129.742:ERROR:device_event_log_impl.cc(214)] [17:51:29.742] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+6월 08, 2022 18:35:27.417 [9448:13416:0608/183527.416:ERROR:device_event_log_impl.cc(214)] [18:35:27.416] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+6월 08, 2022 18:35:27.421 [9448:13416:0608/183527.421:ERROR:device_event_log_impl.cc(214)] [18:35:27.421] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.

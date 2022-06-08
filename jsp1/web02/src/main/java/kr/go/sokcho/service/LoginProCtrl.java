@@ -42,7 +42,7 @@ public class LoginProCtrl extends HttpServlet {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet os = null;
+		ResultSet rs = null;
 		String sql = "";
 		
 		try {
@@ -51,22 +51,25 @@ public class LoginProCtrl extends HttpServlet {
 			sql = "select * from member where mid=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
-			os = pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			MemberVO vo = new MemberVO();
 			HttpSession session = request.getSession();
-			if(os.next()) {
-				lid = os.getString("mid");
-				lpw = os.getString("mpw");
-				lname = os.getString("mname");
+			if(rs.next()) {
+				lid = rs.getString("mid");
+				lpw = rs.getString("mpw");
+				lname = rs.getString("mname");
 				if(lpw.equals(mpw)) {
+					System.out.println("아이디 비밀번호 일치");
 					session.setAttribute("sid", lid);
 					session.setAttribute("sname", lname);
 					response.sendRedirect("index.jsp");	
 				} else {
+					System.out.println("비밀번호가 일치하지 않습니다.");
 					session.invalidate();
 					response.sendRedirect("login.jsp");	
 				}
 			} else { 
+				System.out.println("아이디가 없습니다.");
 				session.invalidate();
 				response.sendRedirect("login.jsp");
 			}
@@ -74,7 +77,7 @@ public class LoginProCtrl extends HttpServlet {
 			e.printStackTrace();
 		} finally {
 			try {
-				os.close();
+				rs.close();
 				pstmt.close();
 				conn.close();
 			} catch(Exception e) {

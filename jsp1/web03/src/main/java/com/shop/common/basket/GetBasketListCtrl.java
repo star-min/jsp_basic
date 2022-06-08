@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.shop.common.BasketVO;
+import com.shop.common.BasketDetailVO;
 import com.shop.model.BasketDAO;
 
 @WebServlet("/GetBasketListCtrl")
@@ -31,10 +31,11 @@ public class GetBasketListCtrl extends HttpServlet {
 		String hid = (String) session.getAttribute("sid");
 		
 		BasketDAO dao = new BasketDAO();
-		ArrayList<BasketVO> list = dao.getBasketList(hid);
+		ArrayList<BasketDetailVO> list = dao.getBasketList(hid);
 		request.setAttribute("list", list);
 		RequestDispatcher view = request.getRequestDispatcher("./basket/getBasketList.jsp");
 		view.forward(request, response);
+
 	}
 
 }
