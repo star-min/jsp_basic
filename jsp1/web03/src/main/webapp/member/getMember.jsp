@@ -62,7 +62,8 @@
 					<tr>
 						<th>생년월일</th>
 						<td>
-							<input type="text" name="birth" value="${member.birth }">
+						<%-- <fmt:parseDate var="parseBirthDate" value="${member.birth }" pattern="yyyy-MM-dd HH:MM:SS" /> --%>
+							<input type="date" name="birth" value="${member.birth }">
 						</td>
 					</tr>
 					<tr>

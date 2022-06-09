@@ -38,7 +38,7 @@
 					<tr>
 						<th>상품이미지</th>
 						<td>
-							<img src="${path1 }/${powder.pimage }" alt="${powder.pname }" />
+							<img src="${path1 }/img/${powder.pimage }" alt="${powder.pname }" />
 						</td>
 					</tr>
 					<tr>

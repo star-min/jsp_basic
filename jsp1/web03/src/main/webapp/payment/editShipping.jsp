@@ -32,7 +32,7 @@
 							<input type="hidden" name="paytype" value="${payment.paytype }">
 							<input type="hidden" name="payno" value="${payment.payno }">
 							<input type="hidden" name="sdate" value="${payment.sdate }">
-							<input type="hidden" name="pamount" value="${payment.sdate }">
+							<input type="hidden" name="pamount" value="${payment.pamount }">
 							<input type="hidden" name="hid" value="${payment.hid }">
 							<input type="hidden" name="transno" value="${vo.transno }">
 							<input type="hidden" name="transco" value="${vo.transco }">
@@ -49,7 +49,7 @@
 					<tr>
 						<th>결제 금액</th>
 						<td>
-							<input type="text" name="pamount" value="${payment.money }" readonly required>
+							<input type="text" name="money" value="${payment.money }" readonly required>
 						</td>
 					</tr>
 					<tr>

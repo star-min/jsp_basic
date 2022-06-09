@@ -139,7 +139,7 @@
 		        </div>
 		      </div>
 		      </c:if>
-		      <c:if test="${!empty sid }">
+		      <c:if test="${sid!='admin' && empty sid  }">
 		      <!-- 로그인 사용자 -->
 		      <div class="navbar-item">
 		        <div class="buttons">
@@ -165,17 +165,20 @@
 		          <a href="${path }/GetBoardListCtrl" class="button is-primary">
 		            <strong>글 관리</strong>
 		          </a>
-		          <a href="${path }/GetMemberListCtrl" class="button is-light">
+		          <a href="${path }/GetMemberListCtrl" class="button is-primary">
 		            회원관리
 		          </a>
-		         <a href="${path }/GetPowderListCtrl" class="button is-light">
+		         <a href="${path }/GetPowderListCtrl" class="button is-primary">
 		            제품관리
 		          </a>
-		          <a href="${path }/GetPaymentListCtrl" class="button is-light">
+		          <a href="${path }/GetPaymentListCtrl" class="button is-primary">
 		            판매관리
 		          </a>
-		          <a href="${path }/AccessListCtrl" class="button is-light">
+		          <a href="${path }/AccessListCtrl" class="button is-primary">
 		            접속자관리
+		          </a>
+		          <a href="${path }/logOutCtrl" class="button is-light">
+		            로그아웃
 		          </a>
 		        </div>
 		      </div>

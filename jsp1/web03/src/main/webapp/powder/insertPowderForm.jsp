@@ -15,61 +15,67 @@
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
 		<h2>보충제 등록</h2>
-		<form action="${path1 }/InsertPowderCtrl" method="post">
+		<form action="${path1 }/InsertPowderCtrl" method="post" enctype="multipart/form-data">
 			<table class="table" id="lst_tb">
 				<tbody>
-						<tr>
-							<th>카테고리</th>
-							<td>
-								<input type="text" name="pgory" value=" ${powder.pgory }" required>
-							</td>
-						</tr>
-						<tr>
-							<th>보충제명</th>
-							<td>
-								<input type="text" name="pname" value="${powder.pname }" required>
-							</td>
-						</tr>
-						<tr>
-							<th>가격</th>
-							<td>
-								<input type="number" name="pprice" value="${powder.pprice }" required>
-							</td>
-						</tr>
-						<tr>
-							<th>맛</th>
-							<td>
-							<label>리얼초코</label>
-								<input type="radio" name="ptaste" value="${powder.ptaste }" required>
-							<label>바닐라</label>
-								<input type="radio" name="ptaste" value="${powder.ptaste }" required>
-							</td>
-						</tr>
-						<tr>
-							<th>개수</th>
-							<td>
-								<input type="number" name="pamount" value="${powder.pamount }" required>
-							</td>
-						</tr>
-						<tr>
-							<th>설명</th>
-							<td>
-								<textarea cols="100" rows ="7" name="pcomment" >${powder.pcomment }</textarea>
-							</td>
-						</tr>
-						<tr>
-							<th>상품 이미지</th>
-							<td>
-								<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="pimage" class="input is-primary">
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<input type="submit" value="보충제 등록" class="button is-info"/>
-								<input type="reset" value="취소" class="button is-info"/>
-								<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>
-							</td>
-						</tr>
+					<tr>
+<!-- 						<th>카테고리</th>
+						<td>
+						<label>보충제</label>
+							<input type="radio" name="pgory" required>
+						<label>부스터</label>
+							<input type="radio" name="pgory"required>
+						</td> -->
+						<th>카테고리</th>
+						<td>
+							<input type="text" name="pgory" required>
+						</td>
+					</tr>
+					<tr>
+						<th>보충제명</th>
+						<td>
+							<input type="text" name="pname" required>
+						</td>
+					</tr>
+					<tr>
+						<th>가격</th>
+						<td>
+							<input type="number" name="pprice" required>
+						</td>
+					</tr>
+					<tr>
+						<th>맛</th>
+						<td>
+						<label>리얼초코</label>
+							<input type="radio" name="ptaste" required>
+						<label>바닐라</label>
+							<input type="radio" name="ptaste"required>
+						</td>
+					</tr>
+					<tr>
+						<th>개수</th>
+						<td>
+							<input type="number" name="pamount" required>
+						</td>
+					</tr>
+					<tr>
+						<th>설명</th>
+						<td>
+							<textarea cols="100" rows ="7" name="pcomment" ></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>상품 이미지</th>
+						<td>
+							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="pimage" class="input is-primary">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="submit" value="보충제 등록" class="button is-info"/>
+							<input type="reset" value="취소" class="button is-info"/>
+							<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>
+						</td>
 					</tr>
 				</tbody>
 			</table>

@@ -89,7 +89,7 @@
 							<c:if test="${sid=='admin' }">
 							<input type="file" accept="*.jpeg,*.jpg, *.png, *.gif" name="pimage" value="./img/${powder.pimage }" class="input is-normal">
 							</c:if>
-							<img alt="${powder.pimage }" src="${powder.pimage }">
+							<img alt="./upload/${powder.pimage }" src="./upload/${powder.pimage }">
 						</td>
 					</tr>
 					<tr>
@@ -106,8 +106,8 @@
 							<a href="${path1 }/DeletPowderCtrl?pno=${powder.pno }" class="button is-info">상품 삭제</a>
 							</c:if>
 							<c:if test="${sid!='admin'  }">
-							<a href="${path1 }/AddBasketCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">장바구니 담기</a>
-							<a href="${path1 }/SailFormCtrl?pno=${powder.pno }&ptaste${powder.ptaste}" class="button is-info">바로 구매</a>
+							<a href="${path1 }/AddBasketCtrl?pno=${powder.pno }&ptaste=${powder.ptaste}" class="button is-info">장바구니 담기</a>
+							<a href="${path1 }/SailFormCtrl?pno=${powder.pno }&ptaste=${powder.ptaste}" class="button is-info">바로 구매</a>
 							</c:if>
 							
 							<a href="${path1 }/GetPowderListCtrl" class="button is-info">목록</a>

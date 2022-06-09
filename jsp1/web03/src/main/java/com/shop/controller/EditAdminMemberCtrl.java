@@ -45,7 +45,7 @@ public class EditAdminMemberCtrl extends HttpServlet {
 //			response.sendRedirect("GetMemberListCtrl");
 			response.sendRedirect("index.jsp");
 		} else {  //회원정보수정 실패
-			response.sendRedirect("./member/myPage.jsp");
+			response.sendRedirect("./member/GetMemberCtrl?hid="+hid);
 		}	
 	}
 

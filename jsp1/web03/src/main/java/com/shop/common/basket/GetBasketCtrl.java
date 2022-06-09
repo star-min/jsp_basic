@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.shop.common.BasketDetailVO;
+import com.shop.common.PowderVO;
 import com.shop.model.BasketDAO;
+import com.shop.model.PowderDAO;
 
 @WebServlet("/GetBasketCtrl")
 public class GetBasketCtrl extends HttpServlet {
@@ -27,10 +29,13 @@ public class GetBasketCtrl extends HttpServlet {
 		
 		//BasketDAO 객체인 dao를 생성한 후 해당 메서드인 getBasket()를 호출하여 매개값 bno를 전달한 BasketVO를 받음
 		BasketDAO dao = new BasketDAO();
+		PowderDAO dao2 = new PowderDAO();
 		BasketDetailVO bs = dao.getBasket(bno);
+		PowderVO po = dao2.getPowder(bno);
 		
 		//전달받은 basket을 getBasket.jsp로 전달
 		if(bs != null) {
+			request.setAttribute("po", po);
 			request.setAttribute("bs", bs);
 			RequestDispatcher view = request.getRequestDispatcher("./basket/getBasket.jsp");
 			view.forward(request, response);

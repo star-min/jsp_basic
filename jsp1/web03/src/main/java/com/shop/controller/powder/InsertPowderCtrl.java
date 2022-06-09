@@ -25,18 +25,18 @@ public class InsertPowderCtrl extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
-		String saveFolder = "D:/ksm/jsp_basic/jsp1/web03/src/main/webapp/upload";
+		String saveFolder = "D:\\ksm\\jsp_basic\\jsp1\\web03\\src\\main\\webapp\\upload";
 		String encType = "UTF-8";
 		int maxSize = 10 * 1024 * 1024;	// 10MB
 		
 		MultipartRequest multi = new MultipartRequest(request, saveFolder, maxSize, encType);
 		
-		String pgory = request.getParameter("pgory");
-		String pname = request.getParameter("pnname");
-		int pprice = Integer.parseInt(request.getParameter("pprice"));
-		String ptaste = request.getParameter("ptaste");
-		int pamount = Integer.parseInt(request.getParameter("pamount"));
-		String pcomment = request.getParameter("pcomment");
+		String pgory = multi.getParameter("pgory");
+		String pname = multi.getParameter("pnname");
+		int pprice = Integer.parseInt(multi.getParameter("pprice"));
+		String ptaste = multi.getParameter("ptaste");
+		int pamount = Integer.parseInt(multi.getParameter("pamount"));
+		String pcomment = multi.getParameter("pcomment");
 		String pimage = "";
 		
 		try {			
@@ -64,6 +64,7 @@ public class InsertPowderCtrl extends HttpServlet {
 		} else {
 			response.sendRedirect("./board/insertPowderForm.jsp");
 		}
+		
 	}
 
 }

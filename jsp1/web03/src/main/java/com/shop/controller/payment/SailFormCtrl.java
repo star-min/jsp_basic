@@ -25,7 +25,6 @@ public class SailFormCtrl extends HttpServlet {
 		int pno = Integer.parseInt(request.getParameter("pno"));
 		int bno = 0;
 		if(request.getParameter("bno")!=null) bno = Integer.parseInt(request.getParameter("bno"));
-//		String ptaste = request.getParameter("ptaste");
 		
 		PaymentDAO dao = new PaymentDAO();
 		PowderVO powder = dao.callByPay(pno);

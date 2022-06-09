@@ -21,7 +21,7 @@ public class PowderDAO {
 	public int insertPowder(PowderVO vo) {	// 보충제 추가
 		try {
 			conn = JDBCConnection.getConnection();
-			sql = "insert into powder values ((select nvl(max(pno), 0)+1 from powder), ?, ?, ?, ?, ?, ?, ?, sysdate)";
+			sql = "insert into powder values((select nvl(max(pno), 0)+1 from powder), ?, ?, ?, ?, ?, ?, ?, sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getPgory());
 			pstmt.setString(2, vo.getPname());

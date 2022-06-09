@@ -5,6 +5,7 @@
 <%@ page import="com.shop.common.*" %>
 <%
 	BasketDetailVO vo = (BasketDetailVO) request.getAttribute("bs"); 
+	PowderVO po = (PowderVO) request.getAttribute("po");
 %>
 <!DOCTYPE html>
 <html>
@@ -38,13 +39,15 @@ margin-top:20px; margin-bottom:15px; }
 				<li>
 					<h3 class="item_tit">제품명 : <%=vo.getPname() %></h3>
 					<p class="item_data">
-						<span class="img_fr"><img src="${path1 }/<%=vo.getPimage() %>" alt="<%=vo.getPname() %>" /></span>
+						<span class="img_fr"><img src="${path1 }/img/<%=vo.getPimage() %>" alt="<%=vo.getPname() %>" /></span>
 						<span id="money">가격 : <%=vo.getPprice() %></span><br>
-						<span>맛 : <%=vo.getPtaste() %></span><br>
+						<span>맛 : <%=po.getPtaste() %></span><br>
 					</p>
 					<p><span>남은 수량 : <%=vo.getPamount() %></span></p>
-					<br><br><a href="${path1 }/SailFormCtrl?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
-					<a href="${path1 }/DelBasketCtrl?bno=${vo.bno }" class="button is-primary">장바구니 삭제</a><br><br>
+					<br><br>
+					<%-- <a href="${path1 }/SailFormCtrl?pno=${vo.pno }&bno=${vo.bno }&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a> --%>
+					<a href="${path1 }/SailFormCtrl?pno=<%=vo.getPno() %>&bno=<%=vo.getBno() %>&ptaste=${vo.ptaste}" class="button is-primary">구매하기</a>
+					<a href="${path1 }/DelBasketCtrl?bno=<%=vo.getBno() %>" class="button is-primary">장바구니 삭제</a><br><br>
 				</li>
 				<% } %>
 			<c:if test="${vo==null }">

@@ -26,7 +26,7 @@ public class UpdatePowderCtrl extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
-		String saveFolder = "E:/java/jsp_basic/jsp1/web03/src/main/webapp/upload";
+		String saveFolder = "D:\\ksm\\jsp_basic\\jsp1\\web03\\src\\main\\webapp\\upload";
 		String encType = "UTF-8";
 		int maxSize = 10 * 1024 * 1024;	// 10MB
 		

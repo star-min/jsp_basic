@@ -52,7 +52,7 @@ margin-top:20px; margin-bottom:15px; }
 			<c:forEach items="${list }" var="vo" varStatus="status">
 				<li>
 					<div class="img_fr">
-						<img src="${path1 }/${vo.pimage }" alt="${vo.pname }">
+						<img src="${path1 }/img/${vo.pimage }" alt="${vo.pname }">
 					</div>
 					<div class="hidden item1">${status.count }</div>
 					<h3 class="item_tit"><a href="${path1 }/GetPowderCtrl?pno=${vo.pno }">${vo.pname }</a></h3>
