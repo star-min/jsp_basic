@@ -29,6 +29,7 @@
 						<th>카테고리</th>
 						<td>
 							<input type="text" name="pgory" required>
+							<input type="hidden" name="pno">
 						</td>
 					</tr>
 					<tr>

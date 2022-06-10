@@ -27,7 +27,6 @@
 		        <a class="navbar-link">
 		          스택
 		        </a>
-		
 		        <div class="navbar-dropdown">
 		          <a class="navbar-item">
 		            운동후 회복
@@ -139,7 +138,7 @@
 		        </div>
 		      </div>
 		      </c:if>
-		      <c:if test="${sid!='admin' && empty sid  }">
+		      <c:if test="${sid!='admin' && !empty sid }">
 		      <!-- 로그인 사용자 -->
 		      <div class="navbar-item">
 		        <div class="buttons">
@@ -159,7 +158,7 @@
 		      </div>
 		      </c:if>
 		      <!-- 관리자 -->
-		      <c:if test="${sid=='admin' }">
+		      <c:if test="${sid =='admin' }">
 		      <div class="navbar-item">
 		        <div class="buttons">
 		          <a href="${path }/GetBoardListCtrl" class="button is-primary">

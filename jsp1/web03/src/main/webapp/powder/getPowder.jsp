@@ -51,15 +51,29 @@
 					</tr>
 					<tr>
 						<th>보충제명</th>
+						<c:if test="${sid!='admin' }">
+						<td>
+							<input type="text" name="pname" value="${powder.pname }" readonly>
+						</td>
+						</c:if>
+						<c:if test="${sid=='admin' }">
 						<td>
 							<input type="text" name="pname" value="${powder.pname }">
 						</td>
+						</c:if>
 					</tr>
 					<tr>
 						<th>가격</th>
+						<c:if test="${sid!='admin' }">
+						<td>
+							<input type="text" name="pprice" value="${powder.pprice }" id="money" readonly>
+						</td>
+						</c:if>
+						<c:if test="${sid=='admin' }">
 						<td>
 							<input type="text" name="pprice" value="${powder.pprice }" id="money">
 						</td>
+						</c:if>
 					</tr>
 					<tr>
 						<th>맛</th>
@@ -79,9 +93,16 @@
 					</tr>
 					<tr>
 						<th>내용</th>
+						<c:if test="${sid!='admin' }">
+						<td>
+							<textarea cols="100" rows ="7" name="pcomment" readonly>${powder.pcomment }</textarea>
+						</td>
+						</c:if>
+						<c:if test="${sid=='admin' }">
 						<td>
 							<textarea cols="100" rows ="7" name="pcomment" >${powder.pcomment }</textarea>
 						</td>
+						</c:if>
 					</tr>
 					<tr>
 						<th>제품사진</th>

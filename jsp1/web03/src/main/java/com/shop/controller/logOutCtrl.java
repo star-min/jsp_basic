@@ -16,5 +16,5 @@ public class logOutCtrl extends HttpServlet {			//로그아웃 ctrl
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect("./member/login.jsp");
+		response.sendRedirect("./index.jsp");
 }}

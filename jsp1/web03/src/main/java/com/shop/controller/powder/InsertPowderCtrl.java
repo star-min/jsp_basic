@@ -32,7 +32,7 @@ public class InsertPowderCtrl extends HttpServlet {
 		MultipartRequest multi = new MultipartRequest(request, saveFolder, maxSize, encType);
 		
 		String pgory = multi.getParameter("pgory");
-		String pname = multi.getParameter("pnname");
+		String pname = multi.getParameter("pname");
 		int pprice = Integer.parseInt(multi.getParameter("pprice"));
 		String ptaste = multi.getParameter("ptaste");
 		int pamount = Integer.parseInt(multi.getParameter("pamount"));
@@ -62,7 +62,7 @@ public class InsertPowderCtrl extends HttpServlet {
 		if(cnt>0) {
 			response.sendRedirect("GetPowderListCtrl");
 		} else {
-			response.sendRedirect("./board/insertPowderForm.jsp");
+			response.sendRedirect("./powder/insertPowderForm.jsp");
 		}
 		
 	}
