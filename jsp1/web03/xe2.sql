@@ -19,6 +19,9 @@ drop table board;
 
 commit;
 
+select * from (select * from board order by regdate desc) where rownum <= 5;
+select * from (select * from powder order by pinday desc) where rownum <= 5;
+
 -- 회원테이블
 create table human (hid varchar2(20) primary key, hpw varchar2(50) not null,
 hname varchar2(50) not null, tel varchar2(100) not null,addr1 varchar2(200),addr2 varchar2(100), postcode varchar2(10),

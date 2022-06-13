@@ -10,20 +10,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 <title>메인</title>
 <style>
-html[data-mobile="N"] .main_popularity_categories {display:block; width:100%; height:auto; margin:70px 0 0 0; padding:0; box-sizing:border-box;}
-html[data-mobile="N"] .main_popularity_categories h1 {
-	display: block;
-	width: auto;
-	height: auto;
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	font-weight: 700;
-	color: #000;
-	line-height: 120%;
-	text-align: center;
-	box-sizing: border-box;
-}
 html .main_popularity_categories_items {display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:center; width:100%; height:auto; margin:5px 0 0 0; padding:0; box-sizing:border-box;}
 html .main_popularity_categories_item {flex:0 0 220px; display:flex; flex-direction:column; align-items:center; justify-content:center; width:220px; height:auto; margin:20px 0 0 0; padding:0 10px; box-sizing:border-box;}
 html .main_popularity_categories_item_anchor {
@@ -33,6 +19,11 @@ html .main_popularity_categories_item_anchor {
 
 .sub_content {max-width: 980px; margin: 0 auto;}
 
+.footer_gyms { width: 100%; max-width: 980px; height: auto; margin: 80px auto 0 auto;  padding: 0; text-align: center; }
+.footer_gyms .footer_gym_items { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center;
+    justify-content: flex-start; width: 100%; height: auto; margin: 0; padding: 0;
+    border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; box-sizing: border-box;
+}
 
 </style>
 </head>
@@ -45,6 +36,8 @@ html .main_popularity_categories_item_anchor {
 			clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen>
 		</iframe>
 	</figure>
+<%-- <jsp:include page="./latest/getlatest.jsp"></jsp:include> --%>
+</body>
 <div class="sub_content">
 	<div class="main_popularity_categories_items">
         <div class="main_popularity_categories_item">
@@ -87,21 +80,20 @@ html .main_popularity_categories_item_anchor {
 </div>
 
 <div class="span16 main_wm_grid">
-<div class="footer_gyms swiper-container-initialized swiper-container-horizontal" style="cursor: grab;">
-    <div class="footer_gym_items swiper-wrapper" style="border: 0px !important; transform: translate3d(0px, 0px, 0px);">
-        <div class="footer_gym_item swiper-slide first_item swiper-slide-active" style="width: 1894px;">
-            <a href="https://news.monsterzym.com/index.php?mid=sports_asia&amp;category=8012270&amp;document_srl=10417661" class="footer_gym_item_anchor">
+<div class="footer_gyms" style="cursor: grab;">
+    <div class="footer_gym_items" style="border: 0px !important; transform: translate3d(0px, 0px, 0px);">
+        <div class="footer_gym_item" style="width: 1894px;">
+            <a href="" class="footer_gym_item_anchor">
                 <div class="footer_gym_item_image">
-                    <img src="./img/footer_gym_2_20220609.png">
+                    <img src="./img/footer_gym_1_20220427.png">
                 </div>
                 <div class="footer_gym_item_text">
                     <div class="footer_gym_item_text_title">잔잔한 피트니스 시장에 일으킬 하나의 폭풍</div>
-                    
                 </div>
             </a>
         </div>
-        <div class="footer_gym_item swiper-slide swiper-slide-next" style="width: 1894px;">
-            <a href="https://news.monsterzym.com/index.php?mid=sports_asia&amp;type=main&amp;document_srl=10417668" class="footer_gym_item_anchor">
+        <div class="footer_gym_item" style="width: 1894px;">
+            <a href="" class="footer_gym_item_anchor">
                 <div class="footer_gym_item_image">
                     <img src="./img/footer_gym_2_20220609.jpg">
                 </div>
@@ -111,7 +103,7 @@ html .main_popularity_categories_item_anchor {
             </a>
         </div>
         <div class="footer_gym_item swiper-slide" style="width: 1894px;">
-            <a href="https://news.monsterzym.com/index.php?mid=sports_asia&amp;category=10417648&amp;document_srl=10417665" class="footer_gym_item_anchor">
+            <a href="" class="footer_gym_item_anchor">
                 <div class="footer_gym_item_image">
                     <img src="./img/footer_gym_3_20220427.png">
                 </div>

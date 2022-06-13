@@ -6,12 +6,19 @@
 	String sid = "";
 	if(session !=null) sid = (String) session.getAttribute("sid");  
 %>
+<<style>
+#header {padding-top: 0px; padding-bottom: 0px }
+#navbar-link { padding-right: 120px}
+#logo { padding-left: 200px; padding-right: 100px; padding-top: 0px; padding-bottom: 0px}
+#logo img { display:block; width:auto; height:130px; min-height:30px; 
+max-height:100px; padding-top: 0px; padding-bottom: 0px}
+</style>
 <header id="header" class="panel-heading">
 	<div class="hd_wrap">
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 		  <div class="navbar-brand">
 		    <a class="navbar-item" href="${path }/index.jsp" id="logo">
-		      <img src="${path }/img/logo.jpg" width="auto" height="auto">
+		      <img src="${path }/img/logogo.png" width="auto" height="auto">
 		    </a>
 		
 		    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

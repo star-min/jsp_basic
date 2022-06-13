@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />  
 <!DOCTYPE html>
 <html>
@@ -53,7 +54,7 @@
 						<th>보충제명</th>
 						<c:if test="${sid!='admin' }">
 						<td>
-							<input type="text" name="pname" value="${powder.pname }" readonly>
+							<p>${powder.pname }</p>
 						</td>
 						</c:if>
 						<c:if test="${sid=='admin' }">
@@ -66,7 +67,8 @@
 						<th>가격</th>
 						<c:if test="${sid!='admin' }">
 						<td>
-							<input type="text" name="pprice" value="${powder.pprice }" id="money" readonly>
+							<span>&#8361;</span>
+							<fmt:formatNumber value="${powder.pprice }" groupingUsed="true"/>
 						</td>
 						</c:if>
 						<c:if test="${sid=='admin' }">
@@ -87,9 +89,21 @@
 					</tr>
 					<tr>
 						<th>남은 수량</th>
+						<c:if test="${sid!='admin' }">
+						<td>
+						<c:if test="${powder.pamount==0 }">
+							<p style="color: red">품절!</p>
+						</c:if>
+						<c:if test="${powder.pamount!=0 }">
+							<p>${powder.pamount }</p>
+						</c:if>
+						</td>
+						</c:if>
+						<c:if test="${sid=='admin' }">
 						<td>
 							<input type="number" name="pamount" value="${powder.pamount }">
 						</td>
+						</c:if>
 					</tr>
 					<tr>
 						<th>내용</th>

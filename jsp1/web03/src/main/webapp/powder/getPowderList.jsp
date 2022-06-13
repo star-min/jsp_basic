@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="com.shop.common.*" %>
 <%
 	PowderVO vo = (PowderVO) request.getAttribute("bs"); 
@@ -54,10 +55,12 @@ margin-top:20px; margin-bottom:15px; }
 					<div class="img_fr">
 						<img src="${path1 }/img/${vo.pimage }" alt="${vo.pname }">
 					</div>
-					<div class="hidden item1">${status.count }</div>
+					<div class="hidden item1">상품 번호 : ${status.count }</div>
 					<h3 class="item_tit"><a href="${path1 }/GetPowderCtrl?pno=${vo.pno }">${vo.pname }</a></h3>
-
-					<p class="item_com" id="money"> ${vo.pprice }￦</p>
+						<c:if test="${vo.pamount==0 }">
+							<span style="color: red">품절!</span>
+						</c:if>
+					<span>&#8361;</span><fmt:formatNumber value="${vo.pprice }" groupingUsed="true"/>
 					<p class="item_data">
 						<span>맛 : ${vo.ptaste }</span><br>
 					</p>
@@ -74,34 +77,6 @@ margin-top:20px; margin-bottom:15px; }
 		</div>
 		</c:if>	
 	</section>
-	<script type="text/javascript">
-function comma(str) {
-       str = String(str);
-       return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
-   }
-
-   function uncomma(str) {
-       str = String(str);
-       return str.replace(/[^\d]+/g, '');
-   } 
-   
-   function inputNumberFormat(obj) {
-       obj.value = comma(uncomma(obj.value));
-   }
-   
-   function inputOnlyNumberFormat(obj) {
-       obj.value = onlynumber(uncomma(obj.value));
-   }
-   
-   function onlynumber(str) {
-    str = String(str);
-    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
-}
-   
-   var money = $('#money').text();
-   var money2 = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-   $('#money').text(money2);
-</script>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>

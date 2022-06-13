@@ -19,7 +19,7 @@ $(document).ready( function () {
 #gnb .navbar-dropdown { z-index:999; }
 .con_wrap { width:1280px; margin:0 auto; } 
 .frm_fr { width:800px; }
-#logo img { display:block; width:180px; height:30px; min-height:30px; max-height:30px; }
+#logo img { display:block; width:280px; height:50px; min-height:30px; max-height:50px; }
 .page_tit { font-size:40px; text-align:center; line-height:2em; padding:1em; }
 
 #form_table { width:800px; margin:20px auto; }
