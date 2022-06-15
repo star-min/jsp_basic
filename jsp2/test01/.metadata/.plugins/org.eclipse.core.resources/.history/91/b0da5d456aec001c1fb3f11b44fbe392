@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="sample">
+	<select id="memberList" resultType="com.okhospital.common.MemberDTO" >
+		select * from member
+	</select>
+</mapper>

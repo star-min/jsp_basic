@@ -18,37 +18,13 @@
 		<property name="password" value="tiger" />
 	</bean>
 	
-	<!-- MySQL 설정 -->
-<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="url"
-            value="jdbc:mysql://127.0.0.1:3306/스키마이름?useSSL=false&amp;serverTimezone=UTC">
-        </property>
-        <property name="username" value="root"></property>
-        <property name="password" value="a1234"></property>
-    </bean> -->
-    
-    <!-- MariaDB 설정 -->
-<!--     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-		<property name="driverClass" value="org.mariadb.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mariadb://localhost:3306/데이터베이스명"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="a1234"></property>
-	</bean> -->
-    
-    <!-- 공용 DB 또는 아파치 DBCP를 활용한 DB연결 설정 -->
-<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
-		destroy-method="close"> <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> 
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" /> 
-		<property name="username" value="system" /> 
-		<property name="password" value="1234"/> 
-	</bean> -->
+
 	<!-- sqlSessionFactory : DB의 SQL을 해당 xml에서 xml 언어로 쉽게 DB처리하기 위한 설정 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- dataSource의 ref는 반드시 해당 드라이버의 id가 들어가야 함 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- mybatis의 설정 방식과 외부 파일의 위치 지정 -->
-		<property name="configLocation" value="classpath:/mybatis.xml" />
+		<property name="configLocation" value="classpath:/mybatis-config.xml" />
 		<!-- xml로 sql명령을 내려지는 실제 파일을 지정 -->
 		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml" />
 	</bean>

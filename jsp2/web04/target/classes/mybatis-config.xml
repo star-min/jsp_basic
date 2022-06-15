@@ -4,8 +4,6 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
  <configuration>
  	<typeAliases>
- 		<package name="com.okhospital.board" />
- 		<package name="com.okhospital.member" />
- 		<package name="com.okhospital.sample" />
+ 		<package name="com.okhospital.base" />
  	</typeAliases>
  </configuration>
