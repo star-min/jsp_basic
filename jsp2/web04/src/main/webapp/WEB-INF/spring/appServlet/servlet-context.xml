@@ -7,22 +7,19 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
-	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- 애너테이션으로 컨트롤러, 클래스 등을 활용할 수 있게 하겠음을 설정 -->
 	<annotation-driven />
-
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- /resources(이미지,동영상,아이콘,한글문서,.. directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 뷰 리졸버 : /WEB-INF/views(jsp파일들)이 있는 directory 설정 및 접두사/접미사 모두 설정 -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<!-- 접두사 -->
 		<beans:property name="suffix" value=".jsp" />
+		<!-- 접미사 -->
 	</beans:bean>
-	
+	<!-- 서블릿에서 home을 호출하면, /WEB-INF/views/home.jsp이 실행되게 됨 -->
+	<resources location="/WEB-INF/views/include/" mapping="/include/**"/>
+	<!-- 홈이 있는 메인 패키지를 설정 -->
 	<context:component-scan base-package="com.okhospital.myapp" />
-	
-	
-	
 </beans:beans>
