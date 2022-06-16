@@ -1,11 +1,14 @@
-package com.okhospital.base;
+package com.okhospital.controller;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
+import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,13 +18,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.okhospital.dto.BoardDTO;
 import com.okhospital.dto.MemberDTO;
+import com.okhospital.service.BoardService;
 
 @Controller
-public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+@RequestMapping("/board/")
+public class BoardController {
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
+	@Inject
+	BoardService boardService;
+	
+	@RequestMapping(value="list", method = RequestMethod.GET)
+	public String boardList(Model model) throws Exception {
+		List<BoardDTO> list = boardService.boardList();
+		model.addAttribute("list",list);
+		return "board/list";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -36,12 +51,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value="/test", method = RequestMethod.GET)
-	public String test(Locale locale, Model model) {
-		logger.info("테스트 페이지~!");
-		model.addAttribute("msg","테스트입니다.");
-		return "/test";
-	}
 	
 	@RequestMapping(value="test/doA", method = RequestMethod.GET)
 	public String doA(Locale locale, Model model) {

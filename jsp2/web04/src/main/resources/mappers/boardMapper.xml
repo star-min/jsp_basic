@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="board">
+	<!-- 목록 불러오기 -->
+	<select id="boardList" resultType="com.okhospital.dto.boardDTO" >
+		select * from board
+	</select>
+	
+	<!-- 글 상세보기 -->
+	<select id="boardRead" resultType="com.okhospital.dto.boardDTO" >
+		select * from board where seq = #{seq}
+	</select>
+	
+	<!-- 글 쓰기 -->
+	<insert id="boardWrite">
+	insert into board (seq, title, content, nickname)
+	values((select nvl(max(seq)+1, 1) from board), #{title}, #{content}, #{nickname})
+	</insert>
+	
+	<!-- 글 수정 -->
+	<update id="boardUpdate">
+	update board set title=#{title}, content=#{content}
+	where seq=#{seq}
+	</update>
+	
+	<!-- 글 삭제 -->
+	<update id="boardDelect">
+	delete from board where seq=#{seq}
+	</update>
+</mapper>

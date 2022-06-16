@@ -1,4 +1,4 @@
-package com.okhospital.common;
+package com.okhospital.dto;
 
 public class MemberDTO {
 	private String hid;
