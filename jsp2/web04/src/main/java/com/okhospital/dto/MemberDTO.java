@@ -1,33 +1,41 @@
 package com.okhospital.dto;
 
 public class MemberDTO {
-	private String hid;
-	private String hpw;
-	private String hname;
+	private String userid;
+	private String userpw;
+	private String username;
+	private String email;
 	private String tel;
 	private String addr1;
 	private String addr2;
 	private String postcode;
-	private String email;
+	private String regdate;
 	private String birth;
-	private String joinday;
-	public String getHid() {
-		return hid;
+	private int userpoint;
+	private int visited;
+	public String getUserid() {
+		return userid;
 	}
-	public void setHid(String hid) {
-		this.hid = hid;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getHpw() {
-		return hpw;
+	public String getUserpw() {
+		return userpw;
 	}
-	public void setHpw(String hpw) {
-		this.hpw = hpw;
+	public void setUserpw(String userpw) {
+		this.userpw = userpw;
 	}
-	public String getHname() {
-		return hname;
+	public String getUsername() {
+		return username;
 	}
-	public void setHname(String hname) {
-		this.hname = hname;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getTel() {
 		return tel;
@@ -53,11 +61,11 @@ public class MemberDTO {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-	public String getEmail() {
-		return email;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 	public String getBirth() {
 		return birth;
@@ -65,11 +73,16 @@ public class MemberDTO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getJoinday() {
-		return joinday;
+	public int getUserpoint() {
+		return userpoint;
 	}
-	public void setJoinday(String joinday) {
-		this.joinday = joinday;
+	public void setUserpoint(int userpoint) {
+		this.userpoint = userpoint;
 	}
-
+	public int getVisited() {
+		return visited;
+	}
+	public void setVisited(int visited) {
+		this.visited = visited;
+	}
 }
