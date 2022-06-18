@@ -6,11 +6,11 @@
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="board">
 <!-- 목록 불러오기 -->
-<select resultType="com.okhospital.dto.BoardDTO" id="boardList">select seq, title, content, regdate, nickname, jo from board </select>
+<select resultType="com.okhospital.dto.BoardDTO" id="boardList">select seq, title, content, regdate, nickname, visited from board order by regdate desc </select>
 <!-- 글 상세보기 -->
-<select resultType="com.okhospital.dto.BoardDTO" id="boardRead">select seq, title, content, regdate, nickname, jo from board where seq = #{seq } </select>
+<select resultType="com.okhospital.dto.BoardDTO" id="boardRead">select * from board where seq = #{seq } </select>
 <!-- 글 쓰기 -->
-<insert id="boardWrite">insert into board (seq, title, content, nickname)values ((select nvl(max(seq)+1, 1) from board), #{title }, #{content }, #{nickname }) </insert>
+<insert id="boardWrite">insert into board (seq, title, content, nickname, regdate)values ((select nvl(max(seq)+1, 1) from board), #{title }, #{content }, #{nickname }, sysdate) </insert>
 <!-- 글 수정 -->
 <update id="boardUpdate">update board set title=#{title }, content=#{content }where seq=#{seq } </update>
 <!-- 글 수정 -->

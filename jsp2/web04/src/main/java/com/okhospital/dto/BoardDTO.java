@@ -1,14 +1,13 @@
 package com.okhospital.dto;
 
 import java.util.Date;
-
 public class BoardDTO {
 	private int seq;
 	private String title;
 	private String content;
 	private String nickname;
 	private Date regdate;
-	private int jo;
+	private int visited;
 	public int getSeq() {
 		return seq;
 	}
@@ -39,10 +38,10 @@ public class BoardDTO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public int getJo() {
-		return jo;
+	public int getVisited() {
+		return visited;
 	}
-	public void setJo(int jo) {
-		this.jo = jo;
+	public void setVisited(int visited) {
+		this.visited = visited;
 	}
 }
