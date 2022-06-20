@@ -24,6 +24,7 @@
 	<!-- 서블릿에서 home을 호출하면, /WEB-INF/views/home.jsp이 실행되게 됨 -->
 	<resources location="/WEB-INF/views/include/" mapping="/include/**"/>
 	<resources location="/WEB-INF/views/board/" mapping="/board/**"/>
+	<resources location="/WEB-INF/views/member/" mapping="/member/**"/>
 	<resources location="/WEB-INF/views/data/" mapping="/data/**"/>
 	<!-- 홈이 있는 메인 패키지를 설정 -->
 	<context:component-scan base-package="com.okhospital" />

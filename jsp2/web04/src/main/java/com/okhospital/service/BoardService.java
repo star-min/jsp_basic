@@ -19,5 +19,4 @@ public interface BoardService {
 	
 	//글 삭제
 	public void boardDelete(int seq) throws Exception;
-	
 }

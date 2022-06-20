@@ -15,11 +15,8 @@
 <link rel="stylesheet" href="${path1 }/include/common.css">
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
 <article id="con" class="content">
-<figure class="sub_visual">
-	<img src="${path1 }/data/bg_sub_top1.jpg" alt="게시판 비주얼">
-</figure>
+
 <h2 class="page_tit">글 상세보기</h2>
 	<form action="${path1 }/board/update.do" method="post">
 	<div class="table_form_wrap">
@@ -66,7 +63,7 @@
 						</c:if>
 						<c:if test="${sid!='admin' }">
 							<c:if test="${board.nickname=='admin' }">관리자</c:if>
-							<c:if test="${board.nickname!='admin' }">김기태</c:if>				
+							<c:if test="${board.nickname!='admin' }">김성민</c:if>				
 						</c:if>
 					</td>
 				</tr>

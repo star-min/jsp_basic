@@ -64,12 +64,12 @@ public class HomeController {
 	public ModelAndView doC(Locale locale, Model model) {
 		ArrayList<MemberDTO> list = new ArrayList<>();
 		MemberDTO dto1 = new MemberDTO();
-		dto1.setHid("kkt");
-		dto1.setHpw("1234");
+		dto1.setUserid("kkt");
+		dto1.setUserpw("1234");
 		list.add(dto1);
 		MemberDTO dto2 = new MemberDTO();
-		dto2.setHid("cjy");
-		dto2.setHpw("4321");
+		dto2.setUserid("cjy");
+		dto2.setUserpw("4321");
 		list.add(dto2);
 		logger.info("doC 페이지~! list 배달~!");
 		model.addAttribute("msg", "doC 테스트");

@@ -4,13 +4,13 @@
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
 <div class="inner">
-    <h1 class="logo"><a href="/"><img src="${path1 }/images/logo.png" alt="판교예스yes의원"></a></h1>
+    <h1 class="logo"><a href="/"><img src="resources/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
     <button type="button" class="btnMenu"><span>MENU</span></button>
 </div>
 <nav id="gnb">
     <div class="login">
         <span class="sign"><a href="#">로그인</a></span>
-            <span><a href="/member/join.html">회원가입</a></span>
+        <span><a href="${path1 }/member/joinForm.do">회원가입</a></span>
     </div>
     <div class="list" >
         <ul id="main-menu" >
@@ -48,33 +48,27 @@
             <li class=""><a href="./menu3/menu3.html#page1">도수 치료</a>
                 <div class="subDepth">
                     <ul id="sub-menu">
-                        <li class=""><a href="./menu3/menu3.html#page1">비수술 통증치료</a></li>
-                        <li class=""><a href="./menu3/menu3.html#page2">카이로프랙틱</a></li>
-                        <li class=""><a href="./menu3/menu3.html#page3">인대강화주사</a></li>
-                        <li class=""><a href="./menu3/menu3.html#page4">신경자극치료</a></li>
-                        <li class=""><a href="./menu3/menu3.html#page5">체외 충격파</a></li>
+                        <li class=""><a href="./menu3/menu3.html#page1">그라스톤 치료</a></li>
                     </ul>
                 </div>
             </li>
             <li class=""><a href="./menu4/menu4.html#page1">초음파 치료</a>
                 <div class="subDepth">
                     <ul id="sub-menu">
-                        <li class=""><a href="./menu4/menu4.html#page1">비수술 통증치료</a></li>
-                        <li class=""><a href="./menu4/menu4.html#page2">카이로프랙틱</a></li>
-                        <li class=""><a href="./menu4/menu4.html#page3">인대강화주사</a></li>
-                        <li class=""><a href="./menu4/menu4.html#page4">신경자극치료</a></li>
-                        <li class=""><a href="./menu4/menu4.html#page5">체외 충격파</a></li>
+                        <li class=""><a href="./menu4/menu4.html#page1">저음파</a></li>
+                        <li class=""><a href="./menu4/menu4.html#page2">초음파</a></li>
+                        <li class=""><a href="./menu4/menu4.html#page3">극초음파</a></li>
                     </ul>
                 </div>
             </li>
             <li class=""><a href="./menu5/menu5.html#page1">탈모 치료</a>
                 <div class="subDepth">
                     <ul id="sub-menu">
-                        <li class=""><a href="./menu5/menu5.html#page1">비수술 통증치료</a></li>
-                        <li class=""><a href="./menu5/menu5.html#page2">카이로프랙틱</a></li>
-                        <li class=""><a href="./menu5/menu5.html#page3">인대강화주사</a></li>
-                        <li class=""><a href="./menu5/menu5.html#page4">신경자극치료</a></li>
-                        <li class=""><a href="./menu5/menu5.html#page5">체외 충격파</a></li>
+                        <li class=""><a href="./menu5/menu5.html#page1">남성형 탈모</a></li>
+                        <li class=""><a href="./menu5/menu5.html#page2">여성형 탈모</a></li>
+                        <li class=""><a href="./menu5/menu5.html#page3">피나스테라이드</a></li>
+                        <li class=""><a href="./menu5/menu5.html#page4">두타스테라이드</a></li>
+                        <li class=""><a href="./menu5/menu5.html#page5">모발 이식</a></li>
                     </ul>
                 </div>
             </li>

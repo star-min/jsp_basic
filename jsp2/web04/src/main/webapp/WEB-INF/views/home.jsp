@@ -37,12 +37,6 @@
 	
 <%@ include file="include/menu.jsp" %>
 
-<article id="con" class="content">
-	<h1 class="page_tit">
-	Hello world!  
-	</h1>
-	<P>  The time on the server is ${serverTime}. </P>
-</article>
 
 	<footer id="footer" class="footer" name="footer">
 		<%@ include file="include/footer.jsp" %>

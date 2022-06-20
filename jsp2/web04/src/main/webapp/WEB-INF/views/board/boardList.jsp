@@ -36,7 +36,7 @@
 				<td><fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd" /></td>
 				<td>
 					<c:if test="${board.nickname=='admin' }">관리자</c:if>
-					<c:if test="${board.nickname!='admin' }">김기태</c:if>
+					<c:if test="${board.nickname!='admin' }">김성민</c:if>
 				</td>
 			</tr>
 		</c:forEach>

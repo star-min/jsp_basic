@@ -4,13 +4,17 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.okhospital.dao.BoardDAO;
 import com.okhospital.dto.BoardDTO;
 
+@Service
 public class BoardServiceImpl implements BoardService {
 
-	//dao 객체 주입
-	@Inject
+	//해당 dao 객체 주입
+	@Autowired
 	BoardDAO boardDao;
 	
 	@Override
@@ -37,5 +41,4 @@ public class BoardServiceImpl implements BoardService {
 	public void boardDelete(int seq) throws Exception {
 		boardDao.boardDelete(seq);
 	}
-	
 }

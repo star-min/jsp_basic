@@ -9,7 +9,7 @@
 	              <ul class="img_box">
 	                  <li>
 	                      <a href="vision.html">
-	                          <img src="./images/main/main10.jpg " alt="안전진료 시스템" class="pic">
+	                          <img src="resources/images/main/main10.jpg " alt="안전진료 시스템" class="pic">
 	                          <div class="tit_box">
 	                              <h2 class="vs_tit">인생을 바꾸는</h2><!-- vs_tit, vs_com은 슬라이드화면에 글씨를 쓰는 칸입니다 프로젝트02 에서 사용하던것과 동일합니다 -->
 	                              <p class="vs_com">도수치료 가족과 함께...</p>
@@ -18,7 +18,7 @@
 	                  </li>
 	                  <li>
 	                      <a href="esgpopel.html">
-	                          <img src="./images/main/main11.jpg " alt="전문병원" class="pic">
+	                          <img src="resources/images/main/main11.jpg " alt="전문병원" class="pic">
 	                          <div class="tit_box">
 	                              <h2 class="vs_tit">첫째는 안전 둘째는 친절</h2>
 	                              <p class="vs_com">최고의 의원 과 함께 남은 인생을..</p>
@@ -27,7 +27,7 @@
 	                  </li>
 	                  <li>
 	                      <a href="ai.html">
-	                          <img src="./images/main/main12.jpg" style="max-width: 100%; height: auto;" alt="전신마취" class="pic">
+	                          <img src="resources/images/main/main12.jpg" style="max-width: 100%; height: auto;" alt="전신마취" class="pic">
 	                          <div class="tit_box">
 	                              <h2 class="vs_tit">환절기마다 다시찾게되는..</h2>
 	                              <p class="vs_com">판교예스의원 !</p>
@@ -36,7 +36,7 @@
 	                  </li>
 	                  <li>
 	                      <a href="service.html">
-	                          <img src="./images/main/main13.jpg" alt="인증기관" class="pic">
+	                          <img src="resources/images/main/main13.jpg" alt="인증기관" class="pic">
 	                          <div class="tit_box">
 	                              <h2 class="vs_tit">떠나자..</h2>
 	                              <p class="vs_com">도수치료받고 건강해진 몸으로..!</p>
@@ -59,7 +59,7 @@
 							<span><a href="">온라인예약</a></span>
 							<span><a href="">탈모 상담</a></span>
 							<a class="guide-btn" href="https://youtu.be/F0VnipjJxrA">
-								<img src="./images/main/main-guide-btn.png" alt="">
+								<img src="resources/images/main/main-guide-btn.png" alt="">
 							</a>
 						</nav>
 					</div>
@@ -149,7 +149,7 @@
 			<ul class="list">
 			<li>
 				<a href="" class="box">
-						<span class="img"><img src="./images/main/info01.jpg" class="block"></span> 
+						<span class="img"><img src="resources/images/main/info01.jpg" class="block"></span> 
 					<span class="cont">
 						<strong class="tit">의사가 말해주는 탈모 유전에 관한 이야기</strong>
 						<span class="txt"></span>
@@ -162,7 +162,7 @@
 			</li>
 			<li>
 				<a href="" class="box">
-						<span class="img"><img src="./images/main/info02.jpg" class="block"></span> 
+						<span class="img"><img src="resources/images/main/info02.jpg" class="block"></span> 
 					<span class="cont">
 						<strong class="tit">무리한 다이어트의 진실을 알려 드립니다. (f</strong>
 						<span class="txt"></span>
@@ -175,7 +175,7 @@
 			</li>
 			<li>
 				<a href="" class="box">
-						<span class="img"><img src="./images/main/info03.jpg" class="block"></span> 
+						<span class="img"><img src="resources/images/main/info03.jpg" class="block"></span> 
 					<span class="cont">
 						<strong class="tit">유전성 탈모란 무엇인가요?</strong>
 						<span class="txt"></span>
@@ -188,7 +188,7 @@
 			</li>
 			<li>
 				<a href="" class="box">
-						<span class="img"><img src="./images/main/info04.jpg" class="block"></span> 
+						<span class="img"><img src="resources/images/main/info04.jpg" class="block"></span> 
 					<span class="cont">
 						<strong class="tit">탈모 증명서, 집에서 받아볼 수 </strong>
 						<span class="txt"></span>
