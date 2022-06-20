@@ -42,13 +42,21 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public MemberDTO loginCheck(String userid, String userpw) throws Exception {
-		MemberDTO mdto = new MemberDTO();
-		Map<String, String> map = new HashMap<>();
-		map.put("userid", userid);
-		map.put("userpw", userpw);
-		mdto = sqlSession.selectOne("member.loginCheck", map);
+	public MemberDTO loginCheck(MemberDTO mdto) throws Exception {
+		mdto = sqlSession.selectOne("member.loginCheck", mdto);
 		return mdto;
+	}
+
+	
+	
+	@Override
+	public MemberDTO signin(MemberDTO mdto) throws Exception {
+		return sqlSession.selectOne("member.signin", mdto);
+	}
+
+	@Override
+	public MemberDTO login(MemberDTO mdto) throws Exception {
+		return sqlSession.selectOne("member.login", mdto);
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
@@ -9,8 +10,19 @@
 </div>
 <nav id="gnb">
     <div class="login">
-        <span class="sign"><a href="#">로그인</a></span>
-        <span><a href="${path1 }/member/joinForm.do">회원가입</a></span>
+    	<c:if test="${empty sid }">
+	        <span class="sign"><a href="#">로그인</a></span>
+	        <span><a href="${path1 }/member/joinForm.do">회원가입</a></span>
+	    </c:if>
+	    <c:if test="${!empty sid }">
+	    	<li><span>${sid }</span>님</li>
+	        <span class="sign"><a href="${path1 }/member/read.do" class="mypage">마이페이지</a></span>
+	        <span><a href="${path1 }/member/logout.do" class="logout">로그아웃</a></span>
+	    </c:if>
+	    <c:if test="${sid=='admin' }">
+	        <span class="sign"><a href="${path1 }/board/list.do">게시판 목록</a></span>
+	        <span><a href="${path1 }/board/write_form.do">글쓰기</a></span>
+	    </c:if>
     </div>
     <div class="list" >
         <ul id="main-menu" >

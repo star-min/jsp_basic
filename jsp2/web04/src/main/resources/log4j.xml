@@ -17,9 +17,24 @@
 	< DEBUG(실행 내용에 대한 설명)
 	< TRACE(실행 내용이나 추적경로 등을 표시)
 	-->
-	
 	<!-- Application Loggers -->
-	<logger name="com.okhospital.myapp">
+	<logger name="com.okhospital.base">
+		<level value="info" />
+	</logger>
+	
+	<logger name="com.okhospital.controller">
+		<level value="info" />
+	</logger>
+	
+	<logger name="com.okhospital.dao">
+		<level value="info" />
+	</logger>
+	
+	<logger name="com.okhospital.dto">
+		<level value="info" />
+	</logger>
+	
+	<logger name="com.okhospital.service">
 		<level value="info" />
 	</logger>
 	

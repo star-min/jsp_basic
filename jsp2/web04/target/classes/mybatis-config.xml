@@ -5,11 +5,5 @@
  <configuration>
  	<typeAliases>
  		<package name="com.okhospital"/>
- 		<package name="com.okhospital.common"/>
- 		<package name="com.okhospital.controller"/>
- 		<package name="com.okhospital.dao"/>
- 		<package name="com.okhospital.dto"/>
- 		<package name="com.okhospital.service"/>
- 		
  	</typeAliases>
  </configuration>
