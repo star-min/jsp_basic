@@ -5,7 +5,7 @@
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 <link rel="stylesheet" href="${path1 }/include/common.css">
 <div class="inner">
-    <h1 class="logo"><a href="${path1 }/home.html"><img src="resources/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
+    <h1 class="logo"><a href="${path1 }"><img src="resources/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
 </div>
 <nav id="gnb">
     <div class="login">
@@ -19,8 +19,9 @@
 	        <span><a href="${path1 }/member/logout.do" class="logout">로그아웃</a></span>
 	    </c:if>
 	    <c:if test="${sid=='admin' }">
-	        <span class="sign"><a href="${path1 }/board/list.do">게시판 목록</a></span>
-	        <span><a href="${path1 }/board/write_form.do">글쓰기</a></span>
+	    	<span><a href="${path1 }/member/list.do">회원 목록</a></span>
+	        <span><a href="${path1 }/board/list.do">게시판 목록</a></span>
+	        <span><a href="${path1 }/databank/list.do">자료실 목록</a></span>
 	    </c:if>
     </div>
     <div class="list" >

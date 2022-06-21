@@ -24,6 +24,9 @@
 	<resources mapping="/include/**" location="/WEB-INF/views/include/" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board/" />
 	<resources mapping="/member/**" location="/WEB-INF/views/member/" />
+	<resources mapping="/reservate/**" location="/WEB-INF/views/reservate/" />
+	<resources mapping="/qna/**" location="/WEB-INF/views/qna/" />
+	<resources mapping="/databank/**" location="/WEB-INF/views/databank/" />
 	<resources mapping="/images/**" location="/WEB-INF/views/images/" />
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->

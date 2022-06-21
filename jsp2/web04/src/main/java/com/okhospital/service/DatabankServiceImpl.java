@@ -11,32 +11,31 @@ import com.okhospital.dto.DatabankDTO;
 @Service
 public class DatabankServiceImpl implements DatabankService {
 
-	//해당 dao 객체 주입
 	@Autowired
-	DatabankDAO databankDao;
+	DatabankDAO databankDAO;
 	
 	@Override
 	public List<DatabankDTO> databankList() throws Exception {
-		return databankDao.databankList();
+		return databankDAO.databankList();
 	}
 
 	@Override
 	public DatabankDTO databankRead(int datano) throws Exception {
-		return databankDao.databankRead(datano);
+		return databankDAO.databankRead(datano);
 	}
 
 	@Override
 	public void databankWrite(DatabankDTO ddto) throws Exception {
-		databankDao.databankWrite(ddto);
+		databankDAO.databankWrite(ddto);
 	}
 
 	@Override
 	public void databankUpdate(DatabankDTO ddto) throws Exception {
-		databankDao.databankUpdate(ddto);
+		databankDAO.databankUpdate(ddto);
 	}
 
 	@Override
 	public void databankDelete(int datano) throws Exception {
-		databankDao.databankDelete(datano);
+		databankDAO.databankDelete(datano);
 	}
 }
