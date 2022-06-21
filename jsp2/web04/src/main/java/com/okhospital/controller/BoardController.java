@@ -28,7 +28,7 @@ public class BoardController {
 		return "board/boardList";
 	}
 
-// 구형 ModelAndView 방식		하나의 데이터밖에 전달못함
+// 구형 ModelAndView 방식
 //	public ModelAndView boardList() throws Exception {
 //		List<BoardDTO> boardList = boardService.boardList();
 //		ModelAndView mav = new ModelAndView();
@@ -46,11 +46,11 @@ public class BoardController {
 
 	@RequestMapping("write_form.do")  //board/write_form  -> board/boardWriteForm.jsp
 	public String boardWriteForm(Model model) throws Exception {
-		return "board/boardWriteForm.do";
+		return "board/boardWriteForm";
 	}
 	
 	@RequestMapping(value="insert.do", method = RequestMethod.POST)
-	public String boardWrite(BoardDTO bdto, Model model) throws Exception {
+	public String databankWrite(BoardDTO bdto, Model model) throws Exception {
 		boardService.boardWrite(bdto);
 		return "redirect:list.do";
 	}

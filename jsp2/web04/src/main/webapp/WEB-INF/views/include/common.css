@@ -21,7 +21,7 @@ hr { border: 0; border-top: 1px solid #ddd;}	/* 선을 긋는데 이용했습니
 #header .inner { position: relative; max-width: 1400px; margin: 0 auto;}
 #header .logo { height: 100px; font: 0/0 a;}
 #header .logo a { display: inline-block; vertical-align: middle;}
-#header .logo img { width : 70%; height: 70%; border: 0; vertical-align: top;}
+#header .logo img { width : 70%; height: 70%; border: 0; vertical-align: top; background: url(./images/logo.png) no-repeat;}
 
 #gnb { position: absolute; z-index: 100; top: 100px; left: 0; width: 100%; background: #fff;
     border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
@@ -200,16 +200,50 @@ input:focus{background-color: rgba(185, 206, 250, 0.582);  }   /*항목의 입�
 .joinbtn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
 
 /* login */
-.container-fluid {padding-top: 180px; text-align:center; } /*콘텐츠 영역을 가운데로 보일 수 있도록 함.*/
-.title { text-align:center; margin: 30px; font-size: 30px; margin-left:20px; padding-bottom: 50px;}/*로그인 글씨를 크게 보일 수 있도록 조정함.*/
-.indata {font-size: 20px;} /*아이디와 비밀번호 입력창 위치를 잡아주기 위함*/
-.btn_frame a {text-decoration: none;}
-.btn_frame {padding-left: 10px; box-sizing: border-box;}
-ul{list-style: none;}
-.form_wrap tr td{ border-collapse: collapse; border-spacing: 0;} 
-input:focus{background-color: rgba(65, 108, 163, 0.384);}
-.btn {background-color: rgb(163, 186, 230); padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px;}   
-.btn:hover{color: #ececec;} /*마우스를 버튼에 올리면 색상이 바뀜*/
+
+.form1 { position: relative; z-index: 1; background: #FFFFFF; max-width: 360px;
+  margin: 0 auto 100px; margin-top:100px; padding: 45px; text-align: center; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form1 input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form1 button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #2c51c0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form1 button:hover,.form button:active,.form button:focus {
+    background: #4a6ac7;
+}
+.form1 .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form1 .message a {
+  color: #343a40;
+  text-decoration: none;
+}
+.form1 .register-form {
+  display: none;
+}
 
 /* mypage */
 .subtitle {padding-bottom: 20px; font-size: 30px; margin-left: 50px;} /*페이지 제목 위치 및 사이즈*/

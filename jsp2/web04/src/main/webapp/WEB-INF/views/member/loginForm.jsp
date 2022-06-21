@@ -10,55 +10,58 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
-<%@ include file="../include/header.jsp" %>
 <link rel="stylesheet" href="${path1 }/include/reset.css">
-<link rel="stylesheet" href="${path1 }/include/common.css">
+<link rel="stylesheet" href="${path1 }/member/common.css">
+
+<style>
+.form { position: relative; z-index: 1; background: #FFFFFF; max-width: 360px;
+  margin: 0 auto 100px; margin-top:200px; padding-top: 100px; padding-bottom: 200px;
+  text-align: center; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);}
+.form input { font-family: "Roboto", sans-serif; outline: 0; background: #f2f2f2; width: 100%;
+  border: 0; margin: 0 0 15px; padding: 15px; box-sizing: border-box; font-size: 14px;}
+.form button { font-family: "Roboto", sans-serif; text-transform: uppercase; outline: 0;
+   background: #2c51c0; width: 100%; border: 0; padding: 15px;
+  color: #FFFFFF; font-size: 14px; -webkit-transition: all 0.3 ease; transition: all 0.3 ease; cursor: pointer;}
+.form button:hover,.form button:active,.form button:focus { background: #4a6ac7;}
+.form .message { margin: 15px 0 0; color: #b3b3b3; font-size: 12px;}
+.form .message a { color: #343a40; text-decoration: none;}
+.form .register-form { display: none;}
+</style>
+
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
+	<header id="header" class="header" name="header">
+			<%@ include file="../include/header.jsp" %>
+	</header>
 <article id="con" class="content">
-<figure class="sub_visual">
-	<img src="${path1 }/data/bg_sub_top1.jpg" alt="서브페이지 비주얼">
-</figure>
-<h2 class="page_tit">로그인</h2>
 	<c:if test="${!empty msg }">
 	<script>
 	alert("로그인 실패");
 	document.loginForm.userid.focus();
 	</script>
 	</c:if>
-	<form action="${path1 }/member/signin.do" method="post" name="loginForm">
-	<div class="table_form_wrap">
-		<table class="table_form">
-			<tbody>
-				<tr>
-					<th><label for="userid">아이디</label></th>
-					<td><input type="text" name="userid" id="userid" size="100" class="single100" placeholder="아이디 입력" required>
-					<!--  pattern="^[a-z0-9]+$"  -->
-					</td>
-				</tr>				
-				<tr>
-					<th><label for="userpw">비밀번호</label></th>
-					<td><input type="password" name="userpw" id="userpw"  class="single100" placeholder="비밀번호 입력" required>
-					<!--  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  -->
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<input type="submit" class="btn btn-writer" value="로그인">
-						<input type="reset" class="btn btn-primary" value="취소">
-					</td>
-				</tr>	
-			</tbody>
-		</table>
-	</div>
-	</form>
+<div id="ct">
+  <div class="loginbox">
+      <div class="login-page">
+    <div class="form">
+      <form action="${path1 }/member/signin.do" method="post" name="loginForm" class="login-form">
+        <input type="text" placeholder="userid" name="userid" id="userid" required />
+        <input type="password" placeholder="password" name="userpw" id="userpw" required />
+        <button type="submit">login</button>
+        <p class="message">아이디가 없으십니까? <a href="./agreement.html">회원가입</a></p>
+      </form>
+    </div>
+      </div>
+  </div>
+</div>
 	<script>
 	function loginFaiure() {
 		alert("로그인 실패");
 	}
 	</script>
 </article>
-<%@ include file="../include/footer.jsp" %>
+<footer id="footer" class="footer" name="footer">
+	<%@ include file="../include/footer.jsp" %>
+</footer>
 </body>
 </html>

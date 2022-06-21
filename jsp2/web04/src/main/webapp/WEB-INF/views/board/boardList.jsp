@@ -10,18 +10,30 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>글 목록</title>
-<%@ include file="../include/header.jsp" %>
 <link rel="stylesheet" href="${path1 }/include/reset.css">
 <link rel="stylesheet" href="${path1 }/include/common.css">
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
+<header id="header" class="header" name="header" style="padding-bottom: 300px">
+	<%@ include file="../include/header.jsp" %>
+</header>
 <article id="con" class="content">
-<figure class="sub_visual">
-	<img src="${path1 }/data/bg_sub_top1.jpg" alt="게시판 비주얼">
-</figure>
-<h2 class="page_tit">글 목록</h2>
 <div class="table_lst_wrap">
+<h2>글 목록</h2>
+		<form method="post" action="${path1 }/GetBoardSearchCtrl" class="frm_fr">
+			<table class="table" id="search_tb">
+				<tr>
+					<td>
+						<select name="searchCondition" required>
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select>
+						<input type="text" name="searchKeyword" required />
+						<input type="submit" value="검색" class="button is-info"/>
+					</td>
+				</tr>
+			</table>
+		</form>
 	<table class="table_lst">
 		<thead>
 			<tr>
@@ -29,14 +41,16 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${boardList }" var="board">
+		<c:forEach items="${boardList }" var="list">
 			<tr>
-				<td>${board.seq }</td>
-				<td><a href="${path1 }/board/read.do?seq=${board.seq }">${board.title }</a></td>
-				<td><fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd" /></td>
+				<td>${lsit.seq }</td>
+				<td><a href="${path1 }/board/read.do?seq=${list.seq }">${list.title }</a></td>
+				<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
+				<td>${list.nickname }</td>
+				<td>${list.regdate }</td>
 				<td>
-					<c:if test="${board.nickname=='admin' }">관리자</c:if>
-					<c:if test="${board.nickname!='admin' }">김성민</c:if>
+					<c:if test="${list.nickname=='admin' }">관리자</c:if>
+					<c:if test="${list.nickname!='admin' }">김성민</c:if>
 				</td>
 			</tr>
 		</c:forEach>
@@ -51,6 +65,8 @@
 	</table>
 </div>
 </article>
-<%@ include file="../include/footer.jsp" %>
+<footer id="footer" class="footer" name="footer">
+	<%@ include file="../include/footer.jsp" %>
+</footer>
 </body>
 </html>

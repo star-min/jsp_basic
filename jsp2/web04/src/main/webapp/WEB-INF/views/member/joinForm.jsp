@@ -10,12 +10,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원 가입</title>
-<%@ include file="../include/header.jsp" %>
+
 <link rel="stylesheet" href="${path1 }/include/reset.css">
-<link rel="stylesheet" href="${path1 }/include/common.css">
+<link rel="stylesheet" href="${path1 }/common.css">
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
+	<header id="header" class="header" name="header">
+			<%@ include file="../include/header.jsp" %>
+	</header>
 <article id="con" class="content">
 <figure class="sub_visual">
 	<img src="${path1 }/data/bg_sub_top1.jpg" alt="서브페이지 비주얼">
@@ -134,6 +136,8 @@
 	</script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </article>
-<%@ include file="../include/footer.jsp" %>
+<footer id="footer" class="footer" name="footer">
+	<%@ include file="../include/footer.jsp" %>
+</footer>
 </body>
 </html>

@@ -10,11 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>글 상세보기</title>
-<%@ include file="../include/header.jsp" %>
 <link rel="stylesheet" href="${path1 }/include/reset.css">
 <link rel="stylesheet" href="${path1 }/include/common.css">
 </head>
 <body>
+<header id="header" class="header" name="header" style="padding-bottom: 600px">
+	<%@ include file="../include/header.jsp" %>
+</header>
 <article id="con" class="content">
 
 <h2 class="page_tit">글 상세보기</h2>
@@ -82,6 +84,8 @@
 	</div>
 	</form>
 </article>
-<%@ include file="../include/footer.jsp" %>
+<footer id="footer" class="footer" name="footer">
+	<%@ include file="../include/footer.jsp" %>
+</footer>
 </body>
 </html>

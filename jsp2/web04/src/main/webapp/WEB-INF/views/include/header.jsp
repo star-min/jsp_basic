@@ -3,15 +3,14 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
-
+<link rel="stylesheet" href="${path1 }/include/common.css">
 <div class="inner">
-    <h1 class="logo"><a href="/"><img src="resources/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
-    <button type="button" class="btnMenu"><span>MENU</span></button>
+    <h1 class="logo"><a href="${path1 }/home.html"><img src="resources/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
 </div>
 <nav id="gnb">
     <div class="login">
     	<c:if test="${empty sid }">
-	        <span class="sign"><a href="#">로그인</a></span>
+	        <span class="sign"><a href="${path1 }/member/loginForm.do">로그인</a></span>
 	        <span><a href="${path1 }/member/joinForm.do">회원가입</a></span>
 	    </c:if>
 	    <c:if test="${!empty sid }">
@@ -37,7 +36,7 @@
                     </ul>
                 </div>
             </li>
-            <li class=""><a href="./menu1/menu1.html"">진료 과목</a>
+            <li class=""><a href="./menu1/menu1.html">진료 과목</a>
                 <div class="subDepth">
                     <ul id="sub-menu">
                         <li class=""><a href="./menu1/menu1.html#page1">내과</a></li>

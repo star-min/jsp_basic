@@ -1,5 +1,10 @@
---공지사항 테이블(아마)
-create table board (seq number(38) primary key,title varchar2(50) not null, content varchar2(500) not null, nickname varchar2(50) not null, regdate date, jo number(38));
+--공지사항 테이블
+create table board (seq number(38) primary key,
+title varchar2(50) not null, 
+content varchar2(500) not null, 
+nickname varchar2(50) not null, 
+regdate date,
+jo number(38));
 --더미데이터 생성
 insert into board values(1, '안녕하세요 첫빠네요', '이곳이 내용칸이로군요 흥미롭습니다.', '관리자', sysdate, 0);
 insert into board values((select nvl(max(seq), 0)+1 from board), '휴대폰 요금에 관한 고찰', '요금제보단 약정으로 인한 금액이 더 비싼것 같아요 약정이 4년인데 왜이리 비싼건지 다음부터는 조금더 신중히 선택해야겠네요', '관리자', sysdate, 0);

@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ page session="false" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 <!DOCTYPE>
 <html lang="ko">

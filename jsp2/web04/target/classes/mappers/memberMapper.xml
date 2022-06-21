@@ -40,9 +40,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>	
 	
 	<!-- 로그인2  -->
-	<select id="login" resultType="com.okhospital.dto.MemberDTO">
+	<!-- <select id="login" resultType="com.okhospital.dto.MemberDTO">
 		select userid, userpw, username from mem where userid = #{userid }
-	</select>	
+	</select> -->	
 	
 	<!-- 아이디 존재 유무 체크 : selectOne("member.idCheck", userid)-->
 	<select id="idCheck" resultType="int">

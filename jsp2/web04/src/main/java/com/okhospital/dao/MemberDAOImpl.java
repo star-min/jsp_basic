@@ -47,8 +47,6 @@ public class MemberDAOImpl implements MemberDAO {
 		return mdto;
 	}
 
-	
-	
 	@Override
 	public MemberDTO signin(MemberDTO mdto) throws Exception {
 		return sqlSession.selectOne("member.signin", mdto);

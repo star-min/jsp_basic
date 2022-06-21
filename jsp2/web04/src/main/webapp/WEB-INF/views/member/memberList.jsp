@@ -30,13 +30,13 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${memberList }" var="member" varStatus="status">
+		<c:forEach items="${memberList }" var="mem" varStatus="status">
 			<tr>
 				<td>${status.count }</td>
-				<td><a href="${path1 }/member/getMember.do?userid=${member.userid }">${member.userid }</a></td>
-				<td>${member.username }</td>
+				<td><a href="${path1 }/member/getMember.do?userid=${mem.userid }">${mem.userid }</a></td>
+				<td>${mem.username }</td>
 				<td>
-						<fmt:formatDate value="${member.regdate}" pattern="yyyy-MM-dd" />
+						<fmt:formatDate value="${mem.regdate}" pattern="yyyy-MM-dd" />
 				</td>
 			</tr>
 		</c:forEach>
