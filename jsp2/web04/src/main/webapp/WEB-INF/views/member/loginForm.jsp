@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="${path1 }/member/common.css">
 
 <style>
+.page_tit { text-align:center; padding-top:40px; font-size:48px; line-height:2; }
 .form { position: relative; z-index: 1; background: #FFFFFF; max-width: 360px;
   margin: 0 auto 100px; margin-top:200px; padding-top: 100px; padding-bottom: 200px;
   text-align: center; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);}
@@ -33,6 +34,10 @@
 	<header id="header" class="header" name="header">
 			<%@ include file="../include/header.jsp" %>
 	</header>
+<div>
+	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
+</div>
+<h2 class="page_tit">로그인</h2>
 <article id="con" class="content">
 	<c:if test="${!empty msg }">
 	<script>

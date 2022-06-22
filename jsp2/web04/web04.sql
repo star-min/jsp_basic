@@ -37,3 +37,7 @@ create table databank (
     dview char(1) default 'Y',
     regdate date default sysdate
 );
+commit;
+select * from databank where datano=1 ;
+select * from databank order by regdate desc;
+select * from databank;

@@ -24,10 +24,9 @@
 	<resources mapping="/include/**" location="/WEB-INF/views/include/" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board/" />
 	<resources mapping="/member/**" location="/WEB-INF/views/member/" />
-	<resources mapping="/reservate/**" location="/WEB-INF/views/reservate/" />
-	<resources mapping="/qna/**" location="/WEB-INF/views/qna/" />
 	<resources mapping="/databank/**" location="/WEB-INF/views/databank/" />
 	<resources mapping="/images/**" location="/WEB-INF/views/images/" />
+	
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- 뷰 리졸버 : 뷰(jsp 페이지)의 접두어, 접미어 설정 -->
@@ -35,6 +34,17 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
+	<!-- 스프링 멀티파트 리졸버  -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760" /> <!-- 10mb 제한 -->
+	</beans:bean>
+	
+	<!-- 업로드된 파일의 저장 위치 지정 -->
+	<beans:bean id="uploadPath" class="java.lang.String">
+		<beans:constructor-arg value="D:\ksm\jsp2\web04\src\main\webapp\resources\upload"></beans:constructor-arg>
+	</beans:bean>
+	
 	<!-- 스프링에서 관리하는 bean의 기본 디렉토리 -->
 	<!-- 컴포넌트 스캔 : 해당 패키지 아래에 있는 컴포넌트들을 검색해 빈 객체로 등록 해준다 -->
 	<context:component-scan base-package="com.okhospital"  />

@@ -36,7 +36,8 @@
     .btn-primary {   background-color: #333; color:#fff; }
         .btn-writer {   background-color:rgb(250, 200, 19);  }
     .btn-writer::before { background-position:-73px -68px; }
-
+    
+    .header {padding-bottom: 300px}
 </style>
 <link rel="stylesheet" href="${path1 }/include/reset.css">
 <link rel="stylesheet" href="${path1 }/include/common.css">
@@ -47,10 +48,7 @@
 </header>
 <article id="con" class="content">
 <div class="table_lst_wrap">
-<div>
-	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
-</div>
-<h2 class="page_tit">글 목록</h2>
+<h2>자료 목록</h2>
 		<form method="post" action="${path1 }" class="frm_fr">
 			<table class="table" id="search_tb">
 				<tr>
@@ -68,18 +66,17 @@
 	<table class="table_lst">
 		<thead>
 			<tr>
-				<th>글 번호</th><th>제목</th><th>작성일</th><th>작성자</th>
+				<th>글 번호</th><th>제목</th><th>작성일</th>
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${boardList }" var="board">
+		<c:forEach items="${databankList }" var="databank">
 			<tr>
-				<td>${board.seq }</td>
-				<td><a href="${path1 }/board/read.do?seq=${board.seq }">${board.title }</a></td>
-				<td><fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd" /></td>
+				<td>${databank.datano }</td>
+				<td><a href="${path1 }/databank/read.do?datano=${databank.datano }">${databank.dtitle }</a></td>
 				<td>
-					<c:if test="${board.nickname=='admin' }">관리자</c:if>
-					<c:if test="${board.nickname!='admin' }">${board.nickname }</c:if>
+						<fmt:parseDate value="${databank.regdate}" var="dateVal" pattern="yyyy-MM-dd" />
+						<fmt:formatDate value="${dateVal }" pattern="yyyy-MM-dd" />
 				</td>
 			</tr>
 		</c:forEach>
@@ -87,7 +84,7 @@
 		<c:if test="${sid=='admin' }">
 			<tr>
 				<td colspan="4">
-					<a href="${path1 }/board/write_form.do" class="btn btn-writer" style="width:70px">글 등록</a>
+					<a href="${path1 }/databank/writeForm.do" class="btn btn-writer" style="width:70px">자료 등록</a>
 				</td>
 			</tr>
 			</c:if>

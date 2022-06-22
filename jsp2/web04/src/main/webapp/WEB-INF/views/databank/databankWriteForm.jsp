@@ -9,8 +9,11 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자료 등록</title>
+<link rel="stylesheet" href="${path1 }/include/reset.css">
+<link rel="stylesheet" href="${path1 }/include/common.css">
 <style>
-    /* 콘텐츠 영역 공통 */
+   /* 콘텐츠 영역 공통 */
     .content {  }
     .sub_visual { margin-bottom:50px; width:100%; }
     .sub_visual img { display:block; width:100%; height:auto; }
@@ -43,40 +46,44 @@
     .subTop1 { background-image: url(/resource/images/bg_sub_top1.jpg);}
 	[class*="subTop"] { height: 142px; background-size: cover;}
 </style>
-<title>글 등록</title>
-<link rel="stylesheet" href="${path1 }/include/reset.css">
-<link rel="stylesheet" href="${path1 }/include/common.css">
 </head>
 <body>
-<header id="header" class="header" name="header">
+<header id="header" class="header" name="header" >
 	<%@ include file="../include/header.jsp" %>
 </header>
 <div class="container">
 <article id="con" class="content">
-
-<div>
-	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
-</div>
-	<h2 class="page_tit">글 쓰기</h2>
-	<form action="${path1 }/board/insert.do" method="post">
+<figure class="sub_visual">
+	<img src="${path1 }/images/bg_sub_top1.jpg" alt="게시판 비주얼">
+</figure>
+	<h2 class="page_tit">자료 등록</h2>
+	<form action="${path1 }/databank/insert.do" method="post" name="databankUpload">
 	<div class="table_form_wrap">
 		<table class="table_form">
 			<tbody>
 				<tr>
-					<th><label for="title">제목</label></th>
-					<td><input type="text" name="title" id="title" size="100" class="single100" placeholder="글제목 입력" required></td>
+					<th><label for="dtitle">제목</label></th>
+					<td><input type="text" name="dtitle" id="dtitle" size="100" class="single100" placeholder="글제목 입력" required></td>
 				</tr>
 				<tr>
 					<th><label for="content">내용</label></th>
-					<td><textarea name="content" id="content" cols="100" rows="8" class="multi100" placeholder="글 내용 입력" required></textarea></td>
+					<td><textarea name="dcontent" id="dcontent" cols="100" rows="8" class="multi100" placeholder="글 내용 입력" required></textarea></td>
 				</tr>
 				<tr>
-					<th><label for="nickname">작성자</label></th>
-					<td><input type="text" name="nickname" id="nickname" size="40" class="single40" value="admin" readonly></td>
+					<th><label for="dposter">파일 형식</label></th>
+					<td><input type="text" name="dposter" id="dposter" size="40" class="single100" value="" readonly>
+					</td>
+				</tr>
+				<tr>
+					<th><label for="dfilename">업로드 파일</label></th>
+					<td><input type="text" name="dfilename" id="dfilename" size="40" class="single100" value="" readonly>
+							<div class="btn btn-primary" onclick="uploadFile()">자료 업로드 하기</div>
+							<input type="hidden" class="btn btn-writer" id="dview" name="dview">
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" class="btn btn-writer" value="글 등록">
+						<input type="submit" class="btn btn-writer" value="자료 등록">
 						<input type="reset" class="btn btn-primary" value="취소">
 					</td>
 				</tr>	
@@ -84,6 +91,11 @@
 		</table>
 	</div>
 	</form>
+	<script>
+	function uploadFile() {
+		window.open("${path1 }/databank/uploadForm.do", "dataupload", "width=400, height=300");
+	}
+	</script>
 </article>
 <footer id="footer" class="footer" name="footer">
 	<%@ include file="../include/footer.jsp" %>

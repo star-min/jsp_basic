@@ -51,9 +51,9 @@
 			<%@ include file="../include/header.jsp" %>
 	</header>
 <article id="con" class="content">
-<figure class="sub_visual">
-	<img src="${path1 }/data/bg_sub_top1.jpg" alt="서브페이지 비주얼">
-</figure>
+<div>
+	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
+</div>
 <h2 class="page_tit">회원 가입</h2>
 	<form action="${path1 }/member/join.do" method="post" onsubmit="return joinCheck(this)" name="join_form">
 	<div class="table_form_wrap">

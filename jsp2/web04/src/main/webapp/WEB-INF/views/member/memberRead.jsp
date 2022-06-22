@@ -61,7 +61,7 @@
 	</header>
 <article id="con" class="content">
 <figure class="sub_visual">
-	<img src="${path1 }/data/bg_sub_top1.jpg" alt="서브페이지 비주얼">
+	<img src="${path1 }/images/bg_sub_top1.jpg" alt="서브페이지 비주얼">
 </figure>
 <h2 class="page_tit">마이 페이지</h2>
 	<form action="${path1 }/member/update.do" method="post" onsubmit="return updateCheck(this)">

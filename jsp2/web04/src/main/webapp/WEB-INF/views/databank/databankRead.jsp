@@ -47,71 +47,97 @@
 <link rel="stylesheet" href="${path1 }/include/common.css">
 </head>
 <body>
-<header id="header" class="header" name="header" >
+<header id="header" class="header" name="header" style="padding-bottom: 300px">
 	<%@ include file="../include/header.jsp" %>
 </header>
 <article id="con" class="content">
-<div>
-	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
-</div>
+
 <h2 class="page_tit">글 상세보기</h2>
-	<form action="${path1 }/board/update.do" method="post">
+	<form action="${path1 }/databank/update.do" method="post">
 	<div class="table_form_wrap">
-		<table class="table_form">
-			<tbody>
+		<tbody>
 				<tr>
-					<th><label for="title">번호</label></th>
+					<th><label for="">번호</label></th>
 					<td>
 						<c:if test="${sid=='admin' }">
-						<input type="text" name="seq" id="seq" size="100" class="single100" placeholder="" value="${board.seq }" readonly>
+						<input type="text" name="datano" id="datano" size="100" class="single100" placeholder="" value="${databank.datano }" readonly>
 						</c:if>
 						<c:if test="${sid!='admin' }">
-							<span>${board.seq }</span>						
+							<span>${databank.datano }</span>						
 						</c:if>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="title">제목</label></th>
+					<th><label for="dtitle">제목</label></th>
 					<td>
 						<c:if test="${sid=='admin' }">
-						<input type="text" name="title" id="title" size="100" class="single100" value="${board.title }" required>
+						<input type="text" name="dtitle" id="dtitle" size="100" class="single100" value="${databank.dtitle }" required>
 						</c:if>
 						<c:if test="${sid!='admin' }">
-							<span>${board.title }</span>						
+							<span>${databank.dtitle }</span>						
 						</c:if>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="content">내용</label></th>
+					<th><label for="dcontent">내용</label></th>
 					<td>
 						<c:if test="${sid=='admin' }">
-						<textarea name="content" id="content" cols="100" rows="8" class="multi100" required>${board.content }</textarea>
+						<textarea name="dcontent" id="dcontent" cols="100" rows="8" class="multi100" required>${databank.dcontent }</textarea>
 						</c:if>
 						<c:if test="${sid!='admin' }">
-							<p>${board.content }</p>						
+							<p>${databank.dcontent }</p>						
 						</c:if>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="nickname">작성자</label></th>
+					<th><label for="dposter">파일 형태</label></th>
 					<td>
 						<c:if test="${sid=='admin' }">
-						<input type="text" name="nickname" id="nickname" size="40" class="single40" value="${board.nickname }" readonly>
+						<input type="text" name="dposter" id="dposter" size="40" class="single40" value="${databank.dposter }" readonly>
 						</c:if>
 						<c:if test="${sid!='admin' }">
-							<c:if test="${board.nickname=='admin' }">관리자</c:if>
-							<c:if test="${board.nickname!='admin' }">김성민</c:if>				
+							<c:set var="filetype" value="${databank.dposter }" />
+							<c:if test="${filetype=='gif' }"><img src="${path1 }/data/img.png" alt="파일타입"/></c:if>				
+							<c:if test="${filetype=='jpg' }"><img src="${path1 }/data/img.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='png' }"><img src="${path1 }/data/img.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='hwp' }"><img src="${path1 }/data/hwp.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='doc' }"><img src="${path1 }/data/doc.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='pdf' }"><img src="${path1 }/data/pdf.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='xls' }"><img src="${path1 }/data/xls.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='ppt' }"><img src="${path1 }/data/ppt.png" alt="파일타입"/></c:if>
+							<c:if test="${filetype=='pptx' }"><img src="${path1 }/data/ppt.png" alt="파일타입"/></c:if>
+							<c:if test="${empty filetype}"><img src="${path1 }/data/no.png" alt="파일타입"/></c:if>
 						</c:if>
 					</td>
 				</tr>
+				<tr>
+					<th><label for="dcontent">첨부 파일</label></th>
+					<td>
+						<c:if test="${sid=='admin' }">
+						<input type="text" name="dfilename" id="dfilename" class="single100" value="${databank.dfilename }" required>
+						<button class="btn btn-primary" onclick="uploadFile()">첨부 파일 변경 하기</button>
+						<input type="hidden" name="fileCheck" id="fileCheck" />
+						</c:if>
+						<a href="${path1 }/resources/upload/${databank.dfilename }">${databank.dfilename }</a>						
+					</td>
+				</tr>
+				<tr>
+					<th><label for="dcontent">등록일</label></th>
+					<td>
+							<fmt:parseDate value="${databank.regdate}" var="dateVal" pattern="yyyy-MM-dd" />
+							<fmt:formatDate value="${dateVal }" pattern="yyyy-MM-dd" />
+							
+					</td>
+				</tr>
+							
 				<tr>
 					<td colspan="2">
 						<c:if test="${sid=='admin' }">					
 						<input type="submit" class="btn btn-writer" value="글 수정">
 						<input type="reset" class="btn btn-primary" value="취소">
-						<a href="${path1 }/board/delete.do?seq=${board.seq }" class="btn btn-primary">글 삭제</a>
+						<a href="${path1 }/databank/delete.do?datano=${databank.datano }" class="btn btn-primary">자료 삭제</a>
 						</c:if>
-						<a href="${path1 }/board/list.do" class="btn btn-primary">글 목록</a>
+						<a href="${path1 }/databank/list.do" class="btn btn-primary">자료 목록</a>
 					</td>
 				</tr>	
 			</tbody>

@@ -5,7 +5,7 @@
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 <link rel="stylesheet" href="${path1 }/include/common.css">
 <div class="inner">
-    <h1 class="logo"><a href="${path1 }"><img src="resources/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
+    <h1 class="logo"><a href="${path1 }"><img src="${path1 }/images/logo.png" alt="판교예스yes의원" style=" width : 100%; height: 100%; "></a></h1>
 </div>
 <nav id="gnb">
     <div class="login">
@@ -29,8 +29,8 @@
             <li class=""><a href="./intro/intro.html#page1">본원 소개</a>
                 <div class="subDepth">
                     <ul id="sub-menu" style="border-left:  1px solid #ddd;">
-                        <li class=""><a href="./intro/intro.html#page1">인사말</a></li>
-                        <li class=""><a href="./intro/intro.html#page2">진료안내</a></li>
+                        <li class=""><a href="${path1 }/board/subpage_3.jsp#page1">인사말</a></li>
+						<li class=""><a href="${path1 }/boardsubpage_3.jsp#page2">진료안내</a></li>
                         <li class=""><a href="./intro/intro.html#page3">오시는길</a></li>
                         <li class=""><a href="./intro/intro.html#page4">의료진소개</a></li>
                         <li class=""><a href="./intro/intro.html#page5">약력</a></li>

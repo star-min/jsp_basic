@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 글 쓰기 -->
 	<insert id="databankWrite">
-		insert into databank (datano, btitle, bcontent, dposter, dfilename, dview, regdate) 
+		insert into databank (datano, dtitle, dcontent, dposter, dfilename, dview, regdate) 
 		values ((select nvl(max(datano)+1, 1) from databank), #{dtitle }, #{dcontent }, #{dposter }, 
 		#{dfilename }, #{dview }, sysdate)
 	</insert>
