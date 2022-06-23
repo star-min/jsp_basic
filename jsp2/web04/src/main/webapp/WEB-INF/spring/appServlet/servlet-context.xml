@@ -26,7 +26,7 @@
 	<resources mapping="/member/**" location="/WEB-INF/views/member/" />
 	<resources mapping="/databank/**" location="/WEB-INF/views/databank/" />
 	<resources mapping="/images/**" location="/WEB-INF/views/images/" />
-	
+	<resources mapping="/qna/**" location="/WEB-INF/views/qna/" />
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- 뷰 리졸버 : 뷰(jsp 페이지)의 접두어, 접미어 설정 -->

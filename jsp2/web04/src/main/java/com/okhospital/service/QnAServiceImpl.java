@@ -2,41 +2,41 @@ package com.okhospital.service;
 
 import java.util.List;
 
-import com.okhospital.dto.BoardDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class QnAServiceImpl implements BoardService {
+import com.okhospital.dao.QnaDAO;
+import com.okhospital.dto.QnaDTO;
+import com.okhospital.dto.SearchDTO;
 
-	@Override
-	public List<BoardDTO> boardList() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public BoardDTO boardRead(int seq) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void boardWrite(BoardDTO bdto) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void boardUpdate(BoardDTO bdto) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void boardDelete(int seq) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+@Service
+public class QnaServiceImpl implements QnaService {
 	
-	public void boardQuery(String title) throws Exception {
-		
+	@Autowired
+	QnaDAO qnaDAO;
+
+	@Override
+	public List<QnaDTO> qnaList(SearchDTO sdto) throws Exception {
+		return qnaDAO.qnaList(sdto);
+	}
+
+	@Override
+	public QnaDTO qnaRead(int qno) throws Exception {
+		return qnaDAO.qnaRead(qno);
+	}
+
+	@Override
+	public void qnaWrite(QnaDTO qdto) throws Exception {
+		qnaDAO.qnaWrite(qdto);
+	}
+
+	@Override
+	public void qnaUpdate(QnaDTO qdto) throws Exception {
+		qnaDAO.qnaUpdate(qdto);
+	}
+
+	@Override
+	public void qnaDelete(int qno) throws Exception {
+		qnaDAO.qnaDelete(qno);
 	}
 }

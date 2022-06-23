@@ -41,3 +41,19 @@ commit;
 select * from databank where datano=1 ;
 select * from databank order by regdate desc;
 select * from databank;
+
+
+
+CREATE TABLE qna(
+    qno         NUMBER PRIMARY KEY,
+    qtitle       VARCHAR2(300) NOT NULL,
+    qcontent     VARCHAR2(4000) NOT NULL,
+    qwriter      VARCHAR2(20) NOT NULL,
+    qwritedate   DATE DEFAULT SYSDATE,
+    qreadcnt     NUMBER DEFAULT 0,
+    qroot        NUMBER,
+    qstep        NUMBER default 0,
+    qindent      NUMBER default 0 
+);
+CREATE SEQUENCE seq_qna START WITH 1 INCREMENT BY 1;
+commit;

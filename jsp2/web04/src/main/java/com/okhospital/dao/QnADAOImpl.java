@@ -2,37 +2,41 @@ package com.okhospital.dao;
 
 import java.util.List;
 
-import com.okhospital.dto.BoardDTO;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-public class QnADAOImpl implements BoardDAO{
+import com.okhospital.dto.QnaDTO;
+import com.okhospital.dto.SearchDTO;
 
+@Repository
+public class QnaDAOImpl implements QnaDAO {
+
+	@Autowired
+	SqlSession sqlSession;
+		
 	@Override
-	public List<BoardDTO> boardList() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<QnaDTO> qnaList(SearchDTO sdto) throws Exception {
+		return sqlSession.selectList("qna.qnaList", sdto);
 	}
 
 	@Override
-	public BoardDTO boardRead(int seq) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public QnaDTO qnaRead(int qno) throws Exception {
+		return sqlSession.selectOne("qna.qnaRead", qno);
 	}
 
 	@Override
-	public void boardWrite(BoardDTO bdto) throws Exception {
-		// TODO Auto-generated method stub
+	public void qnaWrite(QnaDTO qdto) throws Exception {
+		sqlSession.insert("qna.qnaWrite", qdto);
 	}
 
 	@Override
-	public void boardUpdate(BoardDTO bdto) throws Exception {
-		// TODO Auto-generated method stub
+	public void qnaUpdate(QnaDTO qdto) throws Exception {
+		sqlSession.update("qna.qnaUpadte", qdto);
 	}
 
 	@Override
-	public void boardDelete(int seq) throws Exception {
-		// TODO Auto-generated method stub
-	}
-	
-	public void boardQuery(String title) throws Exception {
+	public void qnaDelete(int qno) throws Exception {
+		sqlSession.delete("qna.qnaDelete", qno);
 	}
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="qna">
+	<!--  목록 불러오기 -->
+	<select id="qnaList" resultType="com.okhospital.dto.QnaDTO" >
+		select * from qna <include refid="search" /> order by qwritedate desc
+	</select>
+	
+	<select id="qnaCount" resultType="integer" >
+		select count(*) from qna <include refid="search" />
+	</select>
+	
+	<!-- 검색 조건 지정 -->
+	<sql id="search">
+		<if test="search=='qtitle' or search=='qcontent'" >
+			where #{search } like '%' || #{keyword } || '%'
+		</if>
+		<if test="search=='qwriter'">
+			where <include refid="writer"/>
+		</if>
+		<if test="search=='all'">
+			where qtitle like '%' || #{keyword } || '%' OR 
+			qcontent like '%' || #{keyword } || OR 
+			<include refid="writer"/> 
+		</if>
+	</sql>
+	
+	<!-- 작성자 가져오기 -->
+	<sql id="writer">
+		qwriter in (select userid from mem where username like '%' || #{keyword} || '%' )
+	</sql>
+	
+	<!-- 글 상세보기 -->
+	<select id="qnaRead" resultType="com.okhospital.dto.QnaDTO" >
+		select * from qna <include refid="condi"/>
+	</select>
+	
+	<!-- 글 쓰기 -->
+	<insert id="qnaWrite">
+		insert into qna (qno, qtitle, qcontent, qwriter, qwritedate, qreadcnt, qroot, qstep, qindent) 
+		values (seq_qna.nextval, #{qtitle }, #{qcontent }, #{qwriter }, sysdate, 0, 0, 0, 0)
+	</insert>
+	
+	<!-- 글 수정 -->
+	<update id="qnaUpdate">
+		update qna set qtitle=#{qtitle }, qcontent=#{qcontent }, qwriter=#{qwriter}   
+		<include refid="condi"/>
+	</update>
+	
+	<!-- 글 수정 -->
+	<delete id="qnaDelete">
+		delete from qna <include refid="condi"/>
+	</delete>
+	
+	<sql id="condi">
+		where qno=#{qno }
+	</sql>
+</mapper>
