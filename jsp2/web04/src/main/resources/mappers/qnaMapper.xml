@@ -7,7 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="qna">
 	<!--  목록 불러오기 -->
 	<select id="qnaList" resultType="com.okhospital.dto.QnaDTO" >
-		select * from qna <include refid="search" /> order by qwritedate desc
+		select * from qna <include refid="search" /> order by qroot desc, qstep asc, qwritedate desc
+	</select>
+	
+	<select id="qnaAllList" resultType="com.okhospital.dto.QnaDTO" >
+		select * from qna order by qroot desc, qstep asc, qwritedate desc
 	</select>
 	
 	<select id="qnaCount" resultType="integer" >
@@ -39,21 +43,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from qna <include refid="condi"/>
 	</select>
 	
-	<!-- 글 쓰기 -->
+	<!-- 답변 글 상세보기 -->
+	<select id="replyRead" resultType="com.okhospital.dto.QnaDTO" >
+		select * from qna where qno=#{qno }
+	</select>
+	
+	<!-- 질문하기 -->
 	<insert id="qnaWrite">
 		insert into qna (qno, qtitle, qcontent, qwriter, qwritedate, qreadcnt, qroot, qstep, qindent) 
-		values (seq_qna.nextval, #{qtitle }, #{qcontent }, #{qwriter }, sysdate, 0, 0, 0, 0)
+		values (seq_qna.nextval, #{qtitle }, #{qcontent }, #{qwriter }, sysdate, 0, seq_qna.currval, 0, 0)
+	</insert>
+
+	<!-- 답변하기 -->
+	<insert id="replyWrite">
+		insert into qna (qno, qtitle, qcontent, qwriter, qwritedate, qreadcnt, qroot, qstep, qindent) 
+		values (seq_qna.nextval, #{qtitle }, #{qcontent }, #{qwriter }, sysdate, 0, #{qroot }, 1, 14)
 	</insert>
 	
 	<!-- 글 수정 -->
 	<update id="qnaUpdate">
 		update qna set qtitle=#{qtitle }, qcontent=#{qcontent }, qwriter=#{qwriter}   
-		<include refid="condi"/>
+		where qno=#{qno }
 	</update>
 	
-	<!-- 글 수정 -->
+	<!-- 답글 수정 -->
+	<update id="replyUpdate">
+		update qna set qtitle=#{qtitle }, qcontent=#{qcontent }, qwriter=#{qwriter}   
+		where qno=#{qno }
+	</update>
+	
+	<!-- 글 삭제 -->
 	<delete id="qnaDelete">
-		delete from qna <include refid="condi"/>
+		delete from qna where qroot=#{qno }
+	</delete>
+	
+	<!-- 답글 삭제 -->
+	<delete id="replyDelete">
+		delete from qna where qno=#{qno }
 	</delete>
 	
 	<sql id="condi">

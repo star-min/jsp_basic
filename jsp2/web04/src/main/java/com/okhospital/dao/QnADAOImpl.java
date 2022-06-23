@@ -19,10 +19,20 @@ public class QnaDAOImpl implements QnaDAO {
 	public List<QnaDTO> qnaList(SearchDTO sdto) throws Exception {
 		return sqlSession.selectList("qna.qnaList", sdto);
 	}
+	
+	@Override
+	public List<QnaDTO> qnaList() throws Exception {
+		return sqlSession.selectList("qna.qnaAllList");
+	}
 
 	@Override
 	public QnaDTO qnaRead(int qno) throws Exception {
 		return sqlSession.selectOne("qna.qnaRead", qno);
+	}
+	
+	@Override
+	public QnaDTO replyRead(int qno) throws Exception {
+		return sqlSession.selectOne("qna.replyRead", qno);
 	}
 
 	@Override
@@ -31,12 +41,27 @@ public class QnaDAOImpl implements QnaDAO {
 	}
 
 	@Override
+	public void replyWrite(QnaDTO qdto) throws Exception {
+		sqlSession.insert("qna.replyWrite", qdto);
+	}
+
+	@Override
 	public void qnaUpdate(QnaDTO qdto) throws Exception {
-		sqlSession.update("qna.qnaUpadte", qdto);
+		sqlSession.update("qna.qnaUpdate", qdto);
 	}
 
 	@Override
 	public void qnaDelete(int qno) throws Exception {
 		sqlSession.delete("qna.qnaDelete", qno);
+	}
+
+	@Override
+	public void replyUpdate(QnaDTO qdto) throws Exception {
+		sqlSession.update("qna.replyUpdate", qdto);
+	}
+
+	@Override
+	public void replyDelete(int qno) throws Exception {
+		sqlSession.delete("qna.replyDelete", qno);
 	}
 }

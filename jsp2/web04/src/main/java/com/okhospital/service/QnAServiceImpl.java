@@ -19,15 +19,30 @@ public class QnaServiceImpl implements QnaService {
 	public List<QnaDTO> qnaList(SearchDTO sdto) throws Exception {
 		return qnaDAO.qnaList(sdto);
 	}
-
+	
+	@Override
+	public List<QnaDTO> qnaList() throws Exception {
+		return qnaDAO.qnaList();
+	}
+	
 	@Override
 	public QnaDTO qnaRead(int qno) throws Exception {
 		return qnaDAO.qnaRead(qno);
 	}
 
 	@Override
+	public QnaDTO replyRead(int qno) throws Exception {
+		return qnaDAO.replyRead(qno);
+	}
+
+	@Override
 	public void qnaWrite(QnaDTO qdto) throws Exception {
 		qnaDAO.qnaWrite(qdto);
+	}
+
+	@Override
+	public void replyWrite(QnaDTO qdto) throws Exception {
+		qnaDAO.replyWrite(qdto);
 	}
 
 	@Override
@@ -38,5 +53,15 @@ public class QnaServiceImpl implements QnaService {
 	@Override
 	public void qnaDelete(int qno) throws Exception {
 		qnaDAO.qnaDelete(qno);
+	}
+
+	@Override
+	public void replyUpdate(QnaDTO qdto) throws Exception {
+		qnaDAO.replyUpdate(qdto);
+	}
+
+	@Override
+	public void replyDelete(int qno) throws Exception {
+		qnaDAO.replyDelete(qno);
 	}
 }
