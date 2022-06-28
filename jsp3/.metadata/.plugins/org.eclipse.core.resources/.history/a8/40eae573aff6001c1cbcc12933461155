@@ -1,0 +1,5 @@
+package com.veryvery.dao;
+
+public interface MemberDAO {
+
+}

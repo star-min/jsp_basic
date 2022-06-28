@@ -1,0 +1,16 @@
+package com.veryvery.myapp;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MybatisTest1 {
+	@Autowired
+	SqlSession sqlSession;
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

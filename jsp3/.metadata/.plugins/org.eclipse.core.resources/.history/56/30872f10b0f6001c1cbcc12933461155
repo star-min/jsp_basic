@@ -1,0 +1,6 @@
+package com.veryvery.service;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+}

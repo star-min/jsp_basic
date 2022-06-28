@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JDBCTest1" project="web05" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.veryvery.myapp.JDBCTest1" time="0.142">
+    <testcase name="testConnection" classname="com.veryvery.myapp.JDBCTest1" time="0.142"/>
+  </testsuite>
+</testrun>

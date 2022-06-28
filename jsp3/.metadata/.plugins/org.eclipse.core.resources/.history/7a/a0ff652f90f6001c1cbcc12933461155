@@ -1,0 +1,22 @@
+package com.veryvery.myapp;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class JDBCTest1 {
+	static {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch(Exception e) {
+			System.out.println("드라이버 연결 실패~!");
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

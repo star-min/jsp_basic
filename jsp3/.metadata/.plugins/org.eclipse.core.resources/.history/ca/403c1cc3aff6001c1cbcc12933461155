@@ -1,0 +1,6 @@
+package com.veryvery.dao;
+
+@Repository
+public class MemberDAOImpl implements MemberDAO {
+	
+}

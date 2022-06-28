@@ -1,0 +1,44 @@
+// @root start
+// @root end
+
+// @top1 start
+// @top1 end
+
+// @header1 start
+// @header1 end
+
+// @header1-top start
+$(".header1 .toggle").on("click", function () {
+    $(this).closest(".header1-top").toggleClass("opened");
+});
+
+$(".header1 nav > ul > li > a").on("click", function () {
+    $(this).closest("li").toggleClass("on");
+});
+// @header1-top end
+
+// @cards1 start
+// @cards1 end
+
+// @slider1 start
+(function () {
+    var swiper = new Swiper(".slider1 .swiper-container", {
+        autoHeight: true,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+})();
+// @slider1 end
+
+// @footer1 start
+// @footer1 end

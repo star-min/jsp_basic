@@ -1,0 +1,5 @@
+package com.veryvery.DTO;
+
+public class MemberDTO {
+
+}

@@ -1,0 +1,18 @@
+package com.veryvery.myapp;
+
+import static org.junit.Assert.fail;
+
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class MybatisTest1 {
+	@Autowired
+	SqlSession sqlSession;
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

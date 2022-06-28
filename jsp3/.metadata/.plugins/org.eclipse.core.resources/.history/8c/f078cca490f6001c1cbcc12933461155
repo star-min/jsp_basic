@@ -1,0 +1,29 @@
+package com.veryvery.myapp;
+
+import static org.junit.Assert.*;
+
+import java.sql.DriverManager;
+
+import org.junit.Test;
+
+public class JDBCTest1 {
+	static {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch(Exception e) {
+			System.out.println("드라이버 연결 실패~!");
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testConnection() {
+		try {
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306:veryvery");
+			
+		} catch(Exception e) {
+			System.out.println("연결 실패");
+		}
+	}
+
+}
