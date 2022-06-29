@@ -46,6 +46,7 @@
 </style>
 </head>
 <body>
+<div nid="root" class="root">
 	<header id="header" class="header">
 			<%@ include file="../inc/header.jsp" %>
 	</header>
@@ -168,5 +169,6 @@
 <footer id="footer" class="footer" name="footer">
 	<%@ include file="../inc/footer.jsp" %>
 </footer>
+</div>
 </body>
 </html>

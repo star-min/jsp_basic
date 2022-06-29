@@ -5,11 +5,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="board">
 	<!--  목록 불러오기 -->
-	<select id="boardList" resultType="com.okhospital.dto.BoardDTO" >
-		select seq, title, content, regdate, nickname, visited from board order by regdate desc
+	<select id="boardList" resultType="com.veryvery.dto.BoardDTO" >
+		select seq, title, content, regdate, nickname from board order by regdate desc
 	</select>
 	<!-- 글 상세보기 -->
-	<select id="boardRead" resultType="com.okhospital.dto.BoardDTO" >
+	<select id="boardRead" resultType="com.veryvery.dto.BoardDTO" >
 		select * from board where seq = #{seq }
 	</select>
 	<!-- 글 쓰기 -->

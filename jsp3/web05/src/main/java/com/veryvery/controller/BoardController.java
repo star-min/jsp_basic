@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.servlet.ModelAndView;
 
 import com.veryvery.dto.BoardDTO;
 import com.veryvery.service.BoardService;
@@ -15,15 +16,19 @@ import com.veryvery.service.BoardService;
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
+	//private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	//다음 서비스 작업 객체를 주입
 	@Autowired
 	BoardService boardService;
 	
 	@RequestMapping("list.do")
-	public String boardList(Model model) throws Exception{
+	public String boardList(Model model) throws Exception {
 		List<BoardDTO> boardList = boardService.boardList();
-		model.addAttribute("boardList",boardList);
+		model.addAttribute("boardList", boardList);
 		return "board/boardList";
 	}
+
+	
 	@RequestMapping(value="read.do", method = RequestMethod.GET)
 	public String boardRead(@RequestParam int seq, Model model) throws Exception {
 		BoardDTO board = boardService.boardRead(seq);
@@ -53,5 +58,4 @@ public class BoardController {
 		boardService.boardDelete(seq);
 		return "redirect:list.do";
 	}
-	
 }

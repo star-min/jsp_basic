@@ -47,7 +47,8 @@
 <link rel="stylesheet" href="${path1 }/include/common.css">
 </head>
 <body>
-<header id="header" class="header" name="header" >
+<div nid="root" class="root">
+<header id="header" class="header" >
 	<%@ include file="../inc/header.jsp" %>
 </header>
 <article id="con" class="content">
@@ -119,8 +120,9 @@
 	</div>
 	</form>
 </article>
-<footer id="footer" class="footer" name="footer">
+<footer id="footer" class="footer">
 	<%@ include file="../inc/footer.jsp" %>
 </footer>
+<div nid="root" class="root">
 </body>
 </html>

@@ -11,6 +11,7 @@
 </style>
 </head>
 <body>
+<div nid="root" class="root">
 <%@ include file="../inc/header.jsp" %>
 <div nid="form1" class="form1">
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap" rel="stylesheet">
@@ -33,5 +34,6 @@
     </div>
 </div>
 <%@ include file="../inc/footer.jsp" %>
+</div>
 </body>
 </html>

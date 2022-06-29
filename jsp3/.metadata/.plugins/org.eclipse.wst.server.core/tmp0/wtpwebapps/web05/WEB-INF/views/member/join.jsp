@@ -10,6 +10,7 @@
 <title>회원 가입</title>
 </head>
 <body>
+<div nid="root" class="root">
 <div class="wrap">
 	<c:import url="inc/header.jsp" />
 	<div id="contents" class="contents">
@@ -61,6 +62,7 @@
 		</form:form>
 	</div>
 	<c:import url="inc/footer.jsp" />
+</div>
 </div>
 </body>
 </html>

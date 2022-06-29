@@ -36,12 +36,13 @@
     .btn-primary {   background-color: #333; color:#fff; }
         .btn-writer {   background-color:rgb(250, 200, 19);  }
     .btn-writer::before { background-position:-73px -68px; }
-
+	<%@ include file="../inc/common.css" %>
 </style>
-<link rel="stylesheet" href="${path1 }/include/reset.css">
-<link rel="stylesheet" href="${path1 }/include/common.css">
+<link rel="stylesheet" href="${path1 }/inc/reset.css">
+<link rel="stylesheet" href="${path1 }/inc/common.css">
 </head>
 <body>
+<div nid="root" class="root">
 <header id="header" class="header" >
 	<%@ include file="../inc/header.jsp" %>
 </header>
@@ -95,5 +96,6 @@
 <footer id="footer" class="footer">
 	<%@ include file="../inc/footer.jsp" %>
 </footer>
+</div>
 </body>
 </html>
