@@ -17,11 +17,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertMember">
 		insert into member(id, pwd, uname, birth, phone, email, addr1, addr2, postcode, regdate) values 
 		(#{id }, #{pwd }, #{uname }, #{birth}, #{phone}, #{email }, #{addr1 }, #{addr2 }, #{postcode }, 
-		sysdate)
+		NOW())
 	</insert>
 	<!-- 회원 정보 변경 : dao에서 update("member.updateMember", mdto) -->
 	<update id="updateMember">
-	update member set pwd=#{pwd }, uname=#{uname }, email=#{email }, tel=#{tel }, 
+	update member set pwd=#{pwd }, uname=#{uname }, email=#{email }, phone=#{phone }, 
 	addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id = #{id }
 	</update>
 	<!-- 회원 탈퇴 : dao에서 delete("member.deleteMember", id) -->	

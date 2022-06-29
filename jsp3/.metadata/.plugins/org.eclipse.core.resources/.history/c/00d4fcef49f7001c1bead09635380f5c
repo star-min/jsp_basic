@@ -1,0 +1,5 @@
+package com.veryvery.service;
+
+public class SampleServiceImpl {
+
+}

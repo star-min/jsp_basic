@@ -5,6 +5,14 @@
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<!-- 메인 화면의 스타일들을 넣어놓은 common.css를 불러옵니다. -->
+	<link rel="stylesheet" href="${path1 }/inc/common.css">
+	<style>
+	<%@ include file="inc/common.css" %>
+	</style>
 	<title>Home</title>
 </head>
 <body>
@@ -12,11 +20,9 @@
 	<header id="header" class="header">
 	<%@ include file="inc/header.jsp" %>
 	</header>
-<h1>
-	Hello world!  
-</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+	<%@ include file="inc/main.jsp" %>
+
 	<footer id="footer" class="footer">
 	<%@ include file="inc/footer.jsp" %>
 	</footer>

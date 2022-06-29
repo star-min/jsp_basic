@@ -1,0 +1,10 @@
+package com.veryvery.aop;
+
+import lombok.extern.log4j.Log4j;
+
+@AspectJ
+@Log4j
+@Componet
+public class LogAdvice {
+
+}

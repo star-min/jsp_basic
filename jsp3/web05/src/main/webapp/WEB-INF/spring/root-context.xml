@@ -38,4 +38,11 @@
 	
 	<!-- 네이버 이메일 설정 -->
 	
+	<!-- AOP 설정 -->
+<!--  	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.veryvery.service"></context:component-scan>
+	<context:component-scan base-package="com.veryvery.aop"></context:component-scan>
+	<context:component-scan base-package="com.veryvery"></context:component-scan>
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
+
 </beans>

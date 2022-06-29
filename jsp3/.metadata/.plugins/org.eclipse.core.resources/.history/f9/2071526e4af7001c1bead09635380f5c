@@ -1,0 +1,8 @@
+package com.veryvery.aop;
+
+@AspectJ
+@Log4j
+@Componet
+public class LogAdvice {
+
+}

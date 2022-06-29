@@ -5,7 +5,7 @@ use veryvery;
 -- 회원 table
 create table member(
 id varchar(12),
-pwd varchar(12) not null,
+pwd varchar(100) not null,
 uname varchar(20) not null,
 birth date,
 phone varchar(13) not null,
@@ -24,6 +24,7 @@ insert into member(id, pwd, uname, birth, phone, email) values ('ramen','1234','
 insert into member(id, pwd, uname, birth, phone, email) values ('duk','1234','오리','2022-05-02','010-2421-3237','duk@veryvery.com');
 drop table member;
 select * from member order by regdate desc;
+select * from member;
 commit;
 -- 공지사항
 create table board (
@@ -33,6 +34,9 @@ content varchar(500) not null,
 nickname varchar(50) not null, 
 regdate date default (current_date),
 jo int(38));
+
+
+select * from board;
 -- auto inclement 숫자자동증가
 
 -- 상품테이블

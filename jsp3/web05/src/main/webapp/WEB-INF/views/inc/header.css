@@ -1,0 +1,343 @@
+/* @top1 start */
+.top1 {
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    color: #3a3a3a;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.top1 .menus {
+    text-align: right;
+}
+
+.top1 .menus .item {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.top1 .menus .item.left {
+    float: left;
+    padding: 0 5px;
+}
+
+.top1 .menus .item.left i {
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+}
+
+.top1 .menus .item.left i.fa-twitter {
+    background: #1e8ddf;
+}
+
+.top1 .menus .item.left i.fa-facebook {
+    background: #33488b;
+}
+
+.top1 .menus .item.left i.fa-instagram {
+    background: #cc245f;
+}
+
+.top1 .menus .item.right {
+    padding: 0 5px;
+    margin: 0 10px;
+}
+
+.top1 .menus .item.right:before {
+    content: " | ";
+    position: absolute;
+    left: -17.5px;
+    top: 0;
+}
+
+.top1 .menus .item.right:hover {
+    text-decoration: underline;
+}
+
+.top1 .menus .item.right:last-child {
+    margin-right: 0;
+}
+
+.top1 .menus .item.left+.item.right:before {
+    content: none;
+}
+
+@media(max-width:767px) {
+    .top1 {
+        font-size: 12px;
+    }
+
+    .top1 .menus .item.right {
+        margin: 0 5px;
+    }
+
+    .top1 .menus .item.right:before {
+        content: none;
+    }
+}
+/* @top1 end */
+
+/* @header1 start */
+.header1 {
+    position: relative;
+    margin-bottom: 25px;
+    height: 500px;
+}
+
+.header1 .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    filter: brightness(0.5);
+    z-index: -1;
+}
+
+.header1 .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: table;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.header1 .text>.inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header1 .text>.inner>div {
+    font-size: 42px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.header1 .text>.inner>a {
+    cursor: pointer;
+    margin-top: 50px;
+    font-size: 19px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    transition: background 0.25s;
+}
+
+.header1 .text>.inner>a:hover {
+    background: #fff;
+    color: #262626;
+}
+/* @header1 end */
+
+/* @header1-top start */
+.header1 .header1-top {
+    padding: 25px;
+}
+
+.header1 .header1-top:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.header1 .header1-top>.brand {
+    float: left;
+    position: relative;
+}
+
+.header1 .header1-top>.brand a {
+    color: #fff;
+    font-family: "Parisienne", cursive;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header1 .header1-top>nav {
+    float: right;
+}
+
+.header1 .header1-top>nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header1 .header1-top>nav ul ul {
+    display: none;
+}
+
+.header1 .header1-top>nav ul li {
+    position: relative;
+}
+
+.header1 .header1-top>nav ul li a {
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+}
+
+.header1 .header1-top>nav ul li:hover>a {
+    text-decoration: underline;
+}
+
+.header1 .header1-top>nav>ul {
+    text-align: center;
+}
+
+.header1 .header1-top>nav>ul>li {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.header1 .header1-top>nav>ul>li:last-child {
+    margin-right: 0;
+}
+
+.header1 .header1-top>nav>ul>li>a {
+    display: inline-block;
+    padding: 10px 15px 20px 15px;
+}
+
+.header1 .header1-top>nav ul>li:hover>ul {
+    display: block;
+}
+
+.header1 .header1-top>nav>ul>li>ul {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    width: 140px;
+    left: 50%;
+    margin-left: -70px;
+    z-index: 5;
+}
+
+.header1 .header1-top>nav>ul>li>ul>li>a {
+    display: block;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.header1 .header1-top>nav>ul>li>ul>li:last-child>a {
+    border-bottom: 0;
+}
+
+.header1 .header1-top>.toggle {
+    display: none;
+}
+
+@media(max-width:991px) {
+    .header1 .header1-top>.brand {
+        padding: 0 5px;
+    }
+
+    .header1 .header1-top>nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 10;
+    }
+
+    .header1 .header1-top.opened nav {
+        display: block;
+    }
+
+    .header1 .header1-top>nav>ul>li {
+        display: block;
+        text-align: left;
+        margin: 0;
+    }
+
+    .header1 .header1-top>nav>ul>li a {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .header1 .header1-top>nav>ul>li>ul {
+        position: static;
+        width: 100%;
+        margin: 0;
+        border: 0;
+    }
+
+    .header1 .header1-top>nav>ul>li>ul>li>a {
+        padding-left: 25px;
+    }
+
+    .header1 .header1-top>nav>ul>li>ul>li>a:before {
+        content: "- ";
+    }
+
+    .header1 .header1-top>nav ul>li:hover>ul {
+        display: none;
+    }
+
+    .header1 .header1-top>nav ul>li.on>ul {
+        display: block;
+    }
+
+    .header1 .header1-top>.toggle {
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        padding: 0;
+        position: absolute;
+        right: 30px;
+        top: 35px;
+        cursor: pointer;
+    }
+
+    .header1 .header1-top>.toggle>div {
+        height: 2px;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.25s;
+    }
+
+    .header1 .header1-top>.toggle>div:nth-child(2) {
+        top: 8px;
+    }
+
+    .header1 .header1-top>.toggle>div:nth-child(3) {
+        top: 16px;
+    }
+
+    .header1 .header1-top.opened>.toggle>div:nth-child(1) {
+        top: 8px;
+        transform: rotate(45deg);
+    }
+
+    .header1 .header1-top.opened>.toggle>div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header1 .header1-top.opened>.toggle>div:nth-child(3) {
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+/* @header1-top end */

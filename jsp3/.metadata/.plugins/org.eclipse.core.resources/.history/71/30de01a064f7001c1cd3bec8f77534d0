@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<script>
+	function idCheck() {
+		var uid = document.join_form.userid.value;
+		if(uid==""){
+			alert("아이디가 입력되지 않았습니다. 아이디를 입력 후 진행하시기 바랍니다.");
+			return false;
+		} else {
+			location.href="${path1 }/member/idCheck.do?userid="+uid;
+		}
+	}
+	</script>	
+	<script>
+	function joinCheck(f){
+		if(f.userpw.value!=f.userpw2.value){
+			alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+			return false;
+		}
+		if(f.ck.value!="ok"){
+			alert("회원가입 중복체크를 진행하지 않았습니다.");
+			return false;
+		}
+	}
+	</script>
+	<script>
+	function findAddr() {
+		new daum.Postcode({
+			oncomplete: function(data) {
+				console.log(data);
+				var roadAddr = data.roadAddress;
+				var jibunAddr = data.jibunAddress;
+				document.getElementById("postcode").value = data.zonecode;
+				if(roadAddr !== '') {
+					document.getElementById("addr1").value = roadAddr;				
+				} else if(jibunAddr !== ''){
+					document.getElementById("addr1").value = jibunAddr;
+				}
+			}
+		}).open();
+	}
+	</script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+</html>

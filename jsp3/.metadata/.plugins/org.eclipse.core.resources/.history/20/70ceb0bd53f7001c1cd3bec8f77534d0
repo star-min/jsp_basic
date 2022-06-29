@@ -1,0 +1,214 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div nid="root" class="root">
+    <div nid="top1" class="top1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <div class="menus">
+            <a class="item left" href="https://ko-kr.facebook.com/">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a class="item left" href="https://twitter.com/?lang=ko">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a class="item left" href="https://www.instagram.com/">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a class="item right">로그인</a>
+            <a class="item right">회원가입</a>
+        </div>
+    </div>
+    <header nid="header1" class="header1">
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap" rel="stylesheet">
+        <div class="background" style="background-image:url(/img/photos/dad-909510_1280.jpg)"></div>
+        <div class="text">
+            <div class="inner">
+                <div>let's go, find me!</div>
+                <a>Introduce</a>
+            </div>
+        </div>
+        <div nid="header1-top" class="header1-top">
+            <div class="brand">
+                <a>Discoveryvery</a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a>텐트</a>
+                        <ul>
+                            <li><a>리빙쉘텐트</a></li>
+                            <li><a>돔텐트</a></li>
+                            <li><a>팝업텐트</a></li>
+                            <li><a>알파인텐트</a></li>
+                            <li><a>그늘막텐트</a></li>
+                            <li><a>차박텐트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>테이블</a>
+                        <ul>
+                            <li><a>조립식테이블</a></li>
+                            <li><a>접이식테이블</a></li>
+                            <li><a>높낮이조절테이블</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>체어</a>
+                        <ul>
+                            <li><a>접이식체어</a></li>
+                            <li><a>조립식체어</a></li>
+                            <li><a>경량체어</a></li>
+                            <li><a>릴렉스체어</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>침낭/매트</a>
+                        <ul>
+                            <li><a>침낭</a></li>
+                            <li><a>매트리스</a></li>
+                            <li><a>야전침대</a></li>
+                            <li><a>해먹</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>캠핑소품</a>
+                        <ul>
+                            <li><a>화로/버너</a></li>
+                            <li><a>랜턴</a></li>
+                            <li><a>수납박스</a></li>
+                            <li><a>코펠</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>서비스</a>
+                        <ul>
+                            <li><a>공지사항</a></li>
+                            <li><a>상품후기</a></li>
+                            <li><a>매장안내</a></li>
+                            <li><a>QNA</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        </div>
+    </header>
+    <div nid="cards1" class="cards1">
+        <div class="wrapper">
+            <div class="title">Best! Camping Reviews</div>
+            <div class="cards">
+                <div class="card half">
+                    <div class="inner">
+                        <div class="thumb" style="background-image: url(/img/photos/greece-3384386_640.jpg);"></div>
+                        <div class="info">
+                            <a class="title">산 꼭대기 에서 별과하나된 밤</a>
+                            <div class="desc">1년간 힘들때마다 계획했던 여행 드디어 왔습니다.</div>
+                            <div class="date">2022-06-28</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card quarter">
+                    <div class="inner">
+                        <div class="thumb" style="background-image: url(/img/photos/wardrobe-5961193_640.jpg);"></div>
+                        <div class="info">
+                            <a class="title">속초 캠핑장에서 사랑하는 가족들과</a>
+                            <div class="desc">오랜만에 하는 가족여행 특별하게 지내고싶어 캠핑장을 알아보게...</div>
+                            <div class="date">2021-07-06</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card quarter">
+                    <div class="inner">
+                        <div class="thumb" style="background-image: url(/img/photos/norway-4965490_640.jpg);"></div>
+                        <div class="info">
+                            <a class="title">호수에서 혼자즐기는 낭만적인..</a>
+                            <div class="desc">분명 캠핑 애니메이션에서 봤을떈 쉬워보였는데..</div>
+                            <div class="date">2021-07-06</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div nid="slider1" class="slider1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.css" rel="stylesheet">
+        <div class="wrapper">
+            <div class="slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/img/photos/gallery-3127444_640.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/img/photos/wall-416060_640.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/img/photos/furniture-731449_640.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="texts">
+                <div class="top">리빙쉘 텐트</div>
+                <div class="title">새턴 쉘터</div>
+                <div class="desc">천장 환기창을 적용하여 쾌적한 환경을 제공하며 터널 텐트의 공간활용도가 가장 효율적인 미니멀 캠핑용 쉘터 입니다.</button>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
+    </div>
+    <div nid="footer1" class="footer1">
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <div class="wrapper clearfix">
+            <a class="brand">Discoveryvery</a>
+            <div class="copyright">
+                <div>법인명(상호) : 주식회사 Discoveryvery 대표자(성명) : 김성민 사업자 등록번호 안내 : [125-81-68007]</div>
+                <div>© 2022. Camping. All rights reserved.</div>
+            </div>
+            <div class="links">
+                <button>
+                    <span>SITE LINKS</span>
+                    <i class="fa fa-caret-up"></i>
+                </button>
+                <ul>
+                    <li>
+                        <a target="_blank">
+                            <span>상품후기</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank">
+                            <span>공지사항</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank">
+                            <span>매장안내</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank">
+                            <span>QNA</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

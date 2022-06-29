@@ -1,0 +1,5 @@
+package com.veryvery.aop;
+
+public class LogAdvice {
+
+}

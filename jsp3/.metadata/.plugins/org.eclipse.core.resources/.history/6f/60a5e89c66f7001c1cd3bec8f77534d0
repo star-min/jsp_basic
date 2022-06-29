@@ -1,0 +1,13 @@
+package com.veryvery.bean;
+
+public class JoinMemberBean {
+	private String id;
+	private String pwd;
+	private String uname;
+	private String birth;
+	private String phone;
+	private String email;
+	private String addr1;
+	private String addr2;
+	private String postcode;
+}
