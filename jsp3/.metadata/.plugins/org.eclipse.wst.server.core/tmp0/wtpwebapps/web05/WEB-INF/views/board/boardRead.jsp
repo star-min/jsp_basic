@@ -10,6 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+<%@ include file="../inc/common.css" %>
     /* 콘텐츠 영역 공통 */
     .content {  }
     .sub_visual { margin-bottom:50px; width:100%; }
@@ -52,9 +53,6 @@
 	<%@ include file="../inc/header.jsp" %>
 </header>
 <article id="con" class="content">
-<div>
-	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
-</div>
 <h2 class="page_tit">글 상세보기</h2>
 	<form action="${path1 }/board/update.do" method="post">
 	<div class="table_form_wrap">

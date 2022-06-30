@@ -28,20 +28,22 @@ select * from member;
 commit;
 -- 공지사항
 create table board (
-seq int(38) primary key,
+seq int(38) primary key auto_increment,
 title varchar(50) not null, 
 content varchar(500) not null, 
 nickname varchar(50) not null, 
 regdate date default (current_date),
 jo int(38));
 
-
+insert into board (title, content, nickname, regdate) 
+		values  ('안녕하세요', '첫글입니다.', 'admin', now());
+drop table board;
 select * from board;
 -- auto inclement 숫자자동증가
 
 -- 상품테이블
 create table goods(
-gno int primary key,  -- 상품코드
+gno int primary key auto_increment,  -- 상품코드
 gcategory varchar(100),    -- 카테고리
 gname varchar(100),    -- 상품명
 gprice int,  -- 가격
@@ -53,6 +55,15 @@ gimage varchar(1000),  -- 이미지
 best int,    -- 인기도
 regdate date);  -- 등록일
 
+
+drop table goods;
+select * from goods where gno = 2;
+select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods order by regdate desc
+select * from goods;
+
+insert into goods (gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate) 
+		values ('tent', '미라클텐트',980000, '코튼블랙', 10, '대형', '정말좋아요', '미라클스크린텐트.jpg', 4, now());
+commit;
 -- 장바구니
 create table basket(
 bno int primary key, -- 장바구니번호

@@ -32,11 +32,13 @@
             </c:if>
             <c:if test="${ !empty sid}">
             <a class="item right" href="${path1 }/member/read.do">마이페이지</a>
+            <a class="item right" href="${path1 }/basket/list.do">장바구니</a>
             <a class="item right" href="${path1 }/member/logout.do">로그아웃</a>
             </c:if>
             <c:if test="${ sid=='admin'}">
             <a class="item right" href="${path1 }/member/list.do">회원목록</a>
             <a class="item right" href="${path1 }/board/list.do">게시판목록</a>
+            <a class="item right" href="${path1 }/goods/list.do">상품목록</a>
             <a class="item right" href="${path1 }">주문목록</a>
             </c:if>
         </div>

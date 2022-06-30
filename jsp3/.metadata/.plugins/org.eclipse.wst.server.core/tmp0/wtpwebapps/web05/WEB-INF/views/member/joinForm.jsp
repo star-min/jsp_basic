@@ -43,6 +43,7 @@
     .btn-primary {   background-color: #333; color:#fff; }
         .btn-writer {   background-color:rgb(250, 200, 19);  }
     .btn-writer::before { background-position:-73px -68px; }
+    <%@ include file="../inc/common.css" %>
 </style>
 </head>
 <body>

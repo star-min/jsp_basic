@@ -6,21 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="pwd"/>
+		<item key="selection" value="board"/>
 		<list key="findhistory">
+			<item value="member"/>
 			<item value="userpw"/>
 			<item value="userid"/>
 			<item value="username"/>
 			<item value="maven-var"/>
 		</list>
 		<list key="replacehistory">
+			<item value="board"/>
 			<item value="pwd"/>
 			<item value="id"/>
 			<item value="uname"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-177"/>
+		<item key="DIALOG_X_ORIGIN" value="8"/>
 		<item key="DIALOG_Y_ORIGIN" value="171"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>

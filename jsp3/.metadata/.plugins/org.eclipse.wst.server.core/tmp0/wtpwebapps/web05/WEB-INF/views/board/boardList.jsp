@@ -11,88 +11,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>글 목록</title>
 <style>
-    /* 콘텐츠 영역 공통 */
-    .content {  }
-    .sub_visual { margin-bottom:50px; width:100%; }
-    .sub_visual img { display:block; width:100%; height:auto; }
-    .page_tit { text-align:center; padding-top:40px; font-size:48px; line-height:2; }
-/* 테이블 목록 */
-    .table_lst_wrap { width:1200px; margin:20px auto; }
-    .table_lst { clear:both; display:table;  border-collapse: collapse; width:100%; }
-    .table_lst tr { display:table-row; }
-    .table_lst th, .table_lst td { display:table-cell; line-height:40px; }
-    .table_lst tr td { border-bottom:1px solid #333; text-align:center; }
-    .table_lst tr th { border-top:2px solid #333; border-bottom:2px solid #333; 
-    	background-color:#eee; }
-    .table_lst tr td a { display:block; color:#333; width:500px; text-align:left;  }
-    /* 버튼 스타일 */
-    .btn { display:block; border-radius:40px;  text-align:center; line-height:24px; 
-    padding:7px 16px; margin:10px 16px; min-width:80px; cursor:pointer; 
-    position:relative; padding-left: 30px; border-color:transparent; color:#fff;
-    box-shadow:2px 2px grey; }
-    .btn::before { content:""; display:block; width:15px; height: 12px; 
-    position:absolute; top:12px; left:8px; z-index:5; background-image: url("../data/iconset_white30.png");
-    background-repeat: no-repeat;  }
-    .btn-primary {   background-color: #333; color:#fff; }
-        .btn-writer {   background-color:rgb(250, 200, 19);  }
-    .btn-writer::before { background-position:-73px -68px; }
 	<%@ include file="../inc/common.css" %>
+	<%@ include file="../member/memberList.css" %>
 </style>
-<link rel="stylesheet" href="${path1 }/inc/reset.css">
-<link rel="stylesheet" href="${path1 }/inc/common.css">
 </head>
 <body>
 <div nid="root" class="root">
 <header id="header" class="header" >
 	<%@ include file="../inc/header.jsp" %>
 </header>
-<article id="con" class="content">
-<div class="table_lst_wrap">
-<h2 class="page_tit">글 목록</h2>
-		<form method="post" action="${path1 }" class="frm_fr">
-			<table class="table" id="search_tb">
-				<tr>
-					<td>
-						<select name="searchCondition" required>
-							<option value="title">제목</option>
-							<option value="content">내용</option>
-						</select>
-						<input type="text" name="searchKeyword" required />
-						<input type="submit" value="검색" class="button is-info"/>
-					</td>
-				</tr>
-			</table>
-		</form>
-	<table class="table_lst">
-		<thead>
-			<tr>
-				<th>글 번호</th><th>제목</th><th>작성일</th><th>작성자</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach items="${boardList }" var="board">
-			<tr>
-				<td>${board.seq }</td>
-				<td><a href="${path1 }/board/read.do?seq=${board.seq }">${board.title }</a></td>
-				<td><fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd" /></td>
-				<td>
-					<c:if test="${board.nickname=='admin' }">관리자</c:if>
-					<c:if test="${board.nickname!='admin' }">${board.nickname }</c:if>
-				</td>
-			</tr>
-		</c:forEach>
-		
-		<c:if test="${sid=='admin' }">
-			<tr>
-				<td colspan="4">
-					<a href="${path1 }/board/write_form.do" class="btn btn-writer" style="width:70px">글 등록</a>
-				</td>
-			</tr>
-			</c:if>
-		</tbody>
-	</table>
+<div nid="board1" class="board1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <div class="header">
+        <div class="wrapper">
+            <a class="title" href="${path1 }">Discoveryvery</a>
+            <div class="desc">공지사항 목록 </div>
+        </div>
+    </div>
+    <div class="article">
+        <div class="wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="번호"></th>
+                        <th>작성자</th>
+                        <th>제목</th>
+                        <th class="date">작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${boardList }" var="board" varStatus="status">
+                    <tr>
+                        <td class="num">${status.count }</td>
+                        <td class="title">
+                            <a href="${path1 }/board/read.do?seq=${board.seq }">${board.nickname }</a>
+                        </td>
+                        <td>${board.title}</td>
+                        <td class="date">${board.regdate}</td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+                <c:if test="${sid=='admin' }">
+					<tr>
+						<td colspan="4">
+							<a href="${path1 }/board/write_form.do" class="btn btn-writer" style="width:70px">글 등록</a>
+						</td>
+					</tr>
+				</c:if>
+            </table>
+            <div class="search">
+                <div class="count">Te 10 view</div>
+                <div class="bundle clearfix">
+                </div>
+            </div>
+            <div class="pages">
+                <ul>
+                    <li class="active">
+                        <a>1</a>
+                    </li>
+                    <li>
+                        <a>2</a>
+                    </li>
+                    <li>
+                        <a>3</a>
+                    </li>
+                    <li>
+                        <a>4</a>
+                    </li>
+                    <li>
+                        <a>5</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </div>
-</article>
 <footer id="footer" class="footer">
 	<%@ include file="../inc/footer.jsp" %>
 </footer>

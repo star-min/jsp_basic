@@ -1,0 +1,17 @@
+package com.veryvery.dto;
+
+public class GoodsDTO {
+	private int gno;
+	private String gcategory;
+	private String gname;
+	private int gprice;
+	private String gcolor;
+	private int amount;
+	private String gsize;
+	private String gcontent;
+	private String gimage;
+	private int best;
+	private String regdate;
+	
+	
+}

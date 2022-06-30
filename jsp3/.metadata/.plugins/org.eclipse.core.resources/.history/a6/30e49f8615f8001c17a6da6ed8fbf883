@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="goods">
+	<!--  상품 목록 불러오기 -->
+	<select id="goodsList" resultType="com.veryvery.dto.GoodsDTO" >
+		select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods order by regdate desc
+	</select>
+	<!-- 상품 상세보기 -->
+	<select id="goodsRead" resultType="com.veryvery.dto.GoodsDTO" >
+		select * from goods where gno = #{gno }
+	</select>
+	<!-- 상품 쓰기 -->
+	<insert id="goodsWrite">
+		insert into goods (gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate) 
+		values (#{gcategory }, #{gname }, #{gprice }, #{gcolr}, #{amount}, #{gsize}, #{gcontent}, #{gimage}, #{best}, now())
+	</insert>
+	<!-- 상품 수정 -->
+	<update id="goodsUpdate">
+		update goods set gcategory=#{gcategory}, gname=#{gname}, gprice=#{gprice}, gcolor=#{gcolor}, amount=#{amount}, gsize=#{gsize}, gcontent=#{gcontent}, gimage=#{gimage}, best=#{best}
+		where gno=#{gno }
+	</update>
+	<!-- 상품 수정 -->
+	<delete id="goodsDelete">
+		delete from board where seq=#{seq }
+	</delete>
+</mapper>

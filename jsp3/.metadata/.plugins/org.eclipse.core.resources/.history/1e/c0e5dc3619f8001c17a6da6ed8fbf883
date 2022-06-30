@@ -1,0 +1,7 @@
+package com.veryvery.controller;
+
+@Controller
+@RequestMapping("/goods/*")
+public class GoodsController {
+
+}

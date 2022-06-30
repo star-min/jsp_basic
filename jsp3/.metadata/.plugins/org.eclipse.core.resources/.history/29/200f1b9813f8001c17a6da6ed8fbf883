@@ -1,0 +1,5 @@
+package com.veryvery.dto;
+
+public class GoodsDTO {
+
+}
