@@ -1,0 +1,25 @@
+package com.veryvery.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.veryvery.service.BasketService;
+
+@Controller
+@RequestMapping("/basket/*")
+public class BasketController {
+
+	@Autowired
+	BasketService basketService;
+	
+	@RequestMapping("list.do")
+	public String basketList(Model model) throws Exception {
+		List<BasketdDTO> basketList = basketService.basketList();
+		model.addAttribute("basketList", basketList);
+		return "basket/basketList";
+	}
+}

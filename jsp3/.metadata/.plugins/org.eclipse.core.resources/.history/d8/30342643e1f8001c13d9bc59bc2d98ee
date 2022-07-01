@@ -1,0 +1,21 @@
+package com.veryvery.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.veryvery.dto.FormDTO;
+
+@Controller
+public class FormController {
+	//value 는 호출
+	@RequestMapping(value="/save")
+	public String formSave(@ModelAttribute FormDTO member, BindingResult result) {
+		
+		System.out.println(""+member.getName());
+		
+		return "input";
+	}
+	
+}

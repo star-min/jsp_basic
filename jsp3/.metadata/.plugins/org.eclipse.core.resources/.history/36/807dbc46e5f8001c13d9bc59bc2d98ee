@@ -1,0 +1,13 @@
+package com.veryvery.dto;
+
+public class Code {
+	private String code;
+	private String label;
+	
+	public Code() { }
+	public Code(String code, String label) {
+		this.code = code;
+		this.label = label;
+		
+	}
+}

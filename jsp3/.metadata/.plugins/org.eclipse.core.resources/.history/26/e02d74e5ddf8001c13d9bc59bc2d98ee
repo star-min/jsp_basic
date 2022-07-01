@@ -1,0 +1,6 @@
+package com.veryvery.controller;
+
+@Controller
+public class FormController {
+
+}

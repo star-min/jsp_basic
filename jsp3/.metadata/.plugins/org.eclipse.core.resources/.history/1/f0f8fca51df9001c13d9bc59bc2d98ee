@@ -1,0 +1,7 @@
+package com.veryvery.controller;
+
+@Controller
+@RequestMapping("/basket/*")
+public class BasketController {
+
+}

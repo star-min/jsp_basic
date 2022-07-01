@@ -1,0 +1,16 @@
+package com.veryvery.dto;
+
+public class UserDTO {
+	private String id;
+	private Address address;
+	private String name;
+	private String email;
+	
+	private String[] gender;
+	private String[] hobbys;
+	private String job;
+	private String etc;
+	private boolean contractAgreement;
+	
+	
+}

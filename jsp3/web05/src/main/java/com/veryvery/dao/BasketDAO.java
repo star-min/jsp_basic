@@ -1,0 +1,23 @@
+package com.veryvery.dao;
+
+import java.util.List;
+
+import com.veryvery.dto.BasketDTO;
+
+public interface BasketDAO {
+	//장바구니 목록
+	public List<BasketDTO> basketList() throws Exception;
+	
+	//장바구니 상세
+	public BasketDTO basketRead(int bno) throws Exception;
+	
+	//장바구니 등록
+	public void basketWrite(BasketDTO adto) throws Exception;
+	
+	//장바구니 수정
+	public void basketUpdate(BasketDTO adto) throws Exception;
+	
+	//장바구니 삭제
+	public void basketDelete(int bno) throws Exception;
+
+}

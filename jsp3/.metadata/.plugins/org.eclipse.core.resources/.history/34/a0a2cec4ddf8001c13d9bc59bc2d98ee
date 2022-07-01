@@ -1,0 +1,10 @@
+package com.veryvery.dto;
+
+
+public class FormDTO {
+
+	private String name;
+	private String id;
+	private String email;
+	private String pwd;
+}
