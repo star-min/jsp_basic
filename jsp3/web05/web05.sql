@@ -55,10 +55,10 @@ gimage varchar(1000),  -- 이미지
 best int,    -- 인기도
 regdate date);  -- 등록일
 
-
+delete from goods;
 drop table goods;
 select * from goods where gno = 2;
-select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods order by regdate desc
+select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods order by regdate desc;
 select * from goods;
 
 insert into goods (gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate) 
@@ -66,13 +66,35 @@ insert into goods (gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gi
 commit;
 -- 장바구니
 create table basket(
-bno int primary key, -- 장바구니번호
-userid varchar(20),    -- 사용자아이디
+bno int primary key auto_increment, -- 장바구니번호
+id varchar(12),    -- 사용자아이디
 gno int,             -- 상품코드
 gcolor varchar(40),    -- 색상
 amount int,          -- 수량
 gsize varchar(40),     -- 크기
 bdate date);            -- 장바구니 담긴 날짜
+
+drop table basket;
+commit;
+-- 장바구니 리스트 (admin용)
+select * from basket; 
+
+-- 장바구니 리스트 (사용자용)
+select * from basket where id=?;
+
+-- 장바구니 정보
+select a.bno as bno, a.id as id, a.gno as gno, a.gcolor as gcolor, a.amount as amount, a.gsize as gsize, a.bdate as bdate,
+b.gcategory as gcategory, b.gname as gname, b.gprice as gprice, b.gcontent as gcontent, b.gimage as gimage, b.best as best from
+basket a inner join goods b on a.gno=b.gno where a.bno=1;
+
+-- 장바구니 수정
+update basket set gcolor=?, amount=?, gsize=?, bdate=now() where bno=?;
+
+-- 장바구니 생성
+insert into basket values(1, 'admin', '1', '에쉬그린', 1, '대형', now());
+
+-- 장바구니 삭제
+delete from basket where bno=?;
 
 -- 주문 정보
 create table payment(
