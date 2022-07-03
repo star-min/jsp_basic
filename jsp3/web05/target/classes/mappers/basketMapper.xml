@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 b.gprice as gprice, b.gcontent as gcontent, b.gimage as gimage, b.best as best from
 		 basket a inner join goods b on a.gno=b.gno where a.bno=#{bno}
 	</select>
-	<!-- 장바구니생성 -->
+	<!-- 장바구니생성 --> 		<!-- 이걸 상품에 넣어야 하지 않을까? -->
 	<insert id="basketWrite">
 		insert into basket values(#{id}, #{gno}, #{gcolor}, #{amount}, #{gsize}, now())
 	</insert>
