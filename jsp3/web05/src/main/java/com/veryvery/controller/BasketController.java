@@ -33,6 +33,11 @@ public class BasketController {
 		return "basket/basketRead";
 	}
 	
+	@RequestMapping("write_form.do")  
+	public String basketWriteForm(Model model) throws Exception {
+		return "goods/goodsWriteForm";
+	}
+	
 	@RequestMapping(value="insert.do", method = RequestMethod.POST)
 	public String basketWrite(BasketDTO adto, Model model) throws Exception {
 		basketService.basketWrite(adto);
