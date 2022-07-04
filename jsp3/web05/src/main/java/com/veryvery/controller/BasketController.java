@@ -2,6 +2,9 @@ package com.veryvery.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +22,13 @@ public class BasketController {
 	@Autowired
 	BasketService basketService;
 	
+	@Autowired
+	HttpSession session;
+	
 	@RequestMapping("list.do")
-	public String basketList(Model model) throws Exception {
-		List<BasketDTO> basketList = basketService.basketList();
+	public String basketList( Model model, HttpServletRequest request) throws Exception {
+		String id = (String) session.getAttribute("sid");
+		List<BasketDTO> basketList = basketService.basketList(id);
 		model.addAttribute("basketList", basketList);
 		return "basket/basketList";
 	}
@@ -33,16 +40,12 @@ public class BasketController {
 		return "basket/basketRead";
 	}
 	
-	@RequestMapping("write_form.do")  
-	public String basketWriteForm(Model model) throws Exception {
-		return "goods/goodsWriteForm";
-	}
-	
-	@RequestMapping(value="insert.do", method = RequestMethod.POST)
-	public String basketWrite(BasketDTO adto, Model model) throws Exception {
-		basketService.basketWrite(adto);
-		return "redirect:list.do";
-	}
+
+//	@RequestMapping(value="insert.do", method = RequestMethod.GET)
+//	public String basketWrite(BasketDTO adto, Model model) throws Exception {
+//		basketService.basketWrite(adto);
+//		return "redirect:list.do";
+//	}
 	
 	@RequestMapping(value="update.do", method = RequestMethod.POST)
 	public String boardUpdate(BasketDTO adto, Model model) throws Exception {

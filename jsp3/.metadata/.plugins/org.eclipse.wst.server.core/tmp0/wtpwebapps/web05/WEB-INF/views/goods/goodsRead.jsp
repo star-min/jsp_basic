@@ -131,7 +131,7 @@
 							</c:if>
 							<c:if test="${sid!='admin' }">
 							<c:forEach var="item" begin="0" end="${goods.best }" step="1" varStatus="status"> 
-								<img src="./images/star.png" alt="star" />
+								<img src="${path1 }/images/star.png" alt="star" />
 							</c:forEach>
 							</c:if>
 						</td>
@@ -151,12 +151,12 @@
 							<input type="reset" value="취소" class="button is-info"/>
 							<a href="${path1 }/goods/delete.do?gno=${goods.gno }" class="button is-info">상품 삭제</a>
 							</c:if>
-<%-- 							<c:if test="${sid!='admin' }">
+							<c:if test="${sid!='admin' }">
 								<c:if test="${goods.amount>0 }">
-									<a href="${path1 }/AddBasketCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">장바구니 담기</a>
-									<a href="${path1 }/SailFormCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a>
+									<a href="${path1 }/basket/insert.do?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">장바구니 담기</a>
+									<!-- <a href="${path1 }/SailFormCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a> -->
 								</c:if>
-							</c:if> --%>
+							</c:if>
 							<a href="${path1 }/goods/list.do" class="button is-info">목록</a>
 						</td>
 					</tr>

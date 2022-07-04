@@ -35,11 +35,24 @@ nickname varchar(50) not null,
 regdate date default (current_date),
 jo int(38));
 
+select * from board order by regdate desc limit 5;
+
 insert into board (title, content, nickname, regdate) 
 		values  ('안녕하세요', '첫글입니다.', 'admin', now());
 drop table board;
 select * from board;
 -- auto inclement 숫자자동증가
+
+create table review (
+seq int(38) primary key auto_increment,
+title varchar(50) not null, 
+content varchar(500) not null, 
+image varchar(1000),
+nickname varchar(50) not null, 
+regdate date default (current_date),
+jo int(38));
+
+select * from review;
 
 -- 상품테이블
 create table goods(
@@ -80,7 +93,7 @@ commit;
 select * from basket; 
 
 -- 장바구니 리스트 (사용자용)
-select * from basket where id=?;
+select * from basket where id='dog';
 
 -- 장바구니 정보
 select a.bno as bno, a.id as id, a.gno as gno, a.gcolor as gcolor, a.amount as amount, a.gsize as gsize, a.bdate as bdate,
@@ -91,7 +104,7 @@ basket a inner join goods b on a.gno=b.gno where a.bno=1;
 update basket set gcolor=?, amount=?, gsize=?, bdate=now() where bno=?;
 
 -- 장바구니 생성
-insert into basket values(1, 'admin', '1', '에쉬그린', 1, '대형', now());
+insert into basket values( 'admin', '1', '에쉬그린', 1, '대형', now());
 
 -- 장바구니 삭제
 delete from basket where bno=?;

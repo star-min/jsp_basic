@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />  
 <!DOCTYPE html>
 <html>
@@ -33,13 +34,14 @@ margin-top:20px; margin-bottom:15px; }
 		</div>	
 		<h2 class="page_tit">장바구니 목록</h2>
 		<ul class="pro_lst" id="lst_tb2">
+		<p>${sid }</p>
 			<c:forEach items="${basketList }" var="basket" varStatus="status">
 				<li>
 					<div class="img_fr">
 						<a href="${path1 }/basket/read.do?bno=${basket.bno }">장바구니 상세정보</a>
 					</div>
 					<div class="hidden item1">${status.count }</div>
-<%-- 					<h3 class="item_tit">${basket.pname }</h3> --%>
+<%-- 					<h3 class="item_tit">${basket.gname }</h3> --%>
 					<p><span>맛 : ${basket.ptaste }</span></p>
 					<p><span>남은 수량 : ${basket.pamount }</span></p>
 					<a href="${path1 }/판매폼?pno=${basket.pno }&bno=${basket.bno }&ptaste=${basket.ptaste}" class="button is-primary">구매하기</a>

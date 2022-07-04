@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 목록</title>
-<jsp:include page="common2.css"></jsp:include>
+<jsp:include page="../common.jsp"></jsp:include>
 <style>
 <%@ include file="../inc/common.css" %>
 .page_tit { border-bottom:1px solid #cdcdcd; margin-bottom:25px; }

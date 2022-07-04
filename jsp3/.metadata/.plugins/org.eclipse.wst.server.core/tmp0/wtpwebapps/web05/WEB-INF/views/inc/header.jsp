@@ -7,7 +7,6 @@
 <html>
 <head>
 <style >
-<%@ include file="header.css" %>
 </style>
 <meta charset="UTF-8">
 <title>header</title>
@@ -45,7 +44,7 @@
     </div>
     <header nid="header1" class="header1">
         <link href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap" rel="stylesheet">
-        <div class="background" style="background-image:url(${path}/images/main.jpg)"></div>
+        <div class="background" style="background-image:url(${path1}/images/main.jpg)"></div>
         <div class="text">
             <div class="inner">
                 <div>let's go, find me!</div>
@@ -59,9 +58,9 @@
             <nav>
                 <ul>
                     <li>
-                        <a>텐트</a>
+                        <a href="${path1 }/goods/list.do">텐트</a>
                         <ul>
-                            <li><a>리빙쉘텐트</a></li>
+                            <li><a href="${path1 }/goods/list.do">리빙쉘텐트</a></li>
                             <li><a>돔텐트</a></li>
                             <li><a>팝업텐트</a></li>
                             <li><a>알파인텐트</a></li>
@@ -107,8 +106,8 @@
                     <li>
                         <a>서비스</a>
                         <ul>
-                            <li><a>공지사항</a></li>
-                            <li><a>상품후기</a></li>
+                            <li><a href="${path1 }/board/list.do">공지사항</a></li>
+                            <li><a href="${path1 }/review/list.do">상품후기</a></li>
                             <li><a>매장안내</a></li>
                             <li><a>QNA</a></li>
                         </ul>

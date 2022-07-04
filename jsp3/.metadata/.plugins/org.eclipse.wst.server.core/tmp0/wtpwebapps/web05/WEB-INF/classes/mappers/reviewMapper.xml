@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+	<!--  목록 불러오기 -->
+	<select id="reviewList" resultType="com.veryvery.dto.ReviewDTO" >
+		select seq, title, content, regdate, nickname from review order by regdate desc
+	</select>
+	<!-- 글 상세보기 -->
+	<select id="reviewRead" resultType="com.veryvery.dto.ReviewDTO" >
+		select * from review where seq = #{seq }
+	</select>
+	<!-- 글 쓰기 -->
+	<insert id="reviewWrite">
+		insert into review (title, content, image, nickname, regdate) 
+		values  (#{title }, #{content }, #{image}, #{nickname }, now())
+	</insert>
+	<!-- 글 수정 -->
+	<update id="reviewUpdate">
+		update review set title=#{title }, content=#{content } ,image=#{image}
+		where seq=#{seq }
+	</update>
+	<!-- 글 수정 -->
+	<delete id="reviewDelete">
+		delete from review where seq=#{seq }
+	</delete>
+</mapper>

@@ -44,7 +44,7 @@
             <div class="cards">
                 <div class="card half">
                     <div class="inner">
-                        <div class="thumb" style="background-image: url(/img/photos/greece-3384386_640.jpg);"></div>
+                        <div class="thumb" style="background-image: url(${path1}/images/box1.jpg)"></div>
                         <div class="info">
                             <a class="title">산 꼭대기 에서 별과하나된 밤</a>
                             <div class="desc">1년간 힘들때마다 계획했던 여행 드디어 왔습니다.</div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="card quarter">
                     <div class="inner">
-                        <div class="thumb" style="background-image: url(/img/photos/wardrobe-5961193_640.jpg);"></div>
+                        <div class="thumb" style="background-image: url(${path1}/images/box2.jpg);"></div>
                         <div class="info">
                             <a class="title">속초 캠핑장에서 사랑하는 가족들과</a>
                             <div class="desc">오랜만에 하는 가족여행 특별하게 지내고싶어 캠핑장을 알아보게...</div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="card quarter">
                     <div class="inner">
-                        <div class="thumb" style="background-image: url(/img/photos/norway-4965490_640.jpg);"></div>
+                        <div class="thumb" style="background-image: url(${path1}/images/box3.jpg);"></div>
                         <div class="info">
                             <a class="title">호수에서 혼자즐기는 낭만적인..</a>
                             <div class="desc">분명 캠핑 애니메이션에서 봤을떈 쉬워보였는데..</div>
@@ -75,6 +75,9 @@
             </div>
         </div>
     </div>
+    
+    <%@ include file="../latest/latestBoard.jsp" %>
+    
     <div nid="slider1" class="slider1">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.css" rel="stylesheet">
         <div class="wrapper">
@@ -82,13 +85,13 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="/img/photos/gallery-3127444_640.jpg">
+                            <img src="${path1 }/images/새턴쉘터.jpg">
                         </div>
                         <div class="swiper-slide">
-                            <img src="/img/photos/wall-416060_640.jpg">
+                            <img src="${path1 }/images/포티스.jpg">
                         </div>
                         <div class="swiper-slide">
-                            <img src="/img/photos/furniture-731449_640.jpg">
+                            <img src="${path1 }/images/프라임디럭스.jpg">
                         </div>
                     </div>
                     <div class="swiper-button-next"></div>
@@ -105,5 +108,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
     </div>
 </div>
+<script>
+(function () {
+    var swiper = new Swiper(".slider1 .swiper-container", {
+        autoHeight: true,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+})();
+</script>
 </body>
 </html>

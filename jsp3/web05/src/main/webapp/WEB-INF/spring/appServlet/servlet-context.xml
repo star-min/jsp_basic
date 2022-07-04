@@ -14,13 +14,16 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/inc/**" location="/inc/" />
-	<resources mapping="/member/**" location="/member/" />
-	<resources mapping="/board/**" location="/board/" />
-	<resources mapping="/goods/**" location="/goods/" />
-	<resources mapping="/images/**" location="/images/" />
-	<resources mapping="/user/**" location="/user/" />
-	<resources mapping="/basket/**" location="/basket/" />
+	<resources mapping="/inc/**" location="/WEB-INF/views/inc/" />
+	<resources mapping="/member/**" location="/WEB-INF/views/member/" />
+	<resources mapping="/board/**" location="/WEB-INF/views/board/" />
+	<resources mapping="/goods/**" location="/WEB-INF/views/goods/" />
+	<resources mapping="/images/**" location="/WEB-INF/views/images/" />
+	<resources mapping="/user/**" location="/WEB-INF/views/user/" />
+	<resources mapping="/basket/**" location="/WEB-INF/views/basket/" />
+	<resources mapping="/css/**" location="/WEB-INF/views/css/" />
+	<resources mapping="/review/**" location="/WEB-INF/views/review/" />
+	<resources mapping="/latest/**" location="/WEB-INF/views/latest/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -131,7 +131,7 @@
 							</c:if>
 							<c:if test="${sid!='admin' }">
 							<c:forEach var="item" begin="0" end="${goods.best }" step="1" varStatus="status"> 
-								<img src="./images/star.png" alt="star" />
+								<img src="${path1 }/images/star.png" alt="star" />
 							</c:forEach>
 							</c:if>
 						</td>

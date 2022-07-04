@@ -116,7 +116,6 @@
     position: relative;
     margin-bottom: 25px;
     height: 500px;
-    background-color: gray;
 }
 
 .header1 .background {
@@ -510,6 +509,122 @@
 }
 /* @cards1 end */
 
+/* @news1 start */
+.news1 {
+    margin-bottom: 30px;
+}
+
+.news1 .news-wrapper {
+    margin: 0 -15px;
+}
+
+.news1 .news-wrapper:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.news1 .news-wrapper .news {
+    float: left;
+    padding: 0 15px;
+    width: 50%;
+}
+div.left>span {
+    display: inline-block;
+    padding: 3px 5px;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 3px;
+}
+
+div.left>span.new {
+    background: #f71d1d;
+}
+.news1 .news-wrapper .news .header {
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 22px;
+}
+
+.news1 .news-wrapper .news .header:after {
+    content: " ";
+    display: table;
+    clear: both
+}
+
+.news1 .news-wrapper .news .header .left {
+    float: left;
+}
+
+.news1 .news-wrapper .news .header .left>.title {
+    color: #262626;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.news1 .news-wrapper .news .header .right>button {
+    cursor: pointer;
+    float: right;
+    border: 1px solid #1259a7;
+    background: #1259a7;
+    color: #fff;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0;
+    font-size: 14px;
+}
+
+.news1 .news-wrapper .news .header .right>button:hover {
+    background: #146ece;
+}
+
+.news1 .news-wrapper .news .contents .item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news1 .news-wrapper .news .contents .item>li {
+    margin: 10px 0;
+    position: relative;
+    padding-right: 100px;
+}
+
+.news1 .news-wrapper .news .contents .item>li>a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.news1 .news-wrapper .news .contents .item>li>a:hover {
+    text-decoration: underline;
+}
+
+.news1 .news-wrapper .news .contents .item>li>span {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    font-size: 90%;
+}
+
+@media(max-width:991px) {
+    .news1 .news-wrapper .news .header .left>.title {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .news1 .news-wrapper .news {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+/* @news1 end */
+
 /* @slider1 start */
 .slider1 {
     margin-bottom: 30px;
@@ -532,7 +647,7 @@
 .slider1 .slider .swiper-container .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #eee;
+/*     background: #eee; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -548,8 +663,10 @@
 }
 
 .slider1 .slider .swiper-container .swiper-slide img {
+	clear: both;
     display: block;
-    width: 100%;
+    width: auto;
+    height: 400px;
 }
 
 .slider1 .slider .swiper-container .swiper-button-next,

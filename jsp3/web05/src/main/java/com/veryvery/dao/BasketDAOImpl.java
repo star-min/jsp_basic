@@ -15,7 +15,7 @@ public class BasketDAOImpl implements BasketDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public List<BasketDTO> basketList() throws Exception {
+	public List<BasketDTO> basketList(String id) throws Exception {
 		return sqlSession.selectList("basket.basketList");
 	}
 

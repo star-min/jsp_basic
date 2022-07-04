@@ -6,7 +6,7 @@ import com.veryvery.dto.BasketDTO;
 
 public interface BasketService {
 	//장바구니 목록
-	public List<BasketDTO> basketList() throws Exception;
+	public List<BasketDTO> basketList(String id) throws Exception;
 	
 	//장바구니 상세
 	public BasketDTO basketRead(int bno) throws Exception;

@@ -9,7 +9,6 @@
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 	<!-- 메인 화면의 스타일들을 넣어놓은 common.css를 불러옵니다. -->
-	<link rel="stylesheet" href="${path1 }/inc/common.css">
 	<style>
 	<%@ include file="inc/common.css" %>
 	</style>
