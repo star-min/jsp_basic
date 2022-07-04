@@ -1,0 +1,14 @@
+package com.veryvery.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.veryvery.dao.BoardDAO;
+
+@Service
+public class LatestServiceImpl {
+
+	@Autowired
+	BoardDAO boardDao;
+	
+}

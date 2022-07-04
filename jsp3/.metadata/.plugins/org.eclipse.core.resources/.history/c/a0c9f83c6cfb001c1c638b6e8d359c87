@@ -1,0 +1,6 @@
+package com.veryvery.dao;
+
+public interface LatestDAO {
+
+	public List<BoardDTO> latestBoard() throws Exception;
+}

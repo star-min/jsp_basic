@@ -1,0 +1,22 @@
+package com.veryvery.service;
+
+import java.util.List;
+
+import com.veryvery.dto.ReviewDTO;
+
+public interface ReviewService {
+	//글 목록
+	public List<ReviewDTO> boardList() throws Exception;
+		
+	//글 상세보기
+	public ReviewDTO boardRead(int seq) throws Exception;
+	
+	//글 등록
+	public void boardWrite(ReviewDTO rdto) throws Exception;
+	
+	//글 수정
+	public void boardUpdate(ReviewDTO rdto) throws Exception;
+	
+	//글 삭제
+	public void boardDelete(int seq) throws Exception;
+}

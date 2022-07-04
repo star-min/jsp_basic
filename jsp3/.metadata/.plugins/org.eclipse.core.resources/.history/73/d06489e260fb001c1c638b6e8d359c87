@@ -1,0 +1,42 @@
+package com.veryvery.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.veryvery.dao.ReviewDAO;
+import com.veryvery.dto.ReviewDTO;
+
+@Service
+public class ReviewServiceImpl implements BoardService {
+
+	//해당 dao 객체 주입
+	@Autowired
+	ReviewDAO reviewDao;
+	
+	@Override
+	public List<ReviewDTO> boardList() throws Exception {
+		return boardDao.boardList();
+	}
+
+	@Override
+	public ReviewDTO boardRead(int seq) throws Exception {
+		return boardDao.boardRead(seq);
+	}
+
+	@Override
+	public void boardWrite(ReviewDTO rdto) throws Exception {
+		boardDao.boardWrite(bdto);
+	}
+
+	@Override
+	public void boardUpdate(ReviewDTO rdto) throws Exception {
+		boardDao.boardUpdate(bdto);
+	}
+
+	@Override
+	public void boardDelete(int seq) throws Exception {
+		boardDao.boardDelete(seq);
+	}
+}

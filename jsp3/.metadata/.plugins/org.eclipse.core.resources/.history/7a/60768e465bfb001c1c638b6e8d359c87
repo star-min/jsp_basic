@@ -1,0 +1,270 @@
+/* @cards1 start */
+.cards1 {
+    margin-bottom: 30px;
+}
+
+.cards1>.wrapper>.title {
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.cards1 .cards {
+    margin: 0 -10px;
+}
+
+.cards1 .cards:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+
+.cards1 .cards .card {
+    float: left;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.cards1 .cards .card .inner {
+    height: 464px;
+    border: 1px solid #ddd;
+    position: relative;
+    padding: 25px;
+}
+
+.cards1 .cards .card .inner .thumb {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.cards1 .cards .card .inner .info {
+    position: relative;
+    padding: 25px 0;
+    height: 100%;
+}
+
+.cards1 .cards .card .inner .info .title {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cards1 .cards .card .inner .info .desc {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.cards1 .cards .card .inner .info .date {
+    color: #666;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.cards1 .cards .card.half {
+    width: 50%;
+}
+
+.cards1 .cards .card.half .inner {
+    padding-top: 320px;
+}
+
+.cards1 .cards .card.half .inner .thumb {
+    height: 320px;
+}
+
+.cards1 .cards .card.half .inner .info .desc {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cards1 .cards .card.quarter {
+    width: 25%;
+}
+
+.cards1 .cards .card.quarter .inner {
+    padding-top: 160px;
+}
+
+.cards1 .cards .card.quarter .inner .thumb {
+    height: 160px;
+}
+
+@media(max-width:991px) {
+    .cards1 .cards .card.half {
+        width: 100%;
+    }
+
+    .cards1 .cards .card.quarter {
+        width: 50%;
+    }
+
+    .cards1 .cards .card.half .inner,
+    .cards1 .cards .card.quarter .inner {
+        padding-top: 240px;
+        height: auto;
+    }
+
+    .cards1 .cards .card.half .inner .thumb,
+    .cards1 .cards .card.quarter .inner .thumb {
+        height: 240px;
+    }
+
+
+    .cards1 .cards .card.half .inner .info .desc {
+        white-space: normal;
+        text-overflow: clip;
+        overflow: visible;
+    }
+}
+
+@media(max-width:767px) {
+    .cards1 .cards .card.half {
+        width: 100%;
+    }
+
+    .cards1 .cards .card.quarter {
+        width: 100%;
+    }
+}
+/* @cards1 end */
+
+/* @slider1 start */
+.slider1 {
+    margin-bottom: 30px;
+}
+
+.slider1>.wrapper {
+    position: relative;
+    padding-right: 385px;
+}
+
+.slider1 .slider {
+    padding: 0 50px;
+    position: relative;
+}
+
+.slider1 .slider .swiper-container {
+    position: static;
+}
+
+.slider1 .slider .swiper-container .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #eee;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.slider1 .slider .swiper-container .swiper-slide img {
+    display: block;
+    width: 100%;
+    
+}
+
+.slider1 .slider .swiper-container .swiper-button-next,
+.slider1 .slider .swiper-container .swiper-button-prev {
+    padding: 0 15px;
+}
+
+.slider1 .slider .swiper-container .swiper-button-next {
+    right: 0;
+}
+
+.slider1 .slider .swiper-container .swiper-button-prev {
+    left: 0;
+}
+
+.slider1 .slider .swiper-container .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff;
+}
+
+.slider1 .texts {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 385px;
+    padding: 25px 15px 25px 50px;
+}
+
+.slider1 .texts .top {
+    color: #007aff;
+    font-weight: bold;
+}
+
+.slider1 .texts .title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 0 20px 0;
+}
+
+.slider1 .texts .desc {
+    color: #666;
+    line-height: 21px;
+    margin-bottom: 30px;
+}
+
+.slider1 .texts button {
+    background: none;
+    box-shadow: none;
+    cursor: pointer;
+    border: 1px solid #007aff;
+    color: #007aff;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.slider1 .texts button:hover {
+    background: #007aff;
+    border-color: #007aff;
+    color: #fff;
+}
+
+@media(max-width:991px) {
+    .slider1>.wrapper {
+        padding-right: 15px;
+    }
+
+    .slider1 .slider {
+        padding: 0;
+    }
+
+    .slider1 .slider .swiper-container .swiper-button-next {
+        right: 15px;
+    }
+
+    .slider1 .slider .swiper-container .swiper-button-prev {
+        left: 15px;
+    }
+
+    .slider1 .texts {
+        position: static;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+}
+/* @slider1 end */

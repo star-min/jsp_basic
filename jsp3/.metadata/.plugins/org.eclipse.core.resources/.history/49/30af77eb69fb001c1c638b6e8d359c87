@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<!--  목록 불러오기 -->
+	<select id="boardList" resultType="com.veryvery.dto.BoardDTO" >
+		select seq, title, content, regdate, nickname from board order by regdate desc
+	</select>
+	<!-- 글 상세보기 -->
+	<select id="boardRead" resultType="com.veryvery.dto.BoardDTO" >
+		select * from board where seq = #{seq }
+	</select>
+	<!-- 새로운 글 5개 -->
+	<select id="latestGoods" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods order by regdate desc limit 5
+	</select>
+	<!-- 글 쓰기 -->
+	<insert id="boardWrite">
+		insert into board (title, content, nickname, regdate) 
+		values  (#{title }, #{content }, #{nickname }, now())
+	</insert>
+	<!-- 글 수정 -->
+	<update id="boardUpdate">
+		update board set title=#{title }, content=#{content }  
+		where seq=#{seq }
+	</update>
+	<!-- 글 수정 -->
+	<delete id="boardDelete">
+		delete from board where seq=#{seq }
+	</delete>
+</mapper>

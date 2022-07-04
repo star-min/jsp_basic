@@ -1,0 +1,61 @@
+package com.veryvery.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.servlet.ModelAndView;
+
+import com.veryvery.dto.BoardDTO;
+import com.veryvery.service.BoardService;
+
+@Controller
+@RequestMapping("/review/*")
+public class ReviewController {
+	//private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	//다음 서비스 작업 객체를 주입
+	@Autowired
+	ReviewService reviewService;
+	
+	@RequestMapping("list.do")
+	public String reviewList(Model model) throws Exception {
+		List<ReviewDTO> reviewList = reviewService.reviewList();
+		model.addAttribute("reviewList", reviewList);
+		return "review/reviewList";
+	}
+
+	
+	@RequestMapping(value="read.do", method = RequestMethod.GET)
+	public String boardRead(@RequestParam int seq, Model model) throws Exception {
+		BoardDTO board = boardService.boardRead(seq);
+		model.addAttribute("board", board);
+		return "board/boardRead";
+	}
+
+	@RequestMapping("write_form.do")  //board/write_form  -> board/boardWriteForm.jsp
+	public String boardWriteForm(Model model) throws Exception {
+		return "board/boardWriteForm";
+	}
+	
+	@RequestMapping(value="insert.do", method = RequestMethod.POST)
+	public String databankWrite(BoardDTO bdto, Model model) throws Exception {
+		boardService.boardWrite(bdto);
+		return "redirect:list.do";
+	}
+	
+	@RequestMapping(value="update.do", method = RequestMethod.POST)
+	public String boardUpdate(BoardDTO bdto, Model model) throws Exception {
+		boardService.boardUpdate(bdto);
+		return "redirect:list.do";
+	}
+
+	@RequestMapping(value="delete.do", method = RequestMethod.GET)
+	public String boardDelete(@RequestParam int seq, Model model) throws Exception {
+		boardService.boardDelete(seq);
+		return "redirect:list.do";
+	}
+}

@@ -1,0 +1,14 @@
+package com.veryvery.dao;
+
+import java.util.List;
+
+import com.veryvery.dto.BoardDTO;
+
+public class LatestDAOImpl implements LatestDAO{
+
+	@Override
+	public List<BoardDTO> latestBoard() throws Exception {
+		return null;
+	}
+
+}

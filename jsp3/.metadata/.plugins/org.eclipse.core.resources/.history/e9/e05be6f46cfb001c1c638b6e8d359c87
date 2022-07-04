@@ -1,0 +1,6 @@
+package com.veryvery.service;
+
+public interface LatestService {
+
+	public List<BoardDTO> latestboard() throws Exception;
+}
