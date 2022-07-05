@@ -3,13 +3,14 @@ package com.veryvery.dao;
 import java.util.List;
 
 import com.veryvery.dto.BasketDTO;
+import com.veryvery.dto.BasketDetailDTO;
 
 public interface BasketDAO {
 	//장바구니 목록
 	public List<BasketDTO> basketList(String id) throws Exception;
 	
 	//장바구니 상세
-	public BasketDTO basketRead(int bno) throws Exception;
+	public BasketDetailDTO basketRead(int bno) throws Exception;
 	
 	//장바구니 등록
 	public void basketWrite(BasketDTO adto) throws Exception;

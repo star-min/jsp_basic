@@ -4,11 +4,19 @@ public class BasketDTO {
 	private int bno;		// 장바구니번호
 	private String id;  	// 사용자아이디
 	private int gno;		// 상품코드
+	private String gimage;
 	private String gcolor;	// 색상
 	private int amount;		// 수량
 	private String gsize;	// 크기
 	private String bdate;
 	
+	
+	public String getGimage() {
+		return gimage;
+	}
+	public void setGimage(String gimage) {
+		this.gimage = gimage;
+	}
 	public int getBno() {
 		return bno;
 	}

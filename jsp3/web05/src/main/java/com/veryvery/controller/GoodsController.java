@@ -40,7 +40,7 @@ public class GoodsController {
 	}
 	
 	@RequestMapping(value="insert.do", method = RequestMethod.POST)
-	public String goodskWrite(GoodsDTO gdto, Model model) throws Exception {
+	public String goodsWrite(GoodsDTO gdto, Model model) throws Exception {
 		goodsService.goodsWrite(gdto);
 		return "redirect:list.do";
 	}

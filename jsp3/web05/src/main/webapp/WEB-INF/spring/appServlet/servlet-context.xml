@@ -24,6 +24,7 @@
 	<resources mapping="/css/**" location="/WEB-INF/views/css/" />
 	<resources mapping="/review/**" location="/WEB-INF/views/review/" />
 	<resources mapping="/latest/**" location="/WEB-INF/views/latest/" />
+	<resources mapping="/payment/**" location="/WEB-INF/views/payment/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

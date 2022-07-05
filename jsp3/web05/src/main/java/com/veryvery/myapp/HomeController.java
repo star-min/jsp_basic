@@ -2,6 +2,7 @@ package com.veryvery.myapp;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.veryvery.dto.BoardDTO;
 import com.veryvery.service.LatestService;
 
 /**
@@ -24,6 +26,18 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Autowired
+	LatestService latestService;
+	
+	@Autowired
+	HttpSession session;
+	
+	@RequestMapping("/myapp/*")
+	public String latestBoard(Model model) throws Exception {
+		List<BoardDTO> latestBoard = latestService.latestBoard();
+		model.addAttribute("latestBoard", latestBoard);
+		return "latest/latestBoard";
+	}
 	
 	/**
 	 * Simply selects the home view to render by returning its name.

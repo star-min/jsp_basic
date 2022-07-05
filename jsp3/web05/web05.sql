@@ -68,9 +68,11 @@ gimage varchar(1000),  -- 이미지
 best int,    -- 인기도
 regdate date);  -- 등록일
 
+delete from goods where gno=1;
+
 delete from goods;
 drop table goods;
-select * from goods where gno = 2;
+select * from goods where gno = 1;
 select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods order by regdate desc;
 select * from goods;
 
@@ -82,6 +84,7 @@ create table basket(
 bno int primary key auto_increment, -- 장바구니번호
 id varchar(12),    -- 사용자아이디
 gno int,             -- 상품코드
+gimage varchar(1000),
 gcolor varchar(40),    -- 색상
 amount int,          -- 수량
 gsize varchar(40),     -- 크기
@@ -95,6 +98,7 @@ select * from basket;
 -- 장바구니 리스트 (사용자용)
 select * from basket where id='dog';
 
+delete from basket where bno=1;
 -- 장바구니 정보
 select a.bno as bno, a.id as id, a.gno as gno, a.gcolor as gcolor, a.amount as amount, a.gsize as gsize, a.bdate as bdate,
 b.gcategory as gcategory, b.gname as gname, b.gprice as gprice, b.gcontent as gcontent, b.gimage as gimage, b.best as best from
@@ -111,14 +115,14 @@ delete from basket where bno=?;
 
 -- 주문 정보
 create table payment(
-	ono int primary key, -- 결제번호
+	ono int primary key auto_increment, -- 결제번호
     paytype varchar(20),   -- 결제방식
     payno varchar(30),     -- 결제카드번호
     money int,           -- 결제금액
     sdate date,             -- 결제일
     gno int,             -- 상품코드
     amount int,          -- 수량
-    userid varchar(20),    -- 사용자아이디
+    id varchar(20),    -- 사용자아이디
 	rname varchar(30),     -- 수신자명
     tel varchar(20),       -- 수신자전화번호
     addr1 varchar(200),    -- 수신자 기본주소
@@ -130,4 +134,10 @@ create table payment(
     rdate date,             -- 도착일
 	memo varchar(100)     -- 메모
 );
+
+drop table payment;
+
+select * from payment;
+
+insert into payment values(1, '체크카드', '100-32425-62', 730000, now(), 1, 1, cat, '야옹이', '010-1004-1004','냥냐냐냥', '냐냐냐양냥', '777');
 commit;

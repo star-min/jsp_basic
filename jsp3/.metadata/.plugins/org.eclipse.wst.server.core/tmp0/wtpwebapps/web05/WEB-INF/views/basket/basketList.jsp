@@ -34,7 +34,7 @@ margin-top:20px; margin-bottom:15px; }
 		</div>	
 		<h2 class="page_tit">장바구니 목록</h2>
 		<ul class="pro_lst" id="lst_tb2">
-		<p>${sid }</p>
+		<p>${bno }</p>
 			<c:forEach items="${basketList }" var="basket" varStatus="status">
 				<li>
 					<div class="img_fr">
@@ -42,12 +42,13 @@ margin-top:20px; margin-bottom:15px; }
 					</div>
 					<div class="hidden item1">${status.count }</div>
 <%-- 					<h3 class="item_tit">${basket.gname }</h3> --%>
-					<p><span>맛 : ${basket.ptaste }</span></p>
-					<p><span>남은 수량 : ${basket.pamount }</span></p>
-					<a href="${path1 }/판매폼?pno=${basket.pno }&bno=${basket.bno }&ptaste=${basket.ptaste}" class="button is-primary">구매하기</a>
-					<a href="${path1 }/basket/delete?bno=${basket.bno }" class="button is-primary">장바구니 삭제</a>
+					<p><img alt="${path1 }/images/${basket.gimage}" src="${basket.gimage }"></p>
+					<p><span>색상 : ${basket.gcolor }</span></p>
+					<p><span>남은 수량 : ${basket.amount }</span></p>
+					<a href="${path1 }/payment/paymentWriteForm.do?bno=${basket.bno }&bno=${basket.bno }&ptaste=${basket.gcolor}" class="button is-primary">구매하기</a>
+					<a href="delete.do?bno=${basket.bno }" class="button is-primary">장바구니 삭제</a>
 				</li>
-			</c:forEach>
+			 </c:forEach> 
 			<c:if test="${basket==null }">
 				<li class="nothing">더 이상 상품이 존재하지 않습니다.</li>
 			</c:if>

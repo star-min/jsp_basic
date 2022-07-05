@@ -25,11 +25,11 @@
 						<th>카테고리</th>
 						<td>
 							<select name="gcategory" class="select is-primary" required>
-								<option value="tent">텐트</option>
-								<option value="table">테이블</option>
-								<option value="chair">체어</option>
-								<option value="sleeping">침낭/매트</option>
-								<option value="bunner">캠핑소품</option>
+								<option value="living">LivingTent</option>
+								<option value="dom">DomTent</option>
+								<option value="alpha">AlphaTent</option>
+								<option value="shadow">ShadowTent</option>
+								<option value="car">CarTent</option>
 							</select>
 						</td>
 					</tr>
@@ -48,7 +48,11 @@
 					<tr>
 						<th>상품 색상</th>
 						<td>
-							<input type="text" name="gcolor" class="input is-primary">
+							<select name="gcolor" class="select is-primary" required>
+								<option value="black">black</option>
+								<option value="brown">brown</option>
+								<option value="cooper">cooper</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
@@ -60,7 +64,11 @@
 					<tr>
 						<th>상품 규격</th>
 						<td>
-							<input type="text" name="gsize" class="input is-primary">
+							<select name="gsize" class="select is-primary" required>
+								<option value="big">9~12 peoples</option>
+								<option value="normal">5~8 peoples</option>
+								<option value="small">2~4 peoples</option>
+							</select>
 						</td>
 					</tr>
 					<tr>

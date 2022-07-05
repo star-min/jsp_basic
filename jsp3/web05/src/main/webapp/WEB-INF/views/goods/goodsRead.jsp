@@ -34,11 +34,11 @@
 						<td>
 							<c:if test="${sid=='admin' }">
 							<select name="gcategory" class="select is-primary" required>
-								<option value="tent">텐트</option>
-								<option value="table">테이블</option>
-								<option value="chair">체어</option>
-								<option value="sleeping">침낭/매트</option>
-								<option value="bunner">캠핑소품</option>
+								<option value="living">LivingTent</option>
+								<option value="dom">DomTent</option>
+								<option value="alpha">AlphaTent</option>
+								<option value="shadow">ShadowTent</option>
+								<option value="car">CarTent</option>
 							</select>
 							<input type="hidden" name="gno" value="${goods.gno }">
 							</c:if>
@@ -153,8 +153,8 @@
 							</c:if>
 							<c:if test="${sid!='admin' }">
 								<c:if test="${goods.amount>0 }">
-									<a href="${path1 }/basket/insert.do?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">장바구니 담기</a>
-									<!-- <a href="${path1 }/SailFormCtrl?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a> -->
+									<a href="${path1 }/basket/insert.do?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }&id=${sid}&gimage=${goods.gimage }&amount=${goods.amount}" class="button is-info">장바구니 담기</a>
+									<a href="${path1 }/payment/write_form.do?gno=${goods.gno }&${goods.gname }&${goods.amount }&${goods.gprice }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a>
 								</c:if>
 							</c:if>
 							<a href="${path1 }/goods/list.do" class="button is-info">목록</a>

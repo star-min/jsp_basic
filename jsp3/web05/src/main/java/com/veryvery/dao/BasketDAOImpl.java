@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.veryvery.dto.BasketDTO;
+import com.veryvery.dto.BasketDetailDTO;
 
 @Repository
 public class BasketDAOImpl implements BasketDAO {
@@ -16,11 +17,11 @@ public class BasketDAOImpl implements BasketDAO {
 
 	@Override
 	public List<BasketDTO> basketList(String id) throws Exception {
-		return sqlSession.selectList("basket.basketList");
+		return sqlSession.selectList("basket.basketList", id);
 	}
 
 	@Override
-	public BasketDTO basketRead(int bno) throws Exception {
+	public BasketDetailDTO basketRead(int bno) throws Exception {
 		return sqlSession.selectOne("basket.basketRead", bno);
 	}
 

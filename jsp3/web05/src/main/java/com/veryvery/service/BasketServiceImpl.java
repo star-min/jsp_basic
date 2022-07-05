@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.veryvery.dao.BasketDAO;
 import com.veryvery.dto.BasketDTO;
+import com.veryvery.dto.BasketDetailDTO;
 
 @Service
 public class BasketServiceImpl implements BasketService {
@@ -20,7 +21,7 @@ public class BasketServiceImpl implements BasketService {
 	}
 
 	@Override
-	public BasketDTO basketRead(int bno) throws Exception {
+	public BasketDetailDTO basketRead(int bno) throws Exception {
 		return basketDao.basketRead(bno);
 	}
 

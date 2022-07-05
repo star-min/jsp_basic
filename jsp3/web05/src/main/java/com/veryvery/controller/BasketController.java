@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.veryvery.dto.BasketDTO;
+import com.veryvery.dto.BasketDetailDTO;
 import com.veryvery.service.BasketService;
 
 @Controller
@@ -35,17 +36,17 @@ public class BasketController {
 	
 	@RequestMapping(value="read.do", method = RequestMethod.GET)
 	public String boardRead(@RequestParam int bno, Model model) throws Exception {
-		BasketDTO basket = basketService.basketRead(bno);
+		BasketDetailDTO basket = basketService.basketRead(bno);
 		model.addAttribute("basket", basket);
 		return "basket/basketRead";
 	}
 	
 
-//	@RequestMapping(value="insert.do", method = RequestMethod.GET)
-//	public String basketWrite(BasketDTO adto, Model model) throws Exception {
-//		basketService.basketWrite(adto);
-//		return "redirect:list.do";
-//	}
+	@RequestMapping(value="insert.do", method = RequestMethod.GET)
+	public String basketWrite(BasketDTO adto, Model model) throws Exception {
+		basketService.basketWrite(adto);
+		return "redirect:list.do";
+	}
 	
 	@RequestMapping(value="update.do", method = RequestMethod.POST)
 	public String boardUpdate(BasketDTO adto, Model model) throws Exception {

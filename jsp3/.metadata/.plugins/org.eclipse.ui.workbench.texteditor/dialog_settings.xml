@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="review"/>
+		<item key="selection" value="Id"/>
 		<list key="findhistory">
+			<item value="id"/>
+			<item value="pno"/>
 			<item value="board"/>
 			<item value="img"/>
 			<item value=".header"/>

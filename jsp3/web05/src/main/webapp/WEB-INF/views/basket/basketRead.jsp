@@ -6,6 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<jsp:include page="../common.jsp"></jsp:include>
+<style>
+.page_tit { border-bottom:1px solid #cdcdcd; margin-bottom:25px; }
+#lst_tb2 { width:1280px; margin:20px; auto; }
+#lst_tb2 li { float:left; width:300px; height:600px; margin-right:15px; margin-top:15px; 
+overflow:hidden; }
+#lst_tb2 li img { display:block; width:100%; }
+#lst_tb2 li.nothing { width:100%; clear:both; text-align:center; font-weight:bold; 
+height:60px; line-height:60px; border-top:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd;
+margin-top:20px; margin-bottom:15px; }
+#btn_group { clear:both; }
+</style>
 <meta charset="UTF-8">
 <title>상품 정보 보기</title>
 <jsp:include page="../common.jsp"></jsp:include>
@@ -19,25 +31,19 @@
 <jsp:include page="../inc/header.jsp"></jsp:include>
 <div id="content" class="content_wrap">
 	<section class="con_wrap">
-		<c:if test="${sid=='admin' }">
-		<h2 class="page_tit">상품 정보 수정</h2>
-		</c:if>
-		<c:if test="${sid!='admin' }">
-		<h2 class="page_tit">상품 정보 보기</h2>
-		</c:if>
 <h2 class="page_tit">장바구니 상세보기</h2>
 		<ul class="pro_lst" id="lst_tb2">
 				<li>
-					<h3 class="item_tit">제품명 : ${gname }</h3>
+					<h3 class="item_tit">제품명 : ${basket.gname }</h3>
 					<p class="item_data">
-						<span class="img_fr"><img src="${path1 }/images/${gimage}" alt=" ${gname }" /></span>
-						<span>가격 : ${gprice }</span><br>
-						<span>색상 : ${gcolor }</span><br>
-						<span>크기(중량) : ${gsize }</span>
+						<span class="img_fr"><img src="${path1 }/images/${basket.gimage}" alt=" ${basket.gname }" /></span>
+						<span>가격 : ${basket.gprice }</span><br>
+						<span>색상 : ${basket.gcolor }</span><br>
+						<span>크기(중량) : ${basket.gsize }</span>
 					</p>
-					<p><span>남은 수량 : ${amount}</span></p>
-					<br><br><a href="${path1 }/SailFormCtrl?gno=${gno }&bno=${bno }&gcolor=${gcolor}&gsize=${gsize }" class="button is-primary">구매하기</a>
-					<a href="${path1 }/basket/delete?bno=${bno }" class="button is-primary">장바구니 삭제</a><br><br>
+					<p><span>남은 수량 : ${basket.amount}</span></p>
+					<br><br><a href="${path1 }/payment/paymentWriteForm.do?gno=${basket.gno }&bno=${basket.bno }&gcolor=${basket.gcolor}&gsize=${basket.gsize }" class="button is-primary">구매하기</a>
+					<a href="${path1 }/basket/delete?bno=${basket.bno }" class="button is-primary">장바구니 삭제</a><br><br>
 				</li>
 			<c:if test="${vo==null }">
 				<li class="nothing">더 이상 상품이 존재하지 않습니다.</li>
