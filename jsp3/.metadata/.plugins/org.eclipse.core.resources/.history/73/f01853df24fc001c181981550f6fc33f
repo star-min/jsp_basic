@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관리자용 결제 목록 보기</title>
+</head>
+<body>
+<header id="header" class="header" >
+	<%@ include file="../inc/header.jsp" %>
+</header>
+<div id="content" class="content_wrap">
+	<section class="con_wrap">
+		<div>
+			
+		</div>	
+		<h2 class="page_tit">결제 목록</h2>
+		<table class="pro_lst" id="lst_tb">
+			<thead>
+				<tr>
+					<th>순번</th>
+					<th>아이디</th>
+					<th>상품코드</th>
+					<th>결제금액</th>
+					<th>결제일</th>
+				</tr>
+			</thead>
+			<tbody>
+			<c:forEach items="${paymentList }" var="pay" varStatus="status">
+				<tr>
+					<td><a href="${path1 }/payment/adminRead.do?ono=${pay.ono }">${pay.ono }</a></td>
+					<td><a href="${path1 }/member/read.do?id=${pay.id }" target="_blank">${pay.id }</a></td>
+					<td><a href="${path1 }/goods/read.do?gno=${pay.gno }" target="_blank">${pay.gno }</a></td>
+					<td>${pay.money }</td>
+					<td>${pay.sdate }</td>
+				</tr>
+			</c:forEach>
+			<tr>
+				<td colspan="5">
+					<c:if test="${vo==null }">
+						<span class="nothing">더 이상 상품이 존재하지 않습니다.</span>
+					</c:if>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+</div>
+<footer id="footer" class="footer">
+	<%@ include file="../inc/footer.jsp" %>
+</footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<jsp:include page="../common.jsp"></jsp:include>
+<style>
+#lst_tb th { min-width:140px; }
+</style>
+<title>결제 정보 보기</title>
+</head>
+<body>
+<header id="header" class="header" >
+	<%@ include file="../inc/header.jsp" %>
+</header>
+
+<footer id="footer" class="footer">
+	<%@ include file="../inc/footer.jsp" %>
+</footer>
+</body>
+</html>

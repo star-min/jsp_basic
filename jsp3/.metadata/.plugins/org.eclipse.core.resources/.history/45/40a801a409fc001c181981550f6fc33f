@@ -1,0 +1,18 @@
+package com.veryvery.dto;
+
+public class BasketDetailDTO {
+	private int bno;		//장바구니번호
+	private String userid;	//사용자아이디
+	private int gno;		//상품코드
+	private String gcolor;	//색상
+	private int amount;		//수량
+	private String gsize;	//크기
+	private String bdate;	//장바구니 등록일
+	private String gcategory;    //상품카테고리
+	private String gname;    	//장바구니 제품 상품명
+	private int gprice; 		//장바구니 제품 가격
+	private String gcontent;    //장바구니 제품 설명
+	private String gimage;  	//장바구니 제품 이미지
+	private int best;    		//장바구니 제품 인기도
+	private String regdate;		//장바구니 제품 등록일
+}

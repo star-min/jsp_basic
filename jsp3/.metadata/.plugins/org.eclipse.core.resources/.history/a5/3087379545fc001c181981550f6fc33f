@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="payment">
+	<!--  결제 목록 불러오기 -->
+	<select id="paymentList" resultType="com.veryvery.dto.PaymentDTO" >
+		select * from payment where id=#{id}
+	</select>
+	<!-- 상품 상세보기 -->
+	<select id="paymentRead" resultType="com.veryvery.dto.PaymentDTO" >
+		select * from goods where gno=#{gno}
+	</select>
+	<!-- 관리자용 결제 상세보기 -->
+	<select id="paymentAdminList" resultType="com.veryvery.dto.PaymentDTO" >
+		select * from payment
+	</select>
+	<!-- 결제 정보 불러오기 -->
+	<select id="paymentAdminRead" resultType="com.veryvery.dto.PaymentDTO" >
+		select * from payment where ono=#{ono}
+	</select>
+	<!-- 결제 처리 -->
+	<insert id="paymentWrite">
+		insert into payment(paytype, payno, money, sdate, gno, amount,<!--  id, --> rname, tel, addr1, addr2, postcode, transno, transco, rstatus, rdate, memo) 
+		values(#{paytype}, #{payno}, #{money}, now(), #{gno}, #{amount},<!--  #{id}, --> #{rname}, #{tel}, #{addr1}, #{addr2}, #{postcode}, #{transno}, #{transco}, #{rstatus}, #{rdate}, #{memo})
+	</insert>
+	<!-- 배송지 수정 -->
+	<update id="paymentUpdate">
+		update payment set rname=#{rname}, tel=#{tel}, addr1=#{addr1}, addr2=#{addr2}, postcode=#{postcode}, memo=#{memo} where ono=#{ono}
+	</update>
+	<!-- 택배 배정 -->
+	<update id="paymentAdminUpdate">
+		update payment set transno=#{transno}, transco=#{transco}, rstatus=#{rstatus}, rdate=#{rdate} where ono=#{ono}
+	</update>
+	<!-- 결제 삭제 또는 취소 -->
+	<delete id="paymentDelete">
+		delete from payment where ono=#{ono}
+	</delete>
+</mapper>

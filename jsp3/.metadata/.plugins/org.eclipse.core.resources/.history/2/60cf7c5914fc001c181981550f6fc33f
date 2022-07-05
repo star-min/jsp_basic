@@ -1,0 +1,65 @@
+package com.veryvery.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.veryvery.dao.GoodsDAO;
+import com.veryvery.dto.GoodsDTO;
+import com.veryvery.dto.PaymentDTO;
+
+@Service
+public class PaymentServiceImpl implements PaymentService{
+
+	@Autowired
+	GoodsDAO goodsDao;
+	
+	@Override
+	public List<PaymentDTO> paymentList(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public GoodsDTO paymentRead(int gno) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<PaymentDTO> paymentAdminList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PaymentDTO paymentAdminRead(int ono) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void paymentWrite(PaymentDTO pdto) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void paymentUpdate(PaymentDTO pdto) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void paymentAdminUpdate(PaymentDTO pdto) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void paymentDelete(int ono) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
