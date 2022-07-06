@@ -25,7 +25,7 @@ public class PaymentServiceImpl implements PaymentService{
 	}
 
 	@Override
-	public GoodsDTO paymentRead(int gno) throws Exception {
+	public GoodsDTO paymentGoodRead(int gno) throws Exception {
 		return goodsDao.goodsRead(gno);
 	}
 
@@ -37,6 +37,11 @@ public class PaymentServiceImpl implements PaymentService{
 	@Override
 	public PaymentDTO paymentAdminRead(int ono) throws Exception {
 		return paymentDao.paymentAdminRead(ono);
+	}
+	
+	@Override
+	public PaymentDTO paymentRead(int ono) throws Exception {
+		return paymentDao.paymentRead(ono);
 	}
 
 	@Override

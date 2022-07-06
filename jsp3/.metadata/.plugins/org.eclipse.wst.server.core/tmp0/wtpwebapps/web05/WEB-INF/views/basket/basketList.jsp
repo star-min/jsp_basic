@@ -42,10 +42,10 @@ margin-top:20px; margin-bottom:15px; }
 					</div>
 					<div class="hidden item1">${status.count }</div>
 <%-- 					<h3 class="item_tit">${basket.gname }</h3> --%>
-					<p><img alt="${path1 }/images/${basket.gimage}" src="${basket.gimage }"></p>
+					<p><img alt="${basket.gimage}" src="${path1 }/images/${basket.gimage }"></p>
 					<p><span>색상 : ${basket.gcolor }</span></p>
 					<p><span>남은 수량 : ${basket.amount }</span></p>
-					<a href="${path1 }/payment/paymentWriteForm.do?bno=${basket.bno }&bno=${basket.bno }&ptaste=${basket.gcolor}" class="button is-primary">구매하기</a>
+					<a href="${path1 }/payment/write_form.do?bno=${basket.bno }&gno=${basket.gno }&ptaste=${basket.gcolor}&id=${basket.id}" class="button is-primary">구매하기</a>
 					<a href="delete.do?bno=${basket.bno }" class="button is-primary">장바구니 삭제</a>
 				</li>
 			 </c:forEach> 

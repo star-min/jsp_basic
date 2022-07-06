@@ -61,12 +61,11 @@
                     <li>
                         <a href="${path1 }/goods/list.do">텐트</a>
                         <ul>
-                            <li><a href="${path1 }/goods/list.do">리빙쉘텐트</a></li>
-                            <li><a>돔텐트</a></li>
-                            <li><a>팝업텐트</a></li>
-                            <li><a>알파인텐트</a></li>
-                            <li><a>그늘막텐트</a></li>
-                            <li><a>차박텐트</a></li>
+                            <li><a href="${path1 }/goods/listLiving.do">리빙쉘텐트</a></li>
+                            <li><a href="${path1 }/goods/listDom.do">돔텐트</a></li>
+                            <li><a href="${path1 }/goods/listAlpha.do">알파인텐트</a></li>
+                            <li><a href="${path1 }/goods/listShadow.do">그늘막텐트</a></li>
+                            <li><a href="${path1 }/goods/listCar.do">차박텐트</a></li>
                         </ul>
                     </li>
                     <li>

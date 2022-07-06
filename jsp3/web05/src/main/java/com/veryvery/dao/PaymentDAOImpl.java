@@ -21,7 +21,7 @@ public class PaymentDAOImpl implements PaymentDAO{
 	}
 
 	@Override
-	public GoodsDTO paymentRead(int gno) throws Exception {
+	public GoodsDTO paymentGoodRead(int gno) throws Exception {
 		return sqlSession.selectOne("goods.goodsRead", gno);
 	}
 
@@ -33,6 +33,11 @@ public class PaymentDAOImpl implements PaymentDAO{
 	@Override
 	public PaymentDTO paymentAdminRead(int ono) throws Exception {
 		return sqlSession.selectOne("payment.paymentAdminRead", ono);
+	}
+	
+	@Override
+	public PaymentDTO paymentRead(int ono) throws Exception {
+		return sqlSession.selectOne("payment.paymentRead", ono);
 	}
 
 	@Override

@@ -42,5 +42,25 @@ public class GoodsServiceImpl implements GoodsService {
 		
 	}
 	
+	@Override
+	public List<GoodsDTO> goodsListLiving() throws Exception {
+		return goodsDao.goodsListLiving();
+	}
+	@Override
+	public List<GoodsDTO> goodsListDom() throws Exception {
+		return goodsDao.goodsListDom();
+	}
+	@Override
+	public List<GoodsDTO> goodsListAlpha() throws Exception {
+		return goodsDao.goodsListAlpha();
+	}
+	@Override
+	public List<GoodsDTO> goodsListShadow() throws Exception {
+		return goodsDao.goodsListShadow();
+	}
+	@Override
+	public List<GoodsDTO> goodsListCar() throws Exception {
+		return goodsDao.goodsListCar();
+	}
 	
 }

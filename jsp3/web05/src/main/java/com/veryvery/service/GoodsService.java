@@ -19,4 +19,10 @@ public interface GoodsService {
 	
 	//상품 삭제
 	public void goodsDelete(int gno) throws Exception;
+	
+	public List<GoodsDTO> goodsListLiving() throws Exception;
+	public List<GoodsDTO> goodsListDom() throws Exception;
+	public List<GoodsDTO> goodsListAlpha() throws Exception;
+	public List<GoodsDTO> goodsListShadow() throws Exception;
+	public List<GoodsDTO> goodsListCar() throws Exception;
 }

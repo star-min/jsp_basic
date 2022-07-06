@@ -30,7 +30,7 @@
 						<td>
 							<input type="text" name="gname" value="${goods.gname }" readonly required>
 							<input type="hidden" name="gno" value="${goods.gno }">
-							<input type="hidden" name="id" value="${sid }">
+ 							<input type="hidden" name="id" value="${sid }">
 							<c:if test="${!empty bno}">
 							<input type="hidden" name="bno" value="${bno }">
 							</c:if>

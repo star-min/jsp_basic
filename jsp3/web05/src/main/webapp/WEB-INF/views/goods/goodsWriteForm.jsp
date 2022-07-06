@@ -50,6 +50,7 @@
 						<td>
 							<select name="gcolor" class="select is-primary" required>
 								<option value="black">black</option>
+								<option value="cream">cream</option>
 								<option value="brown">brown</option>
 								<option value="cooper">cooper</option>
 							</select>

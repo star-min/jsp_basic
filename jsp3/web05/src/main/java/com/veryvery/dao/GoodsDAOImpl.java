@@ -39,4 +39,25 @@ public class GoodsDAOImpl implements GoodsDAO {
 		sqlSession.delete("goods.goodsDelete", gno);
 	}
 
+	@Override
+	public List<GoodsDTO> goodsListLiving() throws Exception {
+		return sqlSession.selectList("goods.goodsListLiving");
+	}
+	@Override
+	public List<GoodsDTO> goodsListDom() throws Exception {
+		return sqlSession.selectList("goods.goodsListDom");
+	}
+	@Override
+	public List<GoodsDTO> goodsListAlpha() throws Exception {
+		return sqlSession.selectList("goods.goodsListAlpha");
+	}
+	@Override
+	public List<GoodsDTO> goodsListShadow() throws Exception {
+		return sqlSession.selectList("goods.goodsListShadow");
+	}
+	@Override
+	public List<GoodsDTO> goodsListCar() throws Exception {
+		return sqlSession.selectList("goods.goodsListCar");
+	}
+	
 }

@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from payment where id=#{id}
 	</select>
 	<!-- 상품 상세보기 -->
-	<select id="paymentRead" resultType="com.veryvery.dto.PaymentDTO" >
+	<select id="paymentGoodRead" resultType="com.veryvery.dto.PaymentDTO" >
 		select * from goods where gno=#{gno}
 	</select>
 	<!-- 관리자용 결제 상세보기 -->
@@ -18,6 +18,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 결제 정보 불러오기 -->
 	<select id="paymentAdminRead" resultType="com.veryvery.dto.PaymentDTO" >
+		select * from payment where ono=#{ono}
+	</select>
+	<!-- 구매자 배송지수정 폼 -->
+	<select id="paymentRead" resultType="com.veryvery.dto.PaymentDTO" >
 		select * from payment where ono=#{ono}
 	</select>
 	<!-- 결제 처리 -->

@@ -42,7 +42,7 @@ margin-top:20px; margin-bottom:15px; }
 						<span>크기(중량) : ${basket.gsize }</span>
 					</p>
 					<p><span>남은 수량 : ${basket.amount}</span></p>
-					<br><br><a href="${path1 }/payment/paymentWriteForm.do?gno=${basket.gno }&bno=${basket.bno }&gcolor=${basket.gcolor}&gsize=${basket.gsize }" class="button is-primary">구매하기</a>
+					<br><br><a href="${path1 }/payment/write_form.do?gno=${basket.gno }&bno=${basket.bno }&gcolor=${basket.gcolor}&gsize=${basket.gsize }" class="button is-primary">구매하기</a>
 					<a href="${path1 }/basket/delete?bno=${basket.bno }" class="button is-primary">장바구니 삭제</a><br><br>
 				</li>
 			<c:if test="${vo==null }">

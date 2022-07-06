@@ -1,187 +1,118 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<c:set var="path1" value="${pageContext.request.contextPath }" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" /> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<jsp:include page="../common.jsp"></jsp:include>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+<title>상품 구매 하기</title>
 <style>
 <%@ include file="../inc/common.css" %>
-#lst_tb th { min-width:140px; }
 </style>
-<title>결제 정보 보기</title>
+<jsp:include page="../common.jsp"></jsp:include>
 </head>
 <body>
 <header id="header" class="header" >
 	<%@ include file="../inc/header.jsp" %>
 </header>
-<div id="content" class="content_wrap">
+<div id="content">
 	<section class="con_wrap">
-		<c:if test="${sid=='admin' }">
-		<h2 class="page_tit">상품 정보 수정</h2>
-		</c:if>
-		<c:if test="${sid!='admin' }">
-		<h2 class="page_tit">결제 정보 수정</h2>
-		</c:if>
-		<form action="${path1 }/payment/update.do" method="post">
+		<h2 class="page_tit">배송 도착지 정보 수정</h2>
+		<form action="${path1 }/payment/update.do" method="post" name="payment_form">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
 						<th>결제번호</th>
 						<td>
-							<input type="hidden" name="ono" value="${payment.ono }">
-							<span>${payment.ono }</span>
+							<input type="text" name="ono" value="${paymentRead.ono }" readonly required>
+							<input type="hidden" name="paytype" value="${paymentRead.paytype }">
+							<input type="hidden" name="payno" value="${paymentRead.payno }">
+							<input type="hidden" name="sdate" value="${paymentRead.sdate }">
+							<input type="hidden" name="amount" value="${paymentRead.sdate }">
+							<input type="hidden" name="id" value="${paymentRead.id }">
+							<input type="hidden" name="transno" value="${paymentRead.transno }">
+							<input type="hidden" name="transco" value="${paymentRead.transco }">
+							<input type="hidden" name="rstatus" value="${paymentRead.rstatus }">
+							<input type="hidden" name="rdate" value="${paymentRead.rdate }">
 						</td>
 					</tr>
 					<tr>
-						<th>결제 방식</th>
+						<th>상품코드</th>
 						<td>
-							<c:if test="${payment.paytype=='credit' }">
-							<span>결제방식 : 카드결제 </span> /
+							<input type="text" name="gno" value="${paymentRead.gno }" readonly required>
+						</td>
+					</tr>
+					<tr>
+						<th>결제 금액</th>
+						<td>
+							<input type="text" name="amount" value="${paymentRead.money }" readonly required>
+						</td>
+					</tr>
+					<tr>
+						<th>수신자명</th>
+						<td>
+							<input type="text" name="rname" value="${paymentRead.rname }" required>
+						</td>
+					</tr>
+					<tr>
+						<th>수신자 연락처</th>
+						<td>
+							<input type="text" name="tel" value="${paymentRead.tel }" required>
+						</td>
+					</tr>
+					<tr>
+						<th>수신자 주소</th>
+						<td>
+							<input type="text" name="addr1" id="addr1" value="${paymentRead.addr1 }" required><br>
+							<input type="text" name="addr2" id="addr2" value="${paymentRead.addr2 }" placeholder="상세주소 입력" required><br>
+							<input type="text" name="postcode" id="postcode" value="${paymentRead.postcode }" required>
+							<input type="button" value="주소찾기" onclick="findAddr()" class="button is-info">
+						</td>
+					</tr>
+					<tr>
+						<th>배송장에 남길 말씀</th>
+						<td>
+							<c:if test="${!empty paymentRead.memo }">
+							<input type="text" name="memo" id="memo" value="${paymentRead.memo }">
 							</c:if>
-							<c:if test="${payment.paytype=='check' }">
-							<span>결제방식 : 체크결제 </span> /
-							</c:if>
-							<c:if test="${payment.paytype=='account' }">
-							<span>결제방식 : 계좌이체 </span> /
-							</c:if>
-							<input type="hidden" name="paytype" value="${payment.paytype }"> 
-						</td>
-					</tr>
-					<tr>
-						<th>판매금액</th>
-						<td>
-							<span>${payment.money }</span>
-							<input type="hidden" name="money" value="${payment.money }">
-						</td>
-					</tr>
-					<tr>
-						<th>결제일</th>
-						<td>
-							<span>${payment.sdate }</span>
-							<input type="hidden" name="sdate" value="${payment.sdate }">
-						</td>
-					</tr>
-					<tr>
-						<th>제품코드</th>
-						<td>
-							<span>${payment.gno }</span>
-							<input type="hidden" name="gno" value="${payment.gno }">
-						</td>
-					</tr>
-					<tr>
-						<th>판매량</th>
-						<td>
-							<span>${payment.amount }</span>
-							<input type="hidden" name="amount" value="${payment.amount }">
-						</td>
-					</tr>
-					<tr>
-						<th>구매자 아이디</th>
-						<td>
-							<span>${payment.userid }</span>
-							<input type="hidden" name="userid" value="${payment.userid }">
-						</td>
-					</tr>
-					<tr>
-						<th>수신자</th>
-						<td>
-							<span>${payment.rname }</span>
-							<input type="hidden" name="rname" value="${payment.rname }">
-						</td>
-					</tr>
-					<tr>
-						<th>연락처</th>
-						<td>
-							<span>${payment.tel }</span><br>
-							<input type="hidden" name="tel" value="${payment.rdate }">
-						</td>
-					</tr>
-					<tr>
-						<th>주소</th>
-						<td>
-							<span>${payment.addr1 }</span><br>
-							<span>${payment.addr2 }</span> <span>${payment.postcode }</span>
-							<input type="hidden" name="addr1" value="${payment.addr1 }">
-							<input type="hidden" name="addr2" value="${payment.addr2 }">
-							<input type="hidden" name="postcode" value="${payment.postcode }">
-						</td>
-					</tr>
-					<tr>
-						<th>요청 메시지</th>
-						<td>
-							<span>${payment.memo }</span><br>
-							<input type="hidden" name="memo" value="${payment.memo }">
-						</td>
-					</tr>
-					<tr>
-						<th>송장 번호</th>
-						<td>
-							<c:if test="${!empty payment.transno }">
-							<input type="text" name="transno" value="${payment.transno }">
-							</c:if>
-							<c:if test="${empty payment.transno }">
-							<input type="text" name="transno">
-							</c:if>
-						</td>
-					</tr>
-					<tr>
-						<th>배송 회사</th>
-						<td>
-							<c:if test="${!empty payment.transco }">
-							<input type="text" name="transco" value="${payment.transco }">
-							</c:if>
-							<c:if test="${empty payment.transco }">
-							<input type="text" name="transco">
-							</c:if>
-						</td>
-					</tr>
-					<tr>
-						<th>배송 상태</th>
-						<td>
-							<c:if test="${!empty payment.rstatus }">
-							<input type="text" name="rstatus" value="${payment.rstatus }">
-							</c:if>
-							<c:if test="${empty payment.transno }">
-								<select name="rstatus">
-									<option value="배송시작">배송시작</option>
-									<option value="배송중">배송중</option>
-									<option value="배송완료">배송완료</option>
-								</select>
-							</c:if>
-						</td>
-					</tr>
-					<tr>
-						<th>도착일</th>
-						<td>
-							<c:if test="${!empty payment.rdate }">
-							<input type="text" name="rdate" value="${payment.rdate }">
-							</c:if>
-							<c:if test="${empty payment.rdate }">
-								<input type="date" name="rdate">
+							<c:if test="${empty paymentRead.memo }">
+							<input type="text" name="memo" id="memo" value="">
 							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="submit" value="배송지 입력" class="button is-info"/>
+							<input type="submit" value="도착지 수정" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
-							<a href="${path1 }/payment/delete.do?ono=${payment.ono }" class="button is-info">판매 정보 삭제</a>
-							<a href="${path1 }/payment/list.do" class="button is-info">목록</a>
+							<a href="${path1 }/payment/delete.do?ono=${paymentRead.ono }" class="button is-info">결제 취소</a>
+							<p>모든 항목은 필수항목으로 꼭 입력하셔야 합니다.</p>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-		</form>	
+		</form>
+		<script>
+		function findAddr() {
+			new daum.Postcode({
+				oncomplete: function(data) {
+					console.log(data);
+					var roadAddr = data.roadAddress;
+					var jibunAddr = data.jibunAddress;
+					document.getElementById("postcode").value = data.zonecode;
+					if(roadAddr !== '') {
+						document.getElementById("addr1").value = roadAddr;				
+					} else if(jibunAddr !== ''){
+						document.getElementById("addr1").value = jibunAddr;
+					}
+				}
+			}).open();
+		}
+		</script>
+		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
 	</section>
-	<script>
-	$(document).ready(function(){
-		$("#lst_tb_filter").css("display","none");
-	});
-	</script>	
 </div>
 <footer id="footer" class="footer">
 	<%@ include file="../inc/footer.jsp" %>

@@ -19,4 +19,7 @@ public interface BoardDAO {
 	
 	//글 삭제
 	public void boardDelete(int seq) throws Exception;
+	
+	//최신글 목록
+	public List<BoardDTO> latestBoard() throws Exception;
 }

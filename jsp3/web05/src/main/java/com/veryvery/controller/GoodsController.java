@@ -56,5 +56,36 @@ public class GoodsController {
 		goodsService.goodsDelete(gno);
 		return "redirect:list.do";
 	}
+	
+	@RequestMapping("listLiving.do")
+	public String goodsListLiving(Model model) throws Exception {
+		List<GoodsDTO> goodsListLiving = goodsService.goodsListLiving();
+		model.addAttribute("goodsListLiving", goodsListLiving);
+		return "goods/goodsListLiving";
+	}
+	@RequestMapping("listDom.do")
+	public String goodsListDom(Model model) throws Exception {
+		List<GoodsDTO> goodsListDom = goodsService.goodsListDom();
+		model.addAttribute("goodsListDom", goodsListDom);
+		return "goods/goodsListDom";
+	}
+	@RequestMapping("listAlpha.do")
+	public String goodsListAlpha(Model model) throws Exception {
+		List<GoodsDTO> goodsListAlpha = goodsService.goodsListAlpha();
+		model.addAttribute("goodsListAlpha", goodsListAlpha);
+		return "goods/goodsListAlpha";
+	}
+	@RequestMapping("listShadow.do")
+	public String goodsListShadow(Model model) throws Exception {
+		List<GoodsDTO> goodsListShadow = goodsService.goodsListShadow();
+		model.addAttribute("goodsListShadow", goodsListShadow);
+		return "goods/goodsListShadow";
+	}
+	@RequestMapping("listCar.do")
+	public String goodsListCar(Model model) throws Exception {
+		List<GoodsDTO> goodsListCar = goodsService.goodsListCar();
+		model.addAttribute("goodsListCar", goodsListCar);
+		return "goods/goodsListCar";
+	}
 
 }

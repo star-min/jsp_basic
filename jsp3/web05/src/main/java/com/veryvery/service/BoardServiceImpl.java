@@ -39,4 +39,9 @@ public class BoardServiceImpl implements BoardService {
 	public void boardDelete(int seq) throws Exception {
 		boardDao.boardDelete(seq);
 	}
+	
+	@Override
+	public List<BoardDTO> latestBoard() throws Exception {
+		return boardDao.latestBoard();
+	}
 }

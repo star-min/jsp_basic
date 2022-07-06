@@ -72,7 +72,8 @@ delete from goods where gno=1;
 
 delete from goods;
 drop table goods;
-select * from goods where gno = 1;
+select * from goods where gcategory = 'dom';
+select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods  where gcategory = 'dom';
 select gno, gcategory, gname, gprice, gcolor, amount, gsize, gcontent, gimage, best, regdate from goods order by regdate desc;
 select * from goods;
 
@@ -138,6 +139,6 @@ create table payment(
 drop table payment;
 
 select * from payment;
-
+delete from payment;
 insert into payment values(1, '체크카드', '100-32425-62', 730000, now(), 1, 1, cat, '야옹이', '010-1004-1004','냥냐냐냥', '냐냐냐양냥', '777');
 commit;

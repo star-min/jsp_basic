@@ -40,4 +40,9 @@ public class BoardDAOImpl implements BoardDAO {
 	public void boardDelete(int seq) throws Exception {
 		sqlSession.delete("board.boardDelete", seq);
 	}
+	
+	@Override
+	public List<BoardDTO> latestBoard() throws Exception {
+		return sqlSession.selectList("board.latestBoard");
+	}
 }

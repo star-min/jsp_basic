@@ -11,13 +11,16 @@ public interface PaymentService {
 	public List<PaymentDTO> paymentList(String id) throws Exception;
 	
 	// 상품 상세보기
-	public GoodsDTO paymentRead(int gno) throws Exception;
+	public GoodsDTO paymentGoodRead(int gno) throws Exception;
 	
 	// 관리자용 결제 상세보기
 	public List<PaymentDTO> paymentAdminList() throws Exception;
 	
 	// 결제 정보 불러오기
 	public PaymentDTO paymentAdminRead(int ono) throws Exception;
+	
+	// 결제 정보 불러오기
+	public PaymentDTO paymentRead(int ono) throws Exception;
 	
 	// 결제 처리
 	public void paymentWrite(PaymentDTO pdto) throws Exception;
