@@ -11,6 +11,7 @@
 <jsp:include page="../common.jsp"></jsp:include>
 <style>
 <%@ include file="../inc/common.css" %>
+#content { min-height:2000px; }
 .page_tit { border-bottom:1px solid #cdcdcd; margin-bottom:25px; }
 #lst_tb2 { width:1280px; margin:20px; auto; }
 #lst_tb2 li { float:left; width:300px; height:400px; margin-right:15px; margin-top:15px; 

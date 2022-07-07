@@ -1,0 +1,15 @@
+package com.veryvery.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class FileController {
+
+	@Autowired
+	ResourceLoader rsLoader;
+	
+	@RequestMapping(value="/uploadForm.do", method = RequestMethod.GET)
+	
+}

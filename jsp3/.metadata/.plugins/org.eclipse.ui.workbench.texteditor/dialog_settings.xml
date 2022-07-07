@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="id"/>
+		<item key="selection" value="qroot"/>
 		<list key="findhistory">
+			<item value="qroot"/>
+			<item value="root"/>
 			<item value="id"/>
 			<item value="pno"/>
 			<item value="board"/>

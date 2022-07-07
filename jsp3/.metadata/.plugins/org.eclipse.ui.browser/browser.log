@@ -265,3 +265,9 @@
 7월 04, 2022 16:13:51.19 [16356:7032:0704/161351.196:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
 7월 04, 2022 16:14:31.18 [16356:7032:0704/161431.186:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
 7월 04, 2022 16:14:31.18 [16356:7032:0704/161431.186:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+7월 07, 2022 17:30:54.29 NEW SESSION
+7월 07, 2022 17:30:54.29 [15416:17192:0707/173054.297:ERROR:device_event_log_impl.cc(214)] [17:30:54.297] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 07, 2022 17:31:52.08 [15416:6064:0707/173152.082:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+7월 07, 2022 18:12:13.84 [15416:17192:0707/181213.843:ERROR:interface_endpoint_client.cc(665)] Message 0 rejected by interface blink.mojom.WidgetHost
+7월 07, 2022 18:18:18.57 [15416:17192:0707/181818.571:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost

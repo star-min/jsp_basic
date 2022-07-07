@@ -109,7 +109,7 @@
                             <li><a href="${path1 }/board/list.do">공지사항</a></li>
                             <li><a href="${path1 }/review/list.do">상품후기</a></li>
                             <li><a>매장안내</a></li>
-                            <li><a>QNA</a></li>
+                            <li><a href="${path1 }/qna/list.do">QNA</a></li>
                         </ul>
                     </li>
                 </ul>

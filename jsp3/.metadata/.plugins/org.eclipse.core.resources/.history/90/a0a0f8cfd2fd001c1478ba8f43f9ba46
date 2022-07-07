@@ -1,0 +1,9 @@
+package com.veryvery.dto;
+
+public class DatabankDTO {
+	private int seq;
+	private String title;
+	private String fileurl;
+	private String author;
+	
+}

@@ -142,3 +142,27 @@ select * from payment;
 delete from payment;
 insert into payment values(1, '체크카드', '100-32425-62', 730000, now(), 1, 1, cat, '야옹이', '010-1004-1004','냥냐냐냥', '냐냐냐양냥', '777');
 commit;
+
+
+
+CREATE TABLE qna(
+    qno         int PRIMARY KEY auto_increment,
+    qtitle       VARCHAR(600) NOT NULL,
+    qcontent     VARCHAR(8000) NOT NULL,
+    qwriter      VARCHAR(40) NOT NULL,
+    qwritedate   DATE  default (current_date),
+    qreadcnt     int DEFAULT 0,
+    qroot        int,
+    qstep        int default 0,
+    qindent      int default 0 
+);
+select * from qna;
+drop table qna;
+
+
+create table databank(
+seq int not null auto_increment,
+title varchar(200) not null,
+fileurl varchar(300) not null,
+author varchar(20),
+primary key (seq));

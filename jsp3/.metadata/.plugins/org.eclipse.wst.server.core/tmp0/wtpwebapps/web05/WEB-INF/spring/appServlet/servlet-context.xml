@@ -25,12 +25,27 @@
 	<resources mapping="/review/**" location="/WEB-INF/views/review/" />
 	<resources mapping="/latest/**" location="/WEB-INF/views/latest/" />
 	<resources mapping="/payment/**" location="/WEB-INF/views/payment/" />
+	<resources mapping="/qna/**" location="/WEB-INF/views/qna/" />
+	<resources mapping="/upload/**" location="/WEB-INF/views/upload/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
+<!-- 멀티파트(파일 업로드) 리졸버 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"/>
+		<beans:property name="defaultEncoding" value="UTF-8" />
+	</beans:bean>
+
+	
+	<!-- 멀티파트(파일 업로드) 저장위치 -->
+	<beans:bean id="uploadPath" class="java.lang.String">
+		<beans:constructor-arg value="D:\ksm\jsp3\web05\src\main\webapp\WEB-INF\views\upload"/>
+	</beans:bean>
+
 	
 	<context:component-scan base-package="com.veryvery" />
 	

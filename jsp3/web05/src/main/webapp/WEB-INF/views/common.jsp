@@ -13,7 +13,7 @@ $(document).ready( function () {
 });
 </script>
 <style>
-#content { min-height:1000px; }
+#content { min-height:1200px; }
 #lst_tb, .frm_fr { max-width:1280px; min-width:800px; margin:0 auto; }
 #gnb .navbar-link::after { display:none; }
 #gnb .navbar-dropdown { z-index:999; }

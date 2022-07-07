@@ -1,0 +1,15 @@
+package com.veryvery.dao;
+
+@Repository
+public class FileDAOImpl implements FileDAO
+{
+@Autowired
+SqlSession sqlSession
+;
+@Override
+public void databankInsert
+(DatabankDTO databank) throws Exception {
+sqlSession.insert("databank.databankInsert", databank); }
+@Override
+public List<DatabankDTO> databankList() throws Exception {
+return sqlSession.selectList("databank.databankList"); }}
