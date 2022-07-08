@@ -1,0 +1,7 @@
+package com.veryvery.dto;
+
+public class User2DTO {
+	private String id;
+	private String pw;
+	private String gg;
+}

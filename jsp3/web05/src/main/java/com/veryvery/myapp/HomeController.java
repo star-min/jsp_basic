@@ -32,7 +32,7 @@ public class HomeController {
 	@Autowired
 	HttpSession session;
 	
-	@RequestMapping("/myapp/*")
+	@RequestMapping("list.do")
 	public String latestBoard(Model model) throws Exception {
 		List<BoardDTO> latestBoard = boardService.latestBoard();
 		model.addAttribute("latestBoard", latestBoard);

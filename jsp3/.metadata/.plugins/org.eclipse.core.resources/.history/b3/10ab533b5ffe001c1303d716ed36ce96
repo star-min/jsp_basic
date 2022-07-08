@@ -1,0 +1,8 @@
+package com.veryvery.controller;
+
+public class EMP {
+	private int sno;
+	private String name;
+	private String address;
+	
+}

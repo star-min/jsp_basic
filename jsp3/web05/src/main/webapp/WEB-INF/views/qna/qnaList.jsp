@@ -22,7 +22,7 @@
 <article id="con" class="content">
 <h2 class="page_tit">질문 및 답변</h2>
 <div class="table_lst_wrap">
-	<table class="table_lst">
+	<table class="table_lst" style=" margin-bottom: 300px">
 		<thead>
 			<tr>
 				<th>번호</th><th>제목</th><th>작성일</th><th>작성자</th>

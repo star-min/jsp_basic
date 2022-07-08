@@ -1,0 +1,68 @@
+package com.veryvery.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.extern.log4j.Log4j;
+
+@RestController
+@Log4j
+@Controller
+@RequestMapping("/ajax/*")
+public class AjaxController {
+
+	@Autowired
+	ResourceLoader rsLoader;
+
+	@RequestMapping(value="/ajax0.do", produces="text/plain; charset=UTF-8") //다수파일 업로드 폼 로딩
+	public String ajax0() {
+		log.info("MIME TYPE : "+ MediaType.TEXT_PLAIN_VALUE);
+		return "안녕하세요~!  AJAX";
+	}
+	
+	@RequestMapping(value="/ajax1.do", produces= {MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE}) //다수파일 업로드 폼 로딩
+	public EMP ajax1() {
+		return new EMP(1004, "김성민", "식사동");
+	}
+	
+	@RequestMapping(value="/ajax2.do", produces= {MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE}) //다수파일 업로드 폼 로딩
+	public List<EMP> ajax2() {
+		return IntStream.range(1,10).mapToObj(i -> new EMP(i, "name"+i, "addr"+i)).collect(Collectors.toList());
+	}
+	
+	@RequestMapping(value="/ajax3.do", produces= {MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE}) //다수파일 업로드 폼 로딩
+	public Map<String, EMP> ajax3() {
+		Map<String, EMP> map = new HashMap<>();
+		map.put("first", new EMP(1004, "김성민", "식사동"));
+		map.put("second", new EMP(8989, "양지은", "증산동"));
+		return map;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/ajax4.do") //다수파일 업로드 폼 로딩
+	public Map<String, EMP> ajax4() {
+		Map<String, EMP> map = new HashMap<>();
+		map.put("first", new EMP(1004, "김성민", "식사동"));
+		map.put("second", new EMP(8989, "양지은", "증산동"));
+		return map;
+	}
+	
+	@RequestMapping(value="/ajaxpro2.do", method = RequestMethod.POST) //다수파일 업로드 폼 로딩
+	public String ajaxpro1() throws Exception {
+		
+		return "redirect:/";
+	}
+
+	}

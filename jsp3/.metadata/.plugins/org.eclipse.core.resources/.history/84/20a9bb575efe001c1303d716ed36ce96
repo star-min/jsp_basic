@@ -1,0 +1,33 @@
+package com.veryvery.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@Controller
+@RequestMapping("/ajax/*")
+public class AjaxController {
+
+	@Autowired
+	ResourceLoader rsLoader;
+
+	@RequestMapping(value="/ajax0.do", produces="text/plain; charset=UTF-8") //다수파일 업로드 폼 로딩
+	public String ajax0() {
+		return "안녕하세요~!  AJAX";
+	}
+	
+	@RequestMapping(value="/ajax1.do", method = RequestMethod.GET) //다수파일 업로드 폼 로딩
+	public String ajax1() {
+		return "ajax/ajax1";
+	}
+	@RequestMapping(value="/ajaxpro1.do", method = RequestMethod.POST) //다수파일 업로드 폼 로딩
+	public String ajaxpro1() throws Exception {
+		
+		return "redirect:/";
+	}
+
+	}

@@ -38,6 +38,7 @@ margin-top:20px; margin-bottom:15px; }
 					<th>순번</th>
 					<th>아이디</th>
 					<th>상품코드</th>
+					<th>배송정보</th>
 					<th>결제금액</th>
 					<th>결제일</th>
 				</tr>
@@ -45,9 +46,10 @@ margin-top:20px; margin-bottom:15px; }
 			<tbody>
 			<c:forEach items="${paymentAdminList }" var="pay" varStatus="status">
 				<tr>
-					<td><a href="${path1 }/payment/read.do?ono=${pay.ono }">${pay.ono }</a></td>
+					<td><a href="${path1 }/payment/adminRead.do?ono=${pay.ono }">${pay.ono }</a></td>
 					<td><a href="${path1 }/member/read.do?id=${pay.id }" target="_blank">${pay.id }</a></td>
 					<td><a href="${path1 }/goods/read.do?gno=${pay.gno }" target="_blank">${pay.gno }</a></td>
+					<td>${pay.rstatus }</td>
 					<td>${pay.money }</td>
 					<td>${pay.sdate }</td>
 				</tr>

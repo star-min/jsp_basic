@@ -1,0 +1,10 @@
+package com.veryvery.dto;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserDTO {
+	private String id;
+	private String pw;
+	private String gg;
+}
