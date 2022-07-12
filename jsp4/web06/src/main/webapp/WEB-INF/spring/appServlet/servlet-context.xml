@@ -16,9 +16,15 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/myapp/**" location="/WEB-INF/views/myapp/" />
 	<resources mapping="/inc/**" location="/WEB-INF/views/inc/" />
+	<resources mapping="/board/**" location="/WEB-INF/views/board/" />
+	<resources mapping="/member/**" location="/WEB-INF/views/member/" />
+	
 	<resources mapping="/css/**" location="/WEB-INF/views/css/" />
 	<resources mapping="/img/**" location="/WEB-INF/views/img/" />
 	<resources mapping="/js/**" location="/WEB-INF/views/js/" />
+	<resources mapping="/notice/**" location="/WEB-INF/views/notice/" />
+	<resources mapping="/ckeditor/**" location="/WEB-INF/views/ckeditor/" />
+	<resources mapping="/fonts/**" location="/WEB-INF/views/fonts/" />
 	
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -38,7 +44,7 @@
 		<beans:constructor-arg value="D:\ksm\jsp4\web06\src\main\webapp\WEB-INF\views\upload"/>
 	</beans:bean>
 	
-	<context:component-scan base-package="com.ksmstat.myapp" />
+	<context:component-scan base-package="com.ksmstat" />
 	
 	
 	

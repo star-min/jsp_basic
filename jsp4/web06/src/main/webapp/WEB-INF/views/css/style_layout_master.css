@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
 @charset "utf-8";
 
 /* skip navi */
@@ -376,10 +379,10 @@
 #contgr {width:808px; float:right; margin:0; position:relative;}
 
 #contgr #path {position:absolute; left:0; top:62px;}
-#contgr #path a {float:left; line-height:15px; background:url(../img/img_main/path_arrow.png) no-repeat left center; padding:0 0 0 10px; margin:0 5px 0 0; color:#767676; font-size:12px;}
+#contgr #path a {float:left; line-height:15px; background:url(../img/board_img/path_arrow.png) no-repeat left center; padding:0 0 0 10px; margin:0 5px 0 0; color:#767676; font-size:12px;}
 #contgr #path a:hover {color:#333333;}
 #contgr #path .home {background:url(../img/img_main/path_home.png) no-repeat center center; display:block; width:10px; height:15px; margin:0;}
-#contgr #path .last {float:left; line-height:15px;background:url(../img/img_main/path_arrow.png) no-repeat left center;padding:0 0 0 10px; font-size:12px;}
+#contgr #path .last {float:left; line-height:15px;background:url(../img/board_img/path_arrow.png) no-repeat left center;padding:0 0 0 10px; font-size:12px;}
 
 #contgr .cont_t_icon {position:absolute; right:0; top:50px;}
 #contgr .cont_t_icon li {float:left;}
@@ -622,10 +625,10 @@
 #pop_tit .btn_print a {font-size:13px; color:#333333; background:#ffffff; border-radius:3px; line-height:1.2; padding:1px 10px 2px 10px; text-align:center; margin-left:2px;}
 #contgr_print {width:808px; margin:0 auto; padding:10px;}
 #contgr_print #targetDiv_pageNavi {overflow:hidden; margin:0 0 10px 0;}
-#contgr_print #targetDiv_pageNavi a {float:left; line-height:15px; background:url(../img/img_main/path_arrow.png) no-repeat left center; padding:0 0 0 10px; margin:0 5px 0 0; color:#777777; font-size:12px;}
+#contgr_print #targetDiv_pageNavi a {float:left; line-height:15px; background:url(../img/board_img/path_arrow.png) no-repeat left center; padding:0 0 0 10px; margin:0 5px 0 0; color:#777777; font-size:12px;}
 #contgr_print #targetDiv_pageNavi a:hover {color:#333333;}
 #contgr_print #targetDiv_pageNavi .home {background:url(../img/img_main/path_home.png) no-repeat center center; display:block; width:10px; height:15px; margin:0;}
-#contgr_print #targetDiv_pageNavi .last {float:left; line-height:15px;background:url(../img/img_main/path_arrow.png) no-repeat left center;padding:0 0 0 10px; font-size:12px;}
+#contgr_print #targetDiv_pageNavi .last {float:left; line-height:15px;background:url(../img/board_img/path_arrow.png) no-repeat left center;padding:0 0 0 10px; font-size:12px;}
 
 /* 레이어 팝업 */
 .popup_wrap {position:absolute; top:198px; left:50%; margin-left:-540px; padding:0 0 29px 0; z-index:100; background:#000; }

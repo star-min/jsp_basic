@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url(https://cdn.jsdelivr.net/gh/theeluwin/NotoSansKR-Hestia@master/stylesheets/NotoSansKR-Hestia.css);
+
 @font-face {
     font-family: 'Noto Sans Korean';
     font-style: normal;
@@ -7,9 +9,9 @@
     src: local('Noto Sans Regular'), local('NotoSans-Regular');
     src: url(../fonts/eot/NotoSansKR-Regular-Hestia.eot);
     src: url(../fonts/eot/NotoSansKR-Regular-Hestia.eot?#iefix) format('embedded-opentype'),	
-    url(../fonts/woff2/NotoSansKR-Regular-Hestia.woff2) format('woff2'),
-    url(../fonts/woff/NotoSansKR-Regular-Hestia.woff) format('woff'),
-    url(../fonts/otf/NotoSansKR-Regular-Hestia.otf) format('opentype');
+    url(../fonts/NotoSansKr/NotoSansKR-Regular-Hestia.woff2) format('woff2'),
+    url(../fonts/NotoSansKr/NotoSansKR-Regular-Hestia.woff) format('woff'),
+    url(../fonts/NotoSansKr/NotoSansKR-Regular-Hestia.otf) format('opentype');
 }
 
 @font-face {
@@ -19,7 +21,7 @@
     src: local('Noto Sans Medium'), local('NotoSans-Medium');
     src: url(../fonts/eot/NotoSansKR-Medium-Hestia.eot);
     src: url(../fonts/eot/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/woff2/NotoSansKR-Medium-Hestia.woff2) format('woff2'),
-    url(../fonts/woff/NotoSansKR-Medium-Hestia.woff) format('woff'),
-    url(../fonts/otf/NotoSansKR-Medium-Hestia.otf) format('opentype');
+    url(../fonts/NotoSansKr/NotoSansKR-Medium-Hestia.woff2) format('woff2'),
+    url(../fonts/NotoSansKr/NotoSansKR-Medium-Hestia.woff) format('woff'),
+    url(../fonts/NotoSansKr/NotoSansKR-Medium-Hestia.otf) format('opentype');
 }

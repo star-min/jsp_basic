@@ -14,17 +14,21 @@
 	<logger name="com.ksmstat.myapp">
 		<level value="info" />
 	</logger>
-<!--   	<logger name="com.veryvery.dto">
-	<level value="info" />
-	</logger>
-	<logger name="com.veryvery.controller">
+   	<logger name="com.ksmstat.dto">
 		<level value="info" />
 	</logger>
-	<logger name="com.veryvery.service">
+	<logger name="com.ksmstat.controller">
 		<level value="info" />
 	</logger>
-	<logger name="com.veryvery.dao">
-		<level value="info" /> -->
+	<logger name="com.ksmstat.service">
+		<level value="info" />
+	</logger>
+	<logger name="com.ksmstat.dao">
+		<level value="info" />
+	</logger>
+	<logger name="com.ksmstat.util">
+		<level value="info" />
+	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">

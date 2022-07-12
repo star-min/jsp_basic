@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="${path1 }/css/code.css" media="all" rel="stylesheet" type="text/css" />
+<title>서브페이지</title>
+</head>
+<body>
+<div id="scont">
+<header id="header" class="header">
+	<%@ include file="../inc/header.jsp" %>
+</header>
+    <div id="container">
+
+    <div id="slnb">
+    <h2 class="title">자바(JAVA)</h2>
+        <ul>
+            <li id=""><a href="" class="M_on">JAVA</a>
+                <ul class="mn_depth2">
+                    <li><a href="${path1 }/board/list.do">자바의 개요</a></li>	<!-- 다음페이지만들때 여기서 M_ON바꿔줘야함 -->
+                    <li><a href="${path1 }/board/list2.do">특징</a></li>
+                    <li><a href="${path1 }/board/list3.do" class="M_on">문법</a></li>
+                </ul>
+            </li>
+            <li><a href="">JAVA Script</a></li>
+            <li><a href="">JDK</a></li>
+        </ul>
+    </div>
+ 
+    <div id="contgr">
+        <div id="path" class="sub_nav"><a href="${path1 }" class="home" id="path_h"><span class="Hidden">home</span></a>
+            <a href="">자바(JAVA)</a>
+            <a href="">JAVA</a>
+            <span class="bold last">문법</span>
+        </div> 
+            
+            <ul class="cont_t_icon">
+                <li><a title="주소복사" href="" class="link_icon"><span class="Hidden">주소복사</span></a></li>
+                <li><a title="인쇄하기" href="" class="line_none print_icon" ><!-- a title="새창" href="//kostat.go.kr" onclick="window.print(); return false;" class="line_none print_icon" --><span class="Hidden">프린트</span></a></li>        
+            </ul>
+            <h1 class="h1_tit">Java의 가장 큰 특징</h1>
+            
+   <h3 class="h3_tit">기본</h3>
+   <ul class="list_style01">
+	<li><span class="bold">기본적으로 자바의 코드의 구조는 다음과 같다.</span>
+		<p>[package 이름 명시 (필수는 아님)]<br>
+[import할 패키지 명시]<br>
+[주요 클래스 구현]<br>
+[부차적 클래스 및 함수 구현] </p><br>
+	</li>
+	<li><span class="bold">클래스 선언 시</span>
+		<ul class="list_style02">
+			<li> *.java 파일의 이름과 동일한 이름으로 클래스 이름을 정해야 한다. <br>
+			HelloWorld.java 파일에서는 주요 클래스의 이름이 HelloWorld이어야 한다. <br>
+			부차적 클래스의 이름을 정할 때에는 상관없다.</li><br>
+
+		</ul>
+	</li>
+	<li><span class="bold">하나의 *.java 파일 안에는 하나의 주요 클래스만 정의되어야 한다.</span>
+		<ul class="list_style02">
+			<li>C-족 언어답게 아주 기본적인 문법들은 C와 거의 동일하다. <br>
+			차이점을 찾으라면, 자바는 객체지향언어고 C는 절차지향언어인데 객체지향언어에 속한
+			 프로그래밍 언어들은 사물, 사람, 동물과 같이 주격에 속한 집단들의 특성을 서로 연관(상속) 시킨다. <br>
+			 절차지향언어에 속한 프로그래밍 언어들은 이에 반대. for-문, while-문, switch문, if-else if-else문,
+			  산술 연산자 등 여기에도 그런 것들을 다 적으면 중복이 되니까 C언어/문법을 참고하도록 하자. <br>
+			다만 자바는 포인터를 제공하지 않으므로 포인터에 관한건 다 무시해주자.</li><br>
+		</ul>
+	</li>
+	</ul>
+	
+	   <h3 class="h3_tit">메인 클래스</h3>
+   <ul class="list_style01">
+	<li><span class="bold">메인 메서드</span>
+		<p>자바 프로그램을 실행하려면 어떤 클래스 안에 있는 메인 메서드가 필요하다.</p><br>
+		<pre data-v-6b91d317=""><code class="syntax" data-language="java" data-v-6b91d317=""><span class="syntax-keyword">public</span> <span class="syntax-keyword">class</span> Namu {
+  <span class="syntax-keyword">public</span> <span class="syntax-keyword">static</span> <span class="syntax-keyword">void</span> main(String[] args) {
+    System.out.println(<span class="syntax-literal">"Namu Wiki"</span>);
+  }
+}</code></pre>
+	</li>
+	<li><span class="bold">비 메인 메서드</span>
+		<ul class="list_style02">
+			<li>메인 메서드가 들어있는 클래스에 다른 정적 (static) 메서드를 써넣는게 가능하다. 양식은
+접근자 static 반환형 이름(자료형 패러미터1, ...) {메서드 바디}
+위에 있는 간단한 예제를 정적 메서드를 사용해서 구현해보자.
+<pre data-v-6b91d317=""><code class="syntax" data-language="java" data-v-6b91d317=""><span class="syntax-keyword">public</span> <span class="syntax-keyword">class</span> Namu {
+  <span class="syntax-keyword">public</span> <span class="syntax-keyword">static</span> <span class="syntax-keyword">void</span> main(String[] args) {
+    printNamu();
+  }
+  <span class="syntax-keyword">public</span> <span class="syntax-keyword">static</span> <span class="syntax-keyword">void</span> printNamu() {
+    System.out.println(<span class="syntax-literal">"Namu Wiki"</span>);
+  }
+}</code></pre></li><br>
+		</ul>
+	</li>
+	<li><span class="bold">하나의 *.java 파일 안에는 하나의 주요 클래스만 정의되어야 한다.</span>
+		<ul class="list_style02">
+			<li>C-족 언어답게 아주 기본적인 문법들은 C와 거의 동일하다. <br>
+			차이점을 찾으라면, 자바는 객체지향언어고 C는 절차지향언어인데 객체지향언어에 속한
+			 프로그래밍 언어들은 사물, 사람, 동물과 같이 주격에 속한 집단들의 특성을 서로 연관(상속) 시킨다. <br>
+			 절차지향언어에 속한 프로그래밍 언어들은 이에 반대. for-문, while-문, switch문, if-else if-else문,
+			  산술 연산자 등 여기에도 그런 것들을 다 적으면 중복이 되니까 C언어/문법을 참고하도록 하자. <br>
+			다만 자바는 포인터를 제공하지 않으므로 포인터에 관한건 다 무시해주자.</li><br>
+		</ul>
+	</li>
+	</ul>
+	
+</div>
+</div>
+     </div>
+    <footer id="footer" class="footer">
+	<%@ include file="../inc/footer.jsp" %>
+	</footer>
+</body>
+</html>

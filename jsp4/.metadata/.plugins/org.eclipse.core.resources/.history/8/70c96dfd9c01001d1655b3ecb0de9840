@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="member">
+	<!-- 회원 목록 가져오기 : dao에서 selectList("member.memberList") -->
+	<select id="memberList" resultType="com.ksmstat.dto.MemberDTO">
+		select * from member order by regdate desc
+	</select>
+	<!-- 회원 정보 보기 : dao에서 selectOne("member.viewMember", id) -->
+	<select id="viewMember" resultType="com.ksmstat.dto.MemberDTO">
+		select * from member where id = #{id }
+	</select>
+	<!-- 회원 가입 : dao에서 insert("member.insertMember", mdto) -->
+	<insert id="insertMember">
+		insert into member(id, pwd, uname, birth, phone, email, addr1, addr2, postcode, regdate) values 
+		(#{id }, #{pwd }, #{uname }, #{birth}, #{phone}, #{email }, #{addr1 }, #{addr2 }, #{postcode }, 
+		NOW())
+	</insert>
+	<!-- 회원 정보 변경 : dao에서 update("member.updateMember", mdto) -->
+	<update id="updateMember">
+	update member set pwd=#{pwd }, uname=#{uname }, email=#{email }, phone=#{phone }, 
+	addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id = #{id }
+	</update>
+	<!-- 회원 탈퇴 : dao에서 delete("member.deleteMember", id) -->	
+	<delete id="deleteMember">
+	delete from member where id=#{id }	
+	</delete>
+	<!-- 로그인 : dao에서 selectOne("member.loginCheck", mdto) -->
+	<select id="loginCheck" resultType="com.veryvery.dto.MemberDTO">
+		select id, pwd, uname from member where id = #{id }
+	</select>	
+	
+	<!-- 로그인1  -->
+	<select id="signin" resultType="com.veryvery.dto.MemberDTO">
+		select * from member where id = #{id }
+	</select>	
+	
+	
+	<!-- 아이디 존재 유무 체크 : selectOne("member.idCheck", id)-->
+	<select id="idCheck" resultType="int">
+		select count(*) from member where id = #{id } 
+	</select>
+</mapper>

@@ -7,27 +7,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="../../img_total/n_favicon_n_16.png" />
+<link rel="shortcut icon" href="https://kostat.go.kr/img_total/favicon_kostat.ico" />
+<link href="${path1 }/css/NotoSansKR-Hestia_Main.css" media="all" rel="stylesheet" type="text/css" />
+<link href="${path1 }/css/style_content.css" media="all" rel="stylesheet" type="text/css" />
+<link href="${path1 }/css/style_layout_master.css" media="all" rel="stylesheet" type="text/css" />
+<link href="${path1 }/css/master.css" media="all" rel="stylesheet" type="text/css" />
+<link href="${path1 }/css/style_board.css" media="all" rel="stylesheet" type="text/css" />
+<link href="${path1 }/css/reset_new_n.css" media="all" rel="stylesheet" type="text/css" />
+<link href="${path1 }/css/code.css" media="all" rel="stylesheet" type="text/css" />
 <title> header </title>
 </head>
 <body>
         <div id="skip">
             <p class="Hidden">반복영역 건너뛰기</p>
            <ul class="accessibility">
-                <li><a href="#mcont_s">본문바로가기</a></li>
-                <li><a href="#gnb_s1">주요메뉴바로가기</a></li>
+               	<li><a href="#mcont_s">본문바로가기</a></li>
+               	<li><a href="#gnb_s1">주요메뉴바로가기</a></li>
             </ul>
        </div>
         <div id="header_n">             
             <div id="tnb_layout">
             <div class="t_nav">
-                <h1 class="t_logo"><a href="index.html"><img src="img/logo.png" alt="통계청" /></a></h1>
+                <h1 class="t_logo"><a href="${path1 }"><img src="${path1 }/img/logo.png" alt="통계청" /></a></h1>
                 <ul class="sitelink_r">
-                    <li><a href="" >로그인</a></li>
-                    <li class="eng"><a href="" target="_blank">회원가입</a></li>
+                
+	                <c:if test="${ empty sid}">
+	                    <li><a href="${path1 }/member/loginForm.do" >로그인</a></li>
+	                    <li class="eng"><a href="${path1 }/member/joinForm.do">회원가입</a></li>
+	                </c:if>
+	                
+	                <c:if test="${ sid=='admin'}">
+	                    <li><a href="${path1 }/member/list.do" >회원목록</a></li>
+	                </c:if>
+	                
+	                <c:if test="${ !empty sid}">
+	                    <li><a href="${path1 }/member/read.do" >마이페이지</a></li>
+	                    <li class="eng"><a href="${path1 }/member/logout.do">로그아웃</a></li>
+	                </c:if>
+	                
                 </ul>
             </div>  
             </div>
             <div id="mnb_layout">
+            
+            <!-- 통계청 검색기능 -->
             <h2 class="Hidden">통합검색</h2>
     <div class="search_m_open">
        <a href="http://kostat.go.kr/wnsearch/search.jsp" target="_blank">검색 열기</a>
@@ -88,6 +112,8 @@
     <input type="submit" id="btn_ts_search"  value="검색"/>
           </fieldset>
     </form>
+    
+    
             </div>
             <ul class="relation_link">
                 <li class="fst"><a href="http://kostat.go.kr/"  target="_blank" title="새창" class="c_point"><strong>민원</strong></a></li>

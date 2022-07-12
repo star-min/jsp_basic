@@ -98,8 +98,8 @@
                         <li class="icon_k"><a href="http://kostat.go.kr/"  target="_blank" onclick="dummyAndPop2('https://www.instagram.com/');return false;"><span class="txt_sm">인스타그램</span></a></li>
                     </ul>
                     <!-- 소셜비디어 E -->
-                    <p class="f_img02"><a href="http://kostat.go.kr/file_total/WAQC_210910_kostat.pdf" target="_blank"><img src="img/img_main/ico_wa.jpg" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a></p>
-                    <p class="f_img01"><a href="http://www.kogl.or.kr/index.do" target="_blank"><img src="img/img_main/kogl.gif" alt="OPEN 공공누리:공공저작물 새창으로 열기" /></a></p>
+                    <p class="f_img02"><a href="http://kostat.go.kr/file_total/WAQC_210910_kostat.pdf" target="_blank"><img src="${path1 }/img/img_main/ico_wa.jpg" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a></p>
+                    <p class="f_img01"><a href="http://www.kogl.or.kr/index.do" target="_blank"><img src="${path1 }/img/img_main/kogl.gif" alt="OPEN 공공누리:공공저작물 새창으로 열기" /></a></p>
                 </div>
         </div>
 </body>
@@ -130,5 +130,11 @@ function quickServiceDis(id,evnt){
 }
 
 </script>
+<script src="../js/common.js" ></script>
+<script src="../js/jquery-3.3.1.min.js" ></script>
+<script src="../js/menuNew.js" ></script>
+<script src="../js/rollingIndexBanner.js" ></script>
+<script src="../js/mainBodo.js" ></script>
+<script src="../js/new_main.js" ></script>
 </body>
 </html>

@@ -7,14 +7,7 @@
 <head>
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<link rel="apple-touch-icon" href="../../img_total/favicon_ios_n.png" />
-<link rel="icon" href="../../img_total/n_favicon_n_16.png" />
-<link rel="shortcut icon" href="https://kostat.go.kr/img_total/favicon_kostat.ico" />
-<link href="css/NotoSansKR-Hestia_Main.css" media="all" rel="stylesheet" type="text/css" />
-<link href="css/style_content.css" media="all" rel="stylesheet" type="text/css" />
-<link href="css/style_layout_master.css" media="all" rel="stylesheet" type="text/css" />
-<link href="css/master.css" media="all" rel="stylesheet" type="text/css" />
-<link href="css/reset_new_n.css" media="all" rel="stylesheet" type="text/css" />
+
 	<title>Home</title>
 </head>
 <body>
