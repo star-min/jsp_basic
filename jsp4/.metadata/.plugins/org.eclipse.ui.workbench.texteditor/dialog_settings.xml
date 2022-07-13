@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=".ctb_icon0101"/>
+		<item key="selection" value="코로나"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="코로나"/>
+			<item value="뉴스기반"/>
+			<item value=".mn_dep2"/>
+			<item value="logo"/>
+			<item value="info_link"/>
+			<item value="mn_type"/>
+			<item value="mn"/>
+			<item value="tnb"/>
+			<item value="알림"/>
+			<item value="tnb_lay"/>
+			<item value="gnb1_9"/>
 			<item value=".ctb_icon0101"/>
 			<item value="&lt;link href=&quot;${path1 }/css/code.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;"/>
 			<item value="syntax-literal"/>
 			<item value="h1_tit"/>
-			<item value="h1"/>
-			<item value="협동조합"/>
-			<item value="사전정보"/>
-			<item value="../img_kor/ikor_content"/>
-			<item value="ctb_icon0101.png"/>
-			<item value="open_info_icon01"/>
-			<item value="../img/img_main/path_arrow"/>
-			<item value="path_arrow"/>
-			<item value="h3_tit"/>
-			<item value="ctb_icon0101"/>
-			<item value="../img_kor/ikor_layout/index/p"/>
 		</list>
 		<list key="replacehistory">
 			<item value="../img/board_img"/>

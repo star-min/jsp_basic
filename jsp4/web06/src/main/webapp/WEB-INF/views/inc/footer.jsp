@@ -130,11 +130,11 @@ function quickServiceDis(id,evnt){
 }
 
 </script>
-<script src="../js/common.js" ></script>
-<script src="../js/jquery-3.3.1.min.js" ></script>
-<script src="../js/menuNew.js" ></script>
-<script src="../js/rollingIndexBanner.js" ></script>
-<script src="../js/mainBodo.js" ></script>
-<script src="../js/new_main.js" ></script>
+<script src="${path1 }/js/common.js" ></script>
+<script src="${path1 }/js/jquery-3.3.1.min.js" ></script>
+<script src="${path1 }/js/menuNew.js" ></script>
+<script src="${path1 }/js/rollingIndexBanner.js" ></script>
+<script src="${path1 }/js/mainBodo.js" ></script>
+<script src="${path1 }/js/new_main.js" ></script>
 </body>
 </html>

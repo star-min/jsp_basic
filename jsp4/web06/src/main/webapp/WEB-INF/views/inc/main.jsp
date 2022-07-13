@@ -14,73 +14,76 @@
 <meta name="google-site-verification" content="CdVvMTdPwr71iinMXgKSkU9CzBWJA2iBun2uMWJ2oqc"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
 <title>통계청</title>
+<style>
+#mcont .info_link h3 a {font-size:18px; font-weight:500; margin-bottom:16px; color:#ffffff ;}
+#mcont .info_link .list_box ul li a {font-size: 14px; text-shadow:1px 1px 1px #000; color: #ff0000}
 
+#mcont .info_link .icon4.covid_kr_1 a{display: table-cell; 
+background:url(${path1}/img/program/c.svg) left top no-repeat, 
+url(${path1}/img/program/cplus.svg) right top no-repeat, 
+url(${path1}/img/program/Java.png) right top no-repeat, 
+url(${path1}/img/program/javascript.svg) right bottom no-repeat, 
+url(${path1}/img/program/Python_bw-e1644511228977.png) left bottom no-repeat, 
+url(${path1}/img/program/PLSQL_BW.png) left bottom no-repeat; 
+background-color: #edf4fc;vertical-align:middle;width:100%;height:100%;font-size:21px; 
+font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
+
+#mn_list #gnb1 .mn_dep2 {left:400px;}
+#mn_list #gnb2 .mn_dep2 {left:600px;}
+#mn_list #gnb3 .mn_dep2 {left:700px;}
+#mn_list #gnb4 .mn_dep2 {left:870px;}
+</style>
 </head>
 <body >
 
-<div id="gnb_layout">
+<div id="gnb_layout" style="border-bottom: 1px solid #4e4e4e">
 <div class="g_nav">
 	<h2 class="Hidden">주메뉴</h2>
 	<ul id="mn_list" class="lnb_list">
-		<li class="mn_type01"><a href="" id="gnb_s1">프로그램언어종류</a></li>
-		<li class="mn_type02"><a href="">소프트웨어종류</a></li>
-		<li class="mn_type02"><a href="">운영체제종류</a></li>
+		<li class="mn_type01" style="background: #292929"><a href="" id="gnb_s1">프로그램언어종류</a></li>
+		<li class="mn_type02" style="background: #4e4e4e"><a href="">소프트웨어종류</a></li>
+		<li class="mn_type02" style="background: #4e4e4e"><a href="">운영체제종류</a></li>
 
-    <li class="mn_type03" id="gnb1" ><a href="${path1}/board/list.do" >정보공개</a>
+    <li class="mn_type03" id="gnb1" ><a href="${path1}/board/list.do" >java</a>
 	  	<ul class="Hidden">
-		    <li id="gnb1_9"><a href="">정보공개제도</a></li>    
-		    <li id="gnb1_1"><a href="">정보목록</a></li>    
-		    <li id="gnb1_0"><a href="">사전정보공표</a></li>    
-		    <li id="gnb1_4"><a href="">행정자료실</a></li>    
-		    <li id="gnb1_6"><a href="">정책실명제</a></li>    
-		    <li id="gnb1_7"><a href="">공공데이터개방</a></li>    
-		    <li id="gnb1_8"><a href="" target="_blank"  title="새창">협동조합경영공시</a></li>    
+		    <li id="gnb1_9"><a href="${path1 }/board/list.do">자바의 개요</a></li>    
+		    <li id="gnb1_1"><a href="${path1 }/board/list2.do">특징</a></li>    
+		    <li id="gnb1_0"><a href="${path1 }/board/list3.do">문법</a></li>    
+		    <li id="gnb1_4"><a href="">JAVA Script</a></li>    
+		    <li id="gnb1_6"><a href="">JDK</a></li>
     	</ul>
 	</li>
-    <li class="mn_type03" id="gnb2" ><a href="" >새소식</a>
+    <li class="mn_type03" id="gnb2" ><a href="" >Python</a>
 	  	<ul class="Hidden">
-		    <li id="gnb2_1"><a href="">보도자료</a></li>    
-		    <li id="gnb2_2"><a href="" target="_blank"  title="새창">보도영상</a></li>    
-			<li id="gnb2_3"><a href="">정책뉴스</a></li>
-		    <li id="gnb2_4"><a href="">언론보도설명</a></li>    
-			<li id="gnb2_5"><a href="">보도계획</a></li>
-		    <li id="gnb2_6"><a href="">공지사항</a></li>    
-		    <li id="gnb2_7"><a href="" target="_blank"  title="새창">홍보영상</a></li>    
-		    <li id="gnb2_8"><a href="" target="_blank"  title="새창">소식편지</a></li>    
+		    <li id="gnb2_1"><a href="">파이썬의 개요</a></li>    
+		    <li id="gnb2_2"><a href="">장/단점</a></li>    
+			<li id="gnb2_3"><a href="">개발환경</a></li> 
     	</ul>
 	</li>
-    <li class="mn_type03" id="gnb3" ><a href="" >정책정보</a>
+    <li class="mn_type03" id="gnb3" ><a href="" >C / C++</a>
 	  	<ul class="Hidden">
-		    <li id="gnb3_1"><a href="">주요업무계획</a></li>    
-		    <li id="gnb3_2"><a href="">국가승인통계현황</a></li>    
-		    <li id="gnb3_3"><a href="">법령자료</a></li>    
-		    <li id="gnb3_4"><a href="">국가통계발전포럼</a></li>    
-			<li id="gnb3_5"><a href="">정책자료</a></li>
-		    <li id="gnb3_6"><a href="">국가통계위원회</a></li>    
-		    <li id="gnb3_7"><a href="">통계기반정책평가제도</a></li>    
-		    <li id="gnb3_b"><a href="">실험적통계제도</a></li>    
-		    <li id="gnb3_8"><a href="">통계품질관리</a></li>     
+		    <li id="gnb3_1"><a href="">개요</a></li>    
+		    <li id="gnb3_2"><a href="">장/단점</a></li>    
+		    <li id="gnb3_3"><a href="">사용분야</a></li>    
+		    <li id="gnb3_4"><a href="">이식성</a></li>
     	</ul>
 	</li>
     <li class="mn_type03" id="gnb4" ><a href="" >통계청소개</a>
 	  	<ul class="Hidden">
-			<li id="gnb4_1"><a href="">미션및비전</a></li>
-			<li id="gnb4_2"><a href="">국가통계기본원칙</a></li>
-			<li id="gnb4_3"><a href="">청/차장</a></li>    
-			<li id="gnb4_4"><a href="">일반현황</a></li>    
-			<li id="gnb4_5"><a href="">조직안내</a></li>    
-			<li id="gnb4_6"><a href="">시설물 안내</a></li>    
+			<li id="gnb4_1"><a href="">공지사항</a></li>
+			<li id="gnb4_2"><a href="">QNA</a></li>
+			<li id="gnb4_3"><a href="">자료제출</a></li>    
       	</ul>
 	</li>
 </ul>
 </div>
     <div id="mcont">
-       <div class="info_link_bg">
-<div class="info_link">
+       <div class="info_link_bg" style="background-color: #d0d0d0">
+<div class="info_link" style=" border: 3px solid red; background-color: #777777">
   <h2 class="Hidden">통계정보 사이트 목록</h2>
   <div class="list_box icon1">
-    <h3><a href="" target="_blank" >뉴스기반통계검색</a></h3>
-    <h3 class="info_l_tit"><a href="" target="_blank" >국가통계포털(KOSIS)</a></h3>
+    <h3><a href="" target="_blank" >2022년 언어 사용률</a></h3>
+    <h3 class="info_l_tit"><a href="" >국가통계포털(KOSIS)</a></h3>
     <ul>
       <li><a href="" target="_blank">국내통계</a></li>
       <li><a href="" target="_blank">국제통계</a></li>
@@ -91,7 +94,7 @@
     <h3 class="info_l_tit"><a href="" target="_blank">통계설명자료</a></h3>
   </div>
   <div class="list_box icon2">
-    <h3><a href=""  target="_blank">마이크로데이터(MDIS)</a></h3>
+    <h3><a href=""  target="_blank">마이크로데이터(TIOBE)</a></h3>
     <ul>
       <li><a href="" target="_blank">이용안내</a></li>
       <li><a href="" target="_blank">제공항목 목록</a></li>
@@ -103,19 +106,23 @@
 <h3 class="info_l_tit"><a href=""  target="_blank">빅데이터활용<br/>(Nowcast)</a></h3>
   </div>
   <div class="list_box icon3">
-    <h3><a href=""  target="_blank" >통계지리정보(SGIS)</a></h3>   
-    <h3 class="info_l_tit"><a href=""  target="_blank">국가지표체계</a></h3>
-    <h3 class="info_l_tit"><a href="" target="_blank" class="tLine">한눈에알아보는나라지표<br />(e-나라지표)</a></h3>
-	<h3 class="info_l_tit icon4"><a href=""  target="_blank">통계분류포털</a></h3>
+    <h3><a href=""  target="_blank" >국제 언어 사용률(2022)</a></h3>   
 	<ul>
-        <li><a href=""  target="_blank">한국표준산업분류</a></li>
-        <li><a href=""  target="_blank">한국표준직업분류</a></li>
-        <li><a href=""  target="_blank">한국표준질병ㆍ사인분류</a></li>
+        <li><a href="">Python</a>  13.44%</li>
+        <li><a href="">C </a>  13.13%</li>
+        <li><a href="">Java</a>  11.59%</li>
+        <li><a href="">C++</a>  10.00%</li>
+        <li><a href="">C#</a> 5.65%</li>
+        <li><a href="">Visual Basic</a>  4.97%</li>
+        <li><a href="">JavaScript</a>  1.78%</li>
+        <li><a href="">Assembly language</a>  1.65%</li>
+        <li><a href="">SQL</a>  1.64%</li>
+        <li><a href="">PHP</a>  1.20%</li>
 	</ul>
   </div>
   <div class="list_box line_bg">
     <div class="section1 icon4 covid_kr_1">
-		<a href="" target="_blank" ><span class="red">코로나19</span> <span>(COVID-19)</span></a>
+		<a href="" target="_blank" ><span class="red"></span> <span></span></a>
 	</div>
 <div class="section2 icon5">
 <ul>
@@ -233,13 +240,13 @@
 			<a href="" class="next" onclick="RP_num.next();return false;" ><span class="Hidden">알림판 다음</span></a>
 		</div>
 <ul class="pz_list" id="IntroList">
-<script src="js/alrimpan.js"/>
+<script src="${path1 }/js/alrimpan.js"></script>
 <script>
 var main_delay_time = 5000;
 var RP_num = new RollingBanner();
 var timer_num;
 var flag = false;
-		RP_num.addBanner("img/alrimpan_banner/banner_0628_01.png", "통계연구 제27권 제2호 발간 자세히보기",);	
+		RP_num.addBanner("img/alrimpan_banner/banner_0628_01.png", "통계연구 제27권 제2호 발간 자세히보기");	
 		RP_num.addBanner("img/alrimpan_banner/banner_0627_03.png", "KOSTAT Statistics Plus vol.18 2022. 6.  「KOSTAT 통계플러스」2022년 여름호 발간   주요내용 이슈분석, 통계프리즘, 통계포커스  발행부서: 통계개발원 연구기획실 바로가기(새창열기)");	
 		RP_num.addBanner("img/alrimpan_banner/banner_0623_02.png", "우리 가족이 하루에 사용하는 물의 양은 얼마나 될까요? 데이터(숫자 등)로 한번 생각해보고, 의견을 남겨주세요! 2022. 6. 22.(수) ~ 7. 12.(화) 국민 누구나 가능");	
 		RP_num.addBanner("img/alrimpan_banner/banner_0609_01.png", "제20대대통령직인수위원회백서 겸손하게 국민의 뜻을 받들겠습니다. ");	
@@ -306,8 +313,8 @@ timer_num= setInterval("RP_num.next()",main_delay_time);
 		<script>
 			var MB = new RollingBanner();
 			MB.setDisplayCount(2);
-			MB.addBanner("./img/img_main/banner_0328_01.png", "통계청기업통계등록부정비 2022.3.18.~12/14.",);
-			MB.addBanner("./img/img_main/banner210625.png", "국가상징 알아보기",);
+			MB.addBanner("./img/img_main/banner_0328_01.png", "통계청기업통계등록부정비 2022.3.18.~12/14.");
+			MB.addBanner("./img/img_main/banner210625.png", "국가상징 알아보기");
 			MB.write();
 		</script>
 <noscript>스크립트 기능이 중지되어 있어, 정책광고 더보기를 클릭 해 확인 해 주세요.</noscript> 

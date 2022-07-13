@@ -27,9 +27,9 @@
             </ul>
        </div>
         <div id="header_n">             
-            <div id="tnb_layout">
+            <div id="tnb_layout" style="background-color: #4e4e4e;">
             <div class="t_nav">
-                <h1 class="t_logo"><a href="${path1 }"><img src="${path1 }/img/logo.png" alt="통계청" /></a></h1>
+                <h1 class="t_logo"><a href="${path1 }"><img src="${path1 }/img/logo2.png" style="height: auto; width: 120px" alt="통계청" /></a></h1>
                 <ul class="sitelink_r">
                 
 	                <c:if test="${ empty sid}">
