@@ -43,10 +43,12 @@
                 </div>
                 <div class="contents">
                     <ul class="item">
+                    <c:forEach items="${latestReview }" var="review">
                         <li>
-                            <a>review title</a>
-                            <span>2021-06-03</span>
+                            <a>${review.title }</a>
+                            <span>${review.regdate }</span>
                         </li>
+                    </c:forEach>
                     </ul>
                 </div>
             </div>

@@ -23,6 +23,7 @@ margin-top:20px; margin-bottom:15px; }
 <title>결제목록 불러오기</title>
 </head>
 <body>
+<div id="root" class="root">
 <header id="header" class="header" >
 	<%@ include file="../inc/header.jsp" %>
 </header>
@@ -66,5 +67,6 @@ margin-top:20px; margin-bottom:15px; }
 <footer id="footer" class="footer">
 	<%@ include file="../inc/footer.jsp" %>
 </footer>
+</div>
 </body>
 </html>

@@ -21,7 +21,7 @@ $(document).ready(function(){
 		$.ajax({
 			url:"ajax7.do",
 			type:"POST",
-			dataType:'json',
+			dataType:'json',  //Controller에서 @RequestBody로 데이터를 받으므로 dataType과 contentType이 json 형태이어야함
 			//data:{"sno":sno, "name":name, "address":address}; - 개별로 보내기
 			data:JSON.stringify(source),
 			contentType:'application/json; charset=utf-8',

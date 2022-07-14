@@ -132,6 +132,7 @@
 			alert("아이디가 입력되지 않았습니다. 아이디를 입력 후 진행하시기 바랍니다.");
 			return false;
 		} else {
+			
 			location.href="${path1 }/member/idCheck.do?id="+uid;
 		}
 	}

@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<list key="installedFeatures">
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
+		<item value="net.sourceforge.pmd.eclipse:4.36.0.v20220625-0934-r"/>
 		<item value="org.aspectj:1.9.2.202002051807"/>
 		<item value="org.eclipse.ajdt:2.2.4.202002051807"/>
 		<item value="org.eclipse.buildship:3.1.3.v20191118-1057"/>

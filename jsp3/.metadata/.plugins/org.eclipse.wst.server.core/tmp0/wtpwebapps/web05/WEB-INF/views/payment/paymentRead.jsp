@@ -15,6 +15,7 @@
 <jsp:include page="../common.jsp"></jsp:include>
 </head>
 <body>
+<div class="root">
 <header id="header" class="header" >
 	<%@ include file="../inc/header.jsp" %>
 </header>
@@ -117,5 +118,6 @@
 <footer id="footer" class="footer">
 	<%@ include file="../inc/footer.jsp" %>
 </footer>
+</div>
 </body>
 </html>

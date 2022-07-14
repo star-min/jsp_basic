@@ -4,13 +4,26 @@ public class BasketDTO {
 	private int bno;		// 장바구니번호
 	private String id;  	// 사용자아이디
 	private int gno;		// 상품코드
+	private String gname;
+	private int gprice;
 	private String gimage;
 	private String gcolor;	// 색상
 	private int amount;		// 수량
 	private String gsize;	// 크기
 	private String bdate;
 	
-	
+	public String getGname() {
+		return gname;
+	}
+	public void setGname(String gname) {
+		this.gname = gname;
+	}
+	public int getGprice() {
+		return gprice;
+	}
+	public void setGprice(int gprice) {
+		this.gprice = gprice;
+	}
 	public String getGimage() {
 		return gimage;
 	}

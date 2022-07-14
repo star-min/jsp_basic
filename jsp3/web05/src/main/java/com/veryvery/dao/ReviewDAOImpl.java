@@ -33,11 +33,16 @@ public class ReviewDAOImpl implements ReviewDAO {
 
 	@Override
 	public void reviewUpdate(ReviewDTO rdto) throws Exception {
-		sqlSession.update("review.boardUpdate", rdto);
+		sqlSession.update("review.reviewUpdate", rdto);
 	}
 
 	@Override
 	public void reviewDelete(int seq) throws Exception {
 		sqlSession.delete("review.reviewDelete", seq);
+	}
+	
+	@Override
+	public List<ReviewDTO> latestReview() throws Exception {
+		return sqlSession.selectList("review.latestReview");
 	}
 }

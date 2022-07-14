@@ -27,7 +27,7 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		return "board/boardList";
 	}
-
+	
 	
 	@RequestMapping(value="read.do", method = RequestMethod.GET)
 	public String boardRead(@RequestParam int seq, Model model) throws Exception {

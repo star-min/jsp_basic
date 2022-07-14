@@ -46,7 +46,7 @@
                     <div class="inner">
                         <div class="thumb" style="background-image: url(${path1}/images/box1.jpg)"></div>
                         <div class="info">
-                            <a class="title">산 꼭대기 에서 별과하나된 밤</a>
+                            <a class="title" href="${path1 }/review/read.do?seq=3">산 꼭대기 에서 별과하나된 밤</a>
                             <div class="desc">1년간 힘들때마다 계획했던 여행 드디어 왔습니다.</div>
                             <div class="date">2022-06-28</div>
                         </div>
@@ -56,7 +56,7 @@
                     <div class="inner">
                         <div class="thumb" style="background-image: url(${path1}/images/box2.jpg);"></div>
                         <div class="info">
-                            <a class="title">속초 캠핑장에서 사랑하는 가족들과</a>
+                            <a class="title" href="${path1 }/review/read.do?seq=4">속초 캠핑장에서 사랑하는 가족들과</a>
                             <div class="desc">오랜만에 하는 가족여행 특별하게 지내고싶어 캠핑장을 알아보게...</div>
                             <div class="date">2021-07-06</div>
                         </div>
@@ -66,7 +66,7 @@
                     <div class="inner">
                         <div class="thumb" style="background-image: url(${path1}/images/box3.jpg);"></div>
                         <div class="info">
-                            <a class="title">호수에서 혼자즐기는 낭만적인..</a>
+                            <a class="title" href="${path1 }/review/read.do?seq=5">호수에서 혼자즐기는 낭만적인..</a>
                             <div class="desc">분명 캠핑 애니메이션에서 봤을떈 쉬워보였는데..</div>
                             <div class="date">2021-07-06</div>
                         </div>

@@ -11,10 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,7 +34,7 @@ public class AjaxController {
 	@ResponseBody
 	@GetMapping(value="/ajax1.do", produces={MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE}) //DTO를 xml로 반환 
 	public EMP ajax1() {
-		return new EMP(1004, "김성민", "식사동");
+		return new EMP(1004, "김기태", "화정동");
 	}
 	
 	@ResponseBody
@@ -51,7 +48,7 @@ public class AjaxController {
 	@GetMapping(value="/ajax3.do") //컬렉션 Map 타입으로 반환
 	public Map<String, EMP> ajax3() {
 		Map<String, EMP> map = new HashMap<>();
-		map.put("first", new EMP(1004, "김성민", "식사동"));
+		map.put("first", new EMP(1004, "김기태", "화정동"));
 		map.put("second", new EMP(7979, "조재영", "주엽동"));
 		return map;
 	}
@@ -77,19 +74,5 @@ public class AjaxController {
 			@PathVariable("address") String address) {
 			return new String[] {"name:"+name,"address:"+address};
 	}
-		
-	@ResponseBody
-	@PostMapping(value="ajax6.do")
-	public EMP ajax6(@RequestBody EMP emp) {
-		log.info("emp 타입으로 데이터를 변경하였습니다.");
-		return emp;
-	}
-	
-	@ResponseBody
-    @RequestMapping(value="/ajaxpro2.do", method = RequestMethod.POST)
-    public String ajaxpro1() throws Exception {
-        return "redirect:/";
-    }
-
-    
+	    
 }

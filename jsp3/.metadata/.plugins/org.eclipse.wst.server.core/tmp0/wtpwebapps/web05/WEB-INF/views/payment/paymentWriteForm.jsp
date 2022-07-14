@@ -46,13 +46,20 @@
 						<th>수량</th>
 						<td>
 							<input type="number" id="amount" name="amount" min="1" max="${goods.amount }" value="1">
+							<button onclick="moneyAdd()">확정</button>
 						</td>
 					</tr>
 					<tr>
-						<th>단가</th>
+						<th>가격</th>
 						<td>
-							<input type="text" id="gprice" name="gprice" value="${goods.gprice }" readonly required>
-							<%-- <input type="hidden" name="money" value="${ }" > --%>
+							<input type="text" id="gprice" name="gprice" value="${goods.gprice }" readonly>
+						</td>
+					</tr>
+					<tr>
+						<th>총액</th>
+						<td>
+							<input type="text" id="money" name="money"  >
+
 						</td>
 					</tr>
 					<tr>
@@ -125,6 +132,14 @@
 				}
 			}).open();
 		}
+
+		var amount,gprice,money;
+		function moneyAdd(){
+			document.getElementById("money").value=
+				document.getElementById("gprice").value*
+				document.getElementById("amount").value
+		}
+
 		</script>
 		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
 	</section>

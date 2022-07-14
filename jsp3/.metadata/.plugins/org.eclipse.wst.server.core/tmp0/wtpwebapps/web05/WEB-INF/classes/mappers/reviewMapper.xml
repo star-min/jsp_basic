@@ -12,6 +12,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="reviewRead" resultType="com.veryvery.dto.ReviewDTO" >
 		select * from review where seq = #{seq }
 	</select>
+		<!-- 새로운 글 5개 -->
+	<select id="latestReview" resultType="com.veryvery.dto.BoardDTO">
+		select * from review order by regdate desc limit 5
+	</select>
 	<!-- 글 쓰기 -->
 	<insert id="reviewWrite">
 		insert into review (title, content, image, nickname, regdate) 

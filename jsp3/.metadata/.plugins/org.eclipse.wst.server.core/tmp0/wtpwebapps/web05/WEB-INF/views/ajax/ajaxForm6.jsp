@@ -12,20 +12,24 @@ $(document).ready(function(){
 		var sno = $("#sno").val();
 		var name = $("#name").val();
 		var address = $("#address").val();
-		if(sno.trim()=="" || name.trim()=="" || address.trim()==""){
+		if(sno=="" || name=="" || address==""){
 			alert("입력되지 않은 필드가 존재합니다.");
 			return false;
 		}
 		
+		var data = {"sno":sno, "name":name, "address":address};
+		
 		$.ajax({
 			url:"ajax6.do",
 			type:"POST",
-			dataType:'json',
-			data:"{\"sno\":sno, \"name\":name, \"address\":address}",
-			contentType:'application/json; charset=UTF-8',
+			dataType:'json', //Controller에서 @RequestBody로 데이터를 받으므로 dataType과 contentType이 json 형태이어야함
+			//data:{"sno":sno, "name":name, "address":address}; - 개별로 보내기
+			data:JSON.stringify(data),
+			contentType:'application/json; charset=utf-8',
 			mimeType:'application/json',
 			success:function(data){
-				alert("번호 : "+data.sno);
+				//alert("번호 : "+data.sno);
+				$("#res").html("<p>번호 : "+data.sno+"<br>"+"이름 : "+data.name+"<br>"+data.address+"</p>");
 			},
 			error:function(data, status, err){
 				alert("에러 : "+err+"상태 코드 : "+status)
@@ -42,5 +46,8 @@ $(document).ready(function(){
  	주소 : <input type="text" name="address" id="address"><br><br>
  	<hr>
  	<input type="button" id="sendBtn" value="전송">
+ 	<br><hr><br>
+ 	<div id="res">
+ 	</div>
 </body>
 </html>

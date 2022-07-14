@@ -151,6 +151,7 @@ public class MemberController {
 			rttr.addFlashAttribute("message", "가입 가능한 아이디");
 			model.addAttribute("ck", "ok");
 			model.addAttribute("uid", id);
+			
 		} else {
 			model.addAttribute("msg", "가입 불가능한 아이디");
 			rttr.addFlashAttribute("message", "가입 불가능한 아이디");

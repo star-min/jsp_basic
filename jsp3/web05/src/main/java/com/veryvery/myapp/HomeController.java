@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.veryvery.dto.BoardDTO;
+import com.veryvery.dto.ReviewDTO;
 import com.veryvery.service.BoardService;
+import com.veryvery.service.ReviewService;
 
 /**
  * Handles requests for the application home page.
@@ -30,21 +32,18 @@ public class HomeController {
 	BoardService boardService;
 	
 	@Autowired
-	HttpSession session;
+	ReviewService reviewService;
 	
-	@RequestMapping("list.do")
-	public String latestBoard(Model model) throws Exception {
-		List<BoardDTO> latestBoard = boardService.latestBoard();
-		model.addAttribute("latestBoard", latestBoard);
-		return "latest/latestBoard";
-	}
+	@Autowired
+	HttpSession session;
 	
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
+	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -53,6 +52,12 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		
+		List<BoardDTO> latestBoard = boardService.latestBoard();
+		model.addAttribute("latestBoard", latestBoard);
+		
+		List<ReviewDTO> latestReview = reviewService.latestReview();
+		model.addAttribute("latestReview", latestReview);
 		
 		return "home";
 	}

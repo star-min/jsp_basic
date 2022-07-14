@@ -52,6 +52,8 @@ nickname varchar(50) not null,
 regdate date default (current_date),
 jo int(38));
 
+select * from review order by regdate desc limit 5;
+
 select * from review;
 
 -- 상품테이블
@@ -85,6 +87,8 @@ create table basket(
 bno int primary key auto_increment, -- 장바구니번호
 id varchar(12),    -- 사용자아이디
 gno int,             -- 상품코드
+gname varchar(100),    -- 상품명              추가된것
+gprice int,  -- 가격							추가된것
 gimage varchar(1000),
 gcolor varchar(40),    -- 색상
 amount int,          -- 수량

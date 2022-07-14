@@ -42,7 +42,7 @@
 							</select>
 							<input type="hidden" name="gno" value="${goods.gno }">
 							</c:if>
-							<%-- <span>${goods.gcategory }</span> --%>
+							 <span>${goods.gcategory }</span>
 						</td>
 					</tr>
 					<tr>
@@ -52,7 +52,7 @@
 							<input type="text" name="gname" value="${goods.gname }" class="input is-normal" required>
 							</c:if>
 							<c:if test="${sid!='admin' }">
-<%-- 							<span>${goods.gcategory }</span> --%>
+							<span>${goods.gname }</span>
 							</c:if>
 						</td>
 					</tr>
@@ -153,7 +153,7 @@
 							</c:if>
 							<c:if test="${sid!='admin' }">
 								<c:if test="${goods.amount>0 }">
-									<a href="${path1 }/basket/insert.do?gno=${goods.gno }&gcolor=${goods.gcolor}&gsize=${goods.gsize }&id=${sid}&gimage=${goods.gimage }&amount=${goods.amount}" class="button is-info">장바구니 담기</a>
+									<a href="${path1 }/basket/insert.do?gno=${goods.gno }&gname=${goods.gname }&gprice=${goods.gprice }&gcolor=${goods.gcolor}&gsize=${goods.gsize }&id=${sid}&gimage=${goods.gimage }&amount=${goods.amount}" class="button is-info">장바구니 담기</a>
 									<a href="${path1 }/payment/write_form.do?gno=${goods.gno }&${goods.gname }&${goods.amount }&${goods.gprice }&gcolor=${goods.gcolor}&gsize=${goods.gsize }" class="button is-info">바로 구매</a>
 								</c:if>
 							</c:if>

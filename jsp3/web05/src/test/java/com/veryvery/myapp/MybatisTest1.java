@@ -1,59 +1,40 @@
 package com.veryvery.myapp;
 
-import java.util.List;
+import java.sql.Connection;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.veryvery.dto.MemberDTO;
+import lombok.extern.log4j.Log4j;
 
-@Repository
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
+@Log4j
 public class MybatisTest1 {
-	@Autowired
-	SqlSession sqlSession; 
+	private static final Logger log = LoggerFactory.getLogger(MybatisTest1.class);
 	
 	@Autowired
-	MemberDTO member;
+	SqlSessionFactory sqlSessionFactory;
 	
 	@Test
-	public void testMybatis() {
-		try { 
-			System.out.println("Mybatis 실행 성공");
-			int cnt = sqlSession.selectOne("sample.sampleCount");
-			System.out.println("데이터 바인딩 성공~!");
-			System.out.println("회원수 : "+cnt);
-			System.out.println("데이터 출력 성공~!");
-		} catch(Exception e) {
-			System.out.println("테스트 종료");
-		}
-	}
-	
-	@Test
-	public void testMybatis2() {
+	public void test() {
 		try {
-			System.out.println("Mybatis 실행 성공2");
-			List<MemberDTO> memList = sqlSession.selectList("sample.sampleList");
-			System.out.println("데이터 바인딩 성공~!");
-			for(int i=0;i < memList.size();i++) {
-				MemberDTO member = new MemberDTO();
-				member = memList.get(i);
-				System.out.println("회원명 : "+member.getUname());
-			}
-			System.out.println("데이터 출력 성공~!");
+			SqlSession session = sqlSessionFactory.openSession();
+			Connection con = session.getConnection();
+			log.info("Mybatis 연결 성공");
+			log.info("DB 연결 성공");
+//			System.out.println("Mybatis 연결 성공");
+//			System.out.println("DB 연결 성공");
 		} catch(Exception e) {
-			System.out.println("테스트 종료2");
+			log.info(e.getMessage());
+//			System.out.println(e.getMessage());
 		}
-	}
-	
-	public int mybatisRunning() {
-		System.out.println("Mybatis 실행 성공2");
-		return sqlSession.selectOne("sample.memberCount");
-	}
-	
-	public List<MemberDTO> mybatisRunning2() {
-		System.out.println("Mybatis 실행 성공");
-		return sqlSession.selectList("sample.memberList");
 	}
 }

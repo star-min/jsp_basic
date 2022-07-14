@@ -26,7 +26,7 @@
 		<c:if test="${sid!='admin' }">
 		<h2 class="page_tit">결제 정보 수정</h2>
 		</c:if>
-		<form action="${path1 }/payment/update.do" method="post">
+		<form action="${path1 }/payment/adminUpdate.do" method="post">
 			<table class="table" id="lst_tb">
 				<tbody>
 					<tr>
@@ -170,7 +170,7 @@
 							<input type="submit" value="배송지 입력" class="button is-info"/>
 							<input type="reset" value="취소" class="button is-info"/>
 							<a href="${path1 }/payment/delete.do?ono=${paymentAdminRead.ono }" class="button is-info">판매 정보 삭제</a>
-							<a href="${path1 }/payment/list.do" class="button is-info">목록</a>
+							<a href="${path1 }/payment/adminList.do" class="button is-info">목록</a>
 						</td>
 					</tr>
 				</tbody>

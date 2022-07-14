@@ -1,0 +1,109 @@
+package com.veryvery.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.veryvery.dto.BasketDTO;
+import com.veryvery.dto.GoodsDTO;
+import com.veryvery.dto.PaymentDTO;
+import com.veryvery.service.GoodsService;
+import com.veryvery.service.PaymentService;
+
+@Controller
+@RequestMapping("/payment/*")
+public class PaymentController {
+	
+	@Autowired
+	HttpSession session;
+
+	@Autowired
+	PaymentService paymentService;
+	
+	@Autowired
+	GoodsService goodsService;
+	
+	// 결제 목록 불러오기
+	@RequestMapping("list.do")
+	public String paymentList( Model model) throws Exception {
+		String id = (String) session.getAttribute("sid");
+		List<PaymentDTO> paymentList = paymentService.paymentList(id);
+		model.addAttribute("paymentList", paymentList);
+		return "payment/paymentList";
+	}
+	
+	// 상품 결제
+	@RequestMapping(value="write_form.do", method = RequestMethod.GET)
+	public String paymentGoodRead( @RequestParam int gno, Model model) throws Exception {
+		/* String id = (String) session.getAttribute("sid"); */
+		GoodsDTO goods = goodsService.goodsRead(gno);
+		BasketDTO basket = basketService.basketRead(bno);
+		/* model.addAttribute("id", id); */
+		model.addAttribute("goods", goods);
+		return "payment/paymentWriteForm";
+	}
+	
+	// 관리자용 결제 상세보기
+	@RequestMapping("adminList.do")
+	public String pamentAdminList(Model model) throws Exception {
+		List<PaymentDTO> paymentAdminList = paymentService.paymentAdminList();
+		model.addAttribute("paymentAdminList", paymentAdminList);
+		return "payment/paymentAdminList";
+	}
+	
+	// 구매자 배송지 수정폼
+	@RequestMapping(value="read.do", method = RequestMethod.GET)
+	public String paymentRead(@RequestParam int ono, Model model) throws Exception {
+		PaymentDTO paymentRead = paymentService.paymentAdminRead(ono);
+		model.addAttribute("paymentRead", paymentRead);
+		return "payment/paymentRead";
+	}
+	
+	// 관리자 송장 입력폼
+	@RequestMapping(value="adminRead.do", method = RequestMethod.GET)
+	public String paymentAdminRead(@RequestParam int ono, Model model) throws Exception {
+		PaymentDTO paymentAdminRead = paymentService.paymentAdminRead(ono);
+		model.addAttribute("paymentAdminRead", paymentAdminRead);
+		return "payment/paymentAdminRead";
+	}
+	
+	/*
+	 * @RequestMapping("write_form.do") public String paymentWriteForm(Model model)
+	 * throws Exception { return "payment/paymentWriteForm"; }
+	 */
+	
+	// 결제 처리 
+	@RequestMapping(value="insert.do", method = RequestMethod.POST)
+	public String paymentWrite(@RequestParam(value = "id", required = false) String id, PaymentDTO pdto, Model model) throws Exception {
+		paymentService.paymentWrite(pdto);
+		return "redirect:list.do";
+	}
+	
+	// 배송지 수정
+	@RequestMapping(value="update.do", method = RequestMethod.POST)
+	public String paymentUpdate(PaymentDTO pdto, Model model) throws Exception {
+		paymentService.paymentUpdate(pdto);
+		return "redirect:list.do";
+	}
+	
+	// 택배 배정
+	@RequestMapping(value="adminUpdate.do", method = RequestMethod.POST)
+	public String paymentAdminUpdate(PaymentDTO pdto, Model model) throws Exception {
+		paymentService.paymentAdminUpdate(pdto);
+		return "redirect:list.do";
+	}
+		
+	// 결제 취소
+	@RequestMapping(value="delete.do", method = RequestMethod.GET)
+	public String paymentDelete(@RequestParam int ono, Model model) throws Exception {
+		paymentService.paymentDelete(ono);
+		return "redirect:list.do";
+	}
+}

@@ -19,4 +19,7 @@ public interface ReviewService {
 	
 	//글 삭제
 	public void reviewDelete(int seq) throws Exception;
+	
+	//최신글 목록
+	public List<ReviewDTO> latestReview() throws Exception;
 }

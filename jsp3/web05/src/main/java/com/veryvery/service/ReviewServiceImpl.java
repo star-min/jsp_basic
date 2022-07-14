@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.veryvery.dao.ReviewDAO;
+import com.veryvery.dto.BoardDTO;
 import com.veryvery.dto.ReviewDTO;
 
 @Service
@@ -38,5 +39,10 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public void reviewDelete(int seq) throws Exception {
 		reviewDao.reviewDelete(seq);
+	}
+	
+	@Override
+	public List<ReviewDTO> latestReview() throws Exception {
+		return reviewDao.latestReview();
 	}
 }

@@ -29,12 +29,12 @@
                 </button>
                 <ul>
                     <li>
-                        <a target="_blank">
+                        <a href="${path1 }/review/list.do" target="_blank">
                             <span>상품후기</span>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank">
+                        <a href="${path1 }/board/list.do" target="_blank">
                             <span>공지사항</span>
                         </a>
                     </li>
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li>
-                        <a target="_blank">
+                        <a href="${path1 }/qna/list.do" target="_blank">
                             <span>QNA</span>
                         </a>
                     </li>

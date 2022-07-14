@@ -15,7 +15,6 @@ public class JDBCTest1 {
 			e.printStackTrace();
 		}
 	}
-
 	@Test
 	public void testConnection() {
 		try {

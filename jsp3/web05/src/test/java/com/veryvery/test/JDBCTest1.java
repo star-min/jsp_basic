@@ -18,7 +18,7 @@ public class JDBCTest1 {
 	@Test
 	public void testConnection() {
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/myshop?useSSL=false&serverTimezone=UTC","root","a1234");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC","root","a1234");
 			System.out.println("연결 성공");
 		} catch(Exception e) {
 			System.out.println("연결 실패");
