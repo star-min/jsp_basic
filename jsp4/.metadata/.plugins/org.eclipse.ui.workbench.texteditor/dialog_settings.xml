@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="코로나"/>
+		<item key="selection" value="80%"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="100%"/>
+			<item value="icon4"/>
+			<item value="secsion1"/>
+			<item value="secsion"/>
+			<item value="자료"/>
 			<item value="코로나"/>
 			<item value="뉴스기반"/>
 			<item value=".mn_dep2"/>
@@ -18,13 +23,9 @@
 			<item value="tnb"/>
 			<item value="알림"/>
 			<item value="tnb_lay"/>
-			<item value="gnb1_9"/>
-			<item value=".ctb_icon0101"/>
-			<item value="&lt;link href=&quot;${path1 }/css/code.css&quot; media=&quot;all&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;"/>
-			<item value="syntax-literal"/>
-			<item value="h1_tit"/>
 		</list>
 		<list key="replacehistory">
+			<item value="80%"/>
 			<item value="../img/board_img"/>
 			<item value="../img/board_img/path_arrow"/>
 		</list>

@@ -72,7 +72,7 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 	  	<ul class="Hidden">
 			<li id="gnb4_1"><a href="">공지사항</a></li>
 			<li id="gnb4_2"><a href="">QNA</a></li>
-			<li id="gnb4_3"><a href="">자료제출</a></li>    
+			<li id="gnb4_3"><a href="${path1 }/databank/list.do">자료제출</a></li>    
       	</ul>
 	</li>
 </ul>
@@ -121,21 +121,21 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 	</ul>
   </div>
   <div class="list_box line_bg">
-    <div class="section1 icon4 covid_kr_1">
-		<a href="" target="_blank" ><span class="red"></span> <span></span></a>
+    <div class="section1 icon4 covid_kr_1"">
+		 <a href="" target="_blank" ><span class="red"></span> <span></span></a>
 	</div>
-<div class="section2 icon5">
-<ul>
+ 	<div class="section2 icon5">
+	  <ul>
         <li><a href="" target="_blank">통계청통계 전체보기</a></li>
         <li>
           <a class="l_tit" target="_blank" href="">진행 중인 조사</a>
          <ul>
             <li><a href="" target="_blank" title="새 창으로 이동">가계동향조사</a></li>
-<li><a href=""  target="_blank" title="새 창으로 이동">경제활동인구조사</a></li>
+			<li><a href=""  target="_blank" title="새 창으로 이동">경제활동인구조사</a></li>
           </ul>
         </li>
       </ul>
-    </div>    
+    </div>
   </div>
 </div>
         <!-- 100대 지표 S -->

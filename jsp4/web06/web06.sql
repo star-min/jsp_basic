@@ -31,4 +31,14 @@ insert into notice(title, content, nickname) value ('자바의 왕국 대한민�
 select * from notice order by seq desc, regdate desc;
 commit;
 
+create table databank(
+datano int(100) primary key auto_increment,
+dtitle varchar(300),
+dcontent varchar(2000),
+dposter varchar(2000),
+dfilename varchar(300),
+dview varchar(100),
+regdate date default (current_date)
+);
 
+drop table databank;

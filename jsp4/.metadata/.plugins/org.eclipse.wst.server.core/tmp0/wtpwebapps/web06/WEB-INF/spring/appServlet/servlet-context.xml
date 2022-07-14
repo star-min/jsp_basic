@@ -18,6 +18,7 @@
 	<resources mapping="/inc/**" location="/WEB-INF/views/inc/" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board/" />
 	<resources mapping="/member/**" location="/WEB-INF/views/member/" />
+	<resources mapping="/databank/**" location="/WEB-INF/views/databank/" />
 	
 	<resources mapping="/css/**" location="/WEB-INF/views/css/" />
 	<resources mapping="/img/**" location="/WEB-INF/views/img/" />
