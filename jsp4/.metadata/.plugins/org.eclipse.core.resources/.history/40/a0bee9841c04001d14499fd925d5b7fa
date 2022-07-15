@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ps">
+	<select id="ps" resultType="com.ksmstat.dto.PsDTO">
+		select * from psboard order by seq desc, regdate desc
+	</select>
+	
+	<select id="psList" resultType="com.ksmstat.dto.PsDTO">
+		select * from psboard order by seq desc, regdate desc limit #{startPost}, #{bnum} 
+	</select>
+	
+	<select id="psRead" resultType="com.ksmstat.dto.PsDTO">
+		select * from psboard where seq=#{seq}
+	</select>
+	
+	<select id="latestPs" resultType="com.ksmstat.dto.PsDTO">
+		select * from psboard order by regdate desc limit 5
+	</select>
+		
+	<select id="bodoCount" resultType="integer">
+		select count(*) from psboard
+	</select>
+	
+	<insert id="addBodo">
+	insert into psboard(title, content, nickname) value (#{title}, #{content}, 'admin')
+	</insert>
+	
+	<delete id="deleteBodo">
+		delete from psboard where seq=#{seq}
+	</delete>	
+	
+	<update id="updateBodo">
+		update psboard set title=#{title}, content=#{content}, regdate=now() where seq=#{seq}
+	</update>
+</mapper>

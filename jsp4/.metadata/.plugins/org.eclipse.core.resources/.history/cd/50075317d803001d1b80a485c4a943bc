@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	<select id="bodoList" resultType="com.ksmstat.dto.NoticeDTO">
+		select * from bodoboard order by seq desc, regdate desc
+	</select>
+	
+	<select id="bodoPageList" resultType="com.ksmstat.dto.NoticeDTO">
+		select * from bodoboard order by seq desc, regdate desc limit #{startPost}, #{bnum} 
+	</select>
+	
+	<select id="bodoRead" resultType="com.ksmstat.dto.NoticeDTO">
+		select * from bodoboard where seq=#{seq}
+	</select>
+	
+	<select id="latestNotice" resultType="com.ksmstat.dto.NoticeDTO">
+		select * from bodoboard order by regdate desc limit 5
+	</select>
+		
+	<select id="noticeCount" resultType="integer">
+		select count(*) from bodoboard
+	</select>
+	
+	<insert id="addNotice">
+	insert into bodoboard(title, content, nickname) value (#{title}, #{content}, 'admin')
+	</insert>
+	
+	<delete id="deleteNotice">
+		delete from bodoboard where seq=#{seq}
+	</delete>	
+	
+	<update id="updateNotice">
+		update bodoboard set title=#{title}, content=#{content}, regdate=now() where seq=#{seq}
+	</update>
+</mapper>

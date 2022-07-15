@@ -1,0 +1,17 @@
+package com.ksmstat.dao;
+
+import java.util.List;
+
+import com.ksmstat.dto.PsDTO;
+import com.ksmstat.util.PageMaker;
+
+public interface PsDAO {
+	public List<PsDTO> bodoList() throws Exception;
+	public List<PsDTO> bodoPageList(PageMaker page) throws Exception;
+	public List<PsDTO> latestbodo() throws Exception;
+	public PsDTO bodoRead(int seq) throws Exception;
+	public int bodoCount() throws Exception;
+	public void addBodo(PsDTO bodoboard) throws Exception; 
+	public void deleteBodo(PsDTO bodoboard) throws Exception;
+	public void updateBodo(PsDTO bodoboard) throws Exception;
+}

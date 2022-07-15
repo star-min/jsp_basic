@@ -1,0 +1,57 @@
+package com.ksmstat.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ksmstat.dao.BodoboardDAO;
+import com.ksmstat.dto.BodoboardDTO;
+import com.ksmstat.util.PageMaker;
+
+@Service
+public class PsServiceImpl implements PsService {
+
+	@Autowired
+	PsDAO psDAO;
+	
+	@Override
+	public List<PsDTO> bodoList() throws Exception {
+		return psDAO.psList();
+	}
+
+	@Override
+	public List<PsDTO> bodoPageList(PageMaker page) throws Exception {
+		return bodoboardDAO.bodoPageList(page);
+	}
+
+	@Override
+	public List<PsDTO> latestbodo() throws Exception {
+		return bodoboardDAO.latestbodo();
+	}
+
+	@Override
+	public PsDTO bodoRead(int seq) throws Exception {
+		return bodoboardDAO.bodoRead(seq);
+	}
+
+	@Override
+	public int bodoCount() throws Exception {
+		return bodoboardDAO.bodoCount();
+	}
+
+	@Override
+	public void addBodo(PsDTO bodoboard) throws Exception {
+		bodoboardDAO.addBodo(bodoboard);
+	}
+
+	@Override
+	public void deleteBodo(PsDTO bodoboard) throws Exception {
+		bodoboardDAO.deleteBodo(bodoboard);
+	}
+
+	@Override
+	public void updateBodo(PsDTO bodoboard) throws Exception {
+		bodoboardDAO.updateBodo(bodoboard);
+	}
+}
