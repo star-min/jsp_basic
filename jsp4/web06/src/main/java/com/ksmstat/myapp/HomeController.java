@@ -15,7 +15,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ksmstat.dto.BodoboardDTO;
 import com.ksmstat.dto.NoticeDTO;
+import com.ksmstat.service.BodoboardService;
 import com.ksmstat.service.NoticeService;
 
 /**
@@ -29,6 +31,9 @@ public class HomeController {
 	
 	@Autowired
 	NoticeService noticeService;
+	
+	@Autowired
+	BodoboardService bodoboardService;
 	
 	
 	@Autowired
@@ -50,6 +55,9 @@ public class HomeController {
 		
 		List<NoticeDTO> noticeList = noticeService.noticeList();
 		model.addAttribute("noticeList", noticeList);
+		
+		List<BodoboardDTO> latestbodo = bodoboardService.bodoList();
+		model.addAttribute("latestbodo", latestbodo);
 		
 		return "home";
 	}

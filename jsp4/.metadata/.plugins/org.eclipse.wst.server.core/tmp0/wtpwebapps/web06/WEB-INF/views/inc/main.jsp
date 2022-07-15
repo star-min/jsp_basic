@@ -156,27 +156,20 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 			<li>
 			<h2 class="tit_s1n_on" id="bdh2"><a href="" onclick="showHeadLineFunc('news','bdh2','hmh2','newheadline','haemyungline','efh2'); return false;"><span class="r_line">보도자료</span></a></h2>
 				<div id="newheadline">
-					<div class="list_breif">    
-						<dl id="pn01" style="display: block">
-							<dt><a href="" target="_self" title="title">title</a></dt>
-							<dd><a href="" target="_self" title=" title"><span class="text"> text</span></a><span class="data2">ragdate</span></dd>								
+					<div class="list_breif"> 
+					<c:forEach items="${latestbodo }" var="bodo" varStatus="status" >
+						<dl id="pn0${status.count }" style="display: block">
+							<dt><a href="" target="_self" title="${bodo.title }">${bodo.title }</a></dt>
+							<dd><a href="" target="_self" title="${bodo.title }"><span class="text"> ${bodo.content }</span></a><span class="data2">${bodo.regdate }</span></dd>								
 						</dl>
-						<dl id="pn02" style="display:none">
-				  			<dt><a href="" target="_self" title="title">title</a></dt>
-							<dd><a href="" target="_self" title=" title "><span class="text"> text</span></a>
-							<span class="data2">regdate</span></dd>								
-						</dl>
-						<dl id="pn03" style="display:none">
-				  			<dt><a href="" target="_self" title="title">title</a></dt>
-							<dd><a href="" target="_self" title="title"><span class="text">text</span></a><span class="data2">ragedate</span></dd>								
-						</dl>
+					</c:forEach>
 						<ul>
-							<li class="on" id="pn0_1"><a href='' id="pnl1" onfocus="contentHover('news_play_img');moveNewsTv('news',1);" onblur="contentOut('news_play_img');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">title</span></a><span class="date">regdate</span></li>
-							<li id="pn0_2"><a href='' id="pnl2"  onfocus="contentHover('news_play_img');moveNewsTv('news',2);" onblur="contentOut('news_play_img');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">title</span></a><span class="date">regdate</span></li>
-							<li id="pn0_3"><a href='' id="pnl3"  onfocus="contentHover('news_play_img');moveNewsTv('news',3);" onblur="contentOut('news_play_img');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">title</span></a><span class="date">regdate</span></li>
+					<c:forEach items="${latestbodo }" var="bodo" varStatus="status" >
+							<li class="on" id="pn0_${status.count }"><a href='' id="pnl1" onfocus="contentHover('news_play_img');moveNewsTv('news',${status.count });" onblur="contentOut('news_play_img');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">${bodo.title }</span></a><span class="date">${bodo.regdate }</span></li>
+					</c:forEach>
 						</ul>
 					</div>
-					<p class="more2"><span class="Hidden">보도자료</span></a></p>
+					<p class="more2"><a href="${path1 }/bodoboard/list.do"><span class="text">더보기</span></a></p>
 				</div>
 			</li>
 			<li>
@@ -299,7 +292,7 @@ timer_num= setInterval("RP_num.next()",main_delay_time);
                     	<li class="ps_icon_06"><a href="" target="_blank">소식편지</a></li>                	
                     </ul>                    
                 </div>                    
-            	<p class="more"><a href="http://kostat.go.kr/" onclick="quickServiceDis('div_ps_list','close');return false;"><span class="Hidden">자주찾는 서비스</span>닫기 -</a></p>      
+            	<p class="more"><a href="http://kostat.go.kr/" onclick="quickServiceDis('div_ps_list','close');return false;"><span class="Hidden">자주찾는 서비스</span>닫기 -</a></p>  
                 </div>   
             </div>
             <div class="banner_zone">
