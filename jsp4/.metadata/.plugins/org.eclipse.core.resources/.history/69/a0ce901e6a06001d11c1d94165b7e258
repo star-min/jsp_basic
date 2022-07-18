@@ -1,0 +1,52 @@
+package com.ksmstat.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ksmstat.dao.EmployDAO;
+import com.ksmstat.dto.NoticeDTO;
+import com.ksmstat.util.PageMaker;
+
+@Service
+public class EmployServiceImpl implements EmployService {
+
+	@Autowired
+	EmployDAO employDAO;
+	
+	@Override
+	public List<EmployDTO> employList() throws Exception {
+		return employDAO.employList();
+	}
+
+	@Override
+	public List<EmployDTO> employPageList(PageMaker page) throws Exception {
+		return employDAO.employPageList(page);
+	}
+
+	@Override
+	public EmployDTO employRead(int seq) throws Exception {
+		return employDAO.employRead(seq);
+	}
+
+	@Override
+	public int employCount() throws Exception {
+		return employDAO.employCount();
+	}
+
+	@Override
+	public void addNotice(EmployDTO notice) throws Exception {
+		noticeDAO.addNotice(notice);
+	}
+
+	@Override
+	public void deleteNotice(EmployDTO notice) throws Exception {
+		noticeDAO.deleteNotice(notice);
+	}
+
+	@Override
+	public void updateNotice(EmployDTO notice) throws Exception {
+		noticeDAO.updateNotice(notice);
+	}
+}

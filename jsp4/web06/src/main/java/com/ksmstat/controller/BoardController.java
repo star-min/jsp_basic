@@ -29,6 +29,14 @@ public class BoardController {
 	public String boardList3(Model model) throws Exception{
 		return "board/boardList3";
 	}
+	@RequestMapping("list4.do")
+	public String boardList4(Model model) throws Exception{
+		return "board/boardList4";
+	}
+	@RequestMapping("list5.do")
+	public String boardList5(Model model) throws Exception{
+		return "board/boardList5";
+	}
 //	@Autowired
 //	BoardService boardService;
 //	

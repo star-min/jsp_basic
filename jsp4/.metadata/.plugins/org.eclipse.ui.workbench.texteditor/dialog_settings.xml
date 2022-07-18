@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="more"/>
+		<item key="selection" value="언어 사용률"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="언어 사용률"/>
+			<item value="언론보도설명"/>
 			<item value="more"/>
 			<item value="보도"/>
 			<item value="100%"/>
@@ -21,8 +23,6 @@
 			<item value="logo"/>
 			<item value="info_link"/>
 			<item value="mn_type"/>
-			<item value="mn"/>
-			<item value="tnb"/>
 		</list>
 		<list key="replacehistory">
 			<item value="80%"/>

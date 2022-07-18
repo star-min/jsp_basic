@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employ">
+	<select id="employList" resultType="com.ksmstat.dto.EmployDTO">
+		select * from employboard order by seq desc, regdate desc
+	</select>
+	
+	<select id="employPageList" resultType="com.ksmstat.dto.EmployDTO">
+		select * from employboard order by seq desc, regdate desc limit #{startPost}, #{bnum} 
+	</select>
+	
+	<select id="employRead" resultType="com.ksmstat.dto.EmployDTO">
+		select * from employboard where seq=#{seq}
+	</select>
+	
+	<select id="latestEmploy" resultType="com.ksmstat.dto.EmployDTO">
+		select * from employboard order by regdate desc limit 5
+	</select>
+		
+	<select id="employCount" resultType="integer">
+		select count(*) from employboard
+	</select>
+	
+	<insert id="addEmploy">
+	insert into employboard(title, region, content, nickname) value (#{title}, #{content}, 'admin')
+	</insert>
+	
+	<delete id="deleteEmploy">
+		delete from employboard where seq=#{seq}
+	</delete>	
+	
+	<update id="updateEmploy">
+		update employboard set title=#{title}, content=#{content}, regdate=now() where seq=#{seq}
+	</update>
+</mapper>

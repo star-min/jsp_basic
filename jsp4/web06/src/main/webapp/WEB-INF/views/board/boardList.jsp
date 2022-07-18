@@ -26,8 +26,8 @@
                     <li><a href="${path1 }/board/list3.do">문법</a></li>
                 </ul>
             </li>
-            <li><a href="">JAVA Script</a></li>
-            <li><a href="">JDK</a></li>
+            <li><a href="${path1 }/board/list4.do">JAVA Script</a></li>
+            <li><a href="${path1 }/board/list5.do">JDK</a></li>
         </ul>
     </div>
  

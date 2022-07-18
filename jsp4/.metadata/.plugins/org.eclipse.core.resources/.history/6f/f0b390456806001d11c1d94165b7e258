@@ -1,0 +1,5 @@
+package com.ksmstat.dto;
+
+public class EmployDTO {
+
+}

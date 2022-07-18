@@ -27,8 +27,8 @@
                     <li><a href="${path1 }/board/list3.do" class="M_on">문법</a></li>
                 </ul>
             </li>
-            <li><a href="">JAVA Script</a></li>
-            <li><a href="">JDK</a></li>
+            <li><a href="${path1 }/board/list4.do">JAVA Script</a></li>
+            <li><a href="${path1 }/board/list5.do">JDK</a></li>
         </ul>
     </div>
  
@@ -43,7 +43,7 @@
                 <li><a title="주소복사" href="" class="link_icon"><span class="Hidden">주소복사</span></a></li>
                 <li><a title="인쇄하기" href="" class="line_none print_icon" ><!-- a title="새창" href="//kostat.go.kr" onclick="window.print(); return false;" class="line_none print_icon" --><span class="Hidden">프린트</span></a></li>        
             </ul>
-            <h1 class="h1_tit">Java의 가장 큰 특징</h1>
+            <h1 class="h1_tit">Java의 기본 문법</h1>
             
    <h3 class="h3_tit">기본</h3>
    <ul class="list_style01">

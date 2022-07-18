@@ -49,8 +49,8 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 		    <li id="gnb1_9"><a href="${path1 }/board/list.do">자바의 개요</a></li>    
 		    <li id="gnb1_1"><a href="${path1 }/board/list2.do">특징</a></li>    
 		    <li id="gnb1_0"><a href="${path1 }/board/list3.do">문법</a></li>    
-		    <li id="gnb1_4"><a href="">JAVA Script</a></li>    
-		    <li id="gnb1_6"><a href="">JDK</a></li>
+		    <li id="gnb1_4"><a href="${path1 }/board/list4.do">JAVA Script</a></li>    
+		    <li id="gnb1_6"><a href="${path1 }/board/list5.do">JDK</a></li>
     	</ul>
 	</li>
     <li class="mn_type03" id="gnb2" ><a href="" >Python</a>
@@ -70,7 +70,7 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 	</li>
     <li class="mn_type03" id="gnb4" ><a href="" >통계청소개</a>
 	  	<ul class="Hidden">
-			<li id="gnb4_1"><a href="">공지사항</a></li>
+			<li id="gnb4_1"><a href="${path1 }/notice/list.do">공지사항</a></li>
 			<li id="gnb4_2"><a href="">QNA</a></li>
 			<li id="gnb4_3"><a href="${path1 }/databank/list.do">자료제출</a></li>    
       	</ul>
@@ -82,7 +82,7 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 <div class="info_link" style=" border: 3px solid red; background-color: #777777">
   <h2 class="Hidden">통계정보 사이트 목록</h2>
   <div class="list_box icon1">
-    <h3><a href="" target="_blank" >2022년 언어 사용률</a></h3>
+    <h3><a href="" target="_blank" >2022년 프로그래밍 언어</a></h3>
     <h3 class="info_l_tit"><a href="" >국가통계포털(KOSIS)</a></h3>
     <ul>
       <li><a href="" target="_blank">국내통계</a></li>
@@ -176,25 +176,19 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 			<h2 class="tit_s2n" id="hmh2"><a onclick="showHeadLineFunc('haemyung','hmh2','bdh2','haemyungline','newheadline','efh2'); return false;"><span class="r_line">언론보도설명</span></a></h2>
 				<div id="haemyungline"  class="Dis_none">
 					<div class="list_breif">    
-						<dl id="ph01" style="display: block">
-						 	<dt><a href="" target="_self" title="title">title</a></dt>
-							<dd><a href="" target="_self" title="title"><span class="text"> text</span></a><span class="data2">regdate</span></dd>								
+					<c:forEach items="${latestps }" var="ps" varStatus="status" >
+						<dl id="ph0${status.count }" style="display: block">
+						 	<dt><a href="" target="_self" title="${ps.title }">${ps.title }</a></dt>
+							<dd><a href="" target="_self" title="${ps.title }"><span class="text"> ${ps.content }</span></a><span class="data2">${ps.regdate }</span></dd>								
 						</dl>
-						<dl id="ph02" style="display:none">
-  							<dt><a href="" target="_self" title=" tile">title</a></dt>
-							<dd><a href="" target="_self" title="title"><span class="text">text</span></a><span class="data2">regdate</span></dd>								
-						</dl>
-						<dl id="ph03" style="display:none">
-				  			<dt><a href="" target="_self" title="title">title</a></dt>
-							<dd><a href="" target="_self" title="title"><span class="text">text</span></a><span class="data2">regdate</span></dd>								
-						</dl>
+					</c:forEach>
 						<ul>
-							<li class="on" id="ph0_1"><a href='' id="phl1" onfocus="focusHover('haemyung_stop');moveHaemyung('haemyung',1);" onblur="focusOut('haemyung_play');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">title</span></a><span class="date">regdate</span></li>
-							<li id="ph0_2"><a href='' id="phl2"  onfocus="focusHover('haemyung_stop');moveHaemyung('haemyung',2);" onblur="focusOut('haemyung_play');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">title</span></a><span class="date">regdate</span></li>
-							<li id="ph0_3"><a href='' id="phl3"  onfocus="focusHover('haemyung_stop');moveHaemyung('haemyung',3);" onblur="focusOut('haemyung_play');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">title</span></a><span class="date">regdate</span></li>
+						<c:forEach items="${latestps }" var="ps" varStatus="status" >
+							<li class="on" id="ph0_${status.count }"><a href='' id="phl${status.count }" onfocus="focusHover('haemyung_stop');moveHaemyung('haemyung',${status.count });" onblur="focusOut('haemyung_play');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">${ps.title }</span></a><span class="date">${ps.regdate }</span></li>
+						</c:forEach>
 						</ul>
 					</div>
-					<p class="more2"><span class="Hidden">언론보도설명</span></p>
+					<p class="more2"><a href="${path1 }/ps/list.do"><span class="text">더보기</span></a></p>
 				</div>
 			</li>        
 		<div class="">
@@ -202,9 +196,11 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 				<h2 class="l_tit">채용정보</h2>                    
 				<div class="line_t">    
 				<ul>
-					<li><a target="_blank" href=""><span class="local">[지역]</span>[지역]title</a><span class="date">regdate</span></li>
+				<c:forEach items="${latestemploy }" var="employ" varStatus="status" >
+					<li><a target="_blank" href=""><span class="local">${employ.region }</span>[지역]${employ.title }</a><span class="date">${employ.regdate }</span></li>
+				</c:forEach>
 				</ul>
-				<p class="more"><a href="" target="_blank">채용정보</span>더보기+</a></p>      
+				<p class="more"><a href="${path1 }/employ/list.do" target="_blank">채용정보</span>더보기+</a></p>      
 				</div>              
 			</div>
 			<div class="notice_b">

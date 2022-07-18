@@ -16,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ksmstat.dto.BodoboardDTO;
+import com.ksmstat.dto.EmployDTO;
 import com.ksmstat.dto.NoticeDTO;
+import com.ksmstat.dto.PsDTO;
 import com.ksmstat.service.BodoboardService;
+import com.ksmstat.service.EmployService;
 import com.ksmstat.service.NoticeService;
+import com.ksmstat.service.PsService;
 
 /**
  * Handles requests for the application home page.
@@ -34,6 +38,12 @@ public class HomeController {
 	
 	@Autowired
 	BodoboardService bodoboardService;
+	
+	@Autowired
+	PsService psService;
+	
+	@Autowired
+	EmployService employService;
 	
 	
 	@Autowired
@@ -58,6 +68,12 @@ public class HomeController {
 		
 		List<BodoboardDTO> latestbodo = bodoboardService.bodoList();
 		model.addAttribute("latestbodo", latestbodo);
+		
+		List<PsDTO> latestps = psService.psList();
+		model.addAttribute("latestps", latestps);
+		
+		List<EmployDTO> latestemploy = employService.employList();
+		model.addAttribute("latestemploy", latestemploy);
 		
 		return "home";
 	}

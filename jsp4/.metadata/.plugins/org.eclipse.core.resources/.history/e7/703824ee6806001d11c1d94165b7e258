@@ -1,0 +1,54 @@
+package com.ksmstat.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.ksmstat.dto.EmployDTO;
+import com.ksmstat.util.PageMaker;
+
+@Repository
+public class EmployDAOImpl implements EmployDAO {
+
+	@Autowired
+	SqlSession sqlSession;
+	
+	@Override
+	public List<EmployDTO> employList() throws Exception {
+		return sqlSession.selectList("employ.employList");
+	}
+
+	@Override
+	public List<EmployDTO> employPageList(PageMaker page) throws Exception {
+		System.out.println("페이지 시작 글 : "+page.getStartPost());
+		System.out.println("한 페이지 글 개수 : "+page.getBnum());
+		return sqlSession.selectList("employ.employPageList", page);
+	}
+
+	@Override
+	public EmployDTO employRead(int seq) throws Exception {
+		return sqlSession.selectOne("employ.employRead", seq);
+	}
+
+	@Override
+	public int employCount() throws Exception {
+		return sqlSession.selectOne("employ.employCount");
+	}
+
+	@Override
+	public void addNotice(EmployDTO notice) throws Exception {
+		sqlSession.insert("notice.addNotice", notice);
+	}
+
+	@Override
+	public void deleteNotice(EmployDTO notice) throws Exception {
+		sqlSession.delete("notice.deleteNotice", notice);
+	}
+
+	@Override
+	public void updateNotice(EmployDTO notice) throws Exception {
+		sqlSession.update("notice.updateNotice", notice);
+	}
+}

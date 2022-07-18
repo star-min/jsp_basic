@@ -306,7 +306,7 @@
 .group_R .popup_zone .pz_btn .play {width:25px; background-position:-24px -24px;}
 .group_R .popup_zone .pz_list li {overflow:hidden; width:100%;}
 .group_R .popup_zone .pz_list .Hidden { display: none; }
-.group_R .popup_zone .pz_list li img { width:100%; height:100%; max-height: 175px;}
+.group_R .popup_zone .pz_list li img { width:100%; max-height: 175px;}
 
 /* 자주찾는 서비스 */
 .group_R .popular_service {position:relative; width:100%; margin-bottom:20px;}

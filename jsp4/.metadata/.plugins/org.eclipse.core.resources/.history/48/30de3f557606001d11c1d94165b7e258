@@ -1,0 +1,113 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서브페이지</title>
+</head>
+<body>
+<div id="scont">
+<header id="header" class="header">
+	<%@ include file="../inc/header.jsp" %>
+</header>
+    <div id="container">
+
+    <div id="slnb">
+    <h2 class="title">자바(JAVA)</h2>
+        <ul>
+            <li id=""><a href="" class="M_on">JAVA</a>
+                <ul class="mn_depth2">
+                    <li><a href="${path1 }/board/list.do">자바의 개요</a></li>	<!-- 다음페이지만들때 여기서 M_ON바꿔줘야함 -->
+                    <li><a href="${path1 }/board/list2.do">특징</a></li>
+                    <li><a href="${path1 }/board/list3.do">문법</a></li>
+                </ul>
+            </li>
+            <li><a href="${path1 }/board/list4.do">JAVA Script</a></li>
+            <li><a href="${path1 }/board/list5.do" class="M_on">JDK</a></li>
+        </ul>
+    </div>
+ 
+    <div id="contgr">
+        <div id="path" class="sub_nav"><a href="${path1 }" class="home" id="path_h"><span class="Hidden">home</span></a>
+            <a href="">자바(JAVA)</a>
+            <span class="bold last">JDK 목록</span>
+        </div> 
+            
+            <ul class="cont_t_icon">
+                <li><a title="주소복사" href="" class="link_icon"><span class="Hidden">주소복사</span></a></li>
+                <li><a title="인쇄하기" href="" class="line_none print_icon" ><!-- a title="새창" href="//kostat.go.kr" onclick="window.print(); return false;" class="line_none print_icon" --><span class="Hidden">프린트</span></a></li>        
+            </ul>
+            <h1 class="h1_tit">JDK 공급자</h1>
+    <div class="contents" id="conts">
+		<div id="ct_text">
+			<h2 class="h2_tit">'T'TCK 인증, 'C'기업 무료, '$'유료, 'N'테스트 버전 제공</h2>
+			<p class="mb15"><a href="https://whichjdk.com">https://whichjdk.com</a>에서 자세한 사항(영문)을 볼 수 있다.</p>
+			<ol class="style_decimal">
+				<li>오라클 '$''T': 릴리즈된 최신 버전만 일반 지원 일자 동안 공개 제공, 그 외는 오라클 서비스 구독 고객에게 비공개 제공</li>
+				<li>OpenJDK 'C''N': 릴리즈된 최신 버전만 제공, 그 외에는 소스만 제공. </li>
+				<li>Azul 'C''T': 6 이후 모든 버전 제공, 기업 사용 무료이나 유료 기술지원 제공 </li>
+				<li>AdoptOpenJDK 'C''N': LTS 8, 11 버전 및 최신 버전 제공, 17 이후는 아래 Adoptium 에서 이관하여 Temurin 이라는 배포 명칭으로 제공</li>
+				<li>JBRT: JetBrains 에서 내부적으로 JDK 사용하여 IDE 개발 후, 런타임만 IDE에 포함하여 제공. 공개 제공하지 않는다.</li>
+				<li>Microsoft JDKCTN: LTS 11, 17 제공, 주로 자사 Azure 클라우드 환경을 위한 JDK로 제공</li>
+				<li>BellSoft Liberica JDKCT: Spring 에서 공식 런타임으로 지정한 JDK 로 상기 Zulu 처럼 상업적으로도 무료로 사용 가능하며 기술지원을 유료로 제공한다.</li>
+				<li>IBM Semeru RuntimeT: IBM에서 개발한 JDK로 IBM 클라우드 전용으로 제공한다.</li>
+				<li>Amazon CorrettoCT: 오라클의 라이선스 정책 변경으로 태어난, AWS 에서 사용하기 적합한 JDK로, <br>
+				다른 클라우드와 마찬가지로 클라우드의 JDK 사용 시 라이선스 저촉이 우려되어 이렇게 대형 클라우드사에서 JDK를 배포하고 있다.</li>
+				<li>Alibaba DragonwellT: 알리바바가 만든 JDK로, 알리바바는 생각보다 OpenJDK 기여율이 높은 것으로 알려져 있다.<br> 
+				그렇다 보니 중국에서는 이 JDK 를 통한 자바 개발을 독려 중. 그런 이유가 아니라면 선택지가 많으므로 <br>
+				중국 내 자바 개발 외에는 쓰지 않는 것을 추천한다.</li>
+				<li>SapMachineT: SAP 에서 만든 JDK로, 완전히 SAP 전용이다. 따라서 SAP 개발이 아니라면 볼 일이 없다.</li>
+				<li>Red Hat OpenJDKT: 레드햇에서 만든 JDK로, 레드햇 리눅스 및 그 기반인 CentOS 에서도 <br>
+				구동되어 국내에서도 알게모르게 OpenJDK 설치 시 많이 쓰는 JDK다. 즉, CentOS나 레드햇에서 OpenJDK 를 설치하려고 <br>
+				검색하면 십중팔구 이게 검색되어 설치할 JDK인 셈. 레드햇 기반 리눅스 외에서는 동작하지 않는다. 단, <br>
+				공식 사이트에서 Windows 버전을 추가 제공한다.</li>
+				<li>GraalVMCT$N: 현재 오라클 에서 적극적으로 밀고 있는 JDK로 자바 뿐만 아니라 CLR 같은 방식으로 <br>
+				자바스크립트 등의 폴리글랏 언어로 개발하여 네이티브에 구동할 수 있도록 개발 환경을 제공하는 목표를 가지고 나온 가상 머신. <br>
+				커뮤니티 참여도도 높아서 기대 중이지만, 아직 실제 운영 사례가 존재하지 않고, 자바 생태계에서 이 VM에서 돌아가는 <br>
+				자바 프레임워크 및 라이브러리도 많지 않아 지켜봐야 하는 VM 이지만 지켜볼 가치는 있다. 무료 커뮤니티 에디션은 상용 사용 가능하며, <br>
+				고급 기능을 지원하는 엔터프라이즈 에디션을 판매 중이다.</li>
+			
+			</ol>
+			<h2 class="h2_tit">JVM 언어</h2>
+			<p class="mb15"> 이외에 Java와 똑같이 Java 바이트 코드를 생성하지만 언어 규격이 다른 Scala와 Clojure라는 언어들도 있다.<br> 
+			Scala는 'Scalable Language'에서 따왔는데, Java와 비슷한 부분이 많으며 Java API를 그대로 가져다 쓸 수도 있다. 또한, <br>
+			syntactic sugar가 많고 함수형 프로그래밍의 여러 가지 요소들을 가져와서 Java에 비해 생산성도 높다. <br>
+			일례로 일일이 타입을 명시하지 않고 var x === 1.5와 같이 넣으면 알아서 float 형으로 추론해준다. 또, <br>
+			switch-case의 확장판이라 할 수 있는 패턴 매칭을 지원하며 클로저도 지원된다. <br>
+			단점으로는 이런 고수준-고생산성의 언어에서 많이 볼 수 있듯이 같은 Java 코드에 비해 약간 느리다. <br>
+			Clojure는 Java 플랫폼에서 동작하는 LISP의 방언으로 설계되었으며 Common Lisp와 Scheme과 함께 주요 LISP 방언 중 하나로 꼽힌다. <br>
+			이 언어도 마찬가지로 Java API를 가져다 쓸 수 있다. </p>
+			<div class="wrap_freeline">
+				<dl class="private_info">
+					<dt class="bold">☞ 유명한 JVM 언어 목록 </dt>
+					<dd>
+					<li>Clojure</li>
+					<li>Groovy: Java에 Python, Ruby, SmallTalk 등의 특징을 버무린 동적 타입 언어. 2003년에 등장했다.<br>
+					Gradle 패키지 관리의 기본 언어이다.</li>
+					<li>JRuby: Ruby의 대부분을 Java로 구현한 언어 구현체. 역시 Java와 호환된다.</li>
+					<li>Jython: 파이썬의 Java 구현체. JVM 위에서 동작하며, 따라서 Python 모듈과 함께 Java 클래스, JAR 사용이 가능하다. <br>
+					참고로 로고는 Java의 커피 컨셉과 Python의 뱀 컨셉을 섞어서 커피잔에서 뱀이 연기처럼 피어나오는 로고다(...)</li>
+					<li>Kotlin : IntelliJ IDEA를 만든 JetBrains에서 개발한 JVM 언어. Google I/O 2017에서 안드로이드의 공식 언어로 지정되었다.[8]</li>
+					<li>Rhino: JVM으로 돌아가는 JavaScript 엔진으로, 모질라 재단이 100% Java로 개발했다. <br>
+					JavaScript와 Java의 API를 동시에 사용해 개발할 수 있다. Java 7 에 내장되어 있다.</li>
+					<li>Nashorn: 또 다른 JVM 위에서 돌아가는 JavaScript 엔진이다. Java 8과 함께 등장했다. <br>
+					그러나 Java 11 부터 제거 예정이며, Java 15에서 완전히 제거되었다. 참고로 Nashorn 은 Rhino(코뿔소)의 독일어다. <br>
+					제거 이후는 GraalVM이 대신한다.</li>
+					<li>Scala</li>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+     </div>
+    <footer id="footer" class="footer">
+	<%@ include file="../inc/footer.jsp" %>
+	</footer>
+</body>
+</html>

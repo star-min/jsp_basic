@@ -1,0 +1,17 @@
+package com.ksmstat.dao;
+
+import java.util.List;
+
+import com.ksmstat.dto.EmployDTO;
+import com.ksmstat.dto.NoticeDTO;
+import com.ksmstat.util.PageMaker;
+
+public interface EmployDAO {
+	public List<EmployDTO> noticeList() throws Exception;
+	public List<EmployDTO> noticePageList(PageMaker page) throws Exception;
+	public NoticeDTO noticeRead(int seq) throws Exception;
+	public int noticeCount() throws Exception;
+	public void addNotice(EmployDTO notice) throws Exception; 
+	public void deleteNotice(EmployDTO notice) throws Exception;
+	public void updateNotice(EmployDTO notice) throws Exception;
+}
