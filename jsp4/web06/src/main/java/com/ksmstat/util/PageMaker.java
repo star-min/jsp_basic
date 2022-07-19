@@ -94,34 +94,15 @@ public class PageMaker {
 		}
 	}
 
-	public int getPrevPage() {
-		return prevPage;
-	}
-
-	public int getNextPage() {
-		return nextPage;
-	}
-
-	public int getCurBlock() {
-		return curBlock;
-	}
-
-	public int getStartBlock() {
-		return startBlock;
-	}
-
-	public int getEndBlock() {
-		return endBlock;
-	}
-
-	public void setTotBlock() {
-		//전체 블록 수 계산
+	public int getPrevPage() {		return prevPage;	}
+	public int getNextPage() {		return nextPage;	}
+	public int getCurBlock() {		return curBlock;	}
+	public int getStartBlock() {		return startBlock;	}
+	public int getEndBlock() {		return endBlock;	}
+	public void setTotBlock() { //전체 블록 수 계산
 		this.totBlock = (int) Math.ceil(this.totPage*1.0 / BLOCK_PER_PAGE);
 	}
-	
-	public int getTotBlock() {
-		return totBlock;
-	}
+	public int getTotBlock() {		return totBlock;	}
 
 	public void setPageRange() {
 		//현재 블록의 시작 페이지와 마지막 페이지 번호 계산
@@ -131,29 +112,14 @@ public class PageMaker {
 			this.endPage = this.totPage;
 		}
 	}
-	
-	public int getStartPage() {
-		return startPage;
-	}
-
-	public int getEndPage() {
-		return endPage;
-	}
-
-	public void setTotPage(int count) {
-		//전체 페이지수 계산
+	public int getStartPage() {		return startPage;	}
+	public int getEndPage() {		return endPage;	}
+	public void setTotPage(int count) {		//전체 페이지수 계산
 		this.totPage = (int) Math.ceil(count*1.0 / PAGE_PER_POST);
 	}
 	
-	public int getTotPage() {
-		return this.totPage;
-	}
-
-	
-	public int getPrevBlock() {
-		return prevBlock;
-	}
-
+	public int getTotPage() {		return this.totPage;	}
+	public int getPrevBlock() {		return prevBlock;	}
 	public void setPrevBlock() {
 		this.prevBlock = this.startBlock - 1;
 		if(this.prevBlock <= 1) {
@@ -161,9 +127,7 @@ public class PageMaker {
 		}
 	}
 
-	public int getNextBlock() {
-		return nextBlock;
-	}
+	public int getNextBlock() {		return nextBlock;	}
 
 	public void setNextBlock() {
 		this.nextBlock = this.endBlock + 1;
@@ -172,40 +136,20 @@ public class PageMaker {
 		}
 	}
 
-	public int getBnum() {
-		return bnum;
-	}
-
-	public void setBnum() {
-		this.bnum = PAGE_PER_POST;
-	}
-
-	public int getStartPost() {
-		return startPost;
-	}
-
+	public int getBnum() {		return bnum;	}
+	public void setBnum() {		this.bnum = PAGE_PER_POST;	}
+	public int getStartPost() {		return startPost;	}
 	public void setStartPost() {
 		this.startPost = this.curPage * PAGE_PER_POST - PAGE_PER_POST;
 	}
 	
-	public int getEndPost() {
-		return endPost;
-	}
-
+	public int getEndPost() {		return endPost;	}
 	public void setEndPost() {
 		this.endPost = this.startPost + PAGE_PER_POST;
 		if(this.endPost > this.totPost) { this.endPost = this.totPost; }
 	}
 
-	public int getTotPost() {
-		return totPost;
-	}
-
-	public void setTotPost(int count) {
-		this.totPost = count;
-	}
-
-	public int getCurPage() {
-		return curPage;
-	}
+	public int getTotPost() {		return totPost;	}
+	public void setTotPost(int count) {		this.totPost = count;	}
+	public int getCurPage() {		return curPage;	}
 }

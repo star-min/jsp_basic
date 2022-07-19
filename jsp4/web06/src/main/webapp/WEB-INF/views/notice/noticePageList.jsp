@@ -49,7 +49,7 @@
 							<c:forEach items="${noticePageList}" var="notice" varStatus="status">
 							<tr>
 								<td>${notice.seq }</td>
-								<td>${notice.title }</td>
+								<td><a href="noticeRead.do?seq=${notice.seq}">${notice.title }</a></td>
 								<td>${notice.regdate }</td>
 							</tr>
 							</c:forEach>
@@ -103,9 +103,6 @@
 					</tbody>
 				</table>
 				<script>
-				$(function(){
-					
-				});
 				function list(page){
 					location.href="../notice/pageList.do?curPage="+page;
 				}

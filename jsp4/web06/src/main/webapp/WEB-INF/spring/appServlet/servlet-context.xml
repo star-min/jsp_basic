@@ -22,6 +22,8 @@
 	<resources mapping="/bodoboard/**" location="/WEB-INF/views/bodoboard/" />
 	<resources mapping="/ps/**" location="/WEB-INF/views/ps/" />
 	<resources mapping="/employ/**" location="/WEB-INF/views/employ/" />
+	<resources mapping="/win/**" location="/WEB-INF/views/win/" />
+	<resources mapping="/qna/**" location="/WEB-INF/views/qna/" />
 	
 	<resources mapping="/css/**" location="/WEB-INF/views/css/" />
 	<resources mapping="/img/**" location="/WEB-INF/views/img/" />

@@ -58,4 +58,10 @@ public class MemberDAOImpl implements MemberDAO {
 	public int idCheck(String id) throws Exception {
 		return sqlSession.selectOne("member.idCheck", id);
 	}
+	
+	@Override
+	public MemberDTO loginMember(MemberDTO member) throws Exception {
+		System.out.println("DAO login id : "+member.getId());
+		return sqlSession.selectOne("member.loginMember", member);
+	}
 }

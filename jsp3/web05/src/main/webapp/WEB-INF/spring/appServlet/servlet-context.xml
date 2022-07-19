@@ -29,6 +29,7 @@
 	<resources mapping="/qna/**" location="/WEB-INF/views/qna/" />
 	<resources mapping="/upload/**" location="/WEB-INF/views/upload/" />
 	<resources mapping="/ajax/**" location="/WEB-INF/views/ajax/" />
+	<resources mapping="/test/**" location="/WEB-INF/views/test/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

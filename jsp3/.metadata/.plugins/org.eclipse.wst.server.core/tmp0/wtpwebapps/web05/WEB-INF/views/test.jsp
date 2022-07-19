@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h2>테스트 서버입니다 잘 작동이 되는것 같군요.</h2>
 </body>
 </html>

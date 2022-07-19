@@ -21,7 +21,7 @@
 			<h2 class="tit">공지사항 목록</h2>
 			<c:if test="${member.id == 'admin' }">
 			<div class="row">
-				<a href="addNoticeForm.do" class="btn btn-primary" style="display:inline-block;">글쓰기</a>
+				<a href="addSmartNoticeForm.do" class="btn btn-primary" style="display:inline-block;">글쓰기</a>
 			</div>
 			</c:if>
 			<br><hr>
@@ -40,7 +40,7 @@
 							<c:forEach items="${noticeList}" var="notice" varStatus="status">
 							<tr>
 								<td>${status.count }</td>
-								<td>${notice.title }</td>
+								<td><a href="noticeRead.do?seq=${notice.seq}">${notice.title }</a></td>
 								<td>${notice.regdate }</td>
 							</tr>
 							</c:forEach>

@@ -26,6 +26,11 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
+	public List<NoticeDTO> latestNotice() throws Exception {
+		return noticeDAO.latestNotice();
+	}
+
+	@Override
 	public NoticeDTO noticeRead(int seq) throws Exception {
 		return noticeDAO.noticeRead(seq);
 	}

@@ -87,4 +87,14 @@ public class MemberServiceImpl implements MemberService {
 	public int idCheck(String id) throws Exception {
 		return memberDao.idCheck(id);
 	}
+
+	@Override
+	public boolean loginMemberTest(MemberDTO member) throws Exception {
+		if(member.getId().equals("admin")&& member.getId().equals("1234")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }

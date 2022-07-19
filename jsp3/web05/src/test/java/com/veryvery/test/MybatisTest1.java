@@ -23,15 +23,22 @@ public class MybatisTest1 {
 	@Autowired
 	SqlSessionFactory sqlSessionFactory;
 	
+	@Autowired
+	SqlSession sqlSession; 
+	
 	@Test
 	public void test() {
 		try {
 			SqlSession session = sqlSessionFactory.openSession();
 			Connection con = session.getConnection();
-			System.out.println("Mybatis 연결 성공");
-			System.out.println("DB 연결 성공");
+//			System.out.println("Mybatis 연결 성공");
+//			System.out.println("DB 연결 성공");
+			log.info("성공");
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
+//			System.out.println(e.getMessage());
+			log.info("실패");
 		}
 	}
+	
+	
 }

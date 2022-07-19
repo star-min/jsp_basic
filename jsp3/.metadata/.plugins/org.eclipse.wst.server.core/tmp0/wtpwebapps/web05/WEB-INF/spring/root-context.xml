@@ -12,31 +12,23 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- MySQL 설정 -->
- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="url"
-            value="jdbc:mysql://localhost:3306/veryvery?useSSL=false&amp;serverTimezone=UTC">
-        </property>
-        <property name="username" value="root"/>
-        <property name="password" value="a1234"/>
-    </bean>
-    
-    <!-- sqlSession애서 호출 : SqlSessionFactory 객체 주입 -->
+	<!-- mysql 드라이버 및 접속 정보 설정 : sqlSessionFactory에서 호출 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/veryvery?serverTimezone=UTC" />
+		<property name="username" value="root" />
+		<property name="password" value="a1234" />
+	</bean>	
+	<!-- sqlSession에서 호출 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<!-- mybatis 설정파일의 경로 -->
-		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
-			<!-- mybatis mapper 파일의 경로 -->
-		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+		<property name="configLocation" value="classpath:/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml" />
 	</bean>
-	
-	<!-- DAO에서 호출 : SqlSession 객체 주입 -->
+	<!-- DAO에서 호출 -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
-		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-	
-	<!-- 네이버 이메일 설정 -->
 	
 	<!-- AOP 설정 -->
 <!--  	<context:annotation-config></context:annotation-config>

@@ -26,6 +26,11 @@ public class EmployDAOImpl implements EmployDAO {
 		System.out.println("한 페이지 글 개수 : "+page.getBnum());
 		return sqlSession.selectList("employ.employPageList", page);
 	}
+	
+	@Override
+	public List<EmployDTO> latestEmploy() throws Exception {
+		return sqlSession.selectList("employ.latestEmploy");
+	}
 
 	@Override
 	public EmployDTO employRead(int seq) throws Exception {

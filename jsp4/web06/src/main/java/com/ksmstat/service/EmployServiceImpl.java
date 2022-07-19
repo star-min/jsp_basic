@@ -24,6 +24,11 @@ public class EmployServiceImpl implements EmployService {
 	public List<EmployDTO> employPageList(PageMaker page) throws Exception {
 		return employDAO.employPageList(page);
 	}
+	
+	@Override
+	public List<EmployDTO> latestEmploy() throws Exception {
+		return employDAO.latestEmploy();
+	}
 
 	@Override
 	public EmployDTO employRead(int seq) throws Exception {

@@ -28,6 +28,11 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
+	public List<NoticeDTO> latestNotice() throws Exception {
+		return sqlSession.selectList("notice.latestNotice");
+	}
+
+	@Override
 	public NoticeDTO noticeRead(int seq) throws Exception {
 		return sqlSession.selectOne("notice.noticeRead", seq);
 	}

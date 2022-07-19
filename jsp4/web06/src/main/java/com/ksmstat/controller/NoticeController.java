@@ -70,4 +70,25 @@ public class NoticeController {
 		noticeService.addNotice(notice);
         return "redirect:/notice/list.do";
     }
+	
+	@RequestMapping(value="noticeRead.do", method = RequestMethod.GET)
+    public String noticeRead(@RequestParam("seq") int seq, Model model) throws Exception {
+		NoticeDTO notice = noticeService.noticeRead(seq);
+		model.addAttribute("notice", notice);
+        return "notice/noticeRead";
+    }
+	
+	@RequestMapping(value="updateNotice.do", method = RequestMethod.POST)
+    public String updateNotice(NoticeDTO notice, Model model) throws Exception {
+		noticeService.updateNotice(notice);
+		return "redirect:/notice/list.do";
+    }
+	
+	@RequestMapping(value="deleteNotice.do", method = RequestMethod.GET)
+    public String deleteNotice(@RequestParam("seq") int seq, Model model) throws Exception {
+		NoticeDTO notice = new NoticeDTO();
+		notice.setSeq(seq);
+		noticeService.deleteNotice(notice);
+		return "redirect:/notice/list.do";
+    }
 }

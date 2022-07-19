@@ -33,6 +33,15 @@ insert into notice(title, content, nickname) value ('통계적 자료분석을 �
 insert into notice(title, content, nickname) value ('관리자의 아무말 대잔치 이대로 괜찮은가!', '몰?루', 'admin');
 insert into notice(title, content, nickname) value ('공지합니다.', '공지', 'admin');
 insert into notice(title, content, nickname) value ('인도에서온 시니어 노마드', '최근 부쩍 제가 자바스크립트에 취약하다는것을 깨닫고있습니다 그러던중 즐겨보는 유튜버 노마드코더의 강의를 들어보는것은 어떨까 생각하게 되었습니다.', 'admin');
+insert into notice(title, content, nickname) value ('이곳은 제목칸 입니다2.', '이곳은 컨텐츠 자리입니다2.', 'admin');
+insert into notice(title, content, nickname) value ('절차지향 프로그램에대해.', '함수를 만들고 순차적으로 프로그램이 동작하는방식. 객체나 클래스를 만들필요없이 바로 코딩 가능, 함수호출가능, 프로그램흐름을 쉽게 추적가능', 'admin');
+insert into notice(title, content, nickname) value ('객체지향 프로그램에대해', '각 객체에서 수행할 수 있는 함수랑 필드를 묶어서 하나의 클래스로 만들고 기능을 객체로 만들어 동작하는 방식.', 'admin');
+insert into notice(title, content, nickname) value ('자바는 운영체제가 독립적입니다.', 'JVM위에서 실행되기 때문에 os관계없이 작동합니다.', 'admin');
+insert into notice(title, content, nickname) value ('자바는 컴파일러 언어 입니다.', '컴파일되면 결과를 확인할 수 있고, 코드를 수정한다고 해도 다시 컴파일 할때까지 같은 결과를 나타낸다.', 'admin');
+insert into notice(title, content, nickname) value ('자바 vs 파이썬 그것이 문제로다', '자바는 정적타이핑 언어이고 파이썬은 동적타이핑 언어입니다 제생각에는 파이썬을먼저 배워서 그런지 자바가 불편하다고 생각했으나 스프링부트를 만나고 자바를 왜 사용하는지 이해되기 시작했습니다.', 'admin');
+
+select * from notice order by regdate desc limit 5;
+
 select * from notice order by seq desc, regdate desc;
 commit;
 
@@ -46,8 +55,8 @@ dview varchar(100),
 regdate date default (current_date)
 );
 
-
-
+delete from databank where datano=2;
+select * from databank;
 drop table databank;
 
 -- 보도자료
@@ -116,3 +125,38 @@ insert into employboard(title, region, content, nickname) value ('[강원] 백�
 insert into employboard(title, region, content, nickname) value ('[전남] 목포가 전남이라는 사실', '목포', '전라도는 어렸을적 전주 말고는 가본적이 없네요 식당마다 상다리 휘어지게 차려주는 반찬들이 인상적이었습니다.', 'admin');
 
 drop table employboard;
+
+create table pagemaker (
+bnum int(100) primary key,	/* 임시 번호 : PAGE_PER_POST */
+startPost int(100), /* 현재 페이지의 시작 글 */
+endPost int(100), /* 현재 페이지의 마지막 글 */
+totPost int(100), /* 전체 글의 수 */
+curPage int(100), /* 현재 페이지 번호 */
+startPage int(100), /* 현재 블록의 시작 페이지 번호 */
+endPage int(100), /* 현재 블록의 끝 페이지 번호 */
+prevPage int(100), /* 현재 페이지의 이전 페이지 번호 */
+nextPage int(100), /* 현재 페이지의 다음 페이지 번호 */
+totPage int(100), /* 전체 페이지 수 */
+curBlock int(100), /* 현재 블록 번호 */
+startBlock int(100), /* 현재 블록 시작의 페이지 번호 */
+endBlock int(100), /* 현재 블록 끝의 페이지 번호 */
+prevBlock int(100), /* 이전 블록의 끝 페이지 번호 */ 
+nextBlock int(100), /* 다음 블록의 시작 페이지 번호 */
+totBlock int(100),	/* 전체 블록 수 */
+PAGE_PER_POST int(100), /* 한 페이지당 글의 수 */
+BLOCK_PER_PAGE int(100)
+);
+commit;
+drop table PageMaker;
+
+CREATE TABLE qna(
+    qno         int PRIMARY KEY auto_increment,
+    qtitle       VARCHAR(600) NOT NULL,
+    qcontent     VARCHAR(8000) NOT NULL,
+    qwriter      VARCHAR(40) NOT NULL,
+    qwritedate   DATE  default (current_date),
+    qreadcnt     int DEFAULT 0,
+    qroot        int,
+    qstep        int default 0,
+    qindent      int default 0 
+);

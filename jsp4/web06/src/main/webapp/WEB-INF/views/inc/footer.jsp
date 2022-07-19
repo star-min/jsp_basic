@@ -14,12 +14,24 @@
         <div class="fnb_bg">
                     <div class="fnb_group">
                         <ul class="fg_list">
-                            <li class="fst"><a href="">이용안내</a></li>                
-                            <li><a href=""><span class="c_blue">개인정보처리방침</span></a></li>
-                            <li><a href="">저작권정책</a></li>                  
-                            <li><a href="">누리집개선의견</a></li>
-                            <li class="last"><a href="">찾아오시는길</a></li>
+                            <li class="fst"><a href="" onclick="anne1()">이용안내</a></li>                
+                            <li><a href="" onclick="anne2()"><span class="c_blue">개인정보처리방침</span></a></li>
+                            <li><a href="" onclick="anne3()">저작권정책</a></li>                  
+                            <li><a href="${path1 }/qna/list.do">묻고답하기</a></li>
+                            <li class="last"><a href="${path1 }/gill.do">찾아오시는길</a></li>
                         </ul>
+                        <script>
+                        var win1, win2, win3;
+                        function anne1() {
+                        	win1 = window.open("anne.do", "win4", "width=300, height=200");
+                        }
+                        function anne2() {
+                        	win2 = window.open("anne2.do", "win4", "width=300, height=200");
+                        }
+                        function anne2() {
+                        	win2 = window.open("anne3.do", "win4", "width=300, height=200");
+                        }
+						</script>
                         <div id="siteListBox">
                             <div id="siteList01" class="siteList">
                                 <a href="http://kostat.go.kr/regional/gi/index.action" onclick="kostatServiceDis('kostatagency','open');return false;">소속기관</a>

@@ -52,6 +52,24 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 * @throws Exception 
 	 */
+	
+	@RequestMapping("anne.do")
+	public String anne(Model model) throws Exception{
+		return "win/anne";
+	}
+	@RequestMapping("anne2.do")
+	public String anne2(Model model) throws Exception{
+		return "win/anne2";
+	}
+	@RequestMapping("anne3.do")
+	public String anne3(Model model) throws Exception{
+		return "win/anne3";
+	}
+	@RequestMapping("gill.do")
+	public String gill(Model model) throws Exception{
+		return "win/gill";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -63,16 +81,16 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		List<NoticeDTO> noticeList = noticeService.noticeList();
-		model.addAttribute("noticeList", noticeList);
+		List<NoticeDTO> latestNotice = noticeService.latestNotice();
+		model.addAttribute("latestNotice", latestNotice);
 		
-		List<BodoboardDTO> latestbodo = bodoboardService.bodoList();
+		List<BodoboardDTO> latestbodo = bodoboardService.latestbodo();
 		model.addAttribute("latestbodo", latestbodo);
 		
-		List<PsDTO> latestps = psService.psList();
-		model.addAttribute("latestps", latestps);
+		List<PsDTO> latestPs = psService.latestPs();
+		model.addAttribute("latestPs", latestPs);
 		
-		List<EmployDTO> latestemploy = employService.employList();
+		List<EmployDTO> latestemploy = employService.latestEmploy();
 		model.addAttribute("latestemploy", latestemploy);
 		
 		return "home";

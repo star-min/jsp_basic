@@ -16,6 +16,14 @@
 <link href="${path1 }/css/style_board.css" media="all" rel="stylesheet" type="text/css" />
 <link href="${path1 }/css/reset_new_n.css" media="all" rel="stylesheet" type="text/css" />
 <link href="${path1 }/css/code.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- 필수 플러그인 -->
+<script src="https://code.jquery.com/jquery-latest.js" crossorigin="anonymous"></script>
+<!-- Bootstrap icons-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
 <title> header </title>
 </head>
 <body>

@@ -66,3 +66,10 @@
 7월 18, 2022 18:18:07.13 [10196:3272:0718/181807.133:ERROR:CONSOLE(1)] "Session is unregistering, can't dispatch pending call to DOM.getDocument", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
 7월 18, 2022 18:20:25.48 [10196:3272:0718/182025.488:ERROR:sharing_service.cc(252)] Device un-registration failed with fatal error
 7월 18, 2022 18:20:26.26 [10196:3272:0718/182026.262:ERROR:device_event_log_impl.cc(214)] [18:20:26.262] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+
+7월 19, 2022 09:59:29.27 NEW SESSION
+7월 19, 2022 09:59:29.27 [9428:8380:0719/095929.277:ERROR:device_event_log_impl.cc(214)] [09:59:29.276] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+7월 19, 2022 10:00:27.15 [9428:12832:0719/100027.157:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+7월 19, 2022 14:10:29.11 [9428:8380:0719/141029.113:ERROR:interface_endpoint_client.cc(665)] Message 1 rejected by interface blink.mojom.WidgetHost
+7월 19, 2022 14:14:21.17 [9428:8380:0719/141421.172:ERROR:interface_endpoint_client.cc(665)] Message 0 rejected by interface blink.mojom.WidgetHost
+7월 19, 2022 15:00:27.78 [9428:12532:0719/150027.779:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

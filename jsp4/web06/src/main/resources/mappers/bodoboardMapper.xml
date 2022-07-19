@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="latestbodo" resultType="com.ksmstat.dto.BodoboardDTO">
-		select * from bodoboard order by regdate desc limit 4
+		select * from bodoboard order by regdate desc limit 5
 	</select>
 		
 	<select id="bodoCount" resultType="integer">

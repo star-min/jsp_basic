@@ -176,14 +176,14 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 			<h2 class="tit_s2n" id="hmh2"><a onclick="showHeadLineFunc('haemyung','hmh2','bdh2','haemyungline','newheadline','efh2'); return false;"><span class="r_line">언론보도설명</span></a></h2>
 				<div id="haemyungline"  class="Dis_none">
 					<div class="list_breif">    
-					<c:forEach items="${latestps }" var="ps" varStatus="status" >
+					<c:forEach items="${latestPs }" var="ps" varStatus="status" >
 						<dl id="ph0${status.count }" style="display: block">
 						 	<dt><a href="" target="_self" title="${ps.title }">${ps.title }</a></dt>
 							<dd><a href="" target="_self" title="${ps.title }"><span class="text"> ${ps.content }</span></a><span class="data2">${ps.regdate }</span></dd>								
 						</dl>
 					</c:forEach>
 						<ul>
-						<c:forEach items="${latestps }" var="ps" varStatus="status" >
+						<c:forEach items="${latestPs }" var="ps" varStatus="status" >
 							<li class="on" id="ph0_${status.count }"><a href='' id="phl${status.count }" onfocus="focusHover('haemyung_stop');moveHaemyung('haemyung',${status.count });" onblur="focusOut('haemyung_play');" onmouseover="this.onfocus();" onmouseout="this.onblur();" title="title"><span class="bul">${ps.title }</span></a><span class="date">${ps.regdate }</span></li>
 						</c:forEach>
 						</ul>
@@ -207,11 +207,11 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 				<h2 class="l_tit">공지사항</h2>
 				<div class="line_t">
 				<ul>
-					<c:forEach items="${noticeList }" var="notice" varStatus="status">
+					<c:forEach items="${latestNotice }" var="notice" varStatus="status">
 					<li><a href="">${notice.title }</a><span class="date">${notice.regdate }</span>
 					</c:forEach>
 				</ul>
-				<p class="more"><a href=""  onclick="dummyAndPop1('/portal/korea/kor_nw/6/1/index.board','/dummyURL?bmode=gongGi');return false;"><span class="Hidden">공지사항</span>더보기+</a></p>   
+				<p class="more"><a href="${path1 }/notice/list.do"  onclick="dummyAndPop1('/portal/korea/kor_nw/6/1/index.board','/dummyURL?bmode=gongGi');return false;"><span class="Hidden">공지사항</span>더보기+</a></p>   
 				</div>
 			</div>           
 		</div>            
