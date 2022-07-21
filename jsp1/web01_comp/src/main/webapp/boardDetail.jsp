@@ -49,7 +49,7 @@
 		<tr>
 			<td colspan="3"> 
 				<a href="boardUpdate.jsp" class="btn btn-primary">수정</a>
-				<a href="boardDelete.jsp" class="btn btn-primary">삭제</a>
+				<a href="boardDeletePro.jsp" class="btn btn-primary">삭제</a>
 				<a href="board1.jsp" class="btn btn-primary">목록으로</a>
 			</td>
 		</tr>

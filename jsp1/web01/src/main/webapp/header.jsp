@@ -4,13 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+ <link rel="stylesheet" href="normalize.css">
+ <link rel="stylesheet" href="common.css">
+ <link rel="stylesheet" href="sub_common.css">
+ <script src="https://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body>
 <header id="hd">
             <div class="hd_wrap">
-                <a href="index.html" class="logo">
-                    <img src="./img/art_547244_1624353913.jpg" alt="로고">
+                <a href="index.jsp" class="logo">
+                    <img src="img/art_547244_1624353913.jpg" alt="로고">
                 </a>
                 <nav id="gnb">
                     <ul>
@@ -64,20 +76,19 @@
 					String sname = (String) session.getAttribute("name");
 					if(sid == null){
 				%>
-				<a href="./member/login.jsp">로그인</a>
-				<a href="">방문객</a>
-				<a href="./member/agree.jsp">회원가입</a>
+				<a href="./login.jsp">로그인</a>
+				<a href="./agree.jsp">회원가입</a>
 				<%
 					} else if(!sid.equals("admin")){
 				%>
-				<a href="./member/logout.jsp">로그아웃</a>
-				<a href="./member/mypage.jsp"><%=sname%></a>
-				<a href="./board/board1.jsp">게시판</a>
+				<a href="./logout.jsp">로그아웃</a>
+				<a href="./mypage.jsp"><%=sname%></a>
+				<a href="./board1.jsp">게시판</a>
 				<% } else { %>
-				<a href="./member/mypage.jsp"><%=sname%></a>
-				<a href="./board/board1.jsp">게시판관리</a>
-				<a href="./member/memberList.jsp">회원목록</a>
-				<a href="./member/logout.jsp">로그아웃</a>
+				<a href="./mypage.jsp"><%=sname%></a>
+				<a href="./board1.jsp">게시판관리</a>
+				<a href="./memberList.jsp">회원목록</a>
+				<a href="./logout.jsp">로그아웃</a>
 				<% } %>
 			<span id="msg_a"></span>
 			</p>

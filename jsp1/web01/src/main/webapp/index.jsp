@@ -60,7 +60,7 @@
         text-shadow: 1px 1px 1px #000; padding-left: 40px;} 
     .vs_tit { font-size:43px; line-height: 1.6; font-family: 'jalnan' }
     .vs_com { font-size: 20px; padding-top: 40px;  font-family: 'GangwonEdu'}
-    .btn_group { position:absolute; bottom:138px; left:90px; z-index:40; }
+    .btn_group { position:absolute; bottom:-56px; left:90px; z-index:40; }
     .btn_group button { display:block; width: 80px; height: 80px; float:left; 
     background-color:rgba(255, 255, 255, 0.6); border:none; outline: none; color:#fff; }
     .btn_group button i[class*='xi'] { color: rgb(0, 0, 0); }
@@ -155,9 +155,8 @@
 					String sname = (String) session.getAttribute("name");
 					if(sid == null){
 				%>
-				<a href="./member/login.jsp">로그인</a>
-				<a href="">방문객</a>
-				<a href="./member/agree.jsp">회원가입</a>
+				<a href="login.jsp">로그인</a>
+				<a href="agree.jsp">회원가입</a>
 				<%
 					} else if(!sid.equals("admin")){
 				%>
@@ -168,7 +167,6 @@
 				<a href="mypage.jsp"><%=sname%></a>
 				<a href="board1.jsp">게시판관리</a>
 				<a href="memberList.jsp">회원목록</a>
-				<a href="">상품관리</a>
 				<a href="logout.jsp">로그아웃</a>
 				<% } %>
 			<span id="msg_a"></span>

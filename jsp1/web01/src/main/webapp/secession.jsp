@@ -17,7 +17,7 @@
 		cnt = pstmt.executeUpdate();
 		if(cnt>0){
 			session.invalidate();
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("../index.jsp");
 		} else {
 			out.println("<p>회원탈퇴가 정상적으로 이루어지지 못했습니다.</p>");
 			response.sendRedirect("mypage.jsp");
