@@ -6,8 +6,8 @@
 <%@ page import="kr.go.sokcho.model.MemberVO" %>
 <%@ page import="kr.go.sokcho.model.ReviewVO" %>
 <%
-	String mid = (String) session.getAttribute("mid");
-	String mname = (String) session.getAttribute("mname");
+	String mid = (String) session.getAttribute("sid");
+	String mname = (String) session.getAttribute("sname");
 	if(mid!=null) mid=mid.trim().toLowerCase();
 %>
 <%-- <div class="hd_wrap">
@@ -151,7 +151,7 @@
 </div> --%>
 <header id="hd">
         <div class="hd_wrap">
-            <a href="index.html" class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="./img/logo.png" alt="로고">
             </a>
             <nav id="gnb">
@@ -215,7 +215,6 @@
             <nav id="tnb">
 		<ul>
 		<% if(mid==null) { %>
-			<li><span>손님</span></li>
 			<li><a href="login.jsp">로그인</a></li>
 			<li><a href="agreement.jsp">회원가입</a></li>
 		<% } else if(mid.equals("admin")) { %>
