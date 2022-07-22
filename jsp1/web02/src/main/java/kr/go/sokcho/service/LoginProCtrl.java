@@ -58,18 +58,15 @@ public class LoginProCtrl extends HttpServlet {
 				lid = rs.getString("mid");
 				lpw = rs.getString("mpw");
 				lname = rs.getString("mname");
-				if(lpw.equals(mpw)) {
-					System.out.println("아이디 비밀번호 일치");
+				if(lpw.equals(mpw)) { //아이디와 비밀번호가 일치하면, 세션을 초기화 및 저장
 					session.setAttribute("sid", lid);
 					session.setAttribute("sname", lname);
 					response.sendRedirect("index.jsp");	
-				} else {
-					System.out.println("비밀번호가 일치하지 않습니다.");
+				} else { //아이디만 일치하고, 비밀번호가 일치하지 않으면
 					session.invalidate();
 					response.sendRedirect("login.jsp");	
 				}
-			} else { 
-				System.out.println("아이디가 없습니다.");
+			} else { //없는 아이디이면
 				session.invalidate();
 				response.sendRedirect("login.jsp");
 			}
