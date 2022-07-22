@@ -4,6 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- 스타일 초기화 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<link rel="stylesheet" href="./css/normalize.css">
+<!-- 헤더푸터 스타일 -->
+<link rel="stylesheet" href="./css/common.css">
+
+<!-- 폰트 스타일 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+    font-family: 'swagger';
+    src: url("fonts/SDSwaggerTTF.ttf");
+    font-weight: normal;
+    font-style: normal;}
+    @font-face {
+    font-family: 'jalnan';
+    src: url("fonts/Jalnan.ttf");
+    font-weight: normal;
+    font-style: normal;}
+</style>
 <style>
 /* 스타일 초기화 */
 * { margin: 0; padding: 0; }
