@@ -116,13 +116,14 @@
 
 - #### QNA 기능
 
-  <p align="center"><img src=""/></p>
-
+  <p align="center"><img src="./qnaList.png"/></p>
+  <img src="./qnaInsert.png"/>
+  <img src="./qnaSQL.png"/>
   - **목록 구현 기능**
     1. a태그에 의한 Get방식으로 호출된 경우.
     2. 검색 창(Form)에서 검색방법과 검색어를 입력받아 처리하는 POST방식의 경우.
   - **질문, 답변 기능**
-    1. JsonView를 설정해 Json형태로 데이터를 가져와 Ajax 통신으로 리스트 구성.
+    1. 하나의 테이블을 사용해 질문과 답변기능을 구현.
     2. Toggle을 사용하여 제목을 클릭 시 보이기, 숨기기 기능 구성. 
     3. 리뷰를 등록할 때 CkEditor를 사용하여 DataBase에 저장된 이미지와 내용 출력.
     4. Ajax 및 Jquery로 페이징 구성.
