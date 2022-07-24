@@ -12,11 +12,25 @@
 
 - 참여 인원: Backend 4명
 
+- 개발 도구
+ 
+  - eclipse, visual studio code, spring studio
+
+- 개발 환경
+
+  - Spring 4.0 + Apache Tomcat 9.0 + Oracle11g_XE + Mybatis
+
 - 사용 기술
 
-  - Spring 4.0,  Apache Tomcat 9.0,  BootStrap,  Mybatis
   - Java,  Ajax,  Jquery,  Git,  Spring MVC
-  - Oracle 11g DataBase,  Apache Tomcat 9.0
+
+- 빌드 도구
+
+  - maven
+
+- 테스트 도구
+
+  - jUnit4
 
 - 담당 구현 파트
 
@@ -36,6 +50,11 @@
 
   - 팀원들의 프로젝트 스케줄 관리
 
+- 사용 라이브러리
+
+  - Inject.jar, Servlet.jar, junit.jar, spring-test.jar,
+maven-war.jar, lombok.jar, log4jdbc.jar,
+HikariCP.jar, spring-jdbc.jar
     
 
 # Views
@@ -116,37 +135,32 @@
 
 - #### QNA 기능
 
-  <p align="center"><img src="./qnaList.png"/></p>
+  <p align="center"><img src="./qnaList.png"/>
   <img src="./qnaInsert.png"/>
   <img src="./qnaSQL.png"/>
+  <img src="./qnaSQL2.png"/>
+  </p>
+  
   - **목록 구현 기능**
     1. a태그에 의한 Get방식으로 호출된 경우.
     2. 검색 창(Form)에서 검색방법과 검색어를 입력받아 처리하는 POST방식의 경우.
   - **질문, 답변 기능**
     1. 하나의 테이블을 사용해 질문과 답변기능을 구현.
-    2. Toggle을 사용하여 제목을 클릭 시 보이기, 숨기기 기능 구성. 
-    3. 리뷰를 등록할 때 CkEditor를 사용하여 DataBase에 저장된 이미지와 내용 출력.
-    4. Ajax 및 Jquery로 페이징 구성.
+    2. 테이블의 column만을 사용해 질문과 답변을 나누고 묶어 정렬. 
 
 
 
 
 
-
+<!-- 
 - # Log 설정
 
-  <p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%A0%95.png?raw=true"/></p>
 
-  - **목적 및 설명**
-
-    1. 어떤 순서로 작업이 진행되고 SQL문을 확인 및 오류는 어디서 발생되는지 확인.
-
-    2. Log4j를 이용하였고 SQL 및 MVC패턴의 흐름을 직접적으로 느낄 수 있게   팀원들에게 제공
 
 
        
 
-# Trouble Shooting 
+# Trouble Shooting  -->
 
 
 
@@ -154,9 +168,9 @@
 
 # 스케쥴 및 유즈케이스
 
-<p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EC%8A%A4%EC%BC%80%EC%A5%B4.png?raw=true"/></p>
+<p align="center"><img src="./seulke1.png"/><img src="./seulke2.png"/><img src="./seulke3.png"/></p>
 
+  - **메인페이지와 메뉴 설계**
+    -  제가 담당한 부분을 작성하기전 만들었던 설계들 입니다.
 
-
-<p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EC%9C%A0%EC%A6%88%EC%BC%80%EC%9D%B4%EC%8A%A4.png?raw=true"/></p>
 
