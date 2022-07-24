@@ -56,4 +56,6 @@ CREATE TABLE qna(
     qindent      NUMBER default 0 
 );
 CREATE SEQUENCE seq_qna START WITH 1 INCREMENT BY 1;
+
+select * from qna;
 commit;

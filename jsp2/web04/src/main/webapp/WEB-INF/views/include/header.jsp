@@ -88,8 +88,8 @@
                 <div class="subDepth">
                     <ul id="sub-menu">
                         <li class=""><a href="./board/service.html">안내</a></li>
-                        <li class=""><a href="./board/review.html">치료후기</a></li>
-                        <li class=""><a href="./board/qna.html">QNA(임시)</a></li>
+                        <li class=""><a href="./board/list.do">치료후기</a></li>
+                        <li class=""><a href="./qna/list.do">QNA</a></li>
                     </ul>
                 </div>
             </li>
