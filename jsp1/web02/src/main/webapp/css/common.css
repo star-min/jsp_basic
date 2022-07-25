@@ -34,6 +34,7 @@ li > span { font-size: 18px;}
 #tnb a:hover { color: forestgreen;}
 
 #tnb { float:right; padding-top: 45px; padding-bottom: 20px;}
+#tnb li {float: left;}
 #tnb a { padding-left: 20px; font-size: 0.8em;}
 
 #footer { background: #3e4044; display: block; position: relative; margin-top: 200px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}

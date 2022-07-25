@@ -19,13 +19,13 @@
 </header>
 <div id="content">
 <!-- 이미지를 업로드하기 위해서는 enctype="multipart/form-data" 이어야 실제 이미지가 전송됨  -->
-<form action="AddTourlistCtrl" name="tour_add" method="post" enctype="multipart/form-data">
+<form action="AddTourListCtrl" name="tour_add" method="post" enctype="multipart/form-data">
 	<table class="tb1">
 		<tbody>
 			<tr>
 				<th>형태</th>
 				<td>
-					<select name="pid1" id="pid1" onchange="listData(this)" required>
+					<select name="pid" id="pid" onchange="listData(this)" required>
 						<option value="">선택안함</option>
 						<option value="A">관광지</option>
 						<option value="B">문화축제</option>
@@ -37,14 +37,6 @@
 						<option value="H">기타</option>
 					</select>
 					<input type="hidden" name="ptype" id="ptype" />
-				</td>
-			</tr>
-			<tr>
-				<th>세부종류</th>
-				<td>
-					<select name="pid2" id="pid2">
-
-					</select>
 				</td>
 			</tr>
 			<tr>

@@ -40,7 +40,7 @@ font-size:14px; }
 		//해당VO의 객체 선언
 		TourlistVO vo = tour.get(i);	
 %>
-		<tr><td><%=vo.getPno() %></td><td><%=vo.getPid() %></td><td><%=vo.getPname() %></td><td><%=vo.getPtype() %></td>
+		<tr><td><%=vo.getPno() %></td><td><%=vo.getPid() %></td><td><a href="GetTourCtrl?pid=<%=vo.getPid() %>"><%=vo.getPname() %></a></td><td><%=vo.getPtype() %></td>
 		<td><p class="coment"><%=vo.getPcoment() %></p></td>
 		<td class="img_data">
 		<% if(vo.getPimg1()!=null) { %>

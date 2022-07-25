@@ -37,7 +37,7 @@ public class AddTourListCtrl extends HttpServlet {
 		String file1, file2, file3, file4;
 		String filename1 = "", filename2 = "", filename3="", filename4="";
 		String pat = "./tourlist/";  //업로드된 폴더
-		String realFolder = "tourlist"; //관리자가 업로드할 이미지가 있는 폴더
+		String realFolder = "D:\\ksm\\jsp_basic\\web02\\jsp1\\web02\\src\\main\\webapp\\tourlist"; //관리자가 업로드할 이미지가 있는 폴더
 		String saveFolder = "tourlist"; //실제 업로드된 폴더 
 		String encType = "UTF-8";
 		int maxSize = 5*1024*1024;  //최대 5MB 설정
@@ -48,7 +48,7 @@ public class AddTourListCtrl extends HttpServlet {
 			
 			MultipartRequest multi = null;
 			multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
-			pid = multi.getParameter("pid1") + multi.getParameter("pid2");
+			pid = multi.getParameter("pid");
 			pname = multi.getParameter("pname");
 			ptype = multi.getParameter("ptype");
 			pcoment = multi.getParameter("pcoment");

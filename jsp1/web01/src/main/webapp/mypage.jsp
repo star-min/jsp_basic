@@ -29,7 +29,7 @@
 		<%@ include file="header.jsp" %>
 	</div>
 </header>
-<div class="content" class="panel-body">
+<div class="content" class="panel-body" style="margin-left: 200px; margin-right: 200px; margin-top: 150px;" >
 	<div class="container-fluid">
 		<h2>회원 정보 보기</h2>
 <%

@@ -25,7 +25,7 @@
 			if(upw.equals(pw) || upw==pw){ //로그인 성공
 				session.setAttribute("uid", id);
 				session.setAttribute("name", name);
-				response.sendRedirect("../index.jsp");
+				response.sendRedirect("index.jsp");
 			} else {
 				//비밀번호가 틀렸을 경우
 				response.sendRedirect("login.jsp");

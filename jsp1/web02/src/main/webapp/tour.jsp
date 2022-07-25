@@ -31,7 +31,7 @@ font-size:14px; }
 	<%@ include file="hd.jsp" %>
 </header>
 <div id="content">
-<form action="/web02/EditMemberCtrl" method="post">
+<form action="EditTourListCtrl" method="post">
 	<table class="tb2">
 		<tbody>
 	<%
@@ -39,7 +39,7 @@ font-size:14px; }
 	%>
 			<tr>
 				<th>번호</th>
-				<td><input type="text" name="ppno" value="<%=vo.getPno() %>" readonly></td>
+				<td><input type="text" name="pno" value="<%=vo.getPno() %>" readonly></td>
 			</tr>
 			<tr>
 				<th>방문지코드</th>	

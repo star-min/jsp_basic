@@ -5,7 +5,7 @@
 <%@ page import="kr.go.sokcho.model.MemberVO" %>
 <%
 	//보내진 customList 객체를 받아 customer로 분리하여 출력
-	MemberVO cus = (MemberVO) request.getAttribute("cus");
+	MemberVO cus = (MemberVO) request.getAttribute("mem");
 %>
 <!DOCTYPE html>
 <html>

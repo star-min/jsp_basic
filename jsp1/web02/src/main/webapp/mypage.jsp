@@ -7,7 +7,7 @@
 <%@ page import="kr.go.sokcho.model.ReviewVO" %>
 <%
 	//보내진 customList 객체를 받아 customer로 분리하여 출력
-	MemberVO cus = (MemberVO) request.getAttribute("cus");
+	MemberVO cus = (MemberVO) request.getAttribute("mem");
 %>
 <!DOCTYPE html>
 <html>
@@ -89,9 +89,9 @@
 			Class.forName("oracle.jdbc.OracleDriver");
 			conn2 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
 			sql2 = "select * from review where rid=?";
-			pstmt2 = conn.prepareStatement(sql2);
+			pstmt2 = conn2.prepareStatement(sql2);
 			pstmt2.setString(1, mid);
-			rs2 = pstmt.executeQuery();
+			rs2 = pstmt2.executeQuery();
 			while(rs2.next()) {			
 					
 %>

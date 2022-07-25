@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.veryvery.dao.MemberDAO;
 import com.veryvery.dto.MemberDTO;
 
+
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
@@ -27,6 +28,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Inject
 	BCryptPasswordEncoder pwdEncoder;
+	
 	
 	@Override
 	public List<MemberDTO> memberList() throws Exception {

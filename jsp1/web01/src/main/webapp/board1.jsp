@@ -28,7 +28,7 @@ $(document).ready( function () {
 	</div>
 </header>
 </div>
-<div class="content" class="panel-body">
+<div class="content" class="panel-body" style="margin-left: 200px; margin-right: 200px;">
 	<div class="container-fluid">
 		<h2>게시판글보기</h2>
 		<table class="table" id="myTable">

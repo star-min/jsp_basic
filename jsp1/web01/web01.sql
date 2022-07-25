@@ -12,6 +12,7 @@ create table member(
 insert into member values ('admin','1234','김성민','010-1004-1004','일산 고양대로 956-3');
 
 select * from member;
+select * from board1;
 
 update member set pw='4321', phone='010-1101-1111', address='천국 1004동' where id='admin';
 

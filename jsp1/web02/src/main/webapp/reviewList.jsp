@@ -6,7 +6,7 @@
 <%@ page import="kr.go.sokcho.model.*" %>
 <%
 	//Ctrl에서 보내온 list 객체를 받아 해당 VO 객체로 분리하여 출력
-	List<ReviewVO> legeno = (ArrayList<ReviewVO>) request.getAttribute("legeno");
+	List<ReviewVO> regeno = (ArrayList<ReviewVO>) request.getAttribute("regeno");
 %>    
 <!DOCTYPE html>
 <html>
@@ -36,9 +36,9 @@ font-size:14px; }
 	</thead>
 	<tbody>
 <%
-	for(int i=0;i<legeno.size();i++){
+	for(int i=0;i<regeno.size();i++){
 		//해당VO의 객체 선언
-		ReviewVO vo = legeno.get(i);
+		ReviewVO vo = regeno.get(i);
 %>
 		<tr>
 			<td><%=vo.getRno() %></td>

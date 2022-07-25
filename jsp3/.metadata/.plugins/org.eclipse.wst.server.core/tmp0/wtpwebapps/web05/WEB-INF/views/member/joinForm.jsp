@@ -117,7 +117,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" class="btn btn-writer" value="회원가입">
+						<input type="submit" class="btn btn-writer" id="submit" name="submit" value="회원가입">
 						<input type="reset" class="btn btn-primary" value="취소">
 					</td>
 				</tr>	
@@ -165,6 +165,12 @@
 			}
 		}).open();
 	}
+	
+	$(function () {
+		$("submit").click(function() {
+			alert("회원가입을 축하드립니다.");
+		});
+	});
 	</script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </article>
