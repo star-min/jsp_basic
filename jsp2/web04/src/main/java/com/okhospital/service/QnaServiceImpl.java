@@ -14,6 +14,7 @@ public class QnaServiceImpl implements QnaService {
 	
 	@Autowired
 	QnaDAO qnaDAO;
+	
 
 	@Override
 	public List<QnaDTO> qnaList(SearchDTO sdto) throws Exception {

@@ -61,7 +61,7 @@ HikariCP.jar, spring-jdbc.jar
 
 - **메인**
 
-  <p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/stu_main.gif?raw=true"/></p>
+  <p align="center"><img src="./main.png"/></p>
 
 
 
@@ -70,16 +70,23 @@ HikariCP.jar, spring-jdbc.jar
 
 - **게시판 카테고리** 
 
-  <p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/stu_cate.gif?raw=true"/></p>
+  <p align="center"><img src="./board.png"/></p>
 
 
 
 
 
-- **상품 상세**
+- **QNA 카테고리**
 
-  <p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/stu_detail.gif?raw=true"/></p>
+  <p align="center"><img src="./QNA.png"/></p>
 
+
+
+
+
+- **보험제출용서류 카테고리**
+
+  <p align="center"><img src="./bank.png"/></p>
 
 
 
@@ -88,13 +95,15 @@ HikariCP.jar, spring-jdbc.jar
 
 - #### 메인화면
 
-  <p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4.png?raw=true"/></p>
+  <p align="center"><img src="./main1.jpg"/></p>
 
   - **메뉴설정**
 
     1. Header, Menu, Footer 로 구성된 index 페이지
 
     2. 게시판에 등록되는 글중 최신글 5개를 메인페이지에 출력.
+
+    3. jQuery 를 이용한 슬라이더 를 빼면 특별한것은 없습니다.
 
 
   - **서브메뉴**
@@ -110,14 +119,18 @@ HikariCP.jar, spring-jdbc.jar
 
 - #### 회원 기능
 
-  <img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%99%94%EB%A9%B4.png?raw=true" width="370" /><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%99%94%EB%A9%B42.png?raw=true" width="370"/>
+    <p align="center"><img src="./mypage.png"/></p>
 
-  <img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%99%94%EB%A9%B41.png?raw=true" width="370" />
+  <img src="./idck.jpg" width="370" />
+
+  <img src="./idck2.jpg" width="370" />
 
   
 
   - **로그인, 회원가입, 회원목록, 마이페이지** 
     1. Spring MVC 를 이용했기에 Mapper 에서 SQL구문을 Controller에서 DAO와 Service에서 가져온 데이터를 View로 맵핑해주고 필요하다면 세션에 값을 저장하거나(로그인 등) DB에 저장할수없는 값을 주고받습니다.
+
+    2. 스크립트 부분은 View인 joinForm 의 idCheck 부분 의 스크립트 입니다 아래 Controller에서 model을 이용해 값을 주고받을수 있도록 해놨습니다.
 
  
 
@@ -125,7 +138,6 @@ HikariCP.jar, spring-jdbc.jar
 
 - #### 게시판 기능
 
-  <p align="center"><img src="https://github.com/77kkyu/Style_Is_You/blob/master/src/main/webapp/file/%EB%94%94%ED%85%8C%EC%9D%BC1.png?raw=true"/></p>
 
   - **글쓰기, 글보기, 글목록, 글수정, 글삭제**
 
@@ -152,16 +164,21 @@ HikariCP.jar, spring-jdbc.jar
 
 
 
-<!-- 
-- # Log 설정
+
+<!-- - # Log 설정 -->
 
 
 
 
        
 
-# Trouble Shooting  -->
+# Trouble Shooting 
 
+  <p align="center"><img src="./err1.png"/></p>
+  <p align="center"><img src="./err.png"/></p>
+
+    1. Servlet.init() 호출 예외 오류입니다 경험상 @Autowired 라던가 @Controller, @Service, @Repository 같은 어노테이션의 문제인줄 알았는데
+    import를 잘못한 경우였습니다 주로 사용하는 라이브러리와 Spring 의 Maven, Gradle 에 대해 공부하게 되었던 값진 경험 이었습니다.
 
 
 

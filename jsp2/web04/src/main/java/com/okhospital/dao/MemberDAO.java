@@ -1,6 +1,5 @@
 package com.okhospital.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import com.okhospital.dto.MemberDTO;

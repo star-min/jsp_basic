@@ -46,6 +46,9 @@
 <header id="header" class="header" name="header" >
 	<%@ include file="../include/header.jsp" %>
 </header>
+<div style="padding-top: 100px">
+	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
+</div>
 <article id="con" class="content">
 <div class="table_lst_wrap">
 <h2>자료 목록</h2>

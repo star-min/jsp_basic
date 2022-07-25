@@ -47,10 +47,10 @@
 </header>
 <article id="con" class="content">
 <div class="table_lst_wrap">
-<div>
+<div style="padding-top: 100px">
 	<img alt="${path1 }/images/bg_sub_top1.jpg" src="${path1 }/images/lolomain_img.jpg" style=" width: 100%">
 </div>
-<h2 class="page_tit">글 목록</h2>
+<h2 class="page_tit">후기 목록</h2>
 		<form method="post" action="${path1 }" class="frm_fr">
 			<table class="table" id="search_tb">
 				<tr>
@@ -87,7 +87,7 @@
 		<c:if test="${sid=='admin' }">
 			<tr>
 				<td colspan="4">
-					<a href="${path1 }/board/write_form.do" class="btn btn-writer" style="width:70px">글 등록</a>
+					<a href="${path1 }/board/write_form.do" class="btn btn-writer" style="width:70px">후기 등록</a>
 				</td>
 			</tr>
 			</c:if>
