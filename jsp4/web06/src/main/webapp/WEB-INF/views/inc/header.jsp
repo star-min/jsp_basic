@@ -16,7 +16,8 @@
 <link href="${path1 }/css/style_board.css" media="all" rel="stylesheet" type="text/css" />
 <link href="${path1 }/css/reset_new_n.css" media="all" rel="stylesheet" type="text/css" />
 <link href="${path1 }/css/code.css" media="all" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="${path1 }/inc/datatables.min.css" />
+<script src="${path1 }/inc/datatables.min.js"></script>
 <!-- 필수 플러그인 -->
 <script src="https://code.jquery.com/jquery-latest.js" crossorigin="anonymous"></script>
 <!-- Bootstrap icons-->

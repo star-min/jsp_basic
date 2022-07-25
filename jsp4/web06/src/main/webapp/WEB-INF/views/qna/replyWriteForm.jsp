@@ -14,6 +14,7 @@
 <title>답변하기</title>
 <link rel="stylesheet" href="${path1 }/include/reset.css">
 <link rel="stylesheet" href="${path1 }/include/common.css">
+<link rel="stylesheet" href="qna.css">
 </head>
 <body>
 <div class="container">

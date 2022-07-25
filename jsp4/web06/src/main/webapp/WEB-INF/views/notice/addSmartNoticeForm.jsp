@@ -6,10 +6,12 @@
 <meta charset="UTF-8">
 <title>공지사항 글쓰기</title>
 <script src="../ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="${path1 }/css/bootstrap.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 <body>
 <%@ include file="../inc/header.jsp" %>
-<div id="contents" class="contents">
+<div id="contents" class="contents" style="margin-left: 500px; margin-right: 500px; margin-top: 100px;">
 	<div class="container px-4 px-lg-5 mt-5">
 		<div class="row">
 			<br><br>		

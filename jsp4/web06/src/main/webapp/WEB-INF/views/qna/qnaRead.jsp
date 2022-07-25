@@ -61,7 +61,8 @@
 				<tr>
 					<th><label for="qwriter">작성자</label></th>
 					<td>
-						<input type="text" name="qwriter" id="qwriter" size="40" class="single40" value="${qna.qwriter }" readonly>
+						<input type="hidden" name="qwriter" id="qwriter" size="40" class="single40" value="${qna.qwriter }" readonly>
+						<span>${qna.qwriter }</span>
 						<input type="hidden" name="qroot" value="${qna.qno }" />
 						<input type="hidden" name="qstep" value="0" />
 						<input type="hidden" name="qindent" value="0" />

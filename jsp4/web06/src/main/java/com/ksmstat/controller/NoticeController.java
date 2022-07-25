@@ -16,7 +16,7 @@ import com.ksmstat.service.NoticeService;
 import com.ksmstat.util.PageMaker;
 
 @Controller
-@RequestMapping("/notice/*")
+@RequestMapping("/notice/")
 public class NoticeController {
 	
 	@Autowired

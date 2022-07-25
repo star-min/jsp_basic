@@ -15,7 +15,7 @@ import com.ksmstat.dto.SearchDTO;
 import com.ksmstat.service.QnaService;
 
 @Controller
-@RequestMapping("/qna/*")
+@RequestMapping("/qna/")
 public class QnaController {
 	//private static final Logger logger = LoggerFactory.getLogger(QnaController.class);
 	//다음 서비스 작업 객체를 주입

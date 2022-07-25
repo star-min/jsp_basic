@@ -119,7 +119,7 @@
 				<tr>
 					<td colspan="2">
 						<input type="submit" class="btn btn-writer" value="회원가입">
-						<input type="reset" class="btn btn-primary" value="취소">
+						<input type="text" class="btn btn-primary" value="취소" onclick="ok()">
 					</td>
 				</tr>	
 			</tbody>
@@ -127,6 +127,9 @@
 	</div>
 	</form>
 	<script>
+	function ok(){
+		alert("회원가입이 완료되셧습니다!");
+	}
 	function idCheck() {
 		var uid = document.join_form.userid.value;
 		if(uid==""){

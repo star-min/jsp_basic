@@ -52,7 +52,7 @@
       <form action="${path1 }/member/signin.do" method="post" name="loginForm" class="login-form">
         <input type="text" placeholder="userid" name="userid" id="userid" required />
         <input type="password" placeholder="password" name="userpw" id="userpw" required />
-        <button type="submit">login</button>
+        <button type="submit" onclick="ok()">login</button>
         <p class="message">아이디가 없으십니까? <a href="./agreement.html">회원가입</a></p>
       </form>
     </div>
@@ -60,6 +60,9 @@
   </div>
 </div>
 	<script>
+	function ok(){
+		alert("로그인이 완료되셧습니다!");
+	}
 	function loginFaiure() {
 		alert("로그인 실패");
 	}

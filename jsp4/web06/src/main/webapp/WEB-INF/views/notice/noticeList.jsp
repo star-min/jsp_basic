@@ -9,12 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 목록</title>
+<link rel="stylesheet" href="${path1 }/databank/common.css">
 <link rel="stylesheet" href="../inc/datatables.min.css" />
 <script src="../inc/datatables.min.js"></script>
 </head>
 <body>
 <%@ include file="../inc/header.jsp" %>
-<div id="contents" class="contents">
+<div id="contents" class="contents" >
 	<div class="container px-4 px-lg-5 mt-5">
 		<div class="row">
 			<br><br>		

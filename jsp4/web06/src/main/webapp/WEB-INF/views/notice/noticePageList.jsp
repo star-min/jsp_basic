@@ -20,6 +20,8 @@
 .paging td { text-align:center; line-height:80px; }
 .paging .item1, .paging .item2, .paging .item4, .paging .item5 { width:12%; }
 .paging .item3 { width:50%; }
+.container { margin-left: 800px; margin-right: 850px; margin-top: 150px; text-align: center;}
+
 </style>
 </head>
 <body>
@@ -28,11 +30,8 @@
 	<div class="container px-4 px-lg-5 mt-5">
 		<div class="row">
 			<br><br>		
-			<h2 class="tit">공지사항 목록</h2>
+			<h2 class="tit" style="font-size: 50px; margin-bottom: 100px">공지사항 목록</h2>
 			<c:if test="${member.id == 'admin' }">
-			<div class="row">
-				<a href="addSmartNoticeForm.do" class="btn btn-primary" style="display:inline-block;">글쓰기</a>
-			</div>
 			</c:if>
 			<div class="panel-body">
 				<table class="table responsive" id="myTable">
@@ -102,6 +101,9 @@
 					</tr>
 					</tbody>
 				</table>
+				<div class="row">
+				<a href="addSmartNoticeForm.do" class="btn btn-primary" style="display:inline-block;">글쓰기</a>
+			</div>
 				<script>
 				function list(page){
 					location.href="../notice/pageList.do?curPage="+page;

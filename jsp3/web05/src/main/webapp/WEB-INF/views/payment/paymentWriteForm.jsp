@@ -52,13 +52,14 @@
 					<tr>
 						<th>가격</th>
 						<td>
-							<input type="text" id="gprice" name="gprice" value="${goods.gprice }" readonly>
+							<input type="hidden" id="gprice" name="gprice" value="${goods.gprice }" readonly>
+							<span id="gprice" name="gprice">${goods.gprice }</span>
 						</td>
 					</tr>
 					<tr>
 						<th>총액</th>
 						<td>
-							<input type="text" id="money" name="money"  >
+							<input type="text" id="money" name="money" readonly >
 
 						</td>
 					</tr>

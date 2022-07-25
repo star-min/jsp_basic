@@ -112,7 +112,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" class="btn btn-writer" value="회원정보수정">
+						<input type="submit" class="btn btn-writer" value="회원정보수정" onclick="ok()">
 						<input type="reset" class="btn btn-primary" value="취소">
 					</td>
 				</tr>	
@@ -129,6 +129,9 @@
 	}
 	</script>
 	<script>
+	function ok(){
+		alert("회원 정보 수정이 완료되셧습니다!");
+	}
 	function findAddr() {
 		new daum.Postcode({
 			oncomplete: function(data) {

@@ -70,8 +70,8 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 	</li>
     <li class="mn_type03" id="gnb4" ><a href="" >통계청소개</a>
 	  	<ul class="Hidden">
-			<li id="gnb4_1"><a href="${path1 }/notice/list.do">공지사항</a></li>
-			<li id="gnb4_2"><a href="">QNA</a></li>
+			<li id="gnb4_1"><a href="${path1 }/notice/pageList.do?curPage=1">공지사항</a></li>
+			<li id="gnb4_2"><a href="${path1 }/qna/list.do">QNA</a></li>
 			<li id="gnb4_3"><a href="${path1 }/databank/list.do">자료제출</a></li>    
       	</ul>
 	</li>
@@ -211,7 +211,7 @@ font-weight:500; color:#343434; text-align:center; box-sizing:border-box;}
 					<li><a href="">${notice.title }</a><span class="date">${notice.regdate }</span>
 					</c:forEach>
 				</ul>
-				<p class="more"><a href="${path1 }/notice/list.do"  onclick="dummyAndPop1('/portal/korea/kor_nw/6/1/index.board','/dummyURL?bmode=gongGi');return false;"><span class="Hidden">공지사항</span>더보기+</a></p>   
+				<p class="more"><a href="${path1 }/notice/pageList.do?curPage=1"><span class="Hidden">공지사항</span>더보기+</a></p>   
 				</div>
 			</div>           
 		</div>            

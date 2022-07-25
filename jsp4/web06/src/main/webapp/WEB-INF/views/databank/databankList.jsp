@@ -19,6 +19,7 @@
 	<%@ include file="../inc/header.jsp" %>
 </header>
 <article id="con" class="content">
+
 <h2 class="page_tit">자료실 목록</h2>
 <div class="table_lst_wrap">
 	<table class="table_lst" id="myTable">
@@ -48,6 +49,7 @@
 		</tbody>
 	</table>
 </div>
+
 </article>
 </div>
 <footer id="footer" class="footer">
