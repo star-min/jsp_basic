@@ -11,7 +11,7 @@
 
 - 개발 도구
  
-  - eclipse, visual studio code, spring studio
+  - eclipse, visual studio code, spring studio, bootstrap
 
 - 개발 환경
 
@@ -35,16 +35,6 @@
   - maven-war.jar, lombok.jar, log4jdbc.jar,
   - HikariCP.jar, spring-jdbc.jar
 
-
-# View
-## 메인화면 - 최신공지 5개, 최신리뷰 5개 송출, 상품은 텐트만 구현
-## 회원 - 로그인,로그아웃,회원가입,정보수정,회원목록
-## 공지사항 - 목록, 상세, 수정, 작성, 삭제
-## 리뷰 - 목록, 상세, 수정, 작성, 삭제
-## QNA - 목록, 상세, 답글상세, 작성, 답글작성, 수정, 삭제
-## 상품 - 목록, 카테고리별 목록, 작성, 수정, 삭제
-## 장바구니 - 장바구니 넣기, 장바구니 물품 구매, 장바구니 내 상품 상세, 장바구니 내 상품 상세에서 구매, 삭제
-## 결제 - 결제, 상세, 배송지 수정, 결제목록, 송장등록(관리자), 결제취소
 
 # Views
 
@@ -84,21 +74,15 @@
 
 - #### 메인화면
 
-  <p align="center"><img src="./swiper.jpg"/></p>
+  <p align="center"><img src="./notice2.png"/></p>
+  <p align="center"><img src="./notice3.png"/></p>
 
   - **메뉴설정**
 
-    1. Header, Main, Footer 로 구성된 index 페이지.
+    1. 메인메뉴에선 4개의 게시판의 최신글을 5개까지 출력하는 기능을 넣었습니다.
 
-    2. 최신 공지사항 과 리뷰 5개를 메인화면에 출력.
+    2. HomeController 에서 Service.List 들을 불러와 뿌려준다면 전역적으로 값을 뿌릴수 있지않을까 생각했습니다.
 
-    3. 메인화면의 슬라이더를 조작하는 간단한 swiper.
-
-
-  - **특이사항**
-
-    1. 해당 프로젝트는 1주일의 시간동안 진행한 1인 프로젝트입니다 하나부터 열까지 순전히 제 힘으로 만들어져서 애착이 갑니다.
-      또한 스프링의 프레임워크와 MVC 등 지금껏 배운것을 활용해볼수있는 좋은 기회였습니다 대표적으로 ajax와 io.file, loader 등
 
 
 
@@ -109,16 +93,15 @@
 
 - #### 회원 기능
 
-    <p align="center"><img src="./daum.jpg"/></p>
-    <p align="center"><img src="./daum2.jpg"/></p>
-
-
-  
+  <p align="center"><img src="./pwd.png"/></p>
 
   - **로그인, 회원가입, 회원목록, 마이페이지** 
-    1. Spring MVC 를 이용했기에 Mapper 에서 SQL구문을 Controller에서 DAO와 Service에서 가져온 데이터를 View로 맵핑해주고 필요하다면 세션에 값을 저장하거나(로그인 등) DB에 저장할수없는 값을 주고받습니다.
 
-    2. 주소입력을 다음의 postcode 기능을 이용해 쉽게 작성할수 있도록 하였습니다.
+    1. 통계청을 모티브로 한 사이트에 왜 회원기능이 있나? 라고 생각하실수도 있습니다.
+
+    2. 그렇다고 이곳에 회원기능을 넣지 않으면 이 프로젝트만 확인하신 분께선 " 이녀석 회원기능은 기본인데 안넣었네" 라고 생각하실까봐 넣었습니다.
+
+    3. security 라이브러리의 BCryptPasswordEncoder 를 import시켜 암호화를 사용중입니다.
 
  
 
@@ -126,19 +109,26 @@
 
 - #### 게시판 기능
 
-  <p align="center"><img src="./review1.png"/></p>
+  <p align="center"><img src="./list.png"/></p>
+  <p align="center"><img src="./ck.png"/></p>
+  <p align="center"><img src="./notice1.png"/></p>
 
-  - **글쓰기, 글보기, 글목록, 글수정, 글삭제**
+  - **(ckEditor)글쓰기, 글보기, (PageMaker)글목록, 글수정, 글삭제**
 
-    1. Spring MVC 를 사용한 특별할것 없는 평범한 게시판입니다 해당 프로젝트에서는 후기게시판으로 사용하고있습니다 기능구성은 평범하게 List, Read, insert, update, delete 등 이있으며 그외로는 Form 으로 맵핑해주는 정도 입니다.
+    1. list 에서  PageMaker를 사용해 글목록에 10개 묶음씩 페이지를 나눴습니다 해당 게시판의
+    Controller에서 값을 변경시켜 묶음이나 페이지의 개수등을 설정할수있습니다.
+
+    2. insert form은 ckEditor를 이용해 좀더 그럴듯하게 만들어 봤습니다.
+
+    3. 이번 프로젝트에서 가장 힘을 써야겠다고 생각한 부분인 게시판이지만 pageMaker와 ckEditor 를 이용해 편리하게 작성했습니다 하지만 100% 전부 사용 할 수 있지는 않습니다 이번 프로젝트에선 이해하는데 그쳣지만 좀더 공부해 제것으로 만들 필요가 있습니다.
 
 ------   
 
 - #### QNA 기능
 
-  <p align="center"><img src="./qna1.png"/>
-  <img src="./qna2.jpg"/>
-  </p>
+  <p align="center"><img src="./qnaList2.png"/></p>
+  <p align="center"><img src="./qnaRe.png"/></p>
+  <p align="center"><img src="./qnaRead.png"/></p>
   
   - **목록 구현 기능**
 
