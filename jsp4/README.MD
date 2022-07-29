@@ -79,7 +79,7 @@
 
   - **메뉴설정**
 
-    1. 메인메뉴에선 4개의 게시판의 최신글을 5개까지 출력하는 기능을 넣었습니다.
+    1. 메인메뉴에선 order by 를 작성 날짜로 limit를 5개 까지 허용하는 SQL문을 사용해 4개의 게시판이 최신글을 5개까지 출력하는 기능을 넣었습니다.
 
     2. HomeController 에서 Service.List 들을 불러와 뿌려준다면 전역적으로 값을 뿌릴수 있지않을까 생각했습니다.
 
@@ -146,50 +146,16 @@
 
 ------
 
-- #### 상품 기능
+- #### 자료등록 기능
 
-  <p align="center"><img src="./goods0.jpg"/></p>
-  <p align="center"><img src="./goods1.png"/></p>
+  <p align="center"><img src="./database"/></p>
+  <p align="center"><img src="./database2"/></p>
+  
+  - **자료등록, 상세보기**
 
-  - **텐트 서브메뉴만 구성 되어 있음**
+    1. a태그에 의한 Get방식으로 호출된 경우.
 
-    1. 서브메뉴의 텐트상품의 종류는 리스트에서 카테고리별로 페이지를 열수있도록 했습니다.
-
-    2. 상품을 클릭해 상세보기로 보시면 장바구니에 담기 와 바로 결제하기 가 있습니다.
-
-
-------
-
-- #### 장바구니 기능
-
-  <p align="center"><img src="./basket.jpg"/></p>
-  <p align="center"><img src="./basket2.jpg"/></p>
-
-  - **장바구니 내 상품 상세보기, 상품 구매하기 기능을 수행**
-
-    1. 장바구니 내의 상품 이름을 클릭하시면 해당상품의 정보가 뜨게되는데 SQL 문의 INNER JOIN 을 사용해 goods의 상품과 basket의 등록번호를 묶어 가져올수 있도록 했습니다.
-
-
-
-
-------
-
-- #### 결제 기능
-
-  <p align="center"><img src="./pay.jpg"/></p>
-  <p align="center"><img src="./pay2.png"/></p>
-  <p align="center"><img src="./pay3.png"/></p>
-  <p align="center"><img src="./pay4.png"/></p>
-
-  - **결제와 관리자의 송장등록**
-
-    1. 결제페이지입니다 수량 옆에 확정 버튼이 있는 이유는 제가 jQuery를 잘 모를때 작성을 한것이라 Java Script의 onclick 기능을 사용해서
-    만들었습니다 지금이라면 jQuery를 이용해 만들것같습니다.
-
-    2. 결제목록에서 결제정보를 클릭하면 배송지를 수정할수 있습니다.
-    
-    3. 관리자는 주문목록에서 해당 결제정보를 클릭하여 송장과 배송 상황을 입력할수 있습니다.
-
+    2. 검색 창(Form)에서 검색방법과 검색어를 입력받아 처리하는 POST방식의 경우.
 
 
 <!-- - # Log 설정 -->
@@ -199,7 +165,7 @@
 
        
 
-# Trouble Shooting 
+# Trouble
 
   <p align="center"><img src="./err.jpg"/></p>
   <p align="center"><img src="./err1.jpg"/></p>
