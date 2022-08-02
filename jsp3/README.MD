@@ -50,7 +50,7 @@
 
 - **메인**
 
-  <p align="center"><img src="./web05.png"/></p>
+  <p align="center"><img src="./img/web05.png"/></p>
 
 
 
@@ -59,8 +59,8 @@
 
 - **게시판 카테고리** 
 
-  <p align="center"><img src="./board.png"/></p>
-  <p align="center"><img src="./review.png"/></p>
+  <p align="center"><img src="./img/board.png"/></p>
+  <p align="center"><img src="./img/review.png"/></p>
 
 
 
@@ -68,7 +68,7 @@
 
 - **QNA 카테고리**
 
-  <p align="center"><img src="./qna.png"/></p>
+  <p align="center"><img src="./img/qna.png"/></p>
 
 
 
@@ -76,7 +76,7 @@
 
 - **상품 카테고리**
 
-  <p align="center"><img src="./goods.png"/></p>
+  <p align="center"><img src="./img/goods.png"/></p>
 
 
 
@@ -85,7 +85,7 @@
 
 - #### 메인화면
 
-  <p align="center"><img src="./swiper.jpg"/></p>
+  <p align="center"><img src="./img/swiper.jpg"/></p>
 
   - **메뉴설정**
 
@@ -110,8 +110,8 @@
 
 - #### 회원 기능
 
-    <p align="center"><img src="./daum.jpg"/></p>
-    <p align="center"><img src="./daum2.jpg"/></p>
+    <p align="center"><img src="./img/daum.jpg"/></p>
+    <p align="center"><img src="./img/daum2.jpg"/></p>
 
 
   
@@ -127,7 +127,7 @@
 
 - #### 게시판 기능
 
-  <p align="center"><img src="./review1.png"/></p>
+  <p align="center"><img src="./img/review1.png"/></p>
 
   - **글쓰기, 글보기, 글목록, 글수정, 글삭제**
 
@@ -137,8 +137,8 @@
 
 - #### QNA 기능
 
-  <p align="center"><img src="./qna1.png"/>
-  <img src="./qna2.jpg"/>
+  <p align="center"><img src="./img/qna1.png"/>
+  <img src="./img/qna2.jpg"/>
   </p>
   
   - **목록 구현 기능**
@@ -159,8 +159,8 @@
 
 - #### 상품 기능
 
-  <p align="center"><img src="./goods0.jpg"/></p>
-  <p align="center"><img src="./goods1.png"/></p>
+  <p align="center"><img src="./img/goods0.jpg"/></p>
+  <p align="center"><img src="./img/goods1.png"/></p>
 
   - **텐트 서브메뉴만 구성 되어 있음**
 
@@ -173,8 +173,8 @@
 
 - #### 장바구니 기능
 
-  <p align="center"><img src="./basket.jpg"/></p>
-  <p align="center"><img src="./basket2.jpg"/></p>
+  <p align="center"><img src="./img/basket.jpg"/></p>
+  <p align="center"><img src="./img/basket2.jpg"/></p>
 
   - **장바구니 내 상품 상세보기, 상품 구매하기 기능을 수행**
 
@@ -187,10 +187,10 @@
 
 - #### 결제 기능
 
-  <p align="center"><img src="./pay.jpg"/></p>
-  <p align="center"><img src="./pay2.png"/></p>
-  <p align="center"><img src="./pay3.png"/></p>
-  <p align="center"><img src="./pay4.png"/></p>
+  <p align="center"><img src="./img/pay.jpg"/></p>
+  <p align="center"><img src="./img/pay2.png"/></p>
+  <p align="center"><img src="./img/pay3.png"/></p>
+  <p align="center"><img src="./img/pay4.png"/></p>
 
   - **결제와 관리자의 송장등록**
 
@@ -212,10 +212,10 @@
 
 # Trouble Shooting 
 
-  <p align="center"><img src="./err.jpg"/></p>
-  <p align="center"><img src="./err1.jpg"/></p>
-  <p align="center"><img src="./err2.jpg"/></p>
-  <p align="center"><img src="./err3.jpg"/></p>
+  <p align="center"><img src="./img/err.jpg"/></p>
+  <p align="center"><img src="./img/err1.jpg"/></p>
+  <p align="center"><img src="./img/err2.jpg"/></p>
+  <p align="center"><img src="./img/err3.jpg"/></p>
 
     1. 장바구니를 만들었을때 일어난 404에러입니다 콘솔로그 에 메시지가 뜨지않아 찾기 난감했지만 작성한것을 돌아보니 어노테이션을 작성하지 않아 일어난 문제였습니다.
 
@@ -226,7 +226,7 @@
 
 # 스케쥴 및 유즈케이스
 
-<p align="center"><img src="./UI.png"/><img src="./seulke2.png"/><img src="./seulke3.png"/></p>
+<p align="center"><img src="./img/UI.png"/><img src="./img/seulke2.png"/><img src="./img/seulke3.png"/></p>
 
   - **UI프로세스**
     - 설계당시 만든 UI프로세스입니다.

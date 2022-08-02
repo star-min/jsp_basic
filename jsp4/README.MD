@@ -40,7 +40,7 @@
 
 - **메인**
 
-  <p align="center"><img src="./main.png"/></p>
+  <p align="center"><img src="./img/main.png"/></p>
 
 
 
@@ -49,7 +49,7 @@
 
 - **게시판 카테고리** 
 
-  <p align="center"><img src="./notice.png"/></p>
+  <p align="center"><img src="./img/notice.png"/></p>
 
 
 
@@ -57,7 +57,7 @@
 
 - **QNA 카테고리**
 
-  <p align="center"><img src="./qnaList.png"/></p>
+  <p align="center"><img src="./img/qnaList.png"/></p>
 
 
 
@@ -65,7 +65,7 @@
 
 - **자료제출 카테고리**
 
-  <p align="center"><img src="./database.png"/></p>
+  <p align="center"><img src="./img/database.png"/></p>
 
 
 
@@ -74,8 +74,8 @@
 
 - #### 메인화면
 
-  <p align="center"><img src="./notice2.png"/></p>
-  <p align="center"><img src="./notice3.png"/></p>
+  <p align="center"><img src="./img/notice2.png"/></p>
+  <p align="center"><img src="./img/notice3.png"/></p>
 
   - **메뉴설정**
 
@@ -93,7 +93,7 @@
 
 - #### 회원 기능
 
-  <p align="center"><img src="./pwd.png"/></p>
+  <p align="center"><img src="./img/pwd.png"/></p>
 
   - **로그인, 회원가입, 회원목록, 마이페이지** 
 
@@ -109,9 +109,9 @@
 
 - #### 게시판 기능
 
-  <p align="center"><img src="./list.png"/></p>
-  <p align="center"><img src="./ck.png"/></p>
-  <p align="center"><img src="./notice1.png"/></p>
+  <p align="center"><img src="./img/list.png"/></p>
+  <p align="center"><img src="./img/ck.png"/></p>
+  <p align="center"><img src="./img/notice1.png"/></p>
 
   - **(ckEditor)글쓰기, 글보기, (PageMaker)글목록, 글수정, 글삭제**
 
@@ -126,9 +126,9 @@
 
 - #### QNA 기능
 
-  <p align="center"><img src="./qnaList2.png"/></p>
-  <p align="center"><img src="./qnaRe.png"/></p>
-  <p align="center"><img src="./qnaRead.png"/></p>
+  <p align="center"><img src="./img/qnaList2.png"/></p>
+  <p align="center"><img src="./img/qnaRe.png"/></p>
+  <p align="center"><img src="./img/qnaRead.png"/></p>
   
   - **목록 구현 기능**
 
@@ -148,8 +148,8 @@
 
 - #### 자료등록 기능
 
-  <p align="center"><img src="./database"/></p>
-  <p align="center"><img src="./database2"/></p>
+  <p align="center"><img src="./img/database"/></p>
+  <p align="center"><img src="./img/database2"/></p>
   
   - **자료등록, 상세보기**
 
@@ -167,10 +167,10 @@
 
 # Trouble
 
-  <p align="center"><img src="./err.jpg"/></p>
-  <p align="center"><img src="./err1.jpg"/></p>
-  <p align="center"><img src="./err2.jpg"/></p>
-  <p align="center"><img src="./err3.jpg"/></p>
+  <p align="center"><img src="./img/err.jpg"/></p>
+  <p align="center"><img src="./img/err1.jpg"/></p>
+  <p align="center"><img src="./img/err2.jpg"/></p>
+  <p align="center"><img src="./img/err3.jpg"/></p>
 
     1. 장바구니를 만들었을때 일어난 404에러입니다 콘솔로그 에 메시지가 뜨지않아 찾기 난감했지만 작성한것을 돌아보니 어노테이션을 작성하지 않아 일어난 문제였습니다.
 
@@ -181,7 +181,7 @@
 
 # 스케쥴 및 유즈케이스
 
-<p align="center"><img src="./UI.png"/><img src="./seulke2.png"/><img src="./seulke3.png"/></p>
+<p align="center"><img src="./img/UI.png"/><img src="./img/seulke2.png"/><img src="./img/seulke3.png"/></p>
 
   - **UI프로세스**
     - 설계당시 만든 UI프로세스입니다.

@@ -61,7 +61,7 @@ HikariCP.jar, spring-jdbc.jar
 
 - **메인**
 
-  <p align="center"><img src="./main.png"/></p>
+  <p align="center"><img src="./img/main.png"/></p>
 
 
 
@@ -70,7 +70,7 @@ HikariCP.jar, spring-jdbc.jar
 
 - **게시판 카테고리** 
 
-  <p align="center"><img src="./board.png"/></p>
+  <p align="center"><img src="./img/board.png"/></p>
 
 
 
@@ -78,7 +78,7 @@ HikariCP.jar, spring-jdbc.jar
 
 - **QNA 카테고리**
 
-  <p align="center"><img src="./QNA.png"/></p>
+  <p align="center"><img src="./img/QNA.png"/></p>
 
 
 
@@ -86,7 +86,7 @@ HikariCP.jar, spring-jdbc.jar
 
 - **보험제출용서류 카테고리**
 
-  <p align="center"><img src="./bank.png"/></p>
+  <p align="center"><img src="./img/bank.png"/></p>
 
 
 
@@ -95,7 +95,7 @@ HikariCP.jar, spring-jdbc.jar
 
 - #### 메인화면
 
-  <p align="center"><img src="./main1.jpg"/></p>
+  <p align="center"><img src="./img/main1.jpg"/></p>
 
   - **메뉴설정**
 
@@ -119,11 +119,11 @@ HikariCP.jar, spring-jdbc.jar
 
 - #### 회원 기능
 
-    <p align="center"><img src="./mypage.png"/></p>
+    <p align="center"><img src="./img/mypage.png"/></p>
 
-  <img src="./idck.jpg" width="370" />
+  <img src="./img/idck.jpg" width="370" />
 
-  <img src="./idck2.jpg" width="370" />
+  <img src="./img/idck2.jpg" width="370" />
 
   
 
@@ -147,10 +147,10 @@ HikariCP.jar, spring-jdbc.jar
 
 - #### QNA 기능
 
-  <p align="center"><img src="./qnaList.png"/>
-  <img src="./qnaInsert.png"/>
-  <img src="./qnaSQL.png"/>
-  <img src="./qnaSQL2.png"/>
+  <p align="center"><img src="./img/qnaList.png"/>
+  <img src="./img/qnaInsert.png"/>
+  <img src="./img/qnaSQL.png"/>
+  <img src="./img/qnaSQL2.png"/>
   </p>
   
   - **목록 구현 기능**
@@ -174,8 +174,8 @@ HikariCP.jar, spring-jdbc.jar
 
 # Trouble Shooting 
 
-  <p align="center"><img src="./err1.png"/></p>
-  <p align="center"><img src="./err.png"/></p>
+  <p align="center"><img src="./img/err1.png"/></p>
+  <p align="center"><img src="./img/err.png"/></p>
 
     1. Servlet.init() 호출 예외 오류입니다 경험상 @Autowired 라던가 @Controller, @Service, @Repository 같은 어노테이션의 문제인줄 알았는데
     import를 잘못한 경우였습니다 주로 사용하는 라이브러리와 Spring 의 Maven, Gradle 에 대해 공부하게 되었던 값진 경험 이었습니다.
@@ -185,7 +185,7 @@ HikariCP.jar, spring-jdbc.jar
 
 # 스케쥴 및 유즈케이스
 
-<p align="center"><img src="./seulke1.png"/><img src="./seulke2.png"/><img src="./seulke3.png"/></p>
+<p align="center"><img src="./img/seulke1.png"/><img src="./img/seulke2.png"/><img src="./img/seulke3.png"/></p>
 
   - **메인페이지와 메뉴 설계**
     -  제가 담당한 부분을 작성하기전 만들었던 설계들 입니다.
