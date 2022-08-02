@@ -148,8 +148,9 @@
 
 - #### 자료등록 기능
 
-  <p align="center"><img src="./img/database"/></p>
-  <p align="center"><img src="./img/database2"/></p>
+  <p align="center"><img src="./img/database.png"/></p>
+  <p align="center"><img src="./img/database2.png"/></p>
+  <p align="center"><img src="./img/database3.png"/></p>
   
   - **자료등록, 상세보기**
 
@@ -157,13 +158,19 @@
 
     2. 검색 창(Form)에서 검색방법과 검색어를 입력받아 처리하는 POST방식의 경우.
 
+    3. 코드화면은 작성폼에서 자료업로드 버튼을 누르면 열리는 파일업로드폼 의 코드이다
+    위의 스크립트문 은 jQuery로 들어온 파일의 데이터를 img속성으로 가공하고 업로드를 통해 들어온 값을 제거 하거나 볼수 있게끔 만드는 함수를 적용한 것이다.
+
+    4. 중간의 조건문은 파일이 제대로 들어왔다면 파일업로드폼으로 데이터를 전송하는 함수를 적용 버튼으로 실행할 수 있는 코드이다.
+
+    5. 아래의 스크립트는 적용된 파일의 형식을 구해 업로드폼으로 전달할 코드이다.
 
 <!-- - # Log 설정 -->
 
 
 
 
-       
+<!--        
 
 # Trouble
 
@@ -175,15 +182,14 @@
     1. 장바구니를 만들었을때 일어난 404에러입니다 콘솔로그 에 메시지가 뜨지않아 찾기 난감했지만 작성한것을 돌아보니 어노테이션을 작성하지 않아 일어난 문제였습니다.
 
     2. 똑 같은 에러가 발생시 수정 속도를 높이고자 결함 관리대장을 임시로 만들었습니다.
+ -->
 
 
 
+# 스케줄
 
-# 스케쥴 및 유즈케이스
+<p align="center"><img src="./img/plan.png"/></p>
 
-<p align="center"><img src="./img/UI.png"/><img src="./img/seulke2.png"/><img src="./img/seulke3.png"/></p>
-
-  - **UI프로세스**
-    - 설계당시 만든 UI프로세스입니다.
+  - 프로젝트 진행중 사용한 스케줄이다.
 
 
