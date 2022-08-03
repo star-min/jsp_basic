@@ -1,0 +1,94 @@
+
+	1) DBA로 접속
+		sqlplus sys/비밀번호 as sysdba
+
+	2) scott.sql을 실행
+		@C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin\scott.sql
+
+	3) scott 계정의 암호 변경
+		alter user scott identified by tiger;
+
+	4) scott 계정의 잠금 풀기	
+		alter user scott identified by tiger account unlock;
+
+	5) 커밋
+		commit;
+
+	6) 사용자 전환
+		conn scott/tiger
+
+	7) 권한 부여 : 현 사용자가 system이상의 권한을 가진 계정으로 로그인
+		grant [시스템권한] to [사용자이름] [롤];
+		시스템 권한 : 
+			user -> create user, alter user, drop user
+			(사용자)
+			session -> create session, alter session
+			(접속)
+			table -> create table, create any table, alter any table, drop any table
+				insert any table, update any table, delete any table, select any table
+			index -> create index, drop index, alter index
+			view -> create view, drop view
+			sequence -> create sequence, alter sequence, drop sequence
+			synonym(동의어)
+			profile(프로필)
+			ROLE(롤)
+			resource(자원)
+
+		ex) grant resource, create session, create table to scott;
+		scott 계정에 자원 접근, 세션 생성, 테이블 생성이 가능한 권한을 부여
+
+		
+		grant [객체권한] to [사용자이름] [롤];
+		객체권한 :
+			table : alter, delete, index, insert, references, select, update
+			view : delete, insert, references, select, update
+			sequence : alter, select
+			PL
+				procedure(프로시저)
+				function(함수)
+				package(패키지)
+
+		ex) grant alter on member to scott;
+		scott 계정에 member 테이블의 수정 권한을 부여
+
+		ex) grant connect, dba, resource to scott;
+		scott 계정에 모든 테이블의 모든 권한을 부여
+
+
+	8) 권한 회수 : 현 사용자가 system이상의 권한을 가진 계정으로 로그인
+		revoke [시스템권한] to [사용자이름] [롤];
+
+		 ex) revoke resource, create session, create table to scott;
+		scott 계정에 자원 접근, 세션 생성, 테이블 생성이 가능한 권한을 회수
+
+		ex) revoke connect, dba, resource to scott;
+		scott 계정에 모든 테이블의 모든 권한을 회수
+
+
+	9) 사용자 삭제
+		drop user scott;
+
+
+	10) 사용자 추가
+		create user 계정 IDENTIFIED by 비밀번호;
+		ex) create user test1 IDENTIFIED by 1234;
+
+	11) 사용자 추가/삭제, 권한부여/회수 종합 실습(SYSTEM 계정으로 로그인하여 활용할 것)
+
+		test1/a1234 사용자를 추가하시오.
+
+		test2/a1234 사용자를 추가하시오.
+		
+		추가된 test1 사용자의 비밀번호를 1234로 변경하시오.
+		
+		추가된 test1 계정에 모든 테이블의 모든 권한을 부여하시오.
+
+		추가된 test2 계정에 모든 테이블의 모든 권한을 부여하시오.
+		
+		추가된 test2 계정에 모든 테이블의 모든 권한을 회수하시오.
+
+		추가된 test2 계정을 삭제하시오.
+
+		
+
+		

@@ -1,0 +1,16 @@
+DB 명 : company
+	customer(고객)
+		custno	String 16	널값 허용 안함	기본키
+		name	String 50	널값 허용 안함
+		pass	String 256	널값 허용 안함
+
+	order_tbl(주문)
+		orderno	String 16	널값 허용 안함	기본키
+		custno	String 16	널값 허용 안함
+		odate	Date		널값 허용 안함
+		oprice	Int		널값 허용 안함
+		city	String 256
+		cdate	Date
+		money	int
+		dmoney	int		널값 허용 안함
+		point	int		널값 허용 안함
