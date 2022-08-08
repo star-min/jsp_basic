@@ -1,0 +1,63 @@
+sts 설정 - 서버설정- pom설정
+- home.jsp설정
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+- log4j 에서 loggers 설정 log4jdbc, logback, mybatis-config.xml
+- spring 에서 spring-security 작성
+- root-context.xml 에서 namespaces aop, beans, context, jdbc, mybatis 체크 후
+Source 에서 DB 설정
+
+<!-- sqlSession애서 호출 : SqlSessionFactory 객체 주입 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- mybatis 설정파일의 경로 -->
+		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
+			<!-- mybatis mapper 파일의 경로 -->
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+	</bean>
+
+<!-- DAO에서 호출 : SqlSession 객체 주입 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+
+<!-- 트랜잭션 관련 설정 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+- servlet-context 에서 
+<resources mapping="/myapp/**" location="/WEB-INF/views/myapp/" />
+등 맵핑해주기
+
+-mappers 에서 mapper 별로 설정 해주기
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+- web.xml 에서 한글설정
+
+	<!-- 한글 필터 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+- 
