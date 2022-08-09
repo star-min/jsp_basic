@@ -1,0 +1,29 @@
+application.properties
+
+server.port= 8081
+
+@RestController = controller , responseBody
+
+olacle
+타임리프
+spring web
+
+pom 
+olacle version
+11.2.0.4
+
+
+--lombok 사용법
+lombok 쓰려면 의존성만 넣어주는것이 아니라
+cmd 를 관리자모드로 실행한뒤 lombok이 들어가있는 lib 폴더로 들어가 
+java -jar lombok.jar 치고 location을 해당 실행파일 sts, eclipse 등의 exe파일을 선택해줘야 한다
+
+@Restcontroller = @Controller+@ResponseBody
+
+@RequestParam = @PathVariable 둘이 기능이 같음
+
+@Mapper = @Repository
+
+
+appplication.properties = servelet-context+root-context+spring-security+web.xml 등
+
