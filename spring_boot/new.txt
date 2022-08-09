@@ -1,9 +1,6 @@
 application.properties
-
-server.port= 8081
-
+server.port=
 @RestController = controller , responseBody
-
 olacle
 타임리프
 spring web
@@ -27,3 +24,5 @@ java -jar lombok.jar 치고 location을 해당 실행파일 sts, eclipse 등의 
 
 appplication.properties = servelet-context+root-context+spring-security+web.xml 등
 
+
+-------------------------------------------------------------gradle
