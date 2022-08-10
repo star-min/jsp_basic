@@ -3,6 +3,8 @@ D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\9957
 \web11\src\main\java
 D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1279597459.index
 \web03\src\main\java
+D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3448293399.index
+\boardPractice\src\main\java
 D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3450182.index
 \web03\src\main\java
 D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3149538816.index

@@ -24,5 +24,6 @@ java -jar lombok.jar 치고 location을 해당 실행파일 sts, eclipse 등의 
 
 appplication.properties = servelet-context+root-context+spring-security+web.xml 등
 
+spring boot 는 jpa를 사용 jpa는 jsp가아니라 순수 자바로 던짐
 
--------------------------------------------------------------gradle
+@Builder = 컨트럭터를 만들어중ㄴ다.

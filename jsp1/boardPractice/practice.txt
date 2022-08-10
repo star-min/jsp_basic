@@ -1,0 +1,4 @@
+conn = JDBCConnection 을 저장하기 위한 변수
+sql = sql구문을 저장하기 위한 변수
+pstmt = sql을 가지고있는 conn을 저장하기 위한 변수
+rs = pstmt.executeQuery를 통해 DB에 연결이 된 상태로 SQL문을 가지고있는 변수를 저장
