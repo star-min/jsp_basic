@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCConnection {
-	public static Connection getConnction() throws ClassNotFoundException, SQLException {
+	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		Connection conn = DriverManager.getConnection(url, "scott", "tiger");

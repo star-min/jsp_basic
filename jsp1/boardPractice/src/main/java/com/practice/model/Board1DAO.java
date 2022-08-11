@@ -10,7 +10,6 @@ import com.practice.common.Board1VO;
 import com.practice.common.JDBCConnection;
 
 public class Board1DAO {
-
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
@@ -21,7 +20,7 @@ public class Board1DAO {
 	public ArrayList<Board1VO> getBoardList() {
 		ArrayList<Board1VO> list = null;
 		try {
-			conn = JDBCConnection.getConnction();
+			conn = JDBCConnection.getConnection();
 			sql = "select * from board1";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -34,6 +33,7 @@ public class Board1DAO {
 				vo.setWriter(rs.getString("writer"));
 				vo.setRegdate(rs.getString("regdate"));
 				list.add(vo);
+				System.out.println("DAO작동완료");
 			}
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버 로딩이 실패되었 습니다.");

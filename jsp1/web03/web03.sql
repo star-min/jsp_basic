@@ -6,7 +6,7 @@ regdate date,
 visited number
 );
 
-select * from board;
+select * from board1;
 select * from board where seq=2;
 
 insert into board values(1, '샘플 글 제목1입니다.', '여기는 샘플 글1에 대한 내용입니다.', 'admin', sysdate, 0);

@@ -7,6 +7,8 @@ D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3448
 \boardPractice\src\main\java
 D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3450182.index
 \web03\src\main\java
+D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4187251616.index
+\boardPractice\src\main\java
 D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3149538816.index
 \web03_test\src\main\java
 D:\ksm\jsp_basic\jsp1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2885135757.index
