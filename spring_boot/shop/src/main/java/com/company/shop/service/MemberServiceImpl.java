@@ -23,4 +23,21 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO getMember(String userid) throws Exception {
 		return memberDAO.getMember(userid);
 	}
+
+	@Override
+	public void joinMember(MemberVO memberVO) throws Exception {
+		memberDAO.joinMember(memberVO);
+	}
+
+	@Override
+	public void updateMember(MemberVO memberVO) throws Exception {
+		memberDAO.updateMember(memberVO);
+	}
+
+	@Override
+	public void deleteMember(MemberVO memberVO) throws Exception {
+		memberDAO.deleteMember(memberVO);
+	}
+	
+	
 }
