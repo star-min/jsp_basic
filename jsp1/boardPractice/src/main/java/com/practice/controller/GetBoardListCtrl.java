@@ -25,10 +25,9 @@ public class GetBoardListCtrl extends HttpServlet {
 		Board1DAO dao = new Board1DAO();
 		ArrayList<Board1VO> list = dao.getBoardList();
 		req.setAttribute("list", list);
+		// RequestDispatcher 는 Servlet 에서 처리한 데이터를 jsp 로 이동시켜 처리할수 있게 해준다.
 		RequestDispatcher view = req.getRequestDispatcher("./board1/getBoardList.jsp");
+		// forward를 통해 해당 객체를 이동시키는 것.
 		view.forward(req, resp);
-		
 	}
-	
-
 }
