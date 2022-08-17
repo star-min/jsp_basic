@@ -1,0 +1,30 @@
+package Controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/AddMemberCtrl")
+public class AddMemberCtrl extends HttpServlet {
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		String 
+//		private int custno;
+//		private String custname;
+//		private String phone;
+//		private String address;
+//		private String joindate;
+//		private String grade;
+//		private String city;
+		super.doPost(req, resp);
+	}
+	
+	
+}

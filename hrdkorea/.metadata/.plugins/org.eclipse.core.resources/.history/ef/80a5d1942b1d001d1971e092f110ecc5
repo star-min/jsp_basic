@@ -1,0 +1,13 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class MemberDAO {
+	private Connection conn = null;
+	private PreparedStatement pstat = null;
+	private ResultSet rs = null;
+	String sql = "";
+	int cnt = 0;
+}

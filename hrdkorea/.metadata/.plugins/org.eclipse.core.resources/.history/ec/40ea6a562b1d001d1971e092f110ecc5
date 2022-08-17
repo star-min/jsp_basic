@@ -1,0 +1,10 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class MemberDAO {
+	private Connection conn = null;
+	private PreparedStatement pstat = null;
+	
+}

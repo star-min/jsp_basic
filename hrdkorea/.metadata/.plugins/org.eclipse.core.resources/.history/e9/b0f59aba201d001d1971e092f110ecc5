@@ -1,0 +1,8 @@
+
+public class memberVO {
+	private int custno;
+	private String custname;
+	private String phone;
+	private String address;
+	private String joindate;
+}

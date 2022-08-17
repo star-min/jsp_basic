@@ -1,0 +1,22 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import VO.MemberVO;
+
+public class MemberDAO {
+	private Connection conn = null;
+	private PreparedStatement pstat = null;
+	private ResultSet rs = null;
+	String sql = "";
+	int cnt = 0;
+	
+	// 홈쇼핑 회원등록
+	public int addMember(MemberVO vo) {
+		try{
+			conn = JDBCConnection.getConnection()
+		}
+	}
+}

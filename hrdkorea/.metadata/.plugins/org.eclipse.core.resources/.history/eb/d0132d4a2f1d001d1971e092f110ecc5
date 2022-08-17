@@ -1,0 +1,6 @@
+package Controller;
+
+@WebServlet("/AddMemberCtrl")
+public class AddMemberCtrl {
+
+}
