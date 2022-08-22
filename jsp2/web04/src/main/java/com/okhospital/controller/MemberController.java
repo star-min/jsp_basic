@@ -76,7 +76,7 @@ public class MemberController {
 		String pwd = pwdEncoder.encode(userpw);
 		mdto.setUserpw(pwd);
 		memberService.insertMember(mdto);
-		return "redirect:/";
+		return "redirect:/"; //url요청을 다시해 본주소로 돌려보낸다
 	}
 	
 	@RequestMapping(value="update.do", method = RequestMethod.POST)
